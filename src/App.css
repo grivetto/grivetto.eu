@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -184,8 +186,6 @@ li {
   padding: 2rem;
   margin-top: 2rem;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .shining-text {
   font-family: 'Dancing Script', cursive;

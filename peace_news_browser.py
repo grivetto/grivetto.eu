@@ -45,7 +45,7 @@ def fetch_news():
             print(f"Error fetching feed {feed_url}: {e}")
             
     print(f"Found {len(articles)} potential articles.")
-    return articles[:3] 
+    return articles[:10] 
 
 def run_automation():
     articles = fetch_news()

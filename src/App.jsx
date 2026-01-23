@@ -5,8 +5,10 @@ import ImageGrid from './ImageGrid';
 import RubiksCube from './RubiksCube';
 import NeonTicTacToe from './NeonTicTacToe';
 import TetrisGame from './TetrisGame';
-
+import ModernShowcase from './pages/ModernShowcase';
+import Portfolio from './pages/Portfolio';
 import Resume from './Resume';
+import Home from './pages/Home';
 
 import QuizApp from './QuizApp';
 
@@ -20,6 +22,7 @@ function App() {
     if (page === 'grid') return 'grid';
     if (page === 'resume') return 'resume';
     if (page === 'quiz') return 'quiz';
+    if (page === 'portfolio') return 'portfolio';
     return 'home';
   });
 
@@ -62,6 +65,8 @@ function App() {
       document.title = 'Resume | Sergio Grivetto';
     } else if (view === 'quiz') {
       document.title = 'Quiz App | Grivetto.eu';
+    } else if (view === 'portfolio') {
+      document.title = 'Portfolio | Sergio Grivetto';
     }
   }, [view]);
 
@@ -211,12 +216,13 @@ function App() {
 
   return (
     <div className={`app-container zoom-impact ${isVisible ? 'animate-in' : ''}`}>
-      {view === 'home' && renderHome()}
+      {view === 'home' && <Home onNavigate={setView} />}
       {view === 'links' && renderLinks()}
       {view === 'app' && <CustomApp onNavigate={setView} />}
       {view === 'grid' && <ImageGrid onNavigate={setView} />}
       {view === 'resume' && <Resume onNavigate={setView} />}
       {view === 'quiz' && <QuizApp onNavigate={setView} />}
+      {view === 'portfolio' && <Portfolio onNavigate={setView} />}
       {view === 'rubiks' && <RubiksCube onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tictactoe' && <NeonTicTacToe onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tetris' && <TetrisGame onBack={() => setView('app')} onNavigate={setView} />}
@@ -230,6 +236,7 @@ function App() {
           <button onClick={() => setView('app')} className="btn">Web App</button>
           <button onClick={() => setView('grid')} className="btn">Image Grid</button>
           <button onClick={() => setView('quiz')} className="btn">Quiz App</button>
+          <button onClick={() => setView('portfolio')} className="btn">Portfolio</button>
           <a href="https://linkedin.com/in/sgrivett" className="btn">Who am I</a>
         </div>
         <p className="copyright">© {new Date().getFullYear()} Sergio Grivetto</p>

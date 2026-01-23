@@ -1,0 +1,75 @@
+.modern-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.modern-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+}
+.modern-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.modern-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.modern-btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background: #fff;
+  color: #2575fc;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, color 0.2s;
+}
+.modern-btn:hover {
+  background: #2575fc;
+  color: #fff;
+}
+.modern-main {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #ffffff22;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0002;
+  padding: 2rem;
+}
+.modern-features h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.modern-features ul {
+  list-style: none;
+  padding: 0;
+}
+.modern-features li {
+  font-size: 1.2rem;
+  margin: 0.7rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.modern-features li:before {
+  content: '•';
+  color: #ffecd2;
+  position: absolute;
+  left: 0;
+}
+.modern-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+@media (max-width: 600px) {
+  .modern-main { padding: 1rem; }
+  .modern-hero { padding: 2rem 1rem 1rem 1rem; }
+  .modern-hero h1 { font-size: 2rem; }
+}
