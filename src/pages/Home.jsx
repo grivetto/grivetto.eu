@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Home.css';
+import './HomeCyberpunk.css';
 
 export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
+    const [theme, setTheme] = useState('cyberpunk'); // Toggle between 'default' and 'cyberpunk'
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
@@ -20,6 +22,7 @@ export default function Home({ onNavigate }) {
         script.dataset.cols = "180";
         script.dataset.rows = "15";
         script.dataset.loop = "true";
+        script.dataset.speed = "1.5"; // Slightly faster for better viewing
 
         const container = document.getElementById('asciinema-container');
         if (container && !container.hasChildNodes()) {
@@ -54,7 +57,7 @@ export default function Home({ onNavigate }) {
     };
 
     return (
-        <div className="modern-home">
+        <div className={`modern-home ${theme}`}>
             {/* Ambient Background */}
             <div className="ambient-bg">
                 <div className="gradient-orb orb-1" style={{ transform: `translateY(${scrollY * 0.3}px)` }}></div>
@@ -193,15 +196,18 @@ export default function Home({ onNavigate }) {
                                 <span className="tag">PWA</span>
                                 <span className="tag">TypeScript</span>
                             </div>
+                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem' }}>
+                                View Recent Work: ManuelaAires.it →
+                            </a>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="bento-card">
                             <div className="bento-icon">🧘</div>
-                            <h3 className="bento-title">Peaceful Thoughts</h3>
+                            <h3 className="bento-title">Historic Italian Internet brands</h3>
                             <p className="bento-description">
-                                Exploring mindfulness and inner peace through digital expression.
+                                Exploring Italy's pioneering digital heritage and vintage web culture.
                             </p>
-                            <button onClick={() => onNavigate('links')} className="bento-link">
+                            <button onClick={() => onNavigate('links')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
                                 Explore →
                             </button>
                         </motion.div>
@@ -225,11 +231,11 @@ export default function Home({ onNavigate }) {
                                 focus on reliability and efficient communication.
                             </p>
                             <div className="bento-tags">
-                                <span className="tag">HESK</span>
+                                <a href="https://www.grivetto.eu/hesk/index.php" className="tag" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', position: 'relative', zIndex: 10, pointerEvents: 'auto' }}>HESK</a>
                                 <span className="tag">System Admin</span>
                                 <span className="tag">DevOps</span>
                             </div>
-                            <a href="https://www.grivetto.eu/hesk/" className="bento-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.grivetto.eu/hesk/index.php" className="bento-link" target="_blank" rel="noopener noreferrer">
                                 Access Help Desk →
                             </a>
                         </motion.div>
@@ -354,7 +360,7 @@ export default function Home({ onNavigate }) {
                         Combining technical excellence with mindful design philosophy
                     </p>
                     <div className="cta-buttons">
-                        <a href="https://www.grivetto.eu/hesk/" className="btn-primary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.grivetto.eu/hesk/index.php" className="btn-primary" target="_blank" rel="noopener noreferrer">
                             Get in Touch
                         </a>
                         <a href="https://linkedin.com/in/sgrivett" className="btn-secondary" target="_blank" rel="noopener noreferrer">
@@ -364,43 +370,23 @@ export default function Home({ onNavigate }) {
                 </motion.div>
             </section>
 
-            {/* Footer with All Links */}
+            {/* Modern Footer with Contact Links */}
             <footer className="modern-footer">
                 <div className="footer-container">
                     <div className="footer-grid">
                         <div className="footer-column">
-                            <h3 className="footer-heading">Explore</h3>
+                            <h3 className="footer-heading">Connect</h3>
                             <nav className="footer-links">
-                                <button onClick={() => onNavigate('portfolio')} className="footer-link">Portfolio</button>
-                                <button onClick={() => onNavigate('resume')} className="footer-link">Resume</button>
-                                <button onClick={() => onNavigate('links')} className="footer-link">Peaceful Thoughts</button>
-                                <a href="https://www.grivetto.eu/old/" className="footer-link" target="_blank" rel="noopener noreferrer">History Archive</a>
-                            </nav>
-                        </div>
-
-                        <div className="footer-column">
-                            <h3 className="footer-heading">Applications</h3>
-                            <nav className="footer-links">
-                                <button onClick={() => onNavigate('app')} className="footer-link">Web Apps</button>
-                                <button onClick={() => onNavigate('grid')} className="footer-link">Image Grid</button>
-                                <button onClick={() => onNavigate('quiz')} className="footer-link">Quiz App</button>
-                                <a href="/aura-quiet-living/index.html" className="footer-link" target="_blank" rel="noopener noreferrer">Aura Quiet Living</a>
+                                <a href="https://linkedin.com/in/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <a href="https://github.com/grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                             </nav>
                         </div>
 
                         <div className="footer-column">
                             <h3 className="footer-heading">Support</h3>
                             <nav className="footer-links">
-                                <a href="https://www.grivetto.eu/hesk/" className="footer-link" target="_blank" rel="noopener noreferrer">Help Desk</a>
-                                <a href="mailto:info@grivetto.eu" className="footer-link">Email Contact</a>
-                            </nav>
-                        </div>
-
-                        <div className="footer-column">
-                            <h3 className="footer-heading">Connect</h3>
-                            <nav className="footer-links">
-                                <a href="https://linkedin.com/in/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                <a href="https://github.com/sergrivetto" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="https://www.grivetto.eu/hesk/index.php" className="footer-link" target="_blank" rel="noopener noreferrer">Help Desk</a>
+                                <a href="mailto:sergio@grivetto.eu" className="footer-link">Email Contact</a>
                             </nav>
                         </div>
                     </div>

@@ -1,0 +1,309 @@
+/* ===================================
+   CYBERPUNK NEON THEME OVERRIDE
+   =================================== */
+
+/* Dark ambient background */
+.modern-home.cyberpunk .ambient-bg {
+    background: linear-gradient(135deg,
+            hsl(240, 25%, 8%) 0%,
+            hsl(220, 30%, 10%) 50%,
+            hsl(280, 20%, 12%) 100%);
+}
+
+/* Neon gradient orbs */
+.modern-home.cyberpunk .orb-1 {
+    background: radial-gradient(circle, hsl(180, 100%, 50%) 0%, transparent 70%);
+    filter: blur(100px);
+    opacity: 0.3;
+}
+
+.modern-home.cyberpunk .orb-2 {
+    background: radial-gradient(circle, hsl(300, 100%, 50%) 0%, transparent 70%);
+    filter: blur(100px);
+    opacity: 0.3;
+}
+
+.modern-home.cyberpunk .orb-3 {
+    background: radial-gradient(circle, hsl(280, 80%, 50%) 0%, transparent 70%);
+    filter: blur(100px);
+    opacity: 0.25;
+}
+
+/* Navigation - Dark with neon */
+.modern-home.cyberpunk .modern-nav {
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid hsl(180, 100%, 50%, 0.3);
+    box-shadow: 0 4px 20px hsl(180, 100%, 50%, 0.2);
+}
+
+.modern-home.cyberpunk .logo-text {
+    background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px hsl(180, 100%, 50%, 0.5);
+}
+
+.modern-home.cyberpunk .nav-link {
+    color: hsl(180, 80%, 70%);
+}
+
+.modern-home.cyberpunk .nav-link::after {
+    background: linear-gradient(90deg, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    box-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .nav-link:hover {
+    color: hsl(180, 100%, 60%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .nav-link-btn {
+    background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    box-shadow: 0 4px 20px hsl(180, 100%, 50%, 0.5);
+}
+
+/* Hero section - Neon text */
+.modern-home.cyberpunk .hero-badge {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid hsl(180, 100%, 50%, 0.5);
+    color: hsl(180, 100%, 70%);
+    box-shadow: 0 0 20px hsl(180, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .hero-title {
+    color: white;
+    text-shadow: 0 0 30px hsl(180, 100%, 50%, 0.8);
+}
+
+.modern-home.cyberpunk .gradient-text {
+    background: linear-gradient(135deg, hsl(180, 100%, 60%), hsl(160, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px hsl(180, 100%, 50%));
+}
+
+.modern-home.cyberpunk .gradient-text-alt {
+    background: linear-gradient(135deg, hsl(300, 100%, 60%), hsl(320, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px hsl(300, 100%, 50%));
+}
+
+.modern-home.cyberpunk .hero-subtitle {
+    color: hsl(180, 50%, 80%);
+}
+
+/* Neon buttons */
+.modern-home.cyberpunk .btn-primary {
+    background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    box-shadow:
+        0 6px 30px hsl(180, 100%, 50%, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.modern-home.cyberpunk .btn-primary:hover {
+    box-shadow:
+        0 10px 40px hsl(180, 100%, 50%, 0.7),
+        0 0 30px hsl(300, 100%, 50%, 0.5);
+}
+
+.modern-home.cyberpunk .btn-secondary {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid hsl(180, 100%, 50%);
+    color: hsl(180, 100%, 70%);
+    box-shadow: 0 0 20px hsl(180, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 30px hsl(180, 100%, 50%, 0.5);
+}
+
+/* Stats card - Dark with neon borders */
+.modern-home.cyberpunk .hero-stats {
+    background: rgba(5, 5, 15, 0.8);
+    border: 2px solid hsl(180, 100%, 50%, 0.5);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 40px hsl(180, 100%, 50%, 0.3),
+        inset 0 1px 0 hsl(180, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .stat-value {
+    background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(300, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px hsl(180, 100%, 50%));
+}
+
+.modern-home.cyberpunk .stat-label {
+    color: hsl(180, 70%, 70%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.modern-home.cyberpunk .stat-divider {
+    background: linear-gradient(180deg, transparent, hsl(180, 100%, 50%), transparent);
+    box-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+/* Section headers */
+.modern-home.cyberpunk .section-title {
+    color: white;
+    text-shadow: 0 0 20px hsl(180, 100%, 50%, 0.5);
+}
+
+.modern-home.cyberpunk .section-subtitle {
+    color: hsl(180, 50%, 75%);
+}
+
+.modern-home.cyberpunk .section-badge {
+    background: rgba(0, 255, 255, 0.1);
+    color: hsl(180, 100%, 70%);
+    border: 1px solid hsl(180, 100%, 50%, 0.5);
+    box-shadow: 0 0 15px hsl(180, 100%, 50%, 0.3);
+}
+
+/* Bento cards - Dark with neon glow */
+.modern-home.cyberpunk .bento-card {
+    background: rgba(10, 10, 25, 0.7);
+    backdrop-filter: blur(20px) saturate(150%);
+    border: 2px solid hsl(180, 100%, 50%, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 20px hsl(180, 100%, 50%, 0.2),
+        inset 0 1px 0 rgba(0, 255, 255, 0.1);
+}
+
+.modern-home.cyberpunk .bento-card::before {
+    background: radial-gradient(circle at 20% 20%,
+            rgba(0, 255, 255, 0.2) 0%,
+            transparent 50%);
+}
+
+.modern-home.cyberpunk .bento-card::after {
+    content: '⚡';
+    color: hsl(180, 100%, 50%);
+    text-shadow: 0 0 20px hsl(180, 100%, 50%);
+    pointer-events: none;
+}
+
+.modern-home.cyberpunk .bento-card:hover {
+    border-color: hsl(180, 100%, 50%, 0.8);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 40px hsl(180, 100%, 50%, 0.5),
+        0 0 60px hsl(300, 100%, 50%, 0.3),
+        inset 0 1px 0 rgba(0, 255, 255, 0.3);
+    background: rgba(10, 10, 25, 0.9);
+}
+
+.modern-home.cyberpunk .bento-title {
+    color: white;
+    text-shadow: 0 0 10px hsl(180, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .bento-description {
+    color: hsl(180, 40%, 75%);
+}
+
+.modern-home.cyberpunk .bento-icon {
+    filter: drop-shadow(0 0 10px hsl(180, 100%, 50%));
+}
+
+.modern-home.cyberpunk .tag {
+    background: rgba(0, 255, 255, 0.1);
+    color: hsl(180, 100%, 70%);
+    border: 1px solid hsl(180, 100%, 50%, 0.5);
+    box-shadow: 0 0 10px hsl(180, 100%, 50%, 0.2);
+}
+
+.modern-home.cyberpunk .tag:hover {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: hsl(180, 100%, 50%, 0.8);
+    box-shadow: 0 0 20px hsl(180, 100%, 50%, 0.4);
+    transform: translateY(-2px);
+}
+
+.modern-home.cyberpunk .bento-link {
+    color: hsl(180, 100%, 60%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .bento-link:hover {
+    color: hsl(300, 100%, 60%);
+    text-shadow: 0 0 15px hsl(300, 100%, 50%);
+}
+
+/* Accent cards with magenta */
+.modern-home.cyberpunk .bento-accent {
+    background: linear-gradient(135deg, hsl(180, 100%, 20%), hsl(300, 100%, 20%));
+    border: 2px solid hsl(300, 100%, 50%, 0.5);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 30px hsl(300, 100%, 50%, 0.4);
+}
+
+.modern-home.cyberpunk .bento-accent:hover {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 50px hsl(300, 100%, 50%, 0.6);
+}
+
+/* CTA Section */
+.modern-home.cyberpunk .cta-container {
+    background: rgba(10, 10, 25, 0.9);
+    border: 2px solid hsl(180, 100%, 50%, 0.5);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.7),
+        0 0 40px hsl(180, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .cta-title {
+    color: white;
+    text-shadow: 0 0 20px hsl(180, 100%, 50%, 0.5);
+}
+
+.modern-home.cyberpunk .cta-subtitle {
+    color: hsl(180, 50%, 75%);
+}
+
+/* Terminal - Enhanced for cyberpunk */
+.modern-home.cyberpunk .terminal-window {
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.8),
+        0 0 50px hsl(0, 100%, 50%, 0.3);
+    border: 2px solid hsl(0, 100%, 50%, 0.3);
+}
+
+/* Footer - Dark with neon */
+.modern-home.cyberpunk .modern-footer {
+    background: rgba(5, 5, 15, 0.9);
+    border-top: 2px solid hsl(180, 100%, 50%, 0.3);
+    box-shadow: 0 -4px 30px hsl(180, 100%, 50%, 0.2);
+}
+
+.modern-home.cyberpunk .footer-heading {
+    color: hsl(180, 100%, 60%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .footer-link {
+    color: hsl(180, 70%, 70%);
+}
+
+.modern-home.cyberpunk .footer-link:hover {
+    color: hsl(180, 100%, 60%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .footer-copyright,
+.modern-home.cyberpunk .footer-tagline {
+    color: hsl(180, 40%, 60%);
+}

@@ -9,6 +9,7 @@ import ModernShowcase from './pages/ModernShowcase';
 import Portfolio from './pages/Portfolio';
 import Resume from './Resume';
 import Home from './pages/Home';
+import AsciinemaDemo from './AsciinemaDemo';
 
 import QuizApp from './QuizApp';
 
@@ -23,34 +24,13 @@ function App() {
     if (page === 'resume') return 'resume';
     if (page === 'quiz') return 'quiz';
     if (page === 'portfolio') return 'portfolio';
+    if (page === 'asciinema-demo') return 'asciinema-demo';
     return 'home';
   });
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
-
-    if (view === 'home') {
-      const script = document.createElement('script');
-      script.src = "https://asciinema.org/a/405507.js";
-      script.id = "asciicast-405507";
-      script.async = true;
-      script.dataset.autoplay = "true";
-      script.dataset.cols = "180";
-      script.dataset.rows = "15";
-      script.dataset.loop = "true";
-
-      const container = document.getElementById('asciinema-container');
-      if (container) {
-        container.appendChild(script);
-      }
-
-      return () => {
-        if (container && container.contains(script)) {
-          container.removeChild(script);
-        }
-      };
-    }
-  }, [view]);
+  }, []);
 
   useEffect(() => {
     if (view === 'home') {
@@ -67,6 +47,8 @@ function App() {
       document.title = 'Quiz App | Grivetto.eu';
     } else if (view === 'portfolio') {
       document.title = 'Portfolio | Sergio Grivetto';
+    } else if (view === 'asciinema-demo') {
+      document.title = 'Asciinema Demo | Grivetto.eu';
     }
   }, [view]);
 
@@ -223,24 +205,11 @@ function App() {
       {view === 'resume' && <Resume onNavigate={setView} />}
       {view === 'quiz' && <QuizApp onNavigate={setView} />}
       {view === 'portfolio' && <Portfolio onNavigate={setView} />}
+      {view === 'asciinema-demo' && <AsciinemaDemo />}
       {view === 'rubiks' && <RubiksCube onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tictactoe' && <NeonTicTacToe onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tetris' && <TetrisGame onBack={() => setView('app')} onNavigate={setView} />}
 
-      <footer className="footer glass">
-        <div className="links">
-          <button onClick={() => setView('resume')} className="btn">Resume</button>
-          <a href="/aura-quiet-living/index.html" target="_blank" className="btn">Aura Quiet Living</a>
-          <a href="https://www.grivetto.eu/hesk/" className="btn">Help Desk</a>
-          <button onClick={() => setView('links')} className="btn">Links</button>
-          <button onClick={() => setView('app')} className="btn">Web App</button>
-          <button onClick={() => setView('grid')} className="btn">Image Grid</button>
-          <button onClick={() => setView('quiz')} className="btn">Quiz App</button>
-          <button onClick={() => setView('portfolio')} className="btn">Portfolio</button>
-          <a href="https://linkedin.com/in/sgrivett" className="btn">Who am I</a>
-        </div>
-        <p className="copyright">© {new Date().getFullYear()} Sergio Grivetto</p>
-      </footer>
     </div>
   );
 }
