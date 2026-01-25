@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Animation Demo</title>
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="landing-container" id="mainContainer"
+        style="max-width: 800px; margin: 20px auto; transform: none; opacity: 1;">
+        <header class="hero" style="background: linear-gradient(135deg, #333 0%, #000 100%);">
+            <div class="hero-content">
+                <h1>Scegli il tuo Stile</h1>
+                <p>Esplora 10 diverse animazioni di ingresso per la tua landing page.</p>
+            </div>
+        </header>
+
+        <section class="features"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 30px;">
+            <a href="landing_v1.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V1</h3>
+                <p>Cyberpunk Glitch</p>
+            </a>
+            <a href="landing_v2.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V2</h3>
+                <p>Elegant Fade</p>
+            </a>
+            <a href="landing_v3.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V3</h3>
+                <p>3D Flip</p>
+            </a>
+            <a href="landing_v4.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V4</h3>
+                <p>Zoom Impact</p>
+            </a>
+            <a href="landing_v5.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V5</h3>
+                <p>Curtain Wipe</p>
+            </a>
+            <a href="landing_v6.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V6</h3>
+                <p>Staggered</p>
+            </a>
+            <a href="landing_v7.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V7</h3>
+                <p>Blur Focus</p>
+            </a>
+            <a href="landing_v8.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V8</h3>
+                <p>Elastic Slide</p>
+            </a>
+            <a href="landing_v9.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V9</h3>
+                <p>Spiral In</p>
+            </a>
+            <a href="landing_v10.html" class="feature-card" style="text-decoration: none; color: inherit;">
+                <h3>V10</h3>
+                <p>Split Reveal</p>
+            </a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Grivetto Web. <a href="landing_demo.html">Home</a></p>
+        </footer>
+    </div>
+
+    <!-- No animation script for the hub page itself, or maybe a simple fade in -->
+    <script>
+        document.body.style.opacity = 0;
+        window.onload = () => { document.body.style.transition = 'opacity 0.5s'; document.body.style.opacity = 1; }
+    </script>
+</body>
+
+</html>
