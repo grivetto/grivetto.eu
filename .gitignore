@@ -21,6 +21,7 @@ aura_temp/
 hesk_temp/
 .gemini/
 .agent/
+.shared/
 
 # Debugging and Logs
 *.png
