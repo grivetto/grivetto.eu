@@ -33,22 +33,54 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const updateMeta = (title, desc) => {
+      document.title = title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', desc);
+      }
+    };
+
     if (view === 'home') {
-      document.title = 'Sergio Grivetto | Peaceful Thoughts & Digital Innovation';
+      updateMeta(
+        'Sergio Grivetto | Peaceful Thoughts & Digital Innovation',
+        "Explore the personal portfolio of Sergio Grivetto. Discover 'Peaceful Thoughts', historical Italian internet archives, and modern web applications."
+      );
     } else if (view === 'links') {
-      document.title = 'Historical Links | Grivetto.eu';
+      updateMeta(
+        'Historical Links | Grivetto.eu',
+        'Explore the history of the Italian Internet (1992+). CRS4, Video On Line, and other pioneers of the digital web in Italy.'
+      );
     } else if (view === 'app') {
-      document.title = 'Custom Web App | Grivetto.eu';
+      updateMeta(
+        'Custom Web App | Grivetto.eu',
+        'Experience modern web engineering with this custom web application showcase. Interactive and dynamic web development examples.'
+      );
     } else if (view === 'grid') {
-      document.title = 'Image Grid | Grivetto.eu';
+      updateMeta(
+        'Image Grid | Grivetto.eu',
+        'A visual showcase featuring a responsive image grid layout. Part of the Sergio Grivetto portfolio.'
+      );
     } else if (view === 'resume') {
-      document.title = 'Resume | Sergio Grivetto';
+      updateMeta(
+        'Resume | Sergio Grivetto',
+        'Professional resume of Sergio Grivetto. Web Engineering, Sviluppo Web, and Digital Innovation experience.'
+      );
     } else if (view === 'quiz') {
-      document.title = 'Quiz App | Grivetto.eu';
+      updateMeta(
+        'Quiz App | Grivetto.eu',
+        'Test your knowledge with this interactive Quiz App. A demonstration of React state management and user interaction.'
+      );
     } else if (view === 'portfolio') {
-      document.title = 'Portfolio | Sergio Grivetto';
+      updateMeta(
+        'Portfolio | Sergio Grivetto',
+        'Showcase of web development projects, web engineering skills, and creative digital works by Sergio Grivetto.'
+      );
     } else if (view === 'asciinema-demo') {
-      document.title = 'Asciinema Demo | Grivetto.eu';
+      updateMeta(
+        'Asciinema Demo | Grivetto.eu',
+        'Terminal session recording playback. View CLI tools and scripts in action.'
+      );
     }
   }, [view]);
 

@@ -150,8 +150,8 @@ export default function Home({ onNavigate }) {
                         className="hero-stats"
                     >
                         <div className="stat-item">
-                            <div className="stat-value">15+</div>
-                            <div className="stat-label">Years Experience</div>
+                            <div className="stat-value">30+</div>
+                            <div className="stat-label">years of experience</div>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
