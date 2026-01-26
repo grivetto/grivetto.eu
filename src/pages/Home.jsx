@@ -218,7 +218,7 @@ export default function Home({ onNavigate }) {
                             <p className="bento-description">
                                 Preserving Italian internet history from CRS4 and Video On Line eras.
                             </p>
-                            <a href="https://archive.org/" className="bento-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://archive.org/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem' }}>
                                 View History →
                             </a>
                         </motion.div>
