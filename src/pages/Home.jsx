@@ -269,6 +269,7 @@ export default function Home({ onNavigate }) {
                     <div className="projects-grid">
                         <motion.div variants={itemVariants} className="project-card">
                             <div className="project-image-placeholder">
+                                <img src="/images/aura_card.png" alt="Aura Quiet Living" className="project-thumb" />
                                 <div className="project-tag">Web App</div>
                             </div>
                             <div className="project-content">
@@ -284,6 +285,7 @@ export default function Home({ onNavigate }) {
 
                         <motion.div variants={itemVariants} className="project-card">
                             <div className="project-image-placeholder">
+                                <img src="/images/apps_card.png" alt="Interactive Web Apps" className="project-thumb" />
                                 <div className="project-tag">Interactive</div>
                             </div>
                             <div className="project-content">
@@ -299,6 +301,7 @@ export default function Home({ onNavigate }) {
 
                         <motion.div variants={itemVariants} className="project-card">
                             <div className="project-image-placeholder">
+                                <img src="/images/portfolio_card.png" alt="Portfolio" className="project-thumb" />
                                 <div className="project-tag">Portfolio</div>
                             </div>
                             <div className="project-content">
