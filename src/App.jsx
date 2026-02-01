@@ -12,6 +12,10 @@ import Home from './pages/Home';
 import AsciinemaDemo from './AsciinemaDemo';
 
 import QuizApp from './QuizApp';
+import CuriositySpark from './components/CuriositySpark';
+import WebTerminal from './components/WebTerminal';
+import HeskWrapper from './components/HeskWrapper';
+import TerminalDemo from './components/TerminalDemo';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +29,8 @@ function App() {
     if (page === 'quiz') return 'quiz';
     if (page === 'portfolio') return 'portfolio';
     if (page === 'asciinema-demo') return 'asciinema-demo';
+    if (page === 'curiosity') return 'curiosity';
+    if (page === 'terminal') return 'terminal';
     return 'home';
   });
 
@@ -80,6 +86,16 @@ function App() {
       updateMeta(
         'Asciinema Demo | Grivetto.eu',
         'Terminal session recording playback. View CLI tools and scripts in action.'
+      );
+    } else if (view === 'curiosity') {
+      updateMeta(
+        'Cosmic Curiosity | Grivetto.eu',
+        'Ignite a spark of knowledge with the Cosmic Curiosity Button.'
+      );
+    } else if (view === 'terminal') {
+      updateMeta(
+        'System Admin | Grivetto.eu',
+        'Authorized Personnel Only. Web Terminal Access.'
       );
     }
   }, [view]);
@@ -241,7 +257,10 @@ function App() {
       {view === 'rubiks' && <RubiksCube onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tictactoe' && <NeonTicTacToe onBack={() => setView('app')} onNavigate={setView} />}
       {view === 'tetris' && <TetrisGame onBack={() => setView('app')} onNavigate={setView} />}
-
+      {view === 'curiosity' && <CuriositySpark onNavigate={setView} />}
+      {view === 'terminal' && <WebTerminal onNavigate={setView} />}
+      {view === 'hesk' && <HeskWrapper onNavigate={setView} />}
+      {view === 'terminal-demo' && <TerminalDemo onNavigate={setView} />}
     </div>
   );
 }

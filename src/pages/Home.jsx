@@ -13,28 +13,9 @@ export default function Home({ onNavigate }) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "https://asciinema.org/a/405507.js";
-        script.id = "asciicast-405507";
-        script.async = true;
-        script.dataset.autoplay = "true";
-        script.dataset.cols = "180";
-        script.dataset.rows = "15";
-        script.dataset.loop = "true";
-        script.dataset.speed = "1.5"; // Slightly faster for better viewing
 
-        const container = document.getElementById('asciinema-container');
-        if (container && !container.hasChildNodes()) {
-            container.appendChild(script);
-        }
 
-        return () => {
-            if (container && container.contains(script)) {
-                container.removeChild(script);
-            }
-        };
-    }, []);
+
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -196,8 +177,11 @@ export default function Home({ onNavigate }) {
                                 <span className="tag">PWA</span>
                                 <span className="tag">TypeScript</span>
                             </div>
-                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem' }}>
+                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem', display: 'block' }}>
                                 View Recent Work: ManuelaAires.it →
+                            </a>
+                            <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                View Recent Work: Grivetto.it →
                             </a>
                         </motion.div>
 
@@ -230,14 +214,17 @@ export default function Home({ onNavigate }) {
                                 Implementing robust helpdesk and mail administration solutions with
                                 focus on reliability and efficient communication.
                             </p>
-                            <div className="bento-tags">
-                                <a href="https://www.grivetto.eu/hesk/index.php" className="tag" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', position: 'relative', zIndex: 10, pointerEvents: 'auto' }}>HESK</a>
-                                <span className="tag">System Admin</span>
-                                <span className="tag">DevOps</span>
+                            <div className="bento-tags" style={{ flexDirection: 'column', gap: '8px', alignItems: 'stretch' }}>
+                                <button onClick={() => onNavigate('hesk')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    HESK
+                                </button>
+                                <button onClick={() => onNavigate('terminal')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    System Admin
+                                </button>
+                                <button onClick={() => onNavigate('terminal-demo')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    Terminal Session
+                                </button>
                             </div>
-                            <a href="https://www.grivetto.eu/hesk/index.php" className="bento-link" target="_blank" rel="noopener noreferrer">
-                                Access Help Desk →
-                            </a>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="bento-card bento-accent">
@@ -248,11 +235,11 @@ export default function Home({ onNavigate }) {
                             <cite className="bento-cite">— Philosophy of Peace</cite>
                         </motion.div>
                     </div>
-                </motion.div>
-            </section>
+                </motion.div >
+            </section >
 
             {/* Featured Projects */}
-            <section className="projects-section" id="mindfulness">
+            < section className="projects-section" id="mindfulness" >
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -291,7 +278,7 @@ export default function Home({ onNavigate }) {
                             <div className="project-content">
                                 <h3 className="project-title">Web Applications</h3>
                                 <p className="project-description">
-                                    Collection of interactive demos including games and productivity tools.
+                                    Interactive demos: <strong>Cosmic Curiosity</strong>, Web Terminal, Retro Games, and more.
                                 </p>
                                 <button onClick={() => onNavigate('app')} className="project-link">
                                     Explore Apps →
@@ -316,41 +303,13 @@ export default function Home({ onNavigate }) {
                         </motion.div>
                     </div>
                 </motion.div>
-            </section>
+            </section >
 
-            {/* Terminal Session */}
-            <section className="terminal-section">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="section-container"
-                >
-                    <motion.div variants={itemVariants} className="section-header">
-                        <span className="section-badge">Live Demo</span>
-                        <h2 className="section-title">Terminal Session</h2>
-                        <p className="section-subtitle">Real-time system administration workflow</p>
-                    </motion.div>
 
-                    <motion.div variants={itemVariants} className="terminal-container">
-                        <div className="terminal-window">
-                            <div className="terminal-header">
-                                <div className="terminal-buttons">
-                                    <span className="btn-close"></span>
-                                    <span className="btn-minimize"></span>
-                                    <span className="btn-maximize"></span>
-                                </div>
-                                <div className="terminal-title">bash ~ sergio@grivetto</div>
-                            </div>
-                            <div className="terminal-body" id="asciinema-container"></div>
-                        </div>
-                    </motion.div>
-                </motion.div>
-            </section>
+
 
             {/* CTA Section */}
-            <section className="cta-section" id="history">
+            < section className="cta-section" id="history" >
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -371,10 +330,10 @@ export default function Home({ onNavigate }) {
                         </a>
                     </div>
                 </motion.div>
-            </section>
+            </section >
 
             {/* Modern Footer with Contact Links */}
-            <footer className="modern-footer">
+            < footer className="modern-footer" >
                 <div className="footer-container">
                     <div className="footer-grid">
                         <div className="footer-column">
@@ -399,7 +358,7 @@ export default function Home({ onNavigate }) {
                         <p className="footer-tagline">Bridging Technology and Mindfulness</p>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     );
 }
