@@ -284,12 +284,14 @@ export default function Home({ onNavigate }) {
                                     <p className="project-description">
                                         AI-powered wellness application focused on mindfulness and peaceful living.
                                     </p>
-                                    <a href="/aura-quiet-living/index.html" target="_blank" className="project-link">
-                                        View Project →
-                                    </a>
-                                    <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" className="project-link" style={{ marginTop: '10px', display: 'inline-block' }}>
-                                        Launch Aura →
-                                    </a>
+                                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                                        <a href="/aura-quiet-living/index.html" target="_blank" className="project-link">
+                                            View Project →
+                                        </a>
+                                        <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" className="project-link">
+                                            Launch Aura →
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -321,12 +323,14 @@ export default function Home({ onNavigate }) {
                                     <p className="project-description">
                                         Comprehensive showcase of all projects and professional experience.
                                     </p>
-                                    <button onClick={() => onNavigate('portfolio')} className="project-link">
-                                        View All →
-                                    </button>
-                                    <button onClick={() => onNavigate('resume')} className="project-link" style={{ marginTop: '10px' }}>
-                                        View Resume →
-                                    </button>
+                                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                                        <button onClick={() => onNavigate('portfolio')} className="project-link">
+                                            View All →
+                                        </button>
+                                        <button onClick={() => onNavigate('resume')} className="project-link">
+                                            View Resume →
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
