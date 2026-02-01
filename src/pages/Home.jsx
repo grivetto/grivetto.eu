@@ -180,9 +180,27 @@ export default function Home({ onNavigate }) {
                             <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem', display: 'block' }}>
                                 View Recent Work: ManuelaAires.it →
                             </a>
-                            <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                            <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
                                 View Recent Work: Grivetto.it →
                             </a>
+
+                            <div className="bento-tags" style={{ flexDirection: 'column', gap: '8px', alignItems: 'stretch', marginTop: '10px' }}>
+                                <button onClick={() => onNavigate('curiosity')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    ✨ Curiosità Cosmica
+                                </button>
+                                <button onClick={() => window.open('https://www.grivetto.eu/web-apps/neon-tunnel/', '_blank')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    🌀 Neon Tunnel
+                                </button>
+                                <button onClick={() => onNavigate('tictactoe')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    ⭕ Neon Tic-Tac-Toe
+                                </button>
+                                <button onClick={() => onNavigate('tetris')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    🕹️ Neon Tetris
+                                </button>
+                                <button onClick={() => onNavigate('rubiks')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    🎲 3D Cube
+                                </button>
+                            </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="bento-card">
@@ -253,55 +271,66 @@ export default function Home({ onNavigate }) {
                         <p className="section-subtitle">A selection of projects that showcase my expertise</p>
                     </motion.div>
 
-                    <div className="projects-grid">
-                        <motion.div variants={itemVariants} className="project-card">
-                            <div className="project-image-placeholder">
-                                <img src="/images/aura_card.png" alt="Aura Quiet Living" className="project-thumb" />
-                                <div className="project-tag">Web App</div>
+                    <motion.div variants={itemVariants} className="project-card-unified">
+                        <div className="unified-grid">
+                            {/* Aura Item */}
+                            <div className="unified-item">
+                                <div className="project-image-placeholder unified-thumb">
+                                    <img src="/images/aura_card.png" alt="Aura Quiet Living" className="project-thumb" />
+                                    <div className="project-tag">Web App</div>
+                                </div>
+                                <div className="project-content" style={{ padding: 0 }}>
+                                    <h3 className="project-title">Aura Quiet Living</h3>
+                                    <p className="project-description">
+                                        AI-powered wellness application focused on mindfulness and peaceful living.
+                                    </p>
+                                    <a href="/aura-quiet-living/index.html" target="_blank" className="project-link">
+                                        View Project →
+                                    </a>
+                                    <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" className="project-link" style={{ marginTop: '10px', display: 'inline-block' }}>
+                                        Launch Aura →
+                                    </a>
+                                </div>
                             </div>
-                            <div className="project-content">
-                                <h3 className="project-title">Aura Quiet Living</h3>
-                                <p className="project-description">
-                                    AI-powered wellness application focused on mindfulness and peaceful living.
-                                </p>
-                                <a href="/aura-quiet-living/index.html" target="_blank" className="project-link">
-                                    View Project →
-                                </a>
-                            </div>
-                        </motion.div>
 
-                        <motion.div variants={itemVariants} className="project-card">
-                            <div className="project-image-placeholder">
-                                <img src="/images/apps_card.png" alt="Interactive Web Apps" className="project-thumb" />
-                                <div className="project-tag">Interactive</div>
+                            {/* Apps Item */}
+                            <div className="unified-item">
+                                <div className="project-image-placeholder unified-thumb">
+                                    <img src="/images/apps_card.png" alt="Interactive Web Apps" className="project-thumb" />
+                                    <div className="project-tag">Interactive</div>
+                                </div>
+                                <div className="project-content" style={{ padding: 0 }}>
+                                    <h3 className="project-title">Web Applications</h3>
+                                    <p className="project-description">
+                                        Interactive demos: <strong>Cosmic Curiosity</strong>, Web Terminal, Retro Games, and more.
+                                    </p>
+                                    <button onClick={() => onNavigate('app')} className="project-link">
+                                        Explore Apps →
+                                    </button>
+                                </div>
                             </div>
-                            <div className="project-content">
-                                <h3 className="project-title">Web Applications</h3>
-                                <p className="project-description">
-                                    Interactive demos: <strong>Cosmic Curiosity</strong>, Web Terminal, Retro Games, and more.
-                                </p>
-                                <button onClick={() => onNavigate('app')} className="project-link">
-                                    Explore Apps →
-                                </button>
-                            </div>
-                        </motion.div>
 
-                        <motion.div variants={itemVariants} className="project-card">
-                            <div className="project-image-placeholder">
-                                <img src="/images/portfolio_card.png" alt="Portfolio" className="project-thumb" />
-                                <div className="project-tag">Portfolio</div>
+                            {/* Portfolio Item */}
+                            <div className="unified-item">
+                                <div className="project-image-placeholder unified-thumb">
+                                    <img src="/images/portfolio_card.png" alt="Portfolio" className="project-thumb" />
+                                    <div className="project-tag">Portfolio</div>
+                                </div>
+                                <div className="project-content" style={{ padding: 0 }}>
+                                    <h3 className="project-title">Complete Portfolio</h3>
+                                    <p className="project-description">
+                                        Comprehensive showcase of all projects and professional experience.
+                                    </p>
+                                    <button onClick={() => onNavigate('portfolio')} className="project-link">
+                                        View All →
+                                    </button>
+                                    <button onClick={() => onNavigate('resume')} className="project-link" style={{ marginTop: '10px' }}>
+                                        View Resume →
+                                    </button>
+                                </div>
                             </div>
-                            <div className="project-content">
-                                <h3 className="project-title">Complete Portfolio</h3>
-                                <p className="project-description">
-                                    Comprehensive showcase of all projects and professional experience.
-                                </p>
-                                <button onClick={() => onNavigate('portfolio')} className="project-link">
-                                    View All →
-                                </button>
-                            </div>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </motion.div>
             </section >
 

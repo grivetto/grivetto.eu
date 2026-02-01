@@ -32,6 +32,10 @@ Seamless integration with external tools via custom wrappers:
 *   **HESK:** Embedded Help Desk system.
 *   **Terminal Session:** High-fidelity, full-screen playback of real terminal sessions (using Asciinema).
 
+### **4. Unified Project Interface**
+*   **Design:** A single "Glassmorphism" block consolidating all project cards (Aura, Web Apps, Portfolio) for a cleaner UI.
+*   **Quick Actions:** Direct launch buttons for all apps (Neon Tunnel, Tic-Tac-Toe, Tetris) and resources (Resume, Aura Live).
+
 ---
 
 ## 🛠️ Local Development

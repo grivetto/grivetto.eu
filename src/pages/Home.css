@@ -1017,3 +1017,55 @@
     padding: 4rem 1rem;
   }
 }
+
+/* ===================================
+   UNIFIED CARD
+   =================================== */
+
+.project-card-unified {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.unified-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.unified-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.unified-thumb {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 220px;
+}
+
+/* Re-use project-thumb styles inside unified-thumb */
+.unified-thumb .project-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.unified-item:hover .project-thumb {
+  transform: scale(1.1);
+}
