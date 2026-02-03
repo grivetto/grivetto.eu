@@ -274,8 +274,21 @@ export default function Home({ onNavigate }) {
                     <motion.div variants={itemVariants} className="project-card-unified">
                         <div className="unified-grid">
                             {/* Aura Item */}
-                            <div className="unified-item">
-                                <div className="project-content" style={{ padding: 0 }}>
+                            <div className="unified-item" style={{
+                                backgroundImage: 'url(/images/aura_card.png)',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                height: '400px',
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                                padding: '20px'
+                            }}>
+                                <div className="project-content" style={{
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    padding: '1.5rem',
+                                    borderRadius: '16px',
+                                    width: '100%'
+                                }}>
                                     <h3 className="project-title">Aura Quiet Living</h3>
                                     <p className="project-description">
                                         AI-powered wellness application focused on mindfulness and peaceful living.
@@ -290,8 +303,21 @@ export default function Home({ onNavigate }) {
                             </div>
 
                             {/* Apps Item */}
-                            <div className="unified-item">
-                                <div className="project-content" style={{ padding: 0 }}>
+                            <div className="unified-item" style={{
+                                backgroundImage: 'url(/images/apps_card.png)',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                height: '400px',
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                                padding: '20px'
+                            }}>
+                                <div className="project-content" style={{
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    padding: '1.5rem',
+                                    borderRadius: '16px',
+                                    width: '100%'
+                                }}>
                                     <h3 className="project-title">Web Applications</h3>
                                     <p className="project-description">
                                         Interactive demos: <strong>Cosmic Curiosity</strong>, Web Terminal, Retro Games, and more.
@@ -303,8 +329,21 @@ export default function Home({ onNavigate }) {
                             </div>
 
                             {/* Portfolio Item */}
-                            <div className="unified-item">
-                                <div className="project-content" style={{ padding: 0 }}>
+                            <div className="unified-item" style={{
+                                backgroundImage: 'url(/images/portfolio_card.png)',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                height: '400px',
+                                display: 'flex',
+                                alignItems: 'flex-end',
+                                padding: '20px'
+                            }}>
+                                <div className="project-content" style={{
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    padding: '1.5rem',
+                                    borderRadius: '16px',
+                                    width: '100%'
+                                }}>
                                     <h3 className="project-title">Complete Portfolio</h3>
                                     <p className="project-description">
                                         Comprehensive showcase of all projects and professional experience.
