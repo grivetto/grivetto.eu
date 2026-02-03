@@ -284,14 +284,12 @@ export default function Home({ onNavigate }) {
                                     <p className="project-description">
                                         AI-powered wellness application focused on mindfulness and peaceful living.
                                     </p>
-                                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                                        <a href="/aura-quiet-living/index.html" target="_blank" className="project-link">
-                                            View Project →
-                                        </a>
-                                        <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" className="project-link">
-                                            Launch Aura →
-                                        </a>
-                                    </div>
+                                    <a href="/aura-quiet-living/index.html" target="_blank" className="project-link" style={{ marginRight: '15px' }}>
+                                        View Project →
+                                    </a>
+                                    <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" className="project-link">
+                                        Launch Aura →
+                                    </a>
                                 </div>
                             </div>
 
@@ -323,14 +321,12 @@ export default function Home({ onNavigate }) {
                                     <p className="project-description">
                                         Comprehensive showcase of all projects and professional experience.
                                     </p>
-                                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                                        <button onClick={() => onNavigate('portfolio')} className="project-link">
-                                            View All →
-                                        </button>
-                                        <button onClick={() => onNavigate('resume')} className="project-link">
-                                            View Resume →
-                                        </button>
-                                    </div>
+                                    <button onClick={() => onNavigate('portfolio')} className="project-link" style={{ marginRight: '15px' }}>
+                                        View All →
+                                    </button>
+                                    <button onClick={() => onNavigate('resume')} className="project-link">
+                                        View Resume →
+                                    </button>
                                 </div>
                             </div>
                         </div>
