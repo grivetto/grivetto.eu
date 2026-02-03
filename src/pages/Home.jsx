@@ -275,7 +275,7 @@ export default function Home({ onNavigate }) {
                         <div className="unified-grid">
                             {/* Aura Item */}
                             <div className="unified-item">
-                                <a href="/aura-quiet-living/index.html" target="_blank" className="project-image-placeholder unified-thumb" style={{ cursor: 'pointer', display: 'block', textDecoration: 'none' }}>
+                                <a href="/aura-quiet-living/index.html" target="_blank" className="project-image-placeholder unified-thumb" style={{ cursor: 'pointer', display: 'flex', textDecoration: 'none' }}>
                                     <img src="/images/aura_card.png" alt="Aura Quiet Living" className="project-thumb" />
                                     <div className="project-tag">Web App</div>
                                 </a>
