@@ -275,10 +275,6 @@ export default function Home({ onNavigate }) {
                         <div className="unified-grid">
                             {/* Aura Item */}
                             <div className="unified-item">
-                                <a href="/aura-quiet-living/index.html" target="_blank" className="project-image-placeholder unified-thumb" style={{ cursor: 'pointer', display: 'flex', textDecoration: 'none' }}>
-                                    <img src="/images/aura_card.png" alt="Aura Quiet Living" className="project-thumb" />
-                                    <div className="project-tag">Web App</div>
-                                </a>
                                 <div className="project-content" style={{ padding: 0 }}>
                                     <h3 className="project-title">Aura Quiet Living</h3>
                                     <p className="project-description">
@@ -295,10 +291,6 @@ export default function Home({ onNavigate }) {
 
                             {/* Apps Item */}
                             <div className="unified-item">
-                                <div onClick={() => onNavigate('app')} className="project-image-placeholder unified-thumb" style={{ cursor: 'pointer' }}>
-                                    <img src="/images/apps_card.png" alt="Interactive Web Apps" className="project-thumb" />
-                                    <div className="project-tag">Interactive</div>
-                                </div>
                                 <div className="project-content" style={{ padding: 0 }}>
                                     <h3 className="project-title">Web Applications</h3>
                                     <p className="project-description">
@@ -312,10 +304,6 @@ export default function Home({ onNavigate }) {
 
                             {/* Portfolio Item */}
                             <div className="unified-item">
-                                <div onClick={() => onNavigate('portfolio')} className="project-image-placeholder unified-thumb" style={{ cursor: 'pointer' }}>
-                                    <img src="/images/portfolio_card.png" alt="Portfolio" className="project-thumb" />
-                                    <div className="project-tag">Portfolio</div>
-                                </div>
                                 <div className="project-content" style={{ padding: 0 }}>
                                     <h3 className="project-title">Complete Portfolio</h3>
                                     <p className="project-description">
