@@ -23,7 +23,7 @@ const CustomApp = ({ onNavigate }) => {
                             <span className="icon">🌀</span> Neon Tunnel
                         </button>
                         <button onClick={() => onNavigate('curiosity')} className="app-btn" style={{ background: 'linear-gradient(135deg, #aa00ff, #ea80fc)', boxShadow: '0 4px 15px rgba(234, 128, 252, 0.3)', minWidth: '200px' }}>
-                            <span className="icon">✨</span> Curiosità Cosmica
+                            <span className="icon">✨</span> Cosmic Curiosity
                         </button>
                     </div>
                     <div className="mini-apps-buttons" style={{ marginTop: '0' }}>

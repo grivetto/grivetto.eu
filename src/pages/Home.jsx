@@ -186,7 +186,7 @@ export default function Home({ onNavigate }) {
 
                             <div className="bento-tags" style={{ flexDirection: 'column', gap: '8px', alignItems: 'stretch', marginTop: '10px' }}>
                                 <button onClick={() => onNavigate('curiosity')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
-                                    ✨ Curiosità Cosmica
+                                    ✨ Cosmic Curiosity
                                 </button>
                                 <button onClick={() => window.open('https://www.grivetto.eu/web-apps/neon-tunnel/', '_blank')} className="tag" style={{ background: 'rgba(0, 242, 255, 0.1)', border: '1px solid #00f2ff', color: '#00f2ff', cursor: 'pointer', textAlign: 'center', position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     🌀 Neon Tunnel
