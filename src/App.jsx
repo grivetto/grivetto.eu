@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { LanguageProvider } from './contexts/LanguageContext';
 import CustomApp from './CustomApp';
 import ImageGrid from './ImageGrid';
 import RubiksCube from './RubiksCube';
@@ -10,7 +11,6 @@ import Portfolio from './pages/Portfolio';
 import Resume from './Resume';
 import Home from './pages/Home';
 import AsciinemaDemo from './AsciinemaDemo';
-
 import QuizApp from './QuizApp';
 import CuriositySpark from './components/CuriositySpark';
 import WebTerminal from './components/WebTerminal';
@@ -34,6 +34,31 @@ function App() {
     return 'home';
   });
 
+
+
+  const handleNavigate = (newView) => {
+    setView(newView);
+    const url = new URL(window.location);
+    url.searchParams.set('page', newView);
+    window.history.pushState({ page: newView }, '', url);
+  };
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state && event.state.page) {
+        setView(event.state.page);
+      } else {
+        // Fallback to URL param or 'home'
+        const params = new URLSearchParams(window.location.search);
+        const page = params.get('page') || 'home';
+        setView(page);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
@@ -48,10 +73,7 @@ function App() {
     };
 
     if (view === 'home') {
-      updateMeta(
-        'Sergio Grivetto | Peaceful Thoughts & Digital Innovation',
-        "Explore the personal portfolio of Sergio Grivetto. Discover 'Peaceful Thoughts', historical Italian internet archives, and modern web applications."
-      );
+      // Meta defaults
     } else if (view === 'links') {
       updateMeta(
         'Historical Links | Grivetto.eu',
@@ -100,65 +122,7 @@ function App() {
     }
   }, [view]);
 
-  const renderHome = () => (
-    <>
-      <header className={`hero ${isVisible ? 'fade-in' : ''}`}>
-        <div className="hero-content">
-          <h1>Peaceful Thoughts</h1>
-          <p className="subtitle">Find inner peace and calmness through positive thinking and mindfulness.</p>
-
-
-        </div>
-      </header>
-
-      <main>
-        <section className="card glass">
-          <h2>What is Peace?</h2>
-          <p>
-            Peace is a state of mind where you are free from worry and anxiety.
-            If you do nice things you get back a clean state of mind: <strong>ALWAYS</strong>.
-            It is a feeling of calmness, tranquility, and contentment.
-            Peace comes from within and can be achieved through positive thinking, mindfulness, and self-reflection.
-          </p>
-        </section>
-
-        <div className="grid-container">
-          <section className="card glass">
-            <h2>The Benefits of Peaceful Thinking</h2>
-            <ul className="list-check">
-              <li>Reduces stress and anxiety</li>
-              <li>Improves mental clarity and focus</li>
-              <li>Increases creativity and productivity</li>
-              <li>Improves sleep and overall health</li>
-              <li>Enhances relationships and communication skills</li>
-            </ul>
-          </section>
-
-          <section className="card glass">
-            <h2>Simple Ways to Find Peace</h2>
-            <ul className="list-dot">
-              <li>Practice mindfulness meditation</li>
-              <li>Spend time in nature</li>
-              <li>Listen to calming music</li>
-              <li>Practice deep breathing exercises</li>
-              <li>Take a break from social media and technology</li>
-              <li>Fai al prossimo quello che vorresti fare a te stesso</li>
-            </ul>
-          </section>
-        </div>
-
-        <section className="card glass" style={{ marginTop: '2rem', overflow: 'hidden' }}>
-          <h2>Terminal Session</h2>
-          <div id="asciinema-container"></div>
-        </section>
-
-        <section className="card glass shining-text-container">
-          <h2 className="shining-text"><span className="peace-red">Peace</span> is the only way to live</h2>
-        </section>
-      </main>
-    </>
-  );
-
+  // renderLinks helper moved inside to access isVisible and setView
   const renderLinks = () => (
     <>
       <header className={`hero ${isVisible ? 'fade-in' : ''}`}>
@@ -238,30 +202,33 @@ function App() {
         </section>
 
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <button onClick={() => setView('home')} className="btn">Back to Home</button>
+          <button onClick={() => handleNavigate('home')} className="btn">Back to Home</button>
         </div>
       </main>
     </>
   );
 
   return (
-    <div className={`app-container zoom-impact ${isVisible ? 'animate-in' : ''}`}>
-      {view === 'home' && <Home onNavigate={setView} />}
-      {view === 'links' && renderLinks()}
-      {view === 'app' && <CustomApp onNavigate={setView} />}
-      {view === 'grid' && <ImageGrid onNavigate={setView} />}
-      {view === 'resume' && <Resume onNavigate={setView} />}
-      {view === 'quiz' && <QuizApp onNavigate={setView} />}
-      {view === 'portfolio' && <Portfolio onNavigate={setView} />}
-      {view === 'asciinema-demo' && <AsciinemaDemo />}
-      {view === 'rubiks' && <RubiksCube onBack={() => setView('app')} onNavigate={setView} />}
-      {view === 'tictactoe' && <NeonTicTacToe onBack={() => setView('app')} onNavigate={setView} />}
-      {view === 'tetris' && <TetrisGame onBack={() => setView('app')} onNavigate={setView} />}
-      {view === 'curiosity' && <CuriositySpark onNavigate={setView} />}
-      {view === 'terminal' && <WebTerminal onNavigate={setView} />}
-      {view === 'hesk' && <HeskWrapper onNavigate={setView} />}
-      {view === 'terminal-demo' && <TerminalDemo onNavigate={setView} />}
-    </div>
+    <LanguageProvider>
+      <div className={`app-container fade-in ${isVisible ? 'visible' : ''}`}>
+        {view === 'home' && <Home onNavigate={handleNavigate} />}
+        {view === 'links' && renderLinks()}
+        {view === 'app' && <CustomApp onNavigate={handleNavigate} />}
+        {view === 'grid' && <ImageGrid onNavigate={handleNavigate} />}
+        {view === 'rubiks' && <RubiksCube onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+        {view === 'tictactoe' && <NeonTicTacToe onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+        {view === 'tetris' && <TetrisGame onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+        {view === 'portfolio' && <Portfolio onNavigate={handleNavigate} />}
+        {view === 'resume' && <Resume onNavigate={handleNavigate} />}
+        {view === 'links' && <ModernShowcase onNavigate={handleNavigate} />}
+        {view === 'asciinema-demo' && <AsciinemaDemo onNavigate={handleNavigate} />}
+        {view === 'quiz' && <QuizApp onNavigate={handleNavigate} />}
+        {view === 'curiosity' && <CuriositySpark onNavigate={handleNavigate} />}
+        {view === 'terminal' && <WebTerminal onNavigate={handleNavigate} />}
+        {view === 'hesk' && <HeskWrapper onNavigate={handleNavigate} />}
+        {view === 'terminal-demo' && <TerminalDemo onNavigate={handleNavigate} />}
+      </div>
+    </LanguageProvider>
   );
 }
 

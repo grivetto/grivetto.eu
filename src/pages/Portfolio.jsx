@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 import './Portfolio.css';
 
 const Portfolio = ({ onNavigate }) => {
+    const { t } = useLanguage();
     const [selectedProject, setSelectedProject] = useState(null);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const { scrollYProgress } = useScroll();
@@ -21,9 +23,9 @@ const Portfolio = ({ onNavigate }) => {
     const projects = [
         {
             id: 1,
-            title: "Peaceful Thoughts",
-            category: "Web Experience",
-            description: "Un viaggio digitale verso la pace interiore con design minimale e animazioni fluide",
+            title: t('page_portfolio', 'projects').p1.title,
+            category: t('page_portfolio', 'projects').p1.category,
+            description: t('page_portfolio', 'projects').p1.desc,
             gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             icon: "🕊️",
             tags: ["React", "Design", "Mindfulness"],
@@ -32,9 +34,9 @@ const Portfolio = ({ onNavigate }) => {
         },
         {
             id: 2,
-            title: "Interactive Resume",
-            category: "Personal Branding",
-            description: "CV interattivo che trasforma l'esperienza professionale in una narrazione visiva coinvolgente",
+            title: t('page_portfolio', 'projects').p2.title,
+            category: t('page_portfolio', 'projects').p2.category,
+            description: t('page_portfolio', 'projects').p2.desc,
             gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
             icon: "📄",
             tags: ["TypeScript", "Animation", "UX"],
@@ -43,9 +45,9 @@ const Portfolio = ({ onNavigate }) => {
         },
         {
             id: 3,
-            title: "Quiz App",
-            category: "Gamification",
-            description: "Applicazione quiz con design neon e meccaniche di gioco che stimolano l'apprendimento",
+            title: t('page_portfolio', 'projects').p3.title,
+            category: t('page_portfolio', 'projects').p3.category,
+            description: t('page_portfolio', 'projects').p3.desc,
             gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
             icon: "🎮",
             tags: ["React", "Gaming", "Education"],
@@ -54,9 +56,9 @@ const Portfolio = ({ onNavigate }) => {
         },
         {
             id: 4,
-            title: "Image Grid Gallery",
-            category: "Visual Design",
-            description: "Galleria fotografica con transizioni fluide e layout masonry responsivo",
+            title: t('page_portfolio', 'projects').p4.title,
+            category: t('page_portfolio', 'projects').p4.category,
+            description: t('page_portfolio', 'projects').p4.desc,
             gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
             icon: "🖼️",
             tags: ["CSS Grid", "Animation", "Photography"],
@@ -65,9 +67,9 @@ const Portfolio = ({ onNavigate }) => {
         },
         {
             id: 5,
-            title: "Historical Links",
-            category: "Digital Archive",
-            description: "Tributo ai pionieri di Internet in Italia con design vintage-modern fusion",
+            title: t('page_portfolio', 'projects').p5.title,
+            category: t('page_portfolio', 'projects').p5.category,
+            description: t('page_portfolio', 'projects').p5.desc,
             gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
             icon: "🌐",
             tags: ["History", "Archive", "Web"],
@@ -76,9 +78,9 @@ const Portfolio = ({ onNavigate }) => {
         },
         {
             id: 6,
-            title: "Rubik's Cube 3D",
-            category: "3D Interactive",
-            description: "Cubo di Rubik interattivo in 3D con fisica realistica e controlli intuitivi",
+            title: t('page_portfolio', 'projects').p6.title,
+            category: t('page_portfolio', 'projects').p6.category,
+            description: t('page_portfolio', 'projects').p6.desc,
             gradient: "linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)",
             icon: "🎲",
             tags: ["3D", "WebGL", "Interactive"],
@@ -133,6 +135,11 @@ const Portfolio = ({ onNavigate }) => {
                 transition={{ type: "spring", stiffness: 500, damping: 28 }}
             />
 
+            {/* Back Button */}
+            <button className="back-button glass" onClick={() => onNavigate('home')}>
+                ← {t('resume', 'btn_back')}
+            </button>
+
             {/* Hero Section */}
             <motion.section
                 className="portfolio-hero"
@@ -144,7 +151,7 @@ const Portfolio = ({ onNavigate }) => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h1 className="portfolio-title">
-                        <span className="gradient-text">Progetti</span>
+                        <span className="gradient-text">{t('page_portfolio', 'title')}</span>
                         <motion.span
                             className="title-accent"
                             animate={floatingAnimation}
@@ -153,7 +160,7 @@ const Portfolio = ({ onNavigate }) => {
                         </motion.span>
                     </h1>
                     <p className="portfolio-subtitle">
-                        Dove creatività e tecnologia si incontrano per creare esperienze indimenticabili
+                        {t('page_portfolio', 'subtitle')}
                     </p>
                 </motion.div>
 
@@ -192,10 +199,10 @@ const Portfolio = ({ onNavigate }) => {
             >
                 <div className="stats-grid">
                     {[
-                        { label: "Progetti", value: "15+", icon: "🚀" },
-                        { label: "Tecnologie", value: "20+", icon: "⚡" },
-                        { label: "Ore di Coding", value: "1000+", icon: "💻" },
-                        { label: "Caffè Bevuti", value: "∞", icon: "☕" }
+                        { label: t('page_portfolio', 'stats').projects, value: "15+", icon: "🚀" },
+                        { label: t('page_portfolio', 'stats').tech, value: "20+", icon: "⚡" },
+                        { label: t('page_portfolio', 'stats').hours, value: "1000+", icon: "💻" },
+                        { label: t('page_portfolio', 'stats').coffee, value: "∞", icon: "☕" }
                     ].map((stat, index) => (
                         <motion.div
                             key={index}

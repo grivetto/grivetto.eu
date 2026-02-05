@@ -4,9 +4,9 @@ from ftplib import FTP
 
 FTP_HOST = "ftp.grivetto.eu"
 FTP_USER = "6539170@aruba.it"
-FTP_PASS = "@Freedom_2024!!"
+FTP_PASS = "@Freedom_2010!!"
 LOCAL_DIR = "dist"
-REMOTE_DIR = "/www.grivetto.eu/aura"
+REMOTE_DIR = "/www.grivetto.eu/aura-quiet-living"
 
 def upload_files():
     try:
@@ -14,6 +14,7 @@ def upload_files():
         print(f"Connecting to {FTP_HOST}...")
         ftp = FTP(FTP_HOST)
         ftp.login(FTP_USER, FTP_PASS)
+        ftp.set_pasv(False) # Force Active Mode
         print("Connected and logged in.")
 
         # Ensure remote directory exists
