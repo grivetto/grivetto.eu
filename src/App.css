@@ -9,6 +9,13 @@
   gap: 3rem;
 }
 
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+}
+
 .hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -23,7 +30,7 @@
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
@@ -31,6 +38,7 @@
   color: transparent;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .subtitle {
@@ -152,9 +160,15 @@ li {
 /* Links Grid */
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .link-item {
@@ -189,7 +203,7 @@ li {
 
 .shining-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 10vw, 3.5rem);
   font-weight: 700;
   background: linear-gradient(to right, #2d3748 20%, #4a90e2 40%, #68d391 60%, #2d3748 80%);
   background-size: 200% auto;

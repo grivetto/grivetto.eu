@@ -7,6 +7,7 @@ import './HomeCyberpunk.css';
 export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
     const [theme, setTheme] = useState('cyberpunk'); // Toggle between 'default' and 'cyberpunk'
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { t, language, toggleLanguage } = useLanguage();
 
     useEffect(() => {
@@ -56,11 +57,22 @@ export default function Home({ onNavigate }) {
                         <span className="logo-text">Sergio Grivetto</span>
                         <span className="logo-badge">Digital Architect</span>
                     </div>
-                    <div className="nav-links">
-                        <a href="#work" className="nav-link">{t('nav', 'work')}</a>
 
-                        <a href="#history" className="nav-link">{t('nav', 'history')}</a>
-                        <button onClick={() => onNavigate('resume')} className="nav-link-btn">{t('nav', 'resume')}</button>
+                    {/* Hamburger Menu Button */}
+                    <button
+                        className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Toggle navigation"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
+                        <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
+                        <a href="#history" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'history')}</a>
+                        <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                         <button onClick={toggleLanguage} className="lang-toggle-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}>
                             <img
                                 src={language === 'en' ? "/images/it_flag.png" : "https://flagcdn.com/w40/gb.png"}
