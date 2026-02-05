@@ -216,6 +216,47 @@ export const translations = {
                     category: "3D Interactive"
                 }
             }
+        },
+        page_links: {
+            title: "Historical Links",
+            subtitle: "The dawn of the Internet in Italy (1992+)",
+            pioneers: "Italian Web Pioneers",
+            icons: "International Icons",
+            back: "Back to Home",
+            links: {
+                crs4: {
+                    title: "CRS4 (1993)",
+                    desc: "The first official Italian website, born at the Research Center in Sardinia."
+                },
+                unione: {
+                    title: "L'Unione Sarda (1994)",
+                    desc: "The first European newspaper to go online."
+                },
+                cnr: {
+                    title: "CNR Pisa",
+                    desc: "Where it all started: the first Italian Internet connection (1986)."
+                },
+                cineca: {
+                    title: "Cineca",
+                    desc: "Historic interuniversity consortium for automatic calculation."
+                },
+                vol: {
+                    title: "Video On Line (VOL) (1995)",
+                    desc: "The provider that brought the Internet into the homes of Italians (Link Archive)."
+                },
+                iperbole: {
+                    title: "Iperbole Bologna (1995)",
+                    desc: "The first free Italian civic network for citizens."
+                },
+                netscape: {
+                    title: "Netscape",
+                    desc: "The browser that made web history (1996 Archive)."
+                },
+                dollar: {
+                    title: "SendMeADollar.com",
+                    desc: "A classic Internet social experiment."
+                }
+            }
         }
     },
     it: {
@@ -433,6 +474,47 @@ export const translations = {
                     title: "Cubo di Rubik 3D",
                     desc: "Cubo di Rubik interattivo in 3D con fisica realistica e controlli intuitivi",
                     category: "3D Interattivo"
+                }
+            }
+        },
+        page_links: {
+            title: "Link Storici",
+            subtitle: "Gli albori di Internet in Italia (1992+)",
+            pioneers: "Pionieri del Web Italiano",
+            icons: "Icone Internazionali",
+            back: "Torna alla Home",
+            links: {
+                crs4: {
+                    title: "CRS4 (1993)",
+                    desc: "Il primo sito web ufficiale italiano, nato al Centro di Ricerca in Sardegna."
+                },
+                unione: {
+                    title: "L'Unione Sarda (1994)",
+                    desc: "Il primo quotidiano europeo a sbarcare online."
+                },
+                cnr: {
+                    title: "CNR Pisa",
+                    desc: "Dove tutto è iniziato: la prima connessione italiana a Internet (1986)."
+                },
+                cineca: {
+                    title: "Cineca",
+                    desc: "Storico consorzio interuniversitario per il calcolo automatico."
+                },
+                vol: {
+                    title: "Video On Line (VOL) (1995)",
+                    desc: "Il provider che ha portato Internet nelle case degli italiani (Link Archive)."
+                },
+                iperbole: {
+                    title: "Iperbole Bologna (1995)",
+                    desc: "La prima rete civica italiana gratuita per i cittadini."
+                },
+                netscape: {
+                    title: "Netscape",
+                    desc: "Il browser che ha fatto la storia del web (Archivio 1996)."
+                },
+                dollar: {
+                    title: "SendMeADollar.com",
+                    desc: "Un classico esperimento sociale di Internet."
                 }
             }
         }
