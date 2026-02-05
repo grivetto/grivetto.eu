@@ -6,7 +6,7 @@ import ImageGrid from './ImageGrid';
 import RubiksCube from './RubiksCube';
 import NeonTicTacToe from './NeonTicTacToe';
 import TetrisGame from './TetrisGame';
-import ModernShowcase from './pages/ModernShowcase';
+
 import Portfolio from './pages/Portfolio';
 import Resume from './Resume';
 import Home from './pages/Home';
@@ -220,7 +220,6 @@ function App() {
         {view === 'tetris' && <TetrisGame onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
         {view === 'portfolio' && <Portfolio onNavigate={handleNavigate} />}
         {view === 'resume' && <Resume onNavigate={handleNavigate} />}
-        {view === 'links' && <ModernShowcase onNavigate={handleNavigate} />}
         {view === 'asciinema-demo' && <AsciinemaDemo onNavigate={handleNavigate} />}
         {view === 'quiz' && <QuizApp onNavigate={handleNavigate} />}
         {view === 'curiosity' && <CuriositySpark onNavigate={handleNavigate} />}
