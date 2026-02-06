@@ -73,51 +73,54 @@ function App() {
     };
 
     if (view === 'home') {
-      // Meta defaults
+      updateMeta(
+        'Sergio Grivetto | Senior System Administrator',
+        'Senior System Administrator & Linux Expert in Turin. Specializing in Zabbix monitoring and infrastructure security.'
+      );
     } else if (view === 'links') {
       updateMeta(
         'Historical Links | Grivetto.eu',
-        'Explore the history of the Italian Internet (1992+). CRS4, Video On Line, and other pioneers of the digital web in Italy.'
+        'Explore the history of the Italian Internet (1992+). CRS4, Video On Line, and other digital pioneers.'
       );
     } else if (view === 'app') {
       updateMeta(
         'Custom Web App | Grivetto.eu',
-        'Experience modern web engineering with this custom web application showcase. Interactive and dynamic web development examples.'
+        'Interactive showcase of modern web engineering and custom application development examples.'
       );
     } else if (view === 'grid') {
       updateMeta(
         'Image Grid | Grivetto.eu',
-        'A visual showcase featuring a responsive image grid layout. Part of the Sergio Grivetto portfolio.'
+        'Responsive image grid showcase from the portfolio of Sergio Grivetto, IT System Administrator.'
       );
     } else if (view === 'resume') {
       updateMeta(
         'Resume | Sergio Grivetto',
-        'Professional resume of Sergio Grivetto. Web Engineering, Sviluppo Web, and Digital Innovation experience.'
+        'Professional CV of Sergio Grivetto. Senior System Administrator, Linux Expert, and IT Consultant.'
       );
     } else if (view === 'quiz') {
       updateMeta(
         'Quiz App | Grivetto.eu',
-        'Test your knowledge with this interactive Quiz App. A demonstration of React state management and user interaction.'
+        'Test your IT knowledge with this interactive Quiz. A demonstration of React state management.'
       );
     } else if (view === 'portfolio') {
       updateMeta(
         'Portfolio | Sergio Grivetto',
-        'Showcase of web development projects, web engineering skills, and creative digital works by Sergio Grivetto.'
+        'Showcase of web development projects and system administration expertise by Sergio Grivetto.'
       );
     } else if (view === 'asciinema-demo') {
       updateMeta(
         'Asciinema Demo | Grivetto.eu',
-        'Terminal session recording playback. View CLI tools and scripts in action.'
+        'Terminal session playback showcasing Linux CLI tools and system administration scripts.'
       );
     } else if (view === 'curiosity') {
       updateMeta(
         'Cosmic Curiosity | Grivetto.eu',
-        'Ignite a spark of knowledge with the Cosmic Curiosity Button.'
+        'Interactive spark of knowledge featuring IT history and fun tech facts.'
       );
     } else if (view === 'terminal') {
       updateMeta(
         'System Admin | Grivetto.eu',
-        'Authorized Personnel Only. Web Terminal Access.'
+        'Secure Web Terminal Access for authorized system administration personnel.'
       );
     }
   }, [view]);

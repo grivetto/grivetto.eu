@@ -278,6 +278,32 @@ export default function Home({ onNavigate }) {
 
 
 
+            {/* About & Philosophy Section (Increased Text Content) */}
+            <section className="philosophy-section">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="section-container"
+                >
+                    <div className="philosophy-content glass">
+                        <h2 className="section-title">{t('hero', 'title_tech')} & {t('hero', 'title_mind')}</h2>
+                        <div className="section-text">
+                            <p>
+                                With over 25 years of experience in the IT sector, I have witnessed the evolution of the digital landscape from its pioneering days to the modern cloud-native era. My approach combines the rigorous precision of a <strong>Senior System Administrator</strong> with a mindful philosophy of digital innovation.
+                            </p>
+                            <p>
+                                Specializing in <strong>Linux/Unix environments</strong> and <strong>enterprise monitoring with Zabbix</strong>, I focus on building robust, high-availability infrastructures that serve as the foundation for modern web applications. From custom software engineering to complex network security consulting, my goal is always to create technological solutions that are not only efficient but also harmonious and sustainable.
+                            </p>
+                            <p>
+                                Based in Turin, Italy, I provide both on-site and remote IT services, bridging the gap between historical expertise and future-proof digital architectures.
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+            </section>
+
             {/* CTA Section */}
             < section className="cta-section" id="history" >
                 <motion.div
@@ -311,6 +337,8 @@ export default function Home({ onNavigate }) {
                             <nav className="footer-links">
                                 <a href="https://linkedin.com/in/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                 <a href="https://github.com/grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="https://facebook.com/sergio.grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'facebook')}</a>
+                                <a href="https://x.com/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'twitter')}</a>
                             </nav>
                         </div>
 
@@ -319,7 +347,17 @@ export default function Home({ onNavigate }) {
                             <nav className="footer-links">
                                 <a href="https://www.grivetto.eu/hesk/index.php" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'helpdesk')}</a>
                                 <a href="mailto:sergio@grivetto.eu" className="footer-link">{t('footer', 'email')}</a>
+                                <a href="https://instagram.com/sergiogrivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
+                                <a href="https://youtube.com/@sergiogrivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'youtube')}</a>
                             </nav>
+                        </div>
+
+                        <div className="footer-column">
+                            <h3 className="footer-heading">Contact</h3>
+                            <div className="footer-info">
+                                <p className="footer-info-item">📞 {t('footer', 'phone')}</p>
+                                <p className="footer-info-item">📍 {t('footer', 'address')}</p>
+                            </div>
                         </div>
                     </div>
 

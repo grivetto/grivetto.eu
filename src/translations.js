@@ -90,7 +90,13 @@ export const translations = {
             helpdesk: "Help Desk",
             email: "Email Contact",
             rights: "All rights reserved.",
-            tagline: "Bridging Technology and Mindfulness"
+            tagline: "Bridging Technology and Mindfulness",
+            facebook: "Facebook",
+            twitter: "X (Twitter)",
+            instagram: "Instagram",
+            youtube: "YouTube",
+            phone: "+39 371 1741209",
+            address: "Turin, Italy"
         },
         curiosity: {
             title: "Cosmic Curiosity",
@@ -350,7 +356,13 @@ export const translations = {
             helpdesk: "Help Desk",
             email: "Contatto Email",
             rights: "Tutti i diritti riservati.",
-            tagline: "Unire Tecnologia e Consapevolezza"
+            tagline: "Unire Tecnologia e Consapevolezza",
+            facebook: "Facebook",
+            twitter: "X (Twitter)",
+            instagram: "Instagram",
+            youtube: "YouTube",
+            phone: "+39 371 1741209",
+            address: "Torino, Italia"
         },
         curiosity: {
             title: "Curiosità Cosmica",
