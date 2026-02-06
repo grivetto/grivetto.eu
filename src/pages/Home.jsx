@@ -58,21 +58,7 @@ export default function Home({ onNavigate }) {
                         <span className="logo-badge">Digital Architect</span>
                     </div>
 
-                    {/* Hamburger Menu Button */}
-                    <button
-                        className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle navigation"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-
-                    <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-                        <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
-                        <a href="#history" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'history')}</a>
-                        <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
+                    <div className="nav-actions">
                         <button onClick={toggleLanguage} className="lang-toggle-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}>
                             <img
                                 src={language === 'en' ? "/images/it_flag.png" : "https://flagcdn.com/w40/gb.png"}
@@ -80,6 +66,22 @@ export default function Home({ onNavigate }) {
                                 style={{ width: '30px', height: 'auto', borderRadius: '4px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))' }}
                             />
                         </button>
+
+                        <button
+                            className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label="Toggle navigation"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
+                        <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
+                        <a href="#history" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'history')}</a>
+                        <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
             </motion.nav>
