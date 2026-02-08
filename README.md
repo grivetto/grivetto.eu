@@ -22,15 +22,16 @@ A fully simulated SSH-style terminal experience built with `xterm.js`.
 *   **Commands:** Supports `ls`, `cat`, `whoami`, `neofetch`, and more.
 *   **Theme:** Retro CRT styling with scanlines and glow effects.
 
-### **2. Cosmic Curiosity**
-A lightweight "Fact of the Day" application.
-*   **Features:** Fetches daily space facts with particle confetti animations.
-*   **Localization:** Fully translated to Italian.
+### **2. Multi-Language Support (En/It/Es)**
+Integrated i18n system supporting **English**, **Italian**, and **Spanish**.
+*   **Toggle:** Seamless cycling between flags in the navigation bar.
+*   **Dynamic Metadata:** SEO tags and Open Graph data update automatically based on the active language.
 
-### **3. Support Systems Integration**
-Seamless integration with external tools via custom wrappers:
-*   **HESK:** Embedded Help Desk system.
-*   **Terminal Session:** High-fidelity, full-screen playback of real terminal sessions (using Asciinema).
+### **3. SEO & Social Integration**
+Optimized for search engines and social platforms:
+*   **Meta Tags:** Refined titles and descriptions for maximum SERP impact.
+*   **Social Profiles:** Direct integration with LinkedIn, GitHub, Facebook, X, Instagram, and YouTube.
+*   **Marketing Tools:** Ready-to-use placeholders for Google Tag Manager and Facebook Pixel.
 
 ### **4. Unified Project Interface**
 *   **Design:** A single "Glassmorphism" block consolidating all project cards (Aura, Web Apps, Portfolio) for a cleaner UI.
