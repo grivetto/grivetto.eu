@@ -8,8 +8,8 @@ export const LanguageProvider = ({ children }) => {
 
     const toggleLanguage = () => {
         setLanguage((prev) => {
-            if (prev === 'en') return 'it';
-            if (prev === 'it') return 'es';
+            if (prev === 'en') return 'es';
+            if (prev === 'es') return 'it';
             return 'en';
         });
     };

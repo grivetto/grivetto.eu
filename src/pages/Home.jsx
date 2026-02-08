@@ -59,20 +59,33 @@ export default function Home({ onNavigate }) {
                     </div>
 
                     <div className="nav-actions">
-                        <button onClick={toggleLanguage} className="lang-toggle-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}>
+                        <button onClick={toggleLanguage} className="lang-toggle-btn" style={{
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            border: '1px solid rgba(255, 255, 255, 0.2)',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            padding: '6px 10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            transition: 'all 0.3s ease'
+                        }}>
                             <img
                                 src={
-                                    language === 'en' ? "/images/it_flag.png" :
-                                        language === 'it' ? "https://flagcdn.com/w40/es.png" :
+                                    language === 'en' ? "https://flagcdn.com/w40/es.png" :
+                                        language === 'es' ? "https://flagcdn.com/w40/it.png" :
                                             "https://flagcdn.com/w40/gb.png"
                                 }
                                 alt={
-                                    language === 'en' ? "Cambia a Italiano" :
-                                        language === 'it' ? "Cambiar a Español" :
-                                            "Switch to English"
+                                    language === 'en' ? "Español" :
+                                        language === 'es' ? "Italiano" :
+                                            "English"
                                 }
-                                style={{ width: '30px', height: 'auto', borderRadius: '4px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))' }}
+                                style={{ width: '24px', height: 'auto', borderRadius: '2px' }}
                             />
+                            <span style={{ fontSize: '0.8rem', fontWeight: '600', color: theme === 'cyberpunk' ? '#00fbff' : 'inherit' }}>
+                                {language === 'en' ? 'ES' : language === 'es' ? 'IT' : 'EN'}
+                            </span>
                         </button>
 
                         <button
@@ -355,8 +368,7 @@ export default function Home({ onNavigate }) {
                             <nav className="footer-links">
                                 <a href="https://www.grivetto.eu/hesk/index.php" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'helpdesk')}</a>
                                 <a href="mailto:sergio@grivetto.eu" className="footer-link">{t('footer', 'email')}</a>
-                                <a href="https://instagram.com/sergiogrivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
-                                <a href="https://youtube.com/@sergiogrivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'youtube')}</a>
+                                <a href="https://instagram.com/grivetto_web_agency" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
                             </nav>
                         </div>
 

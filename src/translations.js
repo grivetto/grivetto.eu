@@ -533,7 +533,7 @@ export const translations = {
     },
     es: {
         nav: {
-            work: "Lupa",
+            work: "Proyectos",
             mindfulness: "Atención Plena",
             history: "Historia",
             resume: "Currículum"
