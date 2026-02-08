@@ -530,5 +530,271 @@ export const translations = {
                 }
             }
         }
+    },
+    es: {
+        nav: {
+            work: "Lupa",
+            mindfulness: "Atención Plena",
+            history: "Historia",
+            resume: "Currículum"
+        },
+        hero: {
+            badge: "Disponible para colaboraciones",
+            title_part1: "Uniendo",
+            title_tech: "Tecnología",
+            title_part2: "y",
+            title_mind: "Atención Plena",
+            subtitle: "Creando experiencias digitales que armonizan la innovación con la paz interior.\nConstruyendo el futuro con precisión y calma.",
+            cta_portfolio: "Ver Portfolio",
+            cta_peace: "Pensamientos de Paz",
+            stat_exp: "años de experiencia",
+            stat_proj: "Proyectos Realizados",
+            stat_peace: "Paz Interior"
+        },
+        expertise: {
+            badge: "Experiencia",
+            title: "Áreas Seleccionadas",
+            subtitle: "Dominios de maestría e innovación continua",
+            card_web: {
+                title: "Desarrollo Web Moderno",
+                desc: "Construcción de Single Page Applications escalables y de alto rendimiento con el ecosistema React, centrándome en una experiencia de usuario excepcional y calidad del código.",
+                link_manuela: "Ver Trabajo Reciente: ManuelaAires.it →",
+                link_grivetto: "Ver Trabajo Reciente: Grivetto.it →",
+                link_github: "Ver Proyectos GitHub: grivetto.github.io →",
+                btn_curiosity: "✨ Curiosidad Cósmica",
+                btn_tunnel: "🌀 Túnel Neón",
+                btn_tictactoe: "⭕ Tres en Raya Neón",
+                btn_tetris: "🕹️ Tetris Neón",
+                btn_cube: "🎲 Cubo 3D",
+                btn_aura: "🌿 Aura Quiet Living"
+            },
+            card_history: {
+                title: "Marcas Históricas de Internet en Italia",
+                desc: "Explorando el legado digital pionero de Italia y la cultura web vintage.",
+                btn_explore: "Explorar →"
+            },
+            card_archives: {
+                title: "Archivos Digitales",
+                desc: "Preservando la historia de Internet en Italia desde las eras de CRS4 y Video On Line.",
+                link_history: "Ver Historia →"
+            },
+            card_support: {
+                title: "Sistemas de Soporte",
+                desc: "Implementación de soluciones robustas de helpdesk y administración de correo con enfoque en la fiabilidad y la comunicación eficiente.",
+                btn_hesk: "HESK",
+                btn_sysadmin: "Admin. de Sistemas",
+                btn_terminal: "Sesión de Terminal"
+            },
+            quote: "En medio del movimiento y del caos, mantén la calma dentro de ti.",
+            cite: "— Filosofía de la Paz"
+        },
+        portfolio: {
+            badge: "Portfolio",
+            title: "Trabajo Destacado",
+            subtitle: "Una selección de proyectos que muestran mi experiencia",
+            aura: {
+                title: "Aura Quiet Living",
+                desc: "Aplicación de bienestar impulsada por IA enfocada en la atención plena y la vida pacífica.",
+                link_view: "Ver Proyecto →",
+                link_launch: "Lanzar Aura →"
+            },
+            apps: {
+                title: "Aplicaciones Web",
+                desc: "Demos interactivas: Curiosidad Cósmica, Web Terminal, Juegos Retro y más.",
+                btn_explore: "Explorar Aplicaciones →"
+            },
+            full_portfolio: {
+                title: "Portfolio Completo",
+                desc: "Muestra exhaustiva de todos los proyectos y experiencia profesional.",
+                btn_view: "Ver Todo →",
+                btn_resume: "Ver Currículum →"
+            }
+        },
+        cta: {
+            title: "Creemos Algo Extraordinario",
+            subtitle: "Combinando la excelencia técnica con una filosofía de diseño consciente",
+            btn_touch: "Ponte en Contacto",
+            btn_linkedin: "Conectar en LinkedIn"
+        },
+        footer: {
+            connect: "Conectar",
+            support: "Soporte",
+            helpdesk: "Centro de Ayuda",
+            email: "Contacto por Email",
+            rights: "Todos los derechos reservados.",
+            tagline: "Uniendo Tecnología y Atención Plena",
+            facebook: "Facebook",
+            twitter: "X (Twitter)",
+            instagram: "Instagram",
+            youtube: "YouTube",
+            phone: "+39 371 1741209",
+            address: "Turín, Italia"
+        },
+        curiosity: {
+            title: "Curiosidad Cósmica",
+            btn_back: "← Volver",
+            instruction: "Toca el Orbe para encender una chispa de conocimiento.",
+            did_you_know: "¿Lo sabías?",
+            btn_again: "¿Otra más?",
+            facts: [
+                "¡El primer error informático (bug) fue una polilla real encontrada en la computadora Harvard Mark II en 1947!",
+                "¡El primer sitio web de la historia todavía está en línea! (info.cern.ch)",
+                "Video On Line (VOL) en 1995 utilizaba un mapa gráfico de Cerdeña como interfaz principal.",
+                "Una sola búsqueda en Google utiliza la potencia de cálculo de todo el programa Apollo.",
+                "El nombre original de Windows era 'Interface Manager'.",
+                "El primer dominio registrado fue Symbolics.com el 15 de marzo de 1985.",
+                "El correo electrónico existía antes que la World Wide Web.",
+                "El teclado QWERTY fue diseñado para ralentizar a los mecanógrafos y evitar que las máquinas de escribir se atascaran.",
+                "¿Vivimos en una simulación? Las matemáticas sugieren que hay un 50% de probabilidad.",
+                "En 1993, la web tenía solo 623 sitios. Hoy hay más de 1.900 millones.",
+                "Tim Berners-Lee regaló la web al mundo de forma gratuita. Sin patentes ni regalías.",
+                "El CRS4 en Cerdeña albergó el primer sitio web italiano en 1993.",
+                "El código de error '404' no se llama así por una habitación en el CERN. Es un mito.",
+                "El color CSS más 'pacífico' es probablemente #B0E0E6 (Powder Blue).",
+                "Programar es lo más parecido a la magia que tenemos."
+            ]
+        },
+        resume: {
+            job_title: "Empleado Técnico – Administrador Senior de Sistemas",
+            loc: "Turín, Italia",
+            section_exp: "Experiencia Laboral",
+            exp_npo: {
+                title: "Empleado Técnico – Administrador Senior de Sistemas",
+                company: "NPO Torino – Turín (Italia)",
+                desc_1: "Gestión de Monitoreo Empresarial: Gestión de la infraestructura de monitoreo para una granja de servidores de cientos de equipos.",
+                desc_2: "Entorno Zabbix: Instalación, configuración y mantenimiento de agentes Zabbix en entornos heterogéneos (Windows Server y Linux).",
+                desc_3: "Ingeniería de Software: Compilación y creación de versiones personalizadas del agente Zabbix para Linux, utilizando enlaces estáticos para asegurar portabilidad y estabilidad total en cientos de sistemas cliente con diversas distribuciones.",
+                desc_4: "Garantía de Calidad: Verificación funcional de sistemas de monitoreo, resolución de problemas de agentes y garantía de la continuidad del servicio de recolección de datos."
+            },
+            exp_break: {
+                title: "Pausa en la Carrera",
+                desc: "Pausa profesional por motivos de salud (totalmente resueltos)."
+            },
+            exp_banco: {
+                title: "Ingeniero de Sistemas y Especialista en Seguridad",
+                company: "Banco Argentaria – Palma de Mallorca (España)",
+                desc_1: "Seguridad e IDS: Pruebas de penetración de seguridad de sistemas y consultoría en Sistemas de Detección de Intrusos (IDS Advisor).",
+                desc_2: "Proyectos de Infraestructura: Gestión completa del proyecto de migración de servidores Intranet bancarios a una nueva DMZ interna segura.",
+                desc_3: "Seguridad de Red: Configuración avanzada y endurecimiento de Firewalls Check Point FW-1.",
+                desc_4: "Sistemas Operativos: Administración de entornos de alta seguridad basados en variantes de BSD (OpenBSD, NetBSD, FreeBSD).",
+                desc_5: "Análisis Arquitectónico: Evaluación e implementación de topologías de seguridad, incluyendo análisis comparativo entre Packet Filter y Application Proxy."
+            },
+            exp_eu: {
+                title: "Ingeniero de Sistemas y Especialista en Migración",
+                company: "Comisión Europea (CEE) – Lieja (Bélgica)",
+                desc_1: "Proyecto de Migración: Gestión de una migración crítica de 124 servidores de Windows NT a Samba/Linux, con responsabilidad directa sobre seguridad, optimización de costes, estabilidad y formación del personal.",
+                desc_2: "Administración de Red: Gestión de infraestructuras de red complejas (LAN, WAN, VPN) y administración remota mediante herramientas avanzadas (Webmin, SWAT, VNC).",
+                desc_3: "Monitoreo y Rendimiento: Implementación de sistemas de monitoreo de rendimiento (Netsaint, Dataflow, Ganimede).",
+                desc_4: "Seguridad y Firewall: Análisis de eficiencia y configuración de sistemas de protección perimetral (Check Point FW-1, Bastille, SuSE Firewall).",
+                desc_5: "Benchmarking Tecnológico: Ejecución de pruebas comparativas profundas para seleccionar el mejor stack tecnológico: Samba vs NT, Apache vs IIS, Sendmail vs Qmail, Squid vs Netscape Proxy."
+            },
+            exp_its: {
+                title: "Ingeniero Senior de Sistemas Unix",
+                company: "ITS – Turín (Consultor para Zeropiù/Fiat Group)",
+                desc_1: "Proyecto Weblinea.it: Implementación de la infraestructura de sistemas para el portal web del Grupo FIAT (proyecto Iplanet/Telexis).",
+                desc_2: "Configuración de Servidor y Correo: Instalación y configuración de Sendmail sobre arquitectura SUN Netra y Proxy Server Squid sobre servidores Compaq.",
+                desc_3: "Ajuste y Optimización: Actividades de endurecimiento y optimización del rendimiento en distribuciones Linux empresariales (SuSE y Red Hat) en un entorno de producción crítico."
+            },
+            exp_novell: {
+                title: "Ingeniero de Sistemas",
+                company: "Novell Italy (PR.ES) – Rivoli (Turín)",
+                desc_1: "Certificación: Obtención de la calificación Certified Novell Engineer (CNE).",
+                desc_2: "Infraestructura: Instalación y mantenimiento de servidores NetWare 4.0.",
+                desc_3: "Desarrollo: Diseño y desarrollo de la base de datos interna corporativa (MS Access y herramientas relacionadas)."
+            },
+            section_skills: "Habilidades Técnicas",
+            section_edu: "Educación",
+            edu_diploma: "Diploma en Informática (Perito Industrale Capo Tecnico)",
+            section_lang: "Idiomas",
+            lang_it: "Italiano (Nativo)",
+            lang_en: "Inglés (Profesional)",
+            lang_es: "Español (Profesional)",
+            footer_auth: "Autorizo el tratamiento de mis datos personales de acuerdo con el RGPD (Reglamento UE 2016/679).",
+            btn_back: "Volver al Inicio",
+            btn_download: "Descargar PDF"
+        },
+        page_portfolio: {
+            title: "Portfolio Creativo",
+            subtitle: "Donde la creatividad se encuentra con la tecnología para crear experiencias inolvidables",
+            stats: {
+                projects: "Proyectos",
+                tech: "Tecnologías",
+                hours: "Horas de Código",
+                coffee: "Cafés Tomados"
+            },
+            projects: {
+                p1: {
+                    title: "Pensamientos de Paz",
+                    desc: "Un viaje digital hacia la paz interior con un diseño minimalista y animaciones fluidas",
+                    category: "Experiencia Web"
+                },
+                p2: {
+                    title: "Currículum Interactivo",
+                    desc: "Currículum interactivo que transforma la experiencia profesional en una narrativa visual cautivadora",
+                    category: "Personal Branding"
+                },
+                p3: {
+                    title: "App de Quiz",
+                    desc: "Aplicación de quiz con diseño neón y mecánicas de juego que estimulan el aprendizaje",
+                    category: "Gamificación"
+                },
+                p4: {
+                    title: "Galería de Imágenes",
+                    desc: "Galería fotográfica con transiciones fluidas y diseño masonry responsivo",
+                    category: "Diseño Visual"
+                },
+                p5: {
+                    title: "Enlaces Históricos",
+                    desc: "Tributo a los pioneros de Internet en Italia con un diseño de fusión vintage-moderno",
+                    category: "Archivo Digital"
+                },
+                p6: {
+                    title: "Cubo de Rubik 3D",
+                    desc: "Cubo de Rubik interactivo en 3D con física realista y controles intuitivos",
+                    category: "3D Interactivo"
+                }
+            }
+        },
+        page_links: {
+            title: "Enlaces Históricos",
+            subtitle: "El amanecer de Internet en Italia (1992+)",
+            pioneers: "Pioneros del Web Italiano",
+            icons: "Iconos Internacionales",
+            back: "Volver al Inicio",
+            links: {
+                crs4: {
+                    title: "CRS4 (1993)",
+                    desc: "El primer sitio web oficial italiano, nacido en el Centro de Investigación de Cerdeña."
+                },
+                unione: {
+                    title: "L'Unione Sarda (1994)",
+                    desc: "El primer periódico europeo en tener presencia en línea."
+                },
+                cnr: {
+                    title: "CNR Pisa",
+                    desc: "Donde todo empezó: la primera conexión italiana a Internet (1986)."
+                },
+                cineca: {
+                    title: "Cineca",
+                    desc: "Consorcio interuniversitario histórico para el cálculo automático."
+                },
+                vol: {
+                    title: "Video On Line (VOL) (1995)",
+                    desc: "El proveedor que llevó Internet a los hogares de los italianos (Link Archive)."
+                },
+                iperbole: {
+                    title: "Iperbole Bologna (1995)",
+                    desc: "La primera red cívica italiana gratuita para los ciudadanos."
+                },
+                netscape: {
+                    title: "Netscape",
+                    desc: "El navegador que hizo historia en la web (Archivo 1996)."
+                },
+                dollar: {
+                    title: "SendMeADollar.com",
+                    desc: "Un clásico experimento social de Internet."
+                }
+            }
+        }
     }
 };

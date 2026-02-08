@@ -61,8 +61,16 @@ export default function Home({ onNavigate }) {
                     <div className="nav-actions">
                         <button onClick={toggleLanguage} className="lang-toggle-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px' }}>
                             <img
-                                src={language === 'en' ? "/images/it_flag.png" : "https://flagcdn.com/w40/gb.png"}
-                                alt={language === 'en' ? "Switch to Italian" : "Switch to English"}
+                                src={
+                                    language === 'en' ? "/images/it_flag.png" :
+                                        language === 'it' ? "https://flagcdn.com/w40/es.png" :
+                                            "https://flagcdn.com/w40/gb.png"
+                                }
+                                alt={
+                                    language === 'en' ? "Cambia a Italiano" :
+                                        language === 'it' ? "Cambiar a Español" :
+                                            "Switch to English"
+                                }
                                 style={{ width: '30px', height: 'auto', borderRadius: '4px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))' }}
                             />
                         </button>
