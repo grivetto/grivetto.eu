@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSelector from '../components/LanguageSelector';
 import './Portfolio.css';
 
 const Portfolio = ({ onNavigate }) => {
@@ -136,6 +137,9 @@ const Portfolio = ({ onNavigate }) => {
             />
 
             {/* Back Button */}
+            <div style={{ position: 'absolute', top: '2rem', right: '2rem', zIndex: 1000 }}>
+                <LanguageSelector />
+            </div>
             <button className="back-button glass" onClick={() => onNavigate('home')}>
                 ← {t('resume', 'btn_back')}
             </button>
@@ -292,7 +296,7 @@ const Portfolio = ({ onNavigate }) => {
                                         onNavigate(project.link);
                                     }}
                                 >
-                                    Scopri di più →
+                                    {t('page_portfolio', 'btn_view')}
                                 </motion.button>
                             </div>
                         </motion.div>
@@ -344,7 +348,7 @@ const Portfolio = ({ onNavigate }) => {
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => onNavigate(selectedProject.link)}
                                 >
-                                    Vai al Progetto →
+                                    {t('page_portfolio', 'btn_view')}
                                 </motion.button>
                             </div>
                         </motion.div>
@@ -365,7 +369,7 @@ const Portfolio = ({ onNavigate }) => {
                     whileHover={{ scale: 1.05, x: -5 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    ← Torna alla Home
+                    {t('page_portfolio', 'btn_back')}
                 </motion.button>
             </motion.div>
         </div>

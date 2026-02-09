@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSelector from '../components/LanguageSelector';
 import './Home.css';
 import './HomeCyberpunk.css';
 
@@ -59,34 +60,7 @@ export default function Home({ onNavigate }) {
                     </div>
 
                     <div className="nav-actions">
-                        <button onClick={toggleLanguage} className="lang-toggle-btn" style={{
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            border: '1px solid rgba(255, 255, 255, 0.2)',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            padding: '6px 10px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            transition: 'all 0.3s ease'
-                        }}>
-                            <img
-                                src={
-                                    language === 'en' ? "https://flagcdn.com/w40/es.png" :
-                                        language === 'es' ? "https://flagcdn.com/w40/it.png" :
-                                            "https://flagcdn.com/w40/gb.png"
-                                }
-                                alt={
-                                    language === 'en' ? "Español" :
-                                        language === 'es' ? "Italiano" :
-                                            "English"
-                                }
-                                style={{ width: '24px', height: 'auto', borderRadius: '2px' }}
-                            />
-                            <span style={{ fontSize: '0.8rem', fontWeight: '600', color: theme === 'cyberpunk' ? '#00fbff' : 'inherit' }}>
-                                {language === 'en' ? 'ES' : language === 'es' ? 'IT' : 'EN'}
-                            </span>
-                        </button>
+                        <LanguageSelector theme={theme} />
 
                         <button
                             className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
@@ -196,13 +170,13 @@ export default function Home({ onNavigate }) {
                     viewport={{ once: true, margin: "-100px" }}
                     className="section-container"
                 >
-                    <motion.div variants={itemVariants} className="section-header">
+                    <div className="section-header">
                         <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" rel="noopener noreferrer" className="section-badge" style={{ textDecoration: 'none', cursor: 'pointer' }}>
                             {t('expertise', 'badge')}
                         </a>
                         <h2 className="section-title">{t('expertise', 'title')}</h2>
                         <p className="section-subtitle">{t('expertise', 'subtitle')}</p>
-                    </motion.div>
+                    </div>
 
                     <div className="bento-grid">
                         <motion.div variants={itemVariants} className="bento-card bento-large">
@@ -237,8 +211,23 @@ export default function Home({ onNavigate }) {
                             <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_grivetto}
                             </a>
-                            <a href="https://grivetto.github.io/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
+                            <a href="https://grivetto.github.io/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_github}
+                            </a>
+                            <a href="https://beautiness.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                {t('expertise', 'card_web').link_beautiness}
+                            </a>
+                            <a href="https://justsoap.netlify.app/?#testimonials" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                {t('expertise', 'card_web').link_soap}
+                            </a>
+                            <a href="https://elettricista.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                {t('expertise', 'card_web').link_electrician}
+                            </a>
+                            <a href="https://capelli.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                {t('expertise', 'card_web').link_hair}
+                            </a>
+                            <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
+                                {t('expertise', 'card_web').link_autoschool}
                             </a>
                         </motion.div>
 
@@ -311,15 +300,9 @@ export default function Home({ onNavigate }) {
                     <div className="philosophy-content glass">
                         <h2 className="section-title">{t('hero', 'title_tech')} & {t('hero', 'title_mind')}</h2>
                         <div className="section-text">
-                            <p>
-                                With over 25 years of experience in the IT sector, I have witnessed the evolution of the digital landscape from its pioneering days to the modern cloud-native era. My approach combines the rigorous precision of a <strong>Senior System Administrator</strong> with a mindful philosophy of digital innovation.
-                            </p>
-                            <p>
-                                Specializing in <strong>Linux/Unix environments</strong> and <strong>enterprise monitoring with Zabbix</strong>, I focus on building robust, high-availability infrastructures that serve as the foundation for modern web applications. From custom software engineering to complex network security consulting, my goal is always to create technological solutions that are not only efficient but also harmonious and sustainable.
-                            </p>
-                            <p>
-                                Based in Turin, Italy, I provide both on-site and remote IT services, bridging the gap between historical expertise and future-proof digital architectures.
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: t('philosophy', 'p1') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('philosophy', 'p2') }} />
+                            <p dangerouslySetInnerHTML={{ __html: t('philosophy', 'p3') }} />
                         </div>
                     </div>
                 </motion.div>
@@ -358,8 +341,9 @@ export default function Home({ onNavigate }) {
                             <nav className="footer-links">
                                 <a href="https://linkedin.com/in/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                 <a href="https://github.com/grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                                <a href="https://facebook.com/sergio.grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'facebook')}</a>
+                                <a href="https://www.facebook.com/sgrivetto/" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'facebook')}</a>
                                 <a href="https://x.com/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'twitter')}</a>
+                                <a href="https://youtube.com/@grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'youtube')}</a>
                             </nav>
                         </div>
 

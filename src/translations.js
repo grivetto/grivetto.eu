@@ -29,12 +29,19 @@ export const translations = {
                 link_manuela: "View Recent Work: ManuelaAires.it →",
                 link_grivetto: "View Recent Work: Grivetto.it →",
                 link_github: "View GitHub Projects: grivetto.github.io →",
+                link_beautiness: "See Recent Work: Beautiness →",
+                link_soap: "See Recent Work: JustSoap →",
+                link_electrician: "See Recent Work: Elettricista →",
+                link_hair: "See Recent Work: Capelli →",
+                link_autoschool: "See Recent Work: DriveFlow Academy →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
                 btn_tetris: "🕹️ Neon Tetris",
                 btn_cube: "🎲 3D Cube",
-                btn_aura: "🌿 Aura Quiet Living"
+                btn_aura: "🌿 Aura Quiet Living",
+                app_title: "AI Generated Apps",
+                app_subtitle: "Select one of the AI-powered applications below to explore."
             },
             card_history: {
                 title: "Historic Italian Internet brands",
@@ -77,6 +84,11 @@ export const translations = {
                 btn_view: "View All →",
                 btn_resume: "View Resume →"
             }
+        },
+        philosophy: {
+            p1: "With over 25 years of experience in the IT sector, I have witnessed the evolution of the digital landscape from its pioneering days to the modern cloud-native era. My approach combines the rigorous precision of a <strong>Senior System Administrator</strong> with a mindful philosophy of digital innovation. Looking at the future, I bridge the gap between complex infrastructure management and elegant, performant frontend architectures.",
+            p2: "Specializing in <strong>Linux/Unix environments</strong> and <strong>enterprise monitoring with Zabbix</strong>, I focus on building robust, high-availability infrastructures that serve as the foundation for modern web applications. From custom software engineering to complex network security consulting, my goal is always to create technological solutions that are not only efficient but also harmonious, sustainable, and optimized for peak performance.",
+            p3: "Based in Turin, Italy, I provide both on-site and remote IT services, bridging the gap between historical expertise and future-proof digital architectures. My work is fueled by curiosity and a commitment to quality, ensuring that every line of code and every server configuration contributes to a seamless user experience."
         },
         cta: {
             title: "Let's Create Something Extraordinary",
@@ -221,7 +233,9 @@ export const translations = {
                     desc: "Interactive 3D Rubik's Cube with realistic physics and intuitive controls",
                     category: "3D Interactive"
                 }
-            }
+            },
+            btn_view: "Learn More →",
+            btn_back: "← Back to Home"
         },
         page_links: {
             title: "Historical Links",
@@ -295,12 +309,19 @@ export const translations = {
                 link_manuela: "Vedi Lavoro Recente: ManuelaAires.it →",
                 link_grivetto: "Vedi Lavoro Recente: Grivetto.it →",
                 link_github: "Vedi Progetti GitHub: grivetto.github.io →",
+                link_beautiness: "Vedi Lavoro Recente: Beautiness →",
+                link_soap: "Vedi Lavoro Recente: JustSoap →",
+                link_electrician: "Vedi Lavoro Recente: Elettricista →",
+                link_hair: "Vedi Lavoro Recente: Capelli →",
+                link_autoschool: "Vedi Lavoro Recente: DriveFlow Academy →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
                 btn_tetris: "🕹️ Tetris Neon",
                 btn_cube: "🎲 Cubo 3D",
-                btn_aura: "🌿 Aura Quiet Living"
+                btn_aura: "🌿 Aura Quiet Living",
+                app_title: "App Generate dall'AI",
+                app_subtitle: "Seleziona una delle applicazioni potenziate dall'AI qui sotto per esplorare."
             },
             card_history: {
                 title: "Marchi Storici Internet Italiani",
@@ -343,6 +364,11 @@ export const translations = {
                 btn_view: "Vedi Tutto →",
                 btn_resume: "Vedi Curriculum →"
             }
+        },
+        philosophy: {
+            p1: "Con oltre 25 anni di esperienza nel settore IT, ho assistito all'evoluzione del panorama digitale dai suoi giorni pionieristici fino all'era moderna cloud-native. Il mio approccio combina la rigorosa precisione di un <strong>Amministratore di Sistema Senior</strong> con una filosofia consapevole dell'innovazione digitale. Guardo al futuro unendo la gestione di infrastrutture complesse con architetture frontend eleganti e performanti.",
+            p2: "Specializzato in <strong>ambienti Linux/Unix</strong> e <strong>monitoraggio enterprise con Zabbix</strong>, mi concentro sulla creazione di infrastrutture robuste e ad alta affidabilità che fungano da base per le moderne applicazioni web. Dall'ingegneria del software personalizzata alla complessa consulenza sulla sicurezza di rete, il mio obiettivo è sempre quello di creare soluzioni tecnologiche che non siano solo efficienti, ma anche armoniose, sostenibili e ottimizzate per le massime prestazioni.",
+            p3: "Con sede a Torino, in Italia, offro servizi IT sia in loco che remoti, colmando il divario tra l'esperienza storica e le architetture digitali a prova di futuro. Il mio lavoro è guidato dalla curiosità e dall'impegno per la qualità, assicurando che ogni linea di codice e ogni configurazione server contribuisca a un'esperienza utente senza intoppi."
         },
         cta: {
             title: "Creiamo Qualcosa di Straordinario",
@@ -487,7 +513,9 @@ export const translations = {
                     desc: "Cubo di Rubik interattivo in 3D con fisica realistica e controlli intuitivi",
                     category: "3D Interattivo"
                 }
-            }
+            },
+            btn_view: "Scopri di più →",
+            btn_back: "← Torna alla Home"
         },
         page_links: {
             title: "Link Storici",
@@ -561,12 +589,19 @@ export const translations = {
                 link_manuela: "Ver Trabajo Reciente: ManuelaAires.it →",
                 link_grivetto: "Ver Trabajo Reciente: Grivetto.it →",
                 link_github: "Ver Proyectos GitHub: grivetto.github.io →",
+                link_beautiness: "Ver Trabajo Reciente: Beautiness →",
+                link_soap: "Ver Trabajo Reciente: JustSoap →",
+                link_electrician: "Ver Trabajo Reciente: Elettricista →",
+                link_hair: "Ver Trabajo Reciente: Capelli →",
+                link_autoschool: "Ver Trabajo Reciente: DriveFlow Academy →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
                 btn_tetris: "🕹️ Tetris Neón",
                 btn_cube: "🎲 Cubo 3D",
-                btn_aura: "🌿 Aura Quiet Living"
+                btn_aura: "🌿 Aura Quiet Living",
+                app_title: "Apps Generadas por IA",
+                app_subtitle: "Selecciona una de las aplicaciones impulsadas por IA a continuación para explorar."
             },
             card_history: {
                 title: "Marcas Históricas de Internet en Italia",
@@ -609,6 +644,11 @@ export const translations = {
                 btn_view: "Ver Todo →",
                 btn_resume: "Ver Currículum →"
             }
+        },
+        philosophy: {
+            p1: "Con más de 25 años de experiencia en el sector de las TI, he sido testigo de la evolución del panorama digital desde sus días pioneros hasta la era moderna nativa de la nube. Mi enfoque combina la precisión rigurosa de un <strong>Administrador de Sistemas Senior</strong> con una filosofía consciente de la innovación digital. Miro hacia el futuro integrando la gestión de infraestructuras complejas con arquitecturas frontend elegantes y eficientes.",
+            p2: "Especializado en <strong>entornos Linux/Unix</strong> y <strong>monitoreo empresarial con Zabbix</strong>, me enfoco en construir infraestructuras robustas y de alta disponibilidad que sirvan como base para las aplicaciones web modernas. Desde la ingeniería de software a medida hasta la consultoría compleja de seguridad de redes, mi objetivo es siempre crear soluciones tecnológicas que no solo sean eficientes, sino también armoniosas, sostenibles y optimizadas para un rendimiento superior.",
+            p3: "Con sede en Turín, Italia, brindo servicios de TI tanto presenciales como remotos, cerrando la brecha entre la experiencia histórica y las arquitecturas digitales preparadas para el futuro. Mi trabajo se basa en la curiosidad y el compromiso con la calidad, asegurando que cada línea de código y cada configuración de servidor contribuya a una experiencia de usuario perfecta."
         },
         cta: {
             title: "Creemos Algo Extraordinario",
@@ -753,7 +793,9 @@ export const translations = {
                     desc: "Cubo de Rubik interactivo en 3D con física realista y controles intuitivos",
                     category: "3D Interactivo"
                 }
-            }
+            },
+            btn_view: "Ver más →",
+            btn_back: "← Volver al Inicio"
         },
         page_links: {
             title: "Enlaces Históricos",

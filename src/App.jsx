@@ -16,6 +16,98 @@ import CuriositySpark from './components/CuriositySpark';
 import WebTerminal from './components/WebTerminal';
 import HeskWrapper from './components/HeskWrapper';
 import TerminalDemo from './components/TerminalDemo';
+import LanguageSelector from './components/LanguageSelector';
+
+const LinksView = ({ isVisible, handleNavigate }) => {
+  const { t } = useLanguage();
+  return (
+    <>
+      <header className={`hero ${isVisible ? 'fade-in' : ''}`}>
+        <div style={{ position: 'absolute', top: '2rem', right: '2rem', zIndex: 1000 }}>
+          <LanguageSelector />
+        </div>
+        <div className="hero-content">
+          <h1>{t('page_links', 'title')}</h1>
+          <p className="subtitle">{t('page_links', 'subtitle')}</p>
+        </div>
+      </header>
+
+      <main>
+        <section className="card glass">
+          <h2>{t('page_links', 'pioneers')}</h2>
+          <div className="links-grid">
+            <div className="link-item">
+              <img src="/images/crs4_logo_1765228488116.png" alt="CRS4 Logo" className="link-icon" />
+              <div>
+                <a href="http://www.crs4.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').crs4.title}</strong></a>
+                <p>{t('page_links', 'links').crs4.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/unione_sarda_logo_1765228501109.png" alt="L'Unione Sarda Logo" className="link-icon" />
+              <div>
+                <a href="http://www.unionesarda.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').unione.title}</strong></a>
+                <p>{t('page_links', 'links').unione.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/cnr_logo_1765228516061.png" alt="CNR Logo" className="link-icon" />
+              <div>
+                <a href="http://www.cnr.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').cnr.title}</strong></a>
+                <p>{t('page_links', 'links').cnr.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/cineca_logo_1765228529586.png" alt="Cineca Logo" className="link-icon" />
+              <div>
+                <a href="http://www.cineca.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').cineca.title}</strong></a>
+                <p>{t('page_links', 'links').cineca.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/vol_logo_1765228474268.png" alt="VOL Logo" className="link-icon" />
+              <div>
+                <a href="https://web.archive.org/web/19961222164923/http://www.vol.it/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').vol.title}</strong></a>
+                <p>{t('page_links', 'links').vol.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/iperbole_logo_1765228543789.png" alt="Iperbole Logo" className="link-icon" />
+              <div>
+                <a href="https://web.archive.org/web/19961222164923/http://www.iperbole.bologna.it/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').iperbole.title}</strong></a>
+                <p>{t('page_links', 'links').iperbole.desc}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="card glass">
+          <h2>{t('page_links', 'icons')}</h2>
+          <div className="links-grid">
+            <div className="link-item">
+              <img src="/images/netscape_logo_1765228557991.png" alt="Netscape Logo" className="link-icon" />
+              <div>
+                <a href="https://web.archive.org/web/19961222164923/http://home.netscape.com/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').netscape.title}</strong></a>
+                <p>{t('page_links', 'links').netscape.desc}</p>
+              </div>
+            </div>
+            <div className="link-item">
+              <img src="/images/dollar_logo_1765228574341.png" alt="Dollar Logo" className="link-icon" />
+              <div>
+                <a href="https://web.archive.org/web/20000302091102/http://www.sendmeadollar.com/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').dollar.title}</strong></a>
+                <p>{t('page_links', 'links').dollar.desc}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button onClick={() => handleNavigate('home')} className="btn">{t('page_links', 'back')}</button>
+        </div>
+      </main>
+    </>
+  );
+};
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,94 +216,6 @@ function App() {
       );
     }
   }, [view]);
-
-  const LinksView = ({ isVisible, handleNavigate }) => {
-    const { t } = useLanguage();
-    return (
-      <>
-        <header className={`hero ${isVisible ? 'fade-in' : ''}`}>
-          <div className="hero-content">
-            <h1>{t('page_links', 'title')}</h1>
-            <p className="subtitle">{t('page_links', 'subtitle')}</p>
-          </div>
-        </header>
-
-        <main>
-          <section className="card glass">
-            <h2>{t('page_links', 'pioneers')}</h2>
-            <div className="links-grid">
-              <div className="link-item">
-                <img src="/images/crs4_logo_1765228488116.png" alt="CRS4 Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.crs4.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').crs4.title}</strong></a>
-                  <p>{t('page_links', 'links').crs4.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/unione_sarda_logo_1765228501109.png" alt="L'Unione Sarda Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.unionesarda.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').unione.title}</strong></a>
-                  <p>{t('page_links', 'links').unione.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/cnr_logo_1765228516061.png" alt="CNR Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.cnr.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').cnr.title}</strong></a>
-                  <p>{t('page_links', 'links').cnr.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/cineca_logo_1765228529586.png" alt="Cineca Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.cineca.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').cineca.title}</strong></a>
-                  <p>{t('page_links', 'links').cineca.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/vol_logo_1765228474268.png" alt="VOL Logo" className="link-icon" />
-                <div>
-                  <a href="https://web.archive.org/web/19961222164923/http://www.vol.it/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').vol.title}</strong></a>
-                  <p>{t('page_links', 'links').vol.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/iperbole_logo_1765228543453.png" alt="Iperbole Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.comune.bologna.it" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').iperbole.title}</strong></a>
-                  <p>{t('page_links', 'links').iperbole.desc}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="card glass">
-            <h2>{t('page_links', 'icons')}</h2>
-            <div className="links-grid">
-              <div className="link-item">
-                <img src="/images/netscape_logo_1765228458989.png" alt="Netscape Logo" className="link-icon" />
-                <div>
-                  <a href="https://web.archive.org/web/19961017235908/http://www2.netscape.com/" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').netscape.title}</strong></a>
-                  <p>{t('page_links', 'links').netscape.desc}</p>
-                </div>
-              </div>
-              <div className="link-item">
-                <img src="/images/sendmeadollar_logo_1765228559313.png" alt="SendMeADollar Logo" className="link-icon" />
-                <div>
-                  <a href="http://www.sendmeadollar.com" target="_blank" rel="noopener noreferrer"><strong>{t('page_links', 'links').dollar.title}</strong></a>
-                  <p>{t('page_links', 'links').dollar.desc}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <button onClick={() => handleNavigate('home')} className="btn">{t('page_links', 'back')}</button>
-          </div>
-        </main>
-      </>
-    );
-  };
 
   return (
     <LanguageProvider>

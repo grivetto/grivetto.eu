@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from './contexts/LanguageContext';
+import LanguageSelector from './components/LanguageSelector';
 import './Resume.css';
 
 const Resume = ({ onNavigate }) => {
@@ -15,6 +16,9 @@ const Resume = ({ onNavigate }) => {
     return (
         <div className="resume-container glass">
             <header className="resume-header">
+                <div style={{ position: 'absolute', top: '1rem', right: '1rem', zIndex: 1000 }}>
+                    <LanguageSelector />
+                </div>
                 <div className="header-content">
                     <h1>Sergio Grivetto</h1>
                     <p className="job-title">{t('resume', 'job_title')}</p>

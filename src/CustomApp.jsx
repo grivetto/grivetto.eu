@@ -8,7 +8,7 @@ const CustomApp = ({ onNavigate }) => {
         <>
             <header className="hero fade-in">
                 <div className="hero-content">
-                    <h1>AI generated APP</h1>
+                    <h1>{t('expertise', 'card_web').app_title}</h1>
 
                     <div className="mini-apps-buttons" style={{ marginTop: '2rem', marginBottom: '1rem' }}>
                         <button onClick={() => onNavigate('rubiks')} className="app-btn cube-btn">
@@ -39,8 +39,8 @@ const CustomApp = ({ onNavigate }) => {
 
             <main>
                 <section className="card glass" style={{ textAlign: 'center', padding: '40px' }}>
-                    <h2>Select an App</h2>
-                    <p>Choose one of the AI-generated applications above to start.</p>
+                    <h2>{t('expertise', 'card_web').app_title}</h2>
+                    <p>{t('expertise', 'card_web').app_subtitle}</p>
                 </section>
 
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
