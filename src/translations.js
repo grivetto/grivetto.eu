@@ -565,7 +565,7 @@ export const translations = {
             },
             exp_its: {
                 title: "Senior Unix System Engineer",
-                company: "ITS – Torino (Consulente per Zeropiù/Gruppo Fiat)",
+                company: "ITS – Torino (Zeropiù / Gruppo Fiat)",
                 desc_1: "Progetto Weblinea.it: Implementazione dell'infrastruttura di sistema per il portale web del Gruppo FIAT (progetto Iplanet/Telexis).",
                 desc_2: "Configurazione Server & Mail: Installazione e configurazione di Sendmail su architettura hardware SUN Netra e Squid Proxy Server su server Compaq.",
                 desc_3: "Tuning & Ottimizzazione: Attività di hardening e ottimizzazione delle prestazioni su distribuzioni Enterprise Linux (SuSE e Red Hat) in un ambiente di produzione critico."
@@ -909,7 +909,7 @@ export const translations = {
             },
             exp_its: {
                 title: "Ingeniero Senior de Sistemas Unix",
-                company: "ITS – Turín (Consultor para Zeropiù/Fiat Group)",
+                company: "ITS – Turín (Zeropiù / Grupo Fiat)",
                 desc_1: "Proyecto Weblinea.it: Implementación de la infraestructura de sistemas para el portal web del Grupo FIAT (proyecto Iplanet/Telexis).",
                 desc_2: "Configuración de Servidor y Correo: Instalación y configuración de Sendmail sobre arquitectura SUN Netra y Proxy Server Squid sobre servidores Compaq.",
                 desc_3: "Ajuste y Optimización: Actividades de endurecimiento y optimización del rendimiento en distribuciones Linux empresariales (SuSE y Red Hat) en un entorno de producción crítico."
