@@ -2,8 +2,6 @@ export const translations = {
     en: {
         nav: {
             work: "Work",
-            mindfulness: "Mindfulness",
-            history: "Aura",
             resume: "Resume"
         },
         hero: {
@@ -14,10 +12,7 @@ export const translations = {
             title_mind: "Lifelong Learning",
             subtitle: "Senior IT Specialist & Full-Stack Architect with a focus on adaptive learning and digital resilience. Shaping the IT landscape since 1993.",
             cta_portfolio: "View Portfolio",
-            cta_peace: "Aura Quiet Living",
-            stat_exp: "years of experience",
-            stat_proj: "Projects Delivered",
-            stat_peace: "Inner Peace"
+            stat_proj: "Projects Delivered"
         },
         expertise: {
             badge: "Expertise & Skills",
@@ -37,16 +32,13 @@ export const translations = {
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
-                btn_tetris: "🕹️ Neon Tetris",
                 btn_cube: "🎲 3D Cube",
-                btn_aura: "🌿 Aura Quiet Living",
                 app_title: "AI Generated Apps",
                 app_subtitle: "Select one of the AI-powered applications below to explore."
             },
             card_history: {
                 title: "Historic Italian Internet brands",
                 desc: "Exploring Italy's pioneering digital heritage and vintage web culture.",
-                btn_explore: "Aura →",
                 btn_vintage: "1993 Portal →"
             },
             card_archives: {
@@ -345,8 +337,6 @@ export const translations = {
     it: {
         nav: {
             work: "Lavori",
-            mindfulness: "Consapevolezza",
-            history: "Aura",
             resume: "Curriculum"
         },
         hero: {
@@ -357,10 +347,7 @@ export const translations = {
             title_mind: "Apprendimento Continuo",
             subtitle: "Specialista IT Senior e Architetto Full-Stack con focus su apprendimento adattivo e resilienza digitale. Protagonista del panorama IT dal 1993.",
             cta_portfolio: "Vedi Portfolio",
-            cta_peace: "Aura Quiet Living",
-            stat_exp: "anni di esperienza",
-            stat_proj: "Progetti Consegnati",
-            stat_peace: "Pace Interiore"
+            stat_proj: "Progetti Consegnati"
         },
         expertise: {
             badge: "Competenze",
@@ -700,10 +687,7 @@ export const translations = {
             title_mind: "Aprendizaje Continuo",
             subtitle: "Especialista IT Senior y Arquitecto Full-Stack centrado en el aprendizaje adaptativo y la resiliencia digital. Liderando el panorama IT desde 1993.",
             cta_portfolio: "Ver Portfolio",
-            cta_peace: "Aura Quiet Living",
-            stat_exp: "años de experiencia",
-            stat_proj: "Proyectos Realizados",
-            stat_peace: "Paz Interior"
+            stat_proj: "Proyectos Realizados"
         },
         expertise: {
             badge: "Experiencia",
@@ -780,7 +764,6 @@ export const translations = {
         cta: {
             title: "Creemos Algo Extraordinario",
             subtitle: "Combinando la excelencia técnica con una filosofía de diseño consciente",
-            btn_touch: "Ponte en Contacto",
             btn_linkedin: "Conectar en LinkedIn"
         },
         footer: {

@@ -76,7 +76,6 @@ export default function Home({ onNavigate }) {
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
                         <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
-                        <button onClick={() => { window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
                         <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
@@ -133,9 +132,6 @@ export default function Home({ onNavigate }) {
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
                         </button>
-                        <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="btn-secondary">
-                            {t('hero', 'cta_peace')}
-                        </button>
                     </motion.div>
 
                     <motion.div
@@ -152,11 +148,6 @@ export default function Home({ onNavigate }) {
                         <div className="stat-item">
                             <div className="stat-value">50+</div>
                             <div className="stat-label">{t('hero', 'stat_proj')}</div>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <div className="stat-value">∞</div>
-                            <div className="stat-label">{t('hero', 'stat_peace')}</div>
                         </div>
                     </motion.div>
                 </motion.div>
@@ -202,9 +193,6 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
-                                <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" rel="noopener noreferrer" className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto', textDecoration: 'none' }}>
-                                    {t('expertise', 'card_web').btn_aura}
-                                </a>
                             </div>
                             <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_manuela}
@@ -238,9 +226,6 @@ export default function Home({ onNavigate }) {
                             <p className="bento-description">
                                 {t('expertise', 'card_history').desc}
                             </p>
-                            <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
-                                {t('expertise', 'card_history').btn_explore}
-                            </button>
                             <button onClick={() => onNavigate('vintage')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer', marginTop: '0.5rem' }}>
                                 {t('expertise', 'card_history').btn_vintage}
                             </button>
