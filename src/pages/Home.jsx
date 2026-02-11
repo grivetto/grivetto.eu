@@ -56,7 +56,7 @@ export default function Home({ onNavigate }) {
                 <div className="nav-container">
                     <div className="nav-logo">
                         <span className="logo-text">Sergio Grivetto</span>
-                        <span className="logo-badge">Systems Specialist</span>
+                        <span className="logo-badge">IT Specialist</span>
                     </div>
 
                     <div className="nav-actions">

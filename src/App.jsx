@@ -170,8 +170,8 @@ function App() {
 
     if (view === 'home') {
       updateMeta(
-        'Sergio Grivetto | Senior Systems Specialist',
-        'Senior Systems Specialist & Full-Stack Architect. Shaping the IT landscape since 1993. Expert in Linux/Unix and digital resilience.'
+        'Sergio Grivetto | Senior IT Specialist',
+        'Senior IT Specialist & Full-Stack Architect. Shaping the IT landscape since 1993. Expert in Linux/Unix and digital resilience.'
       );
     } else if (view === 'links') {
       updateMeta(
@@ -191,7 +191,7 @@ function App() {
     } else if (view === 'resume') {
       updateMeta(
         'Resume | Sergio Grivetto',
-        'Professional CV of Sergio Grivetto. Senior Systems Specialist, Linux Expert, and IT Professional since 1993.'
+        'Professional CV of Sergio Grivetto. Senior IT Specialist, Linux Expert, and IT Professional since 1993.'
       );
     } else if (view === 'quiz') {
       updateMeta(
@@ -215,7 +215,7 @@ function App() {
       );
     } else if (view === 'terminal') {
       updateMeta(
-        'Systems Specialist | Grivetto.eu',
+        'IT Specialist | Grivetto.eu',
         'Advanced system administration and infrastructure orchestration since 1993.'
       );
     } else if (view === 'vintage') {
