@@ -45,10 +45,10 @@ const Resume = ({ onNavigate }) => {
                             <span className="dates">Nov 2013 – Present</span>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Enterprise Monitoring Management:</strong> {expNpo.desc_1}</li>
-                            <li><strong>Zabbix Environment:</strong> {expNpo.desc_2}</li>
-                            <li><strong>Software Engineering:</strong> {expNpo.desc_3}</li>
-                            <li><strong>Quality Assurance:</strong> {expNpo.desc_4}</li>
+                            <li><strong>Infrastructure Orchestration:</strong> {expNpo.desc_1}</li>
+                            <li><strong>Systems Engineering:</strong> {expNpo.desc_2}</li>
+                            <li><strong>Advanced System Tools:</strong> {expNpo.desc_3}</li>
+                            <li><strong>Reliability Engineering:</strong> {expNpo.desc_4}</li>
                         </ul>
                     </div>
 
@@ -67,11 +67,11 @@ const Resume = ({ onNavigate }) => {
                             <span className="dates">2004 – 2007</span>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Security & IDS:</strong> {expBanco.desc_1}</li>
-                            <li><strong>Infrastructure Projects:</strong> {expBanco.desc_2}</li>
-                            <li><strong>Network Security:</strong> {expBanco.desc_3}</li>
-                            <li><strong>Operating Systems:</strong> {expBanco.desc_4}</li>
-                            <li><strong>Architectural Analysis:</strong> {expBanco.desc_5}</li>
+                            <li><strong>Security Auditing:</strong> {expBanco.desc_1}</li>
+                            <li><strong>DMZ Migration:</strong> {expBanco.desc_2}</li>
+                            <li><strong>Perimeter Security:</strong> {expBanco.desc_3}</li>
+                            <li><strong>Unix Administration:</strong> {expBanco.desc_4}</li>
+                            <li><strong>Architectural Design:</strong> {expBanco.desc_5}</li>
                         </ul>
                     </div>
 
@@ -126,7 +126,7 @@ const Resume = ({ onNavigate }) => {
                         </div>
                         <div className="skill-category">
                             <h3>Monitoring & DevOps</h3>
-                            <p>Zabbix (Expert), Nagios, Cacti, Shell Scripting (Bash, KSH, Perl), Python, Docker</p>
+                            <p>Advanced Infrastructure Monitoring, Nagios, Cacti, Shell Scripting (Bash, KSH, Perl), Python, Docker</p>
                         </div>
                         <div className="skill-category">
                             <h3>Networking & Security</h3>

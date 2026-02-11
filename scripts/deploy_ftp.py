@@ -20,21 +20,26 @@ def upload_file(ftp, local_path, remote_path):
 def upload_directory(ftp, local_dir):
     # Walk through the directory content
     for root, dirs, files in os.walk(local_dir):
-        # Calculate relative path to mirror structure on server
+        # Calculate relative path
         rel_path = os.path.relpath(root, local_dir)
-        if rel_path == ".":
+        
+        # Skip .well-known and images
+        if ".well-known" in rel_path or "images" in rel_path:
+            continue
+            
+        if rel_path == "." or rel_path == "":
             remote_root = ""
         else:
             remote_root = rel_path.replace("\\", "/")
         
-        # Create remote directories if they don't exist
+        # Create remote directories
         for d in dirs:
-            remote_dir_path = os.path.join(remote_root, d).replace("\\", "/")
+            if d == ".well-known" or d == "images":
+                continue
+            remote_dir_path = (remote_root + "/" + d) if remote_root else d
             try:
                 ftp.mkd(remote_dir_path)
-                print(f"Created directory: {remote_dir_path}")
-            except ftplib.error_perm:
-                # Directory likely already exists
+            except:
                 pass
 
         # Upload files
@@ -42,9 +47,14 @@ def upload_directory(ftp, local_dir):
             local_file_path = os.path.join(root, f)
             remote_file_path = os.path.join(remote_root, f).replace("\\", "/")
             
-            # Simple upload
+            # Force overwrite by deleting first if possible
+            try:
+                ftp.delete(remote_file_path)
+            except:
+                pass
+
             with open(local_file_path, 'rb') as file_obj:
-                print(f"Uploading {f} to {remote_file_path}...")
+                print(f"Uploading {remote_file_path}...")
                 ftp.storbinary(f'STOR {remote_file_path}', file_obj)
 
 def main():

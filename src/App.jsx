@@ -170,8 +170,8 @@ function App() {
 
     if (view === 'home') {
       updateMeta(
-        'Sergio Grivetto | Senior System Administrator',
-        'Senior System Administrator & Linux Expert in Turin. Specializing in Zabbix monitoring and infrastructure security.'
+        'Sergio Grivetto | Senior Systems Specialist',
+        'Senior Systems Specialist & Full-Stack Architect. Shaping the IT landscape since 1993. Expert in Linux/Unix and digital resilience.'
       );
     } else if (view === 'links') {
       updateMeta(
@@ -191,7 +191,7 @@ function App() {
     } else if (view === 'resume') {
       updateMeta(
         'Resume | Sergio Grivetto',
-        'Professional CV of Sergio Grivetto. Senior System Administrator, Linux Expert, and IT Consultant.'
+        'Professional CV of Sergio Grivetto. Senior Systems Specialist, Linux Expert, and IT Professional since 1993.'
       );
     } else if (view === 'quiz') {
       updateMeta(
@@ -215,8 +215,8 @@ function App() {
       );
     } else if (view === 'terminal') {
       updateMeta(
-        'System Admin | Grivetto.eu',
-        'Secure Web Terminal Access for authorized system administration personnel.'
+        'Systems Specialist | Grivetto.eu',
+        'Advanced system administration and infrastructure orchestration since 1993.'
       );
     } else if (view === 'vintage') {
       updateMeta(
@@ -226,7 +226,7 @@ function App() {
     } else if (view === 'not-found') {
       updateMeta(
         '404 Page Not Found | Grivetto.eu',
-        'The requested page was not found on Grivetto.eu. Navigate back to the main site for IT services and system administration.'
+        'The requested page was not found on Grivetto.eu. Discover IT excellence and systems expertise dating back to 1993.'
       );
     }
   }, [view]);

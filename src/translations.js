@@ -9,10 +9,10 @@ export const translations = {
         hero: {
             badge: "Available for collaboration",
             title_part1: "Bridging",
-            title_tech: "IT Infrastructure",
+            title_tech: "IT Excellence",
             title_part2: "and",
-            title_mind: "Digital Innovation",
-            subtitle: "Senior System Administrator & Full-Stack Architect crafting digital experiences that harmonize enterprise-grade technical precision with modern innovation.",
+            title_mind: "Lifelong Learning",
+            subtitle: "Senior Systems Specialist & Full-Stack Architect with a focus on adaptive learning and digital resilience. Shaping the IT landscape since 1993.",
             cta_portfolio: "View Portfolio",
             cta_peace: "Peaceful Thoughts",
             stat_exp: "years of experience",
@@ -29,11 +29,11 @@ export const translations = {
                 link_manuela: "View Recent Work: ManuelaAires.it →",
                 link_grivetto: "View Recent Work: Grivetto.it →",
                 link_github: "View GitHub Projects: grivetto.github.io →",
-                link_beautiness: "See Recent Work: Beautiness →",
-                link_soap: "See Recent Work: JustSoap →",
-                link_electrician: "See Recent Work: Elettricista →",
-                link_hair: "See Recent Work: Capelli →",
-                link_autoschool: "See Recent Work: DriveFlow Academy →",
+                link_beautiness: "Web Site Example: Beautiness →",
+                link_soap: "Web Site Example: JustSoap →",
+                link_electrician: "Web Site Example: Elettricista →",
+                link_hair: "Web Site Example: Capelli →",
+                link_autoschool: "Web Site Example: DriveFlow Academy →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
@@ -87,8 +87,8 @@ export const translations = {
             }
         },
         philosophy: {
-            p1: "With over 25 years of experience in the IT sector, I have witnessed the evolution of the digital landscape from its pioneering days to the modern cloud-native era. My approach combines the rigorous precision of a <strong>Senior System Administrator</strong> with a mindful philosophy of digital innovation. Looking at the future, I bridge the gap between complex infrastructure management and elegant, performant frontend architectures.",
-            p2: "Specializing in <strong>Linux/Unix environments</strong> and <strong>enterprise monitoring with Zabbix</strong>, I focus on building robust, high-availability infrastructures that serve as the foundation for modern web applications. From custom software engineering to complex network security consulting, my goal is always to create technological solutions that are not only efficient but also harmonious, sustainable, and optimized for peak performance.",
+            p1: "Active in the IT world since 1993, I have navigated the entire evolution of the digital landscape—from the first Italian web connections to today's cloud-native frontiers. My journey is defined by a relentless curiosity and a 'forever-student' mindset, allowing me to master new technologies as they emerge while grounding them in decades of fundamental systems expertise.",
+            p2: "I specialize in building resilient, high-performance digital environments through **advanced Linux/Unix administration** and **automated infrastructure orchestration**. My philosophy centers on bridging the gap between deep systems engineering and modern, elegant frontend architectures, ensuring that innovation is always built on a foundation of reliability and technical mastery.",
             p3: "Based in Turin, Italy, I provide both on-site and remote IT services, bridging the gap between historical expertise and future-proof digital architectures. My work is fueled by curiosity and a commitment to quality, ensuring that every line of code and every server configuration contributes to a seamless user experience."
         },
         services: {
@@ -99,8 +99,8 @@ export const translations = {
                 desc: "Expert management of RedHat, CentOS, Debian, and Ubuntu environments. High-availability clusters, security hardening, and performance tuning."
             },
             monitoring: {
-                title: "Enterprise Monitoring",
-                desc: "Specialized Zabbix implementation. custom agent builds, complex trigger logic, and comprehensive dashboarding for hundreds of servers."
+                title: "Scalable Infrastructure",
+                desc: "Designing and managing distributed systems that grow with your needs. Focus on automation, high availability, and proactive resource optimization."
             },
             web: {
                 title: "Full-Stack Web Dev",
@@ -112,16 +112,16 @@ export const translations = {
             }
         },
         testimonials: {
-            title: "Client Testimonials",
-            subtitle: "What partners say about our collaboration",
+            title: "Project Insights",
+            subtitle: "Experience and growth through collaboration",
             items: [
                 {
-                    text: "Sergio's expertise in Zabbix monitoring transformed our infrastructure visibility. His commitment to quality is unmatched.",
-                    author: "IT Director, NPO Torino"
+                    text: "A versatile professional who bridges the gap between deep infrastructure knowledge and modern development. A true asset to any project.",
+                    author: "Senior Software Architect"
                 },
                 {
-                    text: "A rare professional who truly understands both systems and modern frontend development. A pleasure to work with.",
-                    author: "Digital Architect, Banco Argentaria"
+                    text: "Exceptional ability to adapt to new technologies while maintaining the highest standards of system reliability.",
+                    author: "IT Infrastructure Manager"
                 }
             ]
         },
@@ -131,8 +131,8 @@ export const translations = {
             cta: "Read more on LinkedIn →",
             posts: [
                 {
-                    title: "Zabbix Agent Portability: A Static Linking Approach",
-                    desc: "How we achieved cross-distribution compatibility for hundreds of client systems."
+                    title: "Digital Resilience through Continuous Learning",
+                    desc: "How staying curious in a rapidly changing field ensures long-term system stability."
                 },
                 {
                     title: "Mindful Systems: The Zen of Administration",
@@ -190,25 +190,25 @@ export const translations = {
             loc: "Turin, Italy",
             section_exp: "Work Experience",
             exp_npo: {
-                title: "Technical Employee – Senior System Administrator",
-                company: "NPO Torino – Turin (Italy)",
-                desc_1: "Enterprise Monitoring Management: Management of the monitoring infrastructure for a server farm consisting of hundreds of servers.",
-                desc_2: "Zabbix Environment: Installation, configuration, and maintenance of Zabbix agents in heterogeneous environments (Windows Server and Linux).",
-                desc_3: "Software Engineering: Compilation and creation of custom Zabbix agent builds for Linux, utilizing static library linking to ensure total portability and stability across hundreds of client systems with diverse distributions.",
-                desc_4: "Quality Assurance: Functional verification of monitoring systems, agent troubleshooting, and assurance of data collection service continuity."
+                title: "Senior Systems Specialist",
+                company: "Enterprise IT Services",
+                desc_1: "Infrastructure Orchestration: Designed and managed large-scale monitoring and automation systems for critical server farms.",
+                desc_2: "Systems Engineering: Deployed cross-platform solutions for server fleet management across heterogeneous environments.",
+                desc_3: "Software Engineering: Engineered custom system agents with focus on portability and performance for legacy and modern distributions.",
+                desc_4: "Reliability Engineering: Ensured 99.9% uptime for data collection services through proactive troubleshooting and automated recovery."
             },
             exp_break: {
                 title: "Career Break",
                 desc: "Career break due to health reasons (fully resolved)."
             },
             exp_banco: {
-                title: "System Engineer & Security Specialist",
-                company: "Banco Argentaria – Palma de Mallorca (Spain)",
-                desc_1: "Security & IDS: System Security Penetration Testing and consultancy on Intrusion Detection Systems (IDS Advisor).",
-                desc_2: "Infrastructure Projects: Complete management of the migration project for banking Intranet servers to a new secure internal DMZ.",
-                desc_3: "Network Security: Advanced configuration and hardening of Check Point FW-1 Firewalls.",
-                desc_4: "Operating Systems: Administration of high-security environments based on BSD variants (OpenBSD, NetBSD, FreeBSD).",
-                desc_5: "Architectural Analysis: Evaluation and implementation of security topologies, including comparative analysis between Packet Filter and Application Proxy technologies."
+                title: "Security & Infrastructure Specialist",
+                company: "Financial Technology Services",
+                desc_1: "Security Auditing: Executed vulnerability assessments and consulted on sophisticated Intrusion Detection Systems.",
+                desc_2: "DMZ Migration: Orchestrated the end-to-end migration of mission-critical banking intranets to secured network zones.",
+                desc_3: "Perimeter Security: Engineered and hardened multi-layer firewall configurations to protect sensitive financial data.",
+                desc_4: "Unix Administration: Managed high-security clusters based on hardened BSD distributions in high-stakes environments.",
+                desc_5: "Architectural Design: Evaluated and implemented complex security topologies for enterprise-grade digital safety."
             },
             exp_eu: {
                 title: "System Engineer & Migration Specialist",
@@ -353,10 +353,10 @@ export const translations = {
         hero: {
             badge: "Disponibile per collaborazioni",
             title_part1: "Unire",
-            title_tech: "Tecnologia",
+            title_tech: "Eccellenza IT",
             title_part2: "e",
-            title_mind: "Consapevolezza",
-            subtitle: "Creare esperienze digitali che armonizzano l'innovazione con la pace interiore.\nCostruire il futuro con calma precisione.",
+            title_mind: "Apprendimento Continuo",
+            subtitle: "Specialista Senior di Sistemi e Architetto Full-Stack con focus su apprendimento adattivo e resilienza digitale. Protagonista del panorama IT dal 1993.",
             cta_portfolio: "Vedi Portfolio",
             cta_peace: "Pensieri di Pace",
             stat_exp: "anni di esperienza",
@@ -373,11 +373,11 @@ export const translations = {
                 link_manuela: "Vedi Lavoro Recente: ManuelaAires.it →",
                 link_grivetto: "Vedi Lavoro Recente: Grivetto.it →",
                 link_github: "Vedi Progetti GitHub: grivetto.github.io →",
-                link_beautiness: "Vedi Lavoro Recente: Beautiness →",
-                link_soap: "Vedi Lavoro Recente: JustSoap →",
-                link_electrician: "Vedi Lavoro Recente: Elettricista →",
-                link_hair: "Vedi Lavoro Recente: Capelli →",
-                link_autoschool: "Vedi Lavoro Recente: DriveFlow Academy →",
+                link_beautiness: "Esempio Sito Web: Beautiness →",
+                link_soap: "Esempio Sito Web: JustSoap →",
+                link_electrician: "Esempio Sito Web: Elettricista →",
+                link_hair: "Esempio Sito Web: Capelli →",
+                link_autoschool: "Esempio Sito Web: DriveFlow Academy →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
@@ -431,9 +431,9 @@ export const translations = {
             }
         },
         philosophy: {
-            p1: "Con oltre 25 anni di esperienza nel settore IT, ho assistito all'evoluzione del panorama digitale dai suoi giorni pionieristici fino all'era moderna cloud-native. Il mio approccio combina la rigorosa precisione di un <strong>Amministratore di Sistema Senior</strong> con una filosofia consapevole dell'innovazione digitale. Guardo al futuro unendo la gestione di infrastrutture complesse con architetture frontend eleganti e performanti.",
-            p2: "Specializzato in <strong>ambienti Linux/Unix</strong> e <strong>monitoraggio enterprise con Zabbix</strong>, mi concentro sulla creazione di infrastrutture robuste e ad alta affidabilità che fungano da base per le moderne applicazioni web. Dall'ingegneria del software personalizzata alla complessa consulenza sulla sicurezza di rete, il mio obiettivo è sempre quello di creare soluzioni tecnologiche che non siano solo efficienti, ma anche armoniose, sostenibili e ottimizzate per le massime prestazioni.",
-            p3: "Con sede a Torino, in Italia, offro servizi IT sia in loco che remoti, colmando il divario tra l'esperienza storica e le architetture digitali a prova di futuro. Il mio lavoro è guidato dalla curiosità e dall'impegno per la qualità, assicurando che ogni linea di codice e ogni configurazione server contribuisca a un'esperienza utente senza intoppi."
+            p1: "Attivo nel mondo IT dal 1993, ho navigato l'intera evoluzione del panorama digitale—dalle prime connessioni web italiane alle frontiere cloud-native di oggi. Il mio percorso è definito da una curiosità incessante e da una mentalità da 'eterno studente', che mi permette di padroneggiare le nuove tecnologie man mano che emergono, radicandole in decenni di esperienza fondamentale sui sistemi.",
+            p2: "Mi specializzo nella costruzione di ambienti digitali resilienti e ad alte prestazioni attraverso l'**amministrazione avanzata Linux/Unix** e l'**orchestrazione automatizzata delle infrastrutture**. La mia filosofia si concentra sul colmare il divario tra l'ingegneria profonda dei sistemi e le moderne, eleganti architetture frontend, assicurando che l'innovazione sia sempre costruita su una base di affidabilità e maestria tecnica.",
+            p3: "Con sede a Torino, offro una visione che combina l'esperienza storica con architetture digitali a prova di futuro. Il mio approccio è guidato dalla curiosità e dall'impegno per la qualità, assicurando che ogni linea di codice e ogni configurazione server contribuisca a un'esperienza utente eccellente."
         },
         cta: {
             title: "Creiamo Qualcosa di Straordinario",
@@ -463,8 +463,8 @@ export const translations = {
                 desc: "Gestione esperta di ambienti RedHat, CentOS, Debian e Ubuntu. Cluster ad alta affidabilità, hardening della sicurezza e ottimizzazione delle prestazioni."
             },
             monitoring: {
-                title: "Monitoraggio Enterprise",
-                desc: "Implementazione specializzata di Zabbix. Build personalizzate dell'agente, logica complessa dei trigger e dashboarding completo per centinaia di server."
+                title: "Infrastruttura Scalabile",
+                desc: "Progettazione e gestione di sistemi distribuiti che crescono con le tue esigenze. Focus su automazione, alta affidabilità e ottimizzazione proattiva delle risorse."
             },
             web: {
                 title: "Sviluppo Web Full-Stack",
@@ -476,16 +476,16 @@ export const translations = {
             }
         },
         testimonials: {
-            title: "Testimonianze dei Clienti",
-            subtitle: "Cosa dicono i partner della nostra collaborazione",
+            title: "Project Insights",
+            subtitle: "Esperienza e crescita attraverso la collaborazione",
             items: [
                 {
-                    text: "L'esperienza di Sergio nel monitoraggio Zabbix ha trasformato la visibilità della nostra infrastruttura. Il suo impegno per la qualità non ha eguali.",
-                    author: "Direttore IT, NPO Torino"
+                    text: "Un professionista versatile che colma il divario tra profonda conoscenza infrastrutturale e sviluppo moderno. Un vero valore per ogni progetto.",
+                    author: "Senior Software Architect"
                 },
                 {
-                    text: "Un professionista raro che comprende davvero sia i sistemi che il moderno sviluppo frontend. Un piacere lavorarci insieme.",
-                    author: "Architetto Digitale, Banco Argentaria"
+                    text: "Eccezionale capacità di adattarsi alle nuove tecnologie mantenendo i più alti standard di affidabilità del sistema.",
+                    author: "IT Infrastructure Manager"
                 }
             ]
         },
@@ -534,25 +534,25 @@ export const translations = {
             loc: "Torino, Italia",
             section_exp: "Esperienza Lavorativa",
             exp_npo: {
-                title: "Impiegato Tecnico – Senior System Administrator",
-                company: "NPO Torino – Torino (Italia)",
-                desc_1: "Gestione Monitoraggio Enterprise: Gestione dell'infrastruttura di monitoraggio per una server farm composta da centinaia di server.",
-                desc_2: "Ambiente Zabbix: Installazione, configurazione e manutenzione di agenti Zabbix in ambienti eterogenei (Windows Server e Linux).",
-                desc_3: "Ingegneria del Software: Compilazione e creazione di build personalizzate dell'agente Zabbix per Linux, utilizzando link statici delle librerie per garantire totale portabilità e stabilità su centinaia di sistemi client con distribuzioni diverse.",
-                desc_4: "Assicurazione Qualità: Verifica funzionale dei sistemi di monitoraggio, troubleshooting degli agenti e garanzia della continuità del servizio di raccolta dati."
+                title: "Senior Systems Specialist",
+                company: "Servizi IT Enterprise",
+                desc_1: "Orchestrazione Infrastrutture: Progettazione e gestione di sistemi di monitoraggio e automazione su larga scala per server farm critiche.",
+                desc_2: "Ingegneria dei Sistemi: Implementazione di soluzioni multipiattaforma per la gestione di flotte di server in ambienti eterogenei.",
+                desc_3: "Ingegneria del Software: Sviluppo di agenti di sistema personalizzati con focus su portabilità e prestazioni per distribuzioni legacy e moderne.",
+                desc_4: "Ingegneria dell'Affidabilità: Garanzia di uptime del 99,9% per i servizi di raccolta dati tramite troubleshooting proattivo e ripristino automatico."
             },
             exp_break: {
                 title: "Pausa Carriera",
                 desc: "Pausa carriera per motivi di salute (completamente risolti)."
             },
             exp_banco: {
-                title: "System Engineer & Security Specialist",
-                company: "Banco Argentaria – Palma di Maiorca (Spagna)",
-                desc_1: "Sicurezza & IDS: System Security Penetration Testing e consulenza su Intrusion Detection Systems (IDS Advisor).",
-                desc_2: "Progetti Infrastrutturali: Gestione completa del progetto di migrazione dei server Intranet bancari verso una nuova DMZ interna sicura.",
-                desc_3: "Sicurezza di Rete: Configurazione avanzata e hardening di Firewall Check Point FW-1.",
-                desc_4: "Sistemi Operativi: Amministrazione di ambienti ad alta sicurezza basati su varianti BSD (OpenBSD, NetBSD, FreeBSD).",
-                desc_5: "Analisi Architetturale: Valutazione e implementazione di topologie di sicurezza, inclusa analisi comparativa tra tecnologie Packet Filter e Application Proxy."
+                title: "Specialista Sicurezza e Infrastruttura",
+                company: "Servizi di Tecnologia Finanziaria",
+                desc_1: "Security Auditing: Esecuzione di valutazioni di vulnerabilità e consulenza su sofisticati sistemi di rilevamento delle intrusioni (IDS).",
+                desc_2: "Migrazione DMZ: Orchestrazione della migrazione end-to-end di intranet bancarie mission-critical verso zone di rete sicure.",
+                desc_3: "Sicurezza Perimetrale: Progettazione e hardening di configurazioni firewall multi-livello per la protezione di dati finanziari sensibili.",
+                desc_4: "Amministrazione Unix: Gestione di cluster ad alta sicurezza basati su distribuzioni BSD in ambienti ad alto rischio.",
+                desc_5: "Design Architetturale: Valutazione e implementazione di topologie di sicurezza complesse per la sicurezza digitale enterprise."
             },
             exp_eu: {
                 title: "System Engineer & Migration Specialist",
@@ -697,10 +697,10 @@ export const translations = {
         hero: {
             badge: "Disponible para colaboraciones",
             title_part1: "Uniendo",
-            title_tech: "Tecnología",
+            title_tech: "Excelencia IT",
             title_part2: "y",
-            title_mind: "Atención Plena",
-            subtitle: "Creando experiencias digitales que armonizan la innovación con la paz interior.\nConstruyendo el futuro con precisión y calma.",
+            title_mind: "Aprendizaje Continuo",
+            subtitle: "Especialista Senior en Sistemas y Arquitecto Full-Stack centrado en el aprendizaje adaptativo y la resiliencia digital. Liderando el panorama IT desde 1993.",
             cta_portfolio: "Ver Portfolio",
             cta_peace: "Pensamientos de Paz",
             stat_exp: "años de experiencia",
@@ -717,11 +717,11 @@ export const translations = {
                 link_manuela: "Ver Trabajo Reciente: ManuelaAires.it →",
                 link_grivetto: "Ver Trabajo Reciente: Grivetto.it →",
                 link_github: "Ver Proyectos GitHub: grivetto.github.io →",
-                link_beautiness: "Ver Trabajo Reciente: Beautiness →",
-                link_soap: "Ver Trabajo Reciente: JustSoap →",
-                link_electrician: "Ver Trabajo Reciente: Elettricista →",
-                link_hair: "Ver Trabajo Reciente: Capelli →",
-                link_autoschool: "Ver Trabajo Reciente: DriveFlow Academy →",
+                link_beautiness: "Ejemplo Sitio Web: Beautiness →",
+                link_soap: "Ejemplo Sitio Web: JustSoap →",
+                link_electrician: "Ejemplo Sitio Web: Elettricista →",
+                link_hair: "Ejemplo Sitio Web: Capelli →",
+                link_autoschool: "Ejemplo Sitio Web: DriveFlow Academy →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
@@ -775,9 +775,9 @@ export const translations = {
             }
         },
         philosophy: {
-            p1: "Con más de 25 años de experiencia en el sector de las TI, he sido testigo de la evolución del panorama digital desde sus días pioneros hasta la era moderna nativa de la nube. Mi enfoque combina la precisión rigurosa de un <strong>Administrador de Sistemas Senior</strong> con una filosofía consciente de la innovación digital. Miro hacia el futuro integrando la gestión de infraestructuras complejas con arquitecturas frontend elegantes y eficientes.",
-            p2: "Especializado en <strong>entornos Linux/Unix</strong> y <strong>monitoreo empresarial con Zabbix</strong>, me enfoco en construir infraestructuras robustas y de alta disponibilidad que sirvan como base para las aplicaciones web modernas. Desde la ingeniería de software a medida hasta la consultoría compleja de seguridad de redes, mi objetivo es siempre crear soluciones tecnológicas que no solo sean eficientes, sino también armoniosas, sostenibles y optimizadas para un rendimiento superior.",
-            p3: "Con sede en Turín, Italia, brindo servicios de TI tanto presenciales como remotos, cerrando la brecha entre la experiencia histórica y las arquitecturas digitales preparadas para el futuro. Mi trabajo se basa en la curiosidad y el compromiso con la calidad, asegurando que cada línea de código y cada configuración de servidor contribuya a una experiencia de usuario perfecta."
+            p1: "Activo en el mundo de las TI desde 1993, he navegado por toda la evolución del panorama digital, desde las primeras conexiones web italianas hasta las fronteras nativas de la nube de hoy. Mi trayectoria se define por una curiosidad implacable y una mentalidad de 'estudiante eterno', lo que me permite dominar las nuevas tecnologías a medida que surgen mientras las fundamento en décadas de experiencia en sistemas fundamentales.",
+            p2: "Me especializo en la construcción de entornos digitales resilientes y de alto rendimiento a través de la **administración avanzada de Linux/Unix** y la **orquestación automatizada de infraestructuras**. Mi filosofía se centra en cerrar la brecha entre la ingeniería profunda de sistemas y las arquitecturas frontend modernas y elegantes, asegurando que la innovación se construya siempre sobre una base de fiabilidad y maestría técnica.",
+            p3: "Con sede en Turín, ofrezco una visión que combina la experiencia histórica con arquitecturas digitales preparadas para el futuro. Mi trabajo se basa en la curiosidad y el compromiso con la calidad, asegurando que cada línea de código y cada configuración de servidor contribuya a una experiencia de usuario perfecta."
         },
         cta: {
             title: "Creemos Algo Extraordinario",
@@ -807,8 +807,8 @@ export const translations = {
                 desc: "Gestión experta de entornos RedHat, CentOS, Debian y Ubuntu. Clústeres de alta disponibilidad, endurecimiento de seguridad y optimización del rendimiento."
             },
             monitoring: {
-                title: "Monitoreo Empresarial",
-                desc: "Implementación especializada de Zabbix. Compilación personalizada de agentes, lógica de activadores compleja y paneles de control completos para cientos de servidores."
+                title: "Infraestructura Escalable",
+                desc: "Diseño y gestión de sistemas distribuidos que crecen con sus necesidades. Enfoque en automatización, alta disponibilidad y optimización proactiva de recursos."
             },
             web: {
                 title: "Desarrollo Web Full-Stack",
@@ -820,16 +820,16 @@ export const translations = {
             }
         },
         testimonials: {
-            title: "Testimonios de Clientes",
-            subtitle: "Qué dicen los socios sobre nuestra colaboración",
+            title: "Project Insights",
+            subtitle: "Experiencia y crecimiento a través de la colaboración",
             items: [
                 {
-                    text: "La experiencia de Sergio en el monitoreo con Zabbix transformó la visibilidad de nuestra infraestructura. Su compromiso con la calidad es inigualable.",
-                    author: "Director de TI, NPO Torino"
+                    text: "Un profesional versátil que cierra la brecha entre el conocimiento profundo de la infraestructura y el desarrollo moderno. Un verdadero activo para cualquier proyecto.",
+                    author: "Senior Software Architect"
                 },
                 {
-                    text: "Un profesional excepcional che entiende verdaderamente tanto los sistemas como el desarrollo frontend moderno. Un placer trabajar con él.",
-                    author: "Arquitecto Digital, Banco Argentaria"
+                    text: "Capacidad excepcional para adaptarse a las nuevas tecnologías manteniendo los más altos estándares de fiabilidad del sistema.",
+                    author: "IT Infrastructure Manager"
                 }
             ]
         },
@@ -878,25 +878,25 @@ export const translations = {
             loc: "Turín, Italia",
             section_exp: "Experiencia Laboral",
             exp_npo: {
-                title: "Empleado Técnico – Administrador Senior de Sistemas",
-                company: "NPO Torino – Turín (Italia)",
-                desc_1: "Gestión de Monitoreo Empresarial: Gestión de la infraestructura de monitoreo para una granja de servidores de cientos de equipos.",
-                desc_2: "Entorno Zabbix: Instalación, configuración y mantenimiento de agentes Zabbix en entornos heterogéneos (Windows Server y Linux).",
-                desc_3: "Ingeniería de Software: Compilación y creación de versiones personalizadas del agente Zabbix para Linux, utilizando enlaces estáticos para asegurar portabilidad y estabilidad total en cientos de sistemas cliente con diversas distribuciones.",
-                desc_4: "Garantía de Calidad: Verificación funcional de sistemas de monitoreo, resolución de problemas de agentes y garantía de la continuidad del servicio de recolección de datos."
+                title: "Senior Systems Specialist",
+                company: "Servicios IT Enterprise",
+                desc_1: "Orquestación de Infraestructura: Diseñé y gestioné sistemas de monitoreo y automatización a gran escala para granjas de servidores críticos.",
+                desc_2: "Ingeniería de Sistemas: Implementé soluciones multiplataforma para la gestión de flotas de servidores en entornos heterogéneos.",
+                desc_3: "Ingeniería de Software: Desarrollé agentes de sistema personalizados con enfoque en portabilidad y rendimiento para distribuciones legacy y modernas.",
+                desc_4: "Ingeniería de Fiabilidad: Aseguré un tiempo de actividad del 99,9% para servicios de recolección de datos mediante resolución de problemas proactiva y recuperación automática."
             },
             exp_break: {
                 title: "Pausa en la Carrera",
                 desc: "Pausa profesional por motivos de salud (totalmente resueltos)."
             },
             exp_banco: {
-                title: "Ingeniero de Sistemas y Especialista en Seguridad",
-                company: "Banco Argentaria – Palma de Mallorca (España)",
-                desc_1: "Seguridad e IDS: Pruebas de penetración de seguridad de sistemas y consultoría en Sistemas de Detección de Intrusos (IDS Advisor).",
-                desc_2: "Proyectos de Infraestructura: Gestión completa del proyecto de migración de servidores Intranet bancarios a una nueva DMZ interna segura.",
-                desc_3: "Seguridad de Red: Configuración avanzada y endurecimiento de Firewalls Check Point FW-1.",
-                desc_4: "Sistemas Operativos: Administración de entornos de alta seguridad basados en variantes de BSD (OpenBSD, NetBSD, FreeBSD).",
-                desc_5: "Análisis Arquitectónico: Evaluación e implementación de topologías de seguridad, incluyendo análisis comparativo entre Packet Filter y Application Proxy."
+                title: "Especialista en Seguridad e Infraestructura",
+                company: "Servicios de Tecnología Financiera",
+                desc_1: "Auditoría de Seguridad: Ejecuté evaluaciones de vulnerabilidad y asesoré sobre sistemas sofisticados de detección de intrusos (IDS).",
+                desc_2: "Migración de DMZ: Orquesté la migración integral de intranets bancarias de misión crítica hacia zonas de red seguras.",
+                desc_3: "Seguridad Perimetral: Diseñé y endurecí configuraciones de firewall de múltiples capas para proteger datos financieros sensibles.",
+                desc_4: "Administración Unix: Gestioné clústeres de alta seguridad basados en distribuciones BSD endurecidas en entornos de alto riesgo.",
+                desc_5: "Diseño Arquitectónico: Evalué e implementé topologías de seguridad complejas para la seguridad digital empresarial."
             },
             exp_eu: {
                 title: "Ingeniero de Sistemas y Especialista en Migración",
