@@ -50,8 +50,15 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
           <a href="#experience" onClick={(e) => onNavClick(e, 'experience')} className="hover:opacity-60 transition-opacity">{t.nav.experience}</a>
           <a href="#expertise" onClick={(e) => onNavClick(e, 'expertise')} className="hover:opacity-60 transition-opacity">{t.nav.skills}</a>
           <a href="#contact" onClick={(e) => onNavClick(e, 'contact')} className="hover:opacity-60 transition-opacity">{t.nav.contact}</a>
-          <a href="https://grivetto.eu" className="hover:opacity-60 transition-opacity border px-4 py-2 rounded-full border-current">{t.nav.backToHome}</a>
         </div>
+
+        <a
+          href="https://grivetto.eu"
+          className={`text-[10px] md:text-sm font-medium tracking-widest uppercase transition-all border px-3 py-1 md:px-4 md:py-2 rounded-full ${scrolled ? 'text-[#2C2A26] border-[#2C2A26]' : 'text-white border-white'
+            } hover:opacity-60`}
+        >
+          {t.nav.backToHome}
+        </a>
       </div>
     </nav>
   );

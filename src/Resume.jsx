@@ -46,7 +46,7 @@ const Resume = ({ onNavigate }) => {
                         </div>
                         <ul className="job-details">
                             <li><strong>Infrastructure Orchestration:</strong> {expNpo.desc_1}</li>
-                            <li><strong>Systems Engineering:</strong> {expNpo.desc_2}</li>
+                            <li><strong>Monitoring:</strong> {expNpo.desc_2}</li>
                             <li><strong>Advanced System Tools:</strong> {expNpo.desc_3}</li>
                             <li><strong>Reliability Engineering:</strong> {expNpo.desc_4}</li>
                         </ul>
