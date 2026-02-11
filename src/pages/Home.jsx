@@ -423,9 +423,6 @@ export default function Home({ onNavigate }) {
                         {t('cta', 'subtitle')}
                     </p>
                     <div className="cta-buttons">
-                        <a href="https://www.grivetto.eu/hesk/index.php" className="btn-primary" target="_blank" rel="noopener noreferrer">
-                            {t('cta', 'btn_touch')}
-                        </a>
                         <a href="https://linkedin.com/in/sgrivett" className="btn-secondary" target="_blank" rel="noopener noreferrer">
                             {t('cta', 'btn_linkedin')}
                         </a>

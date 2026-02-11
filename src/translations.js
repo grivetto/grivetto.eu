@@ -144,7 +144,6 @@ export const translations = {
         cta: {
             title: "Let's Create Something Extraordinary",
             subtitle: "Combining technical excellence with mindful design philosophy",
-            btn_touch: "Get in Touch",
             btn_linkedin: "Connect on LinkedIn"
         },
         footer: {
@@ -438,7 +437,6 @@ export const translations = {
         cta: {
             title: "Creiamo Qualcosa di Straordinario",
             subtitle: "Combinando eccellenza tecnica con una filosofia di design consapevole",
-            btn_touch: "Mettiamoci in Contatto",
             btn_linkedin: "Connettiti su LinkedIn"
         },
         footer: {
