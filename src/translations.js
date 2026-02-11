@@ -3,7 +3,7 @@ export const translations = {
         nav: {
             work: "Work",
             mindfulness: "Mindfulness",
-            history: "History",
+            history: "Aura",
             resume: "Resume"
         },
         hero: {
@@ -14,7 +14,7 @@ export const translations = {
             title_mind: "Lifelong Learning",
             subtitle: "Senior IT Specialist & Full-Stack Architect with a focus on adaptive learning and digital resilience. Shaping the IT landscape since 1993.",
             cta_portfolio: "View Portfolio",
-            cta_peace: "Peaceful Thoughts",
+            cta_peace: "Aura Quiet Living",
             stat_exp: "years of experience",
             stat_proj: "Projects Delivered",
             stat_peace: "Inner Peace"
@@ -46,7 +46,7 @@ export const translations = {
             card_history: {
                 title: "Historic Italian Internet brands",
                 desc: "Exploring Italy's pioneering digital heritage and vintage web culture.",
-                btn_explore: "Explore →",
+                btn_explore: "Aura →",
                 btn_vintage: "1993 Portal →"
             },
             card_archives: {
@@ -347,7 +347,7 @@ export const translations = {
         nav: {
             work: "Lavori",
             mindfulness: "Consapevolezza",
-            history: "Storia",
+            history: "Aura",
             resume: "Curriculum"
         },
         hero: {
@@ -358,7 +358,7 @@ export const translations = {
             title_mind: "Apprendimento Continuo",
             subtitle: "Specialista IT Senior e Architetto Full-Stack con focus su apprendimento adattivo e resilienza digitale. Protagonista del panorama IT dal 1993.",
             cta_portfolio: "Vedi Portfolio",
-            cta_peace: "Pensieri di Pace",
+            cta_peace: "Aura Quiet Living",
             stat_exp: "anni di esperienza",
             stat_proj: "Progetti Consegnati",
             stat_peace: "Pace Interiore"
@@ -390,7 +390,7 @@ export const translations = {
             card_history: {
                 title: "Marchi Storici Internet Italiani",
                 desc: "Esplorando l'eredità digitale pionieristica italiana e la cultura web vintage.",
-                btn_explore: "Esplora →",
+                btn_explore: "Aura →",
                 btn_vintage: "Portale 1993 →"
             },
             card_archives: {
@@ -691,7 +691,7 @@ export const translations = {
         nav: {
             work: "Proyectos",
             mindfulness: "Atención Plena",
-            history: "Historia",
+            history: "Aura",
             resume: "Currículum"
         },
         hero: {
@@ -702,7 +702,7 @@ export const translations = {
             title_mind: "Aprendizaje Continuo",
             subtitle: "Especialista IT Senior y Arquitecto Full-Stack centrado en el aprendizaje adaptativo y la resiliencia digital. Liderando el panorama IT desde 1993.",
             cta_portfolio: "Ver Portfolio",
-            cta_peace: "Pensamientos de Paz",
+            cta_peace: "Aura Quiet Living",
             stat_exp: "años de experiencia",
             stat_proj: "Proyectos Realizados",
             stat_peace: "Paz Interior"
@@ -734,7 +734,7 @@ export const translations = {
             card_history: {
                 title: "Marcas Históricas de Internet en Italia",
                 desc: "Explorando el legado digital pionero de Italia y la cultura web vintage.",
-                btn_explore: "Explorar →",
+                btn_explore: "Aura →",
                 btn_vintage: "Portal 1993 →"
             },
             card_archives: {

@@ -76,7 +76,7 @@ export default function Home({ onNavigate }) {
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
                         <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
-                        <button onClick={() => { onNavigate('links'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
+                        <button onClick={() => { window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
                         <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ export default function Home({ onNavigate }) {
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
                         </button>
-                        <button onClick={() => onNavigate('links')} className="btn-secondary">
+                        <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="btn-secondary">
                             {t('hero', 'cta_peace')}
                         </button>
                     </motion.div>
@@ -238,7 +238,7 @@ export default function Home({ onNavigate }) {
                             <p className="bento-description">
                                 {t('expertise', 'card_history').desc}
                             </p>
-                            <button onClick={() => onNavigate('links')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
+                            <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
                                 {t('expertise', 'card_history').btn_explore}
                             </button>
                             <button onClick={() => onNavigate('vintage')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer', marginTop: '0.5rem' }}>
