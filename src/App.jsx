@@ -17,6 +17,8 @@ import WebTerminal from './components/WebTerminal';
 import HeskWrapper from './components/HeskWrapper';
 import TerminalDemo from './components/TerminalDemo';
 import LanguageSelector from './components/LanguageSelector';
+import VintagePortal from './pages/VintagePortal';
+import NotFound from './pages/NotFound';
 
 const LinksView = ({ isVisible, handleNavigate }) => {
   const { t } = useLanguage();
@@ -123,6 +125,8 @@ function App() {
     if (page === 'asciinema-demo') return 'asciinema-demo';
     if (page === 'curiosity') return 'curiosity';
     if (page === 'terminal') return 'terminal';
+    if (page === 'vintage') return 'vintage';
+    if (page && page !== 'home') return 'not-found';
     return 'home';
   });
 
@@ -214,6 +218,16 @@ function App() {
         'System Admin | Grivetto.eu',
         'Secure Web Terminal Access for authorized system administration personnel.'
       );
+    } else if (view === 'vintage') {
+      updateMeta(
+        'Vintage Portal (1993) | Grivetto.eu',
+        'Journey back to the dawn of the public World Wide Web with this authentic 1993-styled page.'
+      );
+    } else if (view === 'not-found') {
+      updateMeta(
+        '404 Page Not Found | Grivetto.eu',
+        'The requested page was not found on Grivetto.eu. Navigate back to the main site for IT services and system administration.'
+      );
     }
   }, [view]);
 
@@ -235,6 +249,8 @@ function App() {
         {view === 'terminal' && <WebTerminal onNavigate={handleNavigate} />}
         {view === 'hesk' && <HeskWrapper onNavigate={handleNavigate} />}
         {view === 'terminal-demo' && <TerminalDemo onNavigate={handleNavigate} />}
+        {view === 'vintage' && <VintagePortal onNavigate={handleNavigate} />}
+        {view === 'not-found' && <NotFound onNavigate={handleNavigate} />}
       </div>
     </LanguageProvider>
   );

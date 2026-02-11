@@ -9,10 +9,10 @@ export const translations = {
         hero: {
             badge: "Available for collaboration",
             title_part1: "Bridging",
-            title_tech: "Technology",
+            title_tech: "IT Infrastructure",
             title_part2: "and",
-            title_mind: "Mindfulness",
-            subtitle: "Crafting digital experiences that harmonize innovation with inner peace.\nBuilding the future with calm precision.",
+            title_mind: "Digital Innovation",
+            subtitle: "Senior System Administrator & Full-Stack Architect crafting digital experiences that harmonize enterprise-grade technical precision with modern innovation.",
             cta_portfolio: "View Portfolio",
             cta_peace: "Peaceful Thoughts",
             stat_exp: "years of experience",
@@ -20,9 +20,9 @@ export const translations = {
             stat_peace: "Inner Peace"
         },
         expertise: {
-            badge: "Expertise",
-            title: "Selected Domains",
-            subtitle: "Areas of mastery and continuous innovation",
+            badge: "Expertise & Skills",
+            title: "IT & Development Domains",
+            subtitle: "Specialized expertise in systems administration and web engineering",
             card_web: {
                 title: "Modern Web Development",
                 desc: "Building scalable, performant Single Page Applications with React ecosystem, focusing on exceptional user experience and code quality.",
@@ -46,7 +46,8 @@ export const translations = {
             card_history: {
                 title: "Historic Italian Internet brands",
                 desc: "Exploring Italy's pioneering digital heritage and vintage web culture.",
-                btn_explore: "Explore →"
+                btn_explore: "Explore →",
+                btn_vintage: "1993 Portal →"
             },
             card_archives: {
                 title: "Digital Archives",
@@ -90,6 +91,56 @@ export const translations = {
             p2: "Specializing in <strong>Linux/Unix environments</strong> and <strong>enterprise monitoring with Zabbix</strong>, I focus on building robust, high-availability infrastructures that serve as the foundation for modern web applications. From custom software engineering to complex network security consulting, my goal is always to create technological solutions that are not only efficient but also harmonious, sustainable, and optimized for peak performance.",
             p3: "Based in Turin, Italy, I provide both on-site and remote IT services, bridging the gap between historical expertise and future-proof digital architectures. My work is fueled by curiosity and a commitment to quality, ensuring that every line of code and every server configuration contributes to a seamless user experience."
         },
+        services: {
+            title: "IT Services & Solutions",
+            subtitle: "Senior System Administration & Infrastructure Consulting",
+            linux: {
+                title: "Linux/Unix Administration",
+                desc: "Expert management of RedHat, CentOS, Debian, and Ubuntu environments. High-availability clusters, security hardening, and performance tuning."
+            },
+            monitoring: {
+                title: "Enterprise Monitoring",
+                desc: "Specialized Zabbix implementation. custom agent builds, complex trigger logic, and comprehensive dashboarding for hundreds of servers."
+            },
+            web: {
+                title: "Full-Stack Web Dev",
+                desc: "Modern, performant web applications using React, Vite, and advanced CSS techniques. Bridging the gap between infra and UI."
+            },
+            security: {
+                title: "Infrastructure Security",
+                desc: "Network security audits, firewall configuration (Check Point, Iptables), VPN setups, and IDS/IPS implementation."
+            }
+        },
+        testimonials: {
+            title: "Client Testimonials",
+            subtitle: "What partners say about our collaboration",
+            items: [
+                {
+                    text: "Sergio's expertise in Zabbix monitoring transformed our infrastructure visibility. His commitment to quality is unmatched.",
+                    author: "IT Director, NPO Torino"
+                },
+                {
+                    text: "A rare professional who truly understands both systems and modern frontend development. A pleasure to work with.",
+                    author: "Digital Architect, Banco Argentaria"
+                }
+            ]
+        },
+        blog: {
+            title: "Technical Insights",
+            subtitle: "Thoughts on Linux, Monitoring, and Web Engineering",
+            cta: "Read more on LinkedIn →",
+            posts: [
+                {
+                    title: "Zabbix Agent Portability: A Static Linking Approach",
+                    desc: "How we achieved cross-distribution compatibility for hundreds of client systems."
+                },
+                {
+                    title: "Mindful Systems: The Zen of Administration",
+                    desc: "Integrating mindfulness into high-pressure infrastructure management."
+                }
+            ]
+        },
+
         cta: {
             title: "Let's Create Something Extraordinary",
             subtitle: "Combining technical excellence with mindful design philosophy",
@@ -277,6 +328,19 @@ export const translations = {
                     desc: "A classic Internet social experiment."
                 }
             }
+        },
+        vintage: {
+            title: "Vintage Portal (1993)",
+            subtitle: "Journey back to the dawn of the public World Wide Web.",
+            welcome: "Welcome to the Historical Internet",
+            desc: "This page is styled after the original web aesthetic of 1993-1994. Simple, functional, and built on the pioneering spirit of open information.",
+            back: "Return to Modern Reality",
+            terminal: "Technical Log: Terminal Session (Asciinema)"
+        },
+        not_found: {
+            title: "404 - Page Not Found",
+            message: "Oops! It seems you've drifted into deep space. The page you are looking for doesn't exist or has been moved.",
+            back_home: "Back to Reality"
         }
     },
     it: {
@@ -326,7 +390,8 @@ export const translations = {
             card_history: {
                 title: "Marchi Storici Internet Italiani",
                 desc: "Esplorando l'eredità digitale pionieristica italiana e la cultura web vintage.",
-                btn_explore: "Esplora →"
+                btn_explore: "Esplora →",
+                btn_vintage: "Portale 1993 →"
             },
             card_archives: {
                 title: "Archivi Digitali",
@@ -390,6 +455,56 @@ export const translations = {
             phone: "+39 371 1741209",
             address: "Torino, Italia"
         },
+        services: {
+            title: "Servizi Professionali",
+            subtitle: "Soluzioni tecniche su misura per le tue esigenze di business",
+            linux: {
+                title: "Amministrazione Linux/Unix",
+                desc: "Gestione esperta di ambienti RedHat, CentOS, Debian e Ubuntu. Cluster ad alta affidabilità, hardening della sicurezza e ottimizzazione delle prestazioni."
+            },
+            monitoring: {
+                title: "Monitoraggio Enterprise",
+                desc: "Implementazione specializzata di Zabbix. Build personalizzate dell'agente, logica complessa dei trigger e dashboarding completo per centinaia di server."
+            },
+            web: {
+                title: "Sviluppo Web Full-Stack",
+                desc: "Applicazioni web moderne e performanti realizzate con React, Vite e tecniche CSS avanzate. Colmare il divario tra infrastruttura e UI."
+            },
+            security: {
+                title: "Sicurezza Infrastrutturale",
+                desc: "Audit di sicurezza della rete, configurazione firewall (Check Point, Iptables), configurazioni VPN e implementazione IDS/IPS."
+            }
+        },
+        testimonials: {
+            title: "Testimonianze dei Clienti",
+            subtitle: "Cosa dicono i partner della nostra collaborazione",
+            items: [
+                {
+                    text: "L'esperienza di Sergio nel monitoraggio Zabbix ha trasformato la visibilità della nostra infrastruttura. Il suo impegno per la qualità non ha eguali.",
+                    author: "Direttore IT, NPO Torino"
+                },
+                {
+                    text: "Un professionista raro che comprende davvero sia i sistemi che il moderno sviluppo frontend. Un piacere lavorarci insieme.",
+                    author: "Architetto Digitale, Banco Argentaria"
+                }
+            ]
+        },
+        blog: {
+            title: "Approfondimenti Tecnici",
+            subtitle: "Pensieri su Linux, Monitoraggio e Ingegneria Web",
+            cta: "Leggi di più su LinkedIn →",
+            posts: [
+                {
+                    title: "Portabilità dell'agente Zabbix: Un approccio al collegamento statico",
+                    desc: "Come abbiamo ottenuto la compatibilità tra diverse distribuzioni per centinaia di sistemi client."
+                },
+                {
+                    title: "Sistemi Consapevoli: Lo Zen dell'Amministrazione",
+                    desc: "Integrare la mindfulness nella gestione delle infrastrutture ad alta pressione."
+                }
+            ]
+        },
+
         curiosity: {
             title: "Curiosità Cosmica",
             btn_back: "← Indietro",
@@ -557,6 +672,19 @@ export const translations = {
                     desc: "Un classico esperimento sociale di Internet."
                 }
             }
+        },
+        vintage: {
+            title: "Portale Vintage (1993)",
+            subtitle: "Viaggio alle origini del World Wide Web pubblico.",
+            welcome: "Benvenuti nell'Internet Storica",
+            desc: "Questa pagina è stilizzata secondo l'estetica web originale del 1993-1994. Semplice, funzionale e basata sullo spirito pionieristico dell'informazione aperta.",
+            back: "Torna alla Realtà Moderna",
+            terminal: "Log Tecnico: Sessione Terminale (Asciinema)"
+        },
+        not_found: {
+            title: "404 - Pagina Non Trovata",
+            message: "Oops! Sembra che tu sia finito nello spazio profondo. La pagina che stai cercando non esiste o è stata spostata.",
+            back_home: "Torna alla Realtà"
         }
     },
     es: {
@@ -606,7 +734,8 @@ export const translations = {
             card_history: {
                 title: "Marcas Históricas de Internet en Italia",
                 desc: "Explorando el legado digital pionero de Italia y la cultura web vintage.",
-                btn_explore: "Explorar →"
+                btn_explore: "Explorar →",
+                btn_vintage: "Portal 1993 →"
             },
             card_archives: {
                 title: "Archivos Digitales",
@@ -670,6 +799,56 @@ export const translations = {
             phone: "+39 371 1741209",
             address: "Turín, Italia"
         },
+        services: {
+            title: "Servicios Profesionales",
+            subtitle: "Soluciones técnicas adaptadas a sus necesidades de negocio",
+            linux: {
+                title: "Administración Linux/Unix",
+                desc: "Gestión experta de entornos RedHat, CentOS, Debian y Ubuntu. Clústeres de alta disponibilidad, endurecimiento de seguridad y optimización del rendimiento."
+            },
+            monitoring: {
+                title: "Monitoreo Empresarial",
+                desc: "Implementación especializada de Zabbix. Compilación personalizada de agentes, lógica de activadores compleja y paneles de control completos para cientos de servidores."
+            },
+            web: {
+                title: "Desarrollo Web Full-Stack",
+                desc: "Aplicaciones web modernas y eficientes utilizando React, Vite y técnicas avanzadas de CSS. Cerrando la brecha entre infraestructura y UI."
+            },
+            security: {
+                title: "Seguridad de Infraestructura",
+                desc: "Auditorías de seguridad de red, configuración de firewalls (Check Point, Iptables), configuraciones de VPN e implementación de IDS/IPS."
+            }
+        },
+        testimonials: {
+            title: "Testimonios de Clientes",
+            subtitle: "Qué dicen los socios sobre nuestra colaboración",
+            items: [
+                {
+                    text: "La experiencia de Sergio en el monitoreo con Zabbix transformó la visibilidad de nuestra infraestructura. Su compromiso con la calidad es inigualable.",
+                    author: "Director de TI, NPO Torino"
+                },
+                {
+                    text: "Un profesional excepcional che entiende verdaderamente tanto los sistemas como el desarrollo frontend moderno. Un placer trabajar con él.",
+                    author: "Arquitecto Digital, Banco Argentaria"
+                }
+            ]
+        },
+        blog: {
+            title: "Perspectivas Técnicas",
+            subtitle: "Pensamientos sobre Linux, Monitoreo e Ingeniería Web",
+            cta: "Leer más en LinkedIn →",
+            posts: [
+                {
+                    title: "Portabilidad del agente Zabbix: Un enfoque de enlace estático",
+                    desc: "Cómo logramos la compatibilidad entre distribuciones para cientos de sistemas de clientes."
+                },
+                {
+                    title: "Sistemas Conscientes: El Zen de la Administración",
+                    desc: "Integrando la atención plena en la gestión de infraestructuras de alta presión."
+                }
+            ]
+        },
+
         curiosity: {
             title: "Curiosidad Cósmica",
             btn_back: "← Volver",
@@ -837,6 +1016,19 @@ export const translations = {
                     desc: "Un clásico experimento social de Internet."
                 }
             }
+        },
+        vintage: {
+            title: "Portal Vintage (1993)",
+            subtitle: "Viaje a los albores de la red informática mundial pública.",
+            welcome: "Bienvenidos al Internet Histórico",
+            desc: "Esta página sigue el estilo de la estética web original de 1993-1994. Simple, funcional y basada en el espíritu pionero de la información abierta.",
+            back: "Volver a la Realidad Moderna",
+            terminal: "Registro Técnico: Sesión de Terminal (Asciinema)"
+        },
+        not_found: {
+            title: "404 - Página No Encontrada",
+            message: "¡Oops! Parece que te has adentrado en el espacio profundo. La página que buscas no existe o ha sido movida.",
+            back_home: "Volver a la Realidad"
         }
     }
 };

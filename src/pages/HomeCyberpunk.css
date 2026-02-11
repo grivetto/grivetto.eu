@@ -307,3 +307,53 @@
 .modern-home.cyberpunk .footer-tagline {
     color: hsl(180, 40%, 60%);
 }
+
+/* Services Section - Cyberpunk */
+.modern-home.cyberpunk .service-card {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modern-home.cyberpunk .service-card:hover {
+    border-color: hsl(180, 100%, 50%);
+    box-shadow: 0 0 30px hsl(180, 100%, 50%, 0.3);
+    transform: translateY(-5px);
+}
+
+.modern-home.cyberpunk .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px hsl(180, 100%, 50%));
+}
+
+/* Testimonials Section - Cyberpunk */
+.modern-home.cyberpunk .testimonial-card {
+    border: 1px solid hsl(180, 100%, 50%, 0.2);
+}
+
+.modern-home.cyberpunk .testimonial-text {
+    color: white;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.modern-home.cyberpunk .testimonial-author {
+    color: hsl(300, 100%, 60%);
+    font-weight: 600;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px hsl(300, 100%, 50%, 0.5);
+}
+
+/* Blog Section - Cyberpunk */
+.modern-home.cyberpunk .blog-card {
+    border: 1px solid hsl(300, 100%, 50%, 0.2);
+}
+
+.modern-home.cyberpunk .blog-card:hover {
+    border-color: hsl(300, 100%, 50%);
+    box-shadow: 0 0 30px hsl(300, 100%, 50%, 0.3);
+}
+
+.modern-home.cyberpunk .blog-card h3 {
+    color: hsl(180, 100%, 50%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%, 0.5);
+}

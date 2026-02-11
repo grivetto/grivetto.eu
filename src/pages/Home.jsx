@@ -75,7 +75,8 @@ export default function Home({ onNavigate }) {
 
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
-                        <a href="#history" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'history')}</a>
+                        <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
+                        <button onClick={() => { onNavigate('links'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
                         <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
@@ -201,9 +202,9 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
-                                <button onClick={() => window.location.href = 'https://www.grivetto.eu/aura-quiet-living/index.html'} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" rel="noopener noreferrer" className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto', textDecoration: 'none' }}>
                                     {t('expertise', 'card_web').btn_aura}
-                                </button>
+                                </a>
                             </div>
                             <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_manuela}
@@ -239,6 +240,9 @@ export default function Home({ onNavigate }) {
                             </p>
                             <button onClick={() => onNavigate('links')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
                                 {t('expertise', 'card_history').btn_explore}
+                            </button>
+                            <button onClick={() => onNavigate('vintage')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer', marginTop: '0.5rem' }}>
+                                {t('expertise', 'card_history').btn_vintage}
                             </button>
                         </motion.div>
 
@@ -282,6 +286,103 @@ export default function Home({ onNavigate }) {
                     </div>
                 </motion.div >
             </section >
+
+            {/* Services Section */}
+            <section className="services-section" id="services">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="section-container"
+                >
+                    <div className="section-header">
+                        <span className="section-badge">{t('services', 'title')}</span>
+                        <h2 className="section-title">{t('services', 'subtitle')}</h2>
+                    </div>
+
+                    <div className="services-grid">
+                        <motion.div variants={itemVariants} className="service-card glass">
+                            <div className="service-icon">🐧</div>
+                            <h3>{t('services', 'linux').title}</h3>
+                            <p>{t('services', 'linux').desc}</p>
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="service-card glass">
+                            <div className="service-icon">📊</div>
+                            <h3>{t('services', 'monitoring').title}</h3>
+                            <p>{t('services', 'monitoring').desc}</p>
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="service-card glass">
+                            <div className="service-icon">💻</div>
+                            <h3>{t('services', 'web').title}</h3>
+                            <p>{t('services', 'web').desc}</p>
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="service-card glass">
+                            <div className="service-icon">🛡️</div>
+                            <h3>{t('services', 'security').title}</h3>
+                            <p>{t('services', 'security').desc}</p>
+                        </motion.div>
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="testimonials-section">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="section-container"
+                >
+                    <h2 className="section-title">{t('testimonials', 'title')}</h2>
+                    <div className="testimonials-grid">
+                        {t('testimonials', 'items').map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.2 }}
+                                className="testimonial-card glass"
+                            >
+                                <p className="testimonial-text">"{item.text}"</p>
+                                <p className="testimonial-author">{item.author}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* Blog Section */}
+            <section className="blog-section">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="section-container"
+                >
+                    <div className="section-header">
+                        <h2 className="section-title">{t('blog', 'title')}</h2>
+                        <p className="section-subtitle">{t('blog', 'subtitle')}</p>
+                    </div>
+                    <div className="blog-grid">
+                        {t('blog', 'posts').map((post, index) => (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                className="blog-card glass"
+                            >
+                                <h3>{post.title}</h3>
+                                <p>{post.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                        <a href="https://linkedin.com/in/sgrivett" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                            {t('blog', 'cta')}
+                        </a>
+                    </div>
+                </motion.div>
+            </section>
 
 
 

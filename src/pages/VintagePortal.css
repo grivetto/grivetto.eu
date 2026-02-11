@@ -1,0 +1,106 @@
+/* Authentic 1993/1994 Web Aesthetic */
+.vintage-body {
+    background-color: #c0c0c0;
+    /* Classic grey background */
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.vintage-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #c0c0c0;
+}
+
+.vintage-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.vintage-h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.vintage-h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #808080;
+    color: white;
+    padding: 5px 10px;
+}
+
+.vintage-hr {
+    border: none;
+    border-top: 2px solid #808080;
+    border-bottom: 2px solid #ffffff;
+    height: 4px;
+    margin: 1.5rem 0;
+}
+
+.vintage-section {
+    margin-bottom: 2rem;
+}
+
+.vintage-a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+.vintage-a:visited {
+    color: #551a8b;
+}
+
+.vintage-a:active {
+    color: #ff0000;
+}
+
+.vintage-terminal-box {
+    background-color: #000;
+    padding: 10px;
+    border: 3px inset #808080;
+    margin: 1rem 0;
+}
+
+.vintage-gifs {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.vintage-gif {
+    border: 2px solid #000;
+    margin-bottom: 1rem;
+}
+
+.vintage-button {
+    background-color: #c0c0c0;
+    border: 2px outset #ffffff;
+    padding: 5px 15px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.vintage-button:active {
+    border-style: inset;
+}
+
+.vintage-footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
