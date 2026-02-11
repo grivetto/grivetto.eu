@@ -53,19 +53,11 @@ export const translations = {
                 btn_sysadmin: "System Admin",
                 btn_terminal: "Terminal Session"
             },
-            quote: "In the midst of movement and chaos, keep stillness inside of you.",
-            cite: "— Philosophy of Peace"
         },
         portfolio: {
             badge: "Portfolio",
             title: "Featured Work",
             subtitle: "A selection of projects that showcase my expertise",
-            aura: {
-                title: "Aura Quiet Living",
-                desc: "AI-powered wellness application focused on mindfulness and peaceful living.",
-                link_view: "View Project →",
-                link_launch: "Launch Aura →"
-            },
             apps: {
                 title: "Web Applications",
                 desc: "Interactive demos: Cosmic Curiosity, Web Terminal, Retro Games, and more.",
@@ -391,19 +383,11 @@ export const translations = {
                 btn_sysadmin: "Ammin. di Sistema",
                 btn_terminal: "Sessione Terminale"
             },
-            quote: "Nel mezzo del movimento e del caos, mantieni la calma dentro di te.",
-            cite: "— Filosofia della Pace"
         },
         portfolio: {
             badge: "Portfolio",
             title: "Lavori in Evidenza",
             subtitle: "Una selezione di progetti che mostrano la mia esperienza",
-            aura: {
-                title: "Aura Quiet Living",
-                desc: "Applicazione benessere potenziata dall'AI focalizzata su mindfulness e vita pacifica.",
-                link_view: "Vedi Progetto →",
-                link_launch: "Lancia Aura →"
-            },
             apps: {
                 title: "Applicazioni Web",
                 desc: "Demo interattive: Curiosità Cosmica, Web Terminal, Retro Games, e altro.",
@@ -731,19 +715,11 @@ export const translations = {
                 btn_sysadmin: "Admin. de Sistemas",
                 btn_terminal: "Sesión de Terminal"
             },
-            quote: "En medio del movimiento y del caos, mantén la calma dentro de ti.",
-            cite: "— Filosofía de la Paz"
         },
         portfolio: {
             badge: "Portfolio",
             title: "Trabajo Destacado",
             subtitle: "Una selección de proyectos que muestran mi experiencia",
-            aura: {
-                title: "Aura Quiet Living",
-                desc: "Aplicación de bienestar impulsada por IA enfocada en la atención plena y la vida pacífica.",
-                link_view: "Ver Proyecto →",
-                link_launch: "Lanzar Aura →"
-            },
             apps: {
                 title: "Aplicaciones Web",
                 desc: "Demos interactivas: Curiosidad Cósmica, Web Terminal, Juegos Retro y más.",
