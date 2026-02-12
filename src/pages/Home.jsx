@@ -76,6 +76,7 @@ export default function Home({ onNavigate }) {
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
                         <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
+                        <button onClick={() => { onNavigate('links'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
                         <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
@@ -226,6 +227,9 @@ export default function Home({ onNavigate }) {
                             <p className="bento-description">
                                 {t('expertise', 'card_history').desc}
                             </p>
+                            <button onClick={() => onNavigate('links')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer' }}>
+                                {t('expertise', 'card_history').btn_explore}
+                            </button>
                             <button onClick={() => onNavigate('vintage')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer', marginTop: '0.5rem' }}>
                                 {t('expertise', 'card_history').btn_vintage}
                             </button>

@@ -2,6 +2,7 @@ export const translations = {
     en: {
         nav: {
             work: "Work",
+            history: "History",
             resume: "Resume"
         },
         hero: {
@@ -39,6 +40,7 @@ export const translations = {
             card_history: {
                 title: "Historic Italian Internet brands",
                 desc: "Exploring Italy's pioneering digital heritage and vintage web culture.",
+                btn_explore: "Historical Links →",
                 btn_vintage: "1993 Portal →"
             },
             card_archives: {
@@ -329,6 +331,7 @@ export const translations = {
     it: {
         nav: {
             work: "Lavori",
+            history: "Storia",
             resume: "Curriculum"
         },
         hero: {
@@ -361,14 +364,13 @@ export const translations = {
                 btn_tictactoe: "⭕ Tris Neon",
                 btn_tetris: "🕹️ Tetris Neon",
                 btn_cube: "🎲 Cubo 3D",
-                btn_aura: "🌿 Aura Quiet Living",
                 app_title: "App Generate dall'AI",
                 app_subtitle: "Seleziona una delle applicazioni potenziate dall'AI qui sotto per esplorare."
             },
             card_history: {
                 title: "Marchi Storici Internet Italiani",
                 desc: "Esplorando l'eredità digitale pionieristica italiana e la cultura web vintage.",
-                btn_explore: "Aura →",
+                btn_explore: "Link Storici →",
                 btn_vintage: "Portale 1993 →"
             },
             card_archives: {
@@ -659,8 +661,7 @@ export const translations = {
     es: {
         nav: {
             work: "Proyectos",
-            mindfulness: "Atención Plena",
-            history: "Aura",
+            history: "Historia",
             resume: "Currículum"
         },
         hero: {
@@ -693,14 +694,13 @@ export const translations = {
                 btn_tictactoe: "⭕ Tres en Raya Neón",
                 btn_tetris: "🕹️ Tetris Neón",
                 btn_cube: "🎲 Cubo 3D",
-                btn_aura: "🌿 Aura Quiet Living",
                 app_title: "Apps Generadas por IA",
                 app_subtitle: "Selecciona una de las aplicaciones impulsadas por IA a continuación para explorar."
             },
             card_history: {
                 title: "Marcas Históricas de Internet en Italia",
                 desc: "Explorando el legado digital pionero de Italia y la cultura web vintage.",
-                btn_explore: "Aura →",
+                btn_explore: "Enlaces Históricos →",
                 btn_vintage: "Portal 1993 →"
             },
             card_archives: {
