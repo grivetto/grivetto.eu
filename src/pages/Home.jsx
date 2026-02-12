@@ -193,13 +193,26 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
+                                <button onClick={() => onNavigate('aura')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                    {t('expertise', 'card_web').btn_aura}
+                                </button>
                             </div>
-                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem', display: 'block' }}>
+
+                            <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(195, 60%, 45%)', marginTop: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8 }}>
+                                {t('expertise', 'card_web').label_business}
+                            </p>
+                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_manuela}
                             </a>
                             <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_grivetto}
                             </a>
+
+                            <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '1.25rem 0 1rem' }} />
+
+                            <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
+                                {t('expertise', 'card_web').label_projects}
+                            </p>
                             <a href="https://grivetto.github.io/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_github}
                             </a>
