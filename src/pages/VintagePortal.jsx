@@ -96,7 +96,7 @@ const VintagePortal = ({ onNavigate }) => {
 
                 <footer className="vintage-footer">
                     <hr className="vintage-hr" />
-                    <p>&copy; 2023-2026 Peaceful Thoughts. All rights reserved.</p>
+                    <p>&copy; 1993-2026 Peaceful Thoughts. All rights reserved.</p>
                     <p><small>Optimized for Mosaic 1.0 and Netscape 0.96</small></p>
                 </footer>
             </div>
