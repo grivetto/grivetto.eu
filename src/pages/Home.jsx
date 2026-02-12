@@ -89,15 +89,7 @@ export default function Home({ onNavigate }) {
                     transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     className="hero-content"
                 >
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="hero-badge"
-                    >
-                        <span className="badge-dot"></span>
-                        {t('hero', 'badge')}
-                    </motion.div>
+
 
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
@@ -317,6 +309,14 @@ export default function Home({ onNavigate }) {
                             <div className="service-icon">💻</div>
                             <h3>{t('services', 'web').title}</h3>
                             <p>{t('services', 'web').desc}</p>
+                        </motion.div>
+                        <motion.div variants={itemVariants} className="service-card glass availability-card">
+                            <div className="availability-status">
+                                <span className="badge-dot"></span>
+                                {t('hero', 'badge')}
+                            </div>
+                            <h3>{t('services', 'title')}</h3>
+                            <p>{t('services', 'subtitle')}</p>
                         </motion.div>
                         <motion.div variants={itemVariants} className="service-card glass">
                             <div className="service-icon">🛡️</div>
