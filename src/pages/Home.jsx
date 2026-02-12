@@ -76,7 +76,6 @@ export default function Home({ onNavigate }) {
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
                         <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
-                        <button onClick={() => { onNavigate('links'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'history')}</button>
                         <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
                     </div>
                 </div>
