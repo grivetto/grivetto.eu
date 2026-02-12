@@ -55,6 +55,8 @@ export const translations = {
                 btn_sysadmin: "System Admin",
                 btn_terminal: "Terminal Session"
             },
+            quote: "IT Architecture is not just about building systems; it's about engineering digital ecosystems that stand the test of time and scale.",
+            cite: "Systems Engineering Philosophy"
         },
         portfolio: {
             badge: "Portfolio",
@@ -385,6 +387,8 @@ export const translations = {
                 btn_sysadmin: "Ammin. di Sistema",
                 btn_terminal: "Sessione Terminale"
             },
+            quote: "L'Infrastruttura IT non riguarda solo l'hardware, ma l'architettura di sistemi resilienti capaci di evolvere e ispirare fiducia.",
+            cite: "Filosofia dei Sistemi"
         },
         portfolio: {
             badge: "Portfolio",
@@ -715,6 +719,8 @@ export const translations = {
                 btn_sysadmin: "Admin. de Sistemas",
                 btn_terminal: "Sesión de Terminal"
             },
+            quote: "La Resiliencia Digital no es un estado, sino un compromiso continuo con la excelencia técnica y la adaptabilidad de los sistemas.",
+            cite: "Filosofía Tecnológica"
         },
         portfolio: {
             badge: "Portfolio",
