@@ -104,3 +104,38 @@ ul {
 li {
     margin-bottom: 0.5rem;
 }
+
+/* ===================================
+   Y2K SECTION
+   =================================== */
+
+.y2k-section {
+    border: 3px solid #f00 !important;
+    padding: 1.5rem !important;
+    background-color: #000 !important;
+    color: #0f0 !important;
+    margin: 2rem 0 !important;
+    text-align: center;
+}
+
+.y2k-image-container {
+    margin-top: 1.5rem;
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    border: 2px solid #555;
+    box-shadow: 5px 5px 0px #888;
+}
+
+.y2k-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #000;
+}
+
+.y2k-section p {
+    color: #0f0 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px #000;
+}

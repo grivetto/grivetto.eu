@@ -78,6 +78,18 @@ const VintagePortal = ({ onNavigate }) => {
                         </p>
                     </section>
 
+                    <section className="vintage-section y2k-section">
+                        <h2 className="vintage-h2">{t('vintage', 'millennium_bug').title}</h2>
+                        <p>{t('vintage', 'millennium_bug').desc}</p>
+                        <div className="y2k-image-container">
+                            <img
+                                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663295999996/rTIpRGkoAlwctIhq.png"
+                                alt="Millennium Bug Y2K"
+                                className="y2k-image"
+                            />
+                        </div>
+                    </section>
+
                     <div className="vintage-gifs">
                         <img src="/vipower.gif" alt="Vi power" className="vintage-gif" />
                         <br />

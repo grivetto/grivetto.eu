@@ -326,7 +326,11 @@ export const translations = {
             welcome: "Welcome to the Historical Internet",
             desc: "This page is styled after the original web aesthetic of 1993-1994. Simple, functional, and built on the pioneering spirit of open information.",
             back: "Return to Modern Reality",
-            terminal: "Technical Log: Terminal Session (Asciinema)"
+            terminal: "Technical Log: Terminal Session (Asciinema)",
+            millennium_bug: {
+                title: "The Millennium Bug (Y2K)",
+                desc: "An icon of a era when we feared the digital clock would reset the world. The Millennium Bug was the first truly global digital anxiety."
+            }
         },
         not_found: {
             title: "404 - Page Not Found",
@@ -661,7 +665,11 @@ export const translations = {
             welcome: "Benvenuti nell'Internet Storica",
             desc: "Questa pagina è stilizzata secondo l'estetica web originale del 1993-1994. Semplice, funzionale e basata sullo spirito pionieristico dell'informazione aperta.",
             back: "Torna alla Realtà Moderna",
-            terminal: "Log Tecnico: Sessione Terminale (Asciinema)"
+            terminal: "Log Tecnico: Sessione Terminale (Asciinema)",
+            millennium_bug: {
+                title: "Il Millennium Bug (Y2K)",
+                desc: "Un'icona di un'epoca in cui temevamo che l'orologio digitale avrebbe resettato il mondo. Il Millennium Bug è stata la prima vera ansia digitale globale."
+            }
         },
         not_found: {
             title: "404 - Pagina Non Trovata",
@@ -996,7 +1004,11 @@ export const translations = {
             welcome: "Bienvenidos al Internet Histórico",
             desc: "Esta página sigue el estilo de la estética web original de 1993-1994. Simple, funcional y basada en el espíritu pionero de la información abierta.",
             back: "Volver a la Realidad Moderna",
-            terminal: "Registro Técnico: Sesión de Terminal (Asciinema)"
+            terminal: "Registro Técnico: Sesión de Terminal (Asciinema)",
+            millennium_bug: {
+                title: "El error del milenio (Y2K)",
+                desc: "Un icono di un epoca in cui temevamo che l'orologio digitale avrebbe resettato il mondo. El error del milenio fue la primera ansiedad digital verdaderamente global."
+            }
         },
         not_found: {
             title: "404 - Página No Encontrada",
