@@ -134,5 +134,6 @@ export const CONTACT_INFO = {
   phone: '+39 371 1741209',
   email: 'sergio@grivetto.it',
   web: 'https://grivetto.eu',
+  instagram: 'https://www.instagram.com/webagency2000/',
   address: 'Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO'
 };

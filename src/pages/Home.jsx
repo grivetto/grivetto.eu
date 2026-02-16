@@ -451,7 +451,7 @@ export default function Home({ onNavigate }) {
                             <nav className="footer-links">
                                 <a href="https://www.grivetto.eu/hesk/index.php" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'helpdesk')}</a>
                                 <a href="mailto:sergio@grivetto.eu" className="footer-link">{t('footer', 'email')}</a>
-                                <a href="https://www.instagram.com/webagency2000/" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
+                                <a href={t('footer', 'instagram_url')} className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
                             </nav>
                         </div>
 

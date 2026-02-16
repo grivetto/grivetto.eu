@@ -148,6 +148,7 @@ export const translations = {
             facebook: "Facebook",
             twitter: "X (Twitter)",
             instagram: "Instagram",
+            instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
             address: "Turin, Italy"
@@ -437,6 +438,7 @@ export const translations = {
             facebook: "Facebook",
             twitter: "X (Twitter)",
             instagram: "Instagram",
+            instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
             address: "Torino, Italia"
@@ -776,6 +778,7 @@ export const translations = {
             facebook: "Facebook",
             twitter: "X (Twitter)",
             instagram: "Instagram",
+            instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
             address: "Turín, Italia"

@@ -29,8 +29,9 @@ Integrated i18n system supporting **English**, **Italian**, and **Spanish**.
 
 ### **3. SEO & Social Integration**
 Optimized for search engines and social platforms:
-*   **Meta Tags:** Refined titles and descriptions for maximum SERP impact.
+*   **Meta Tags:** Refined titles and descriptions for maximum SERP impact, including JSON-LD structured data.
 *   **Social Profiles:** Direct integration with LinkedIn, GitHub, Facebook, X, Instagram, and YouTube.
+*   **Centralized Links:** Social links are centralized in the i18n system for consistency across the main site and the **Aura** sub-project.
 *   **Marketing Tools:** Ready-to-use placeholders for Google Tag Manager and Facebook Pixel.
 
 ### **4. Unified Project Interface**
