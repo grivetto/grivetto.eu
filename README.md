@@ -87,7 +87,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
 - **2026-02-28**: Updated the company name in the Resume section to "NPO Torino" and added a direct link to `https://nposervices.com/`.
 - **2026-02-28**: Updated the background Spline 3D animation on the Home page.
-- **2026-02-28**: Updated the "DriveFlow Academy" link to point to `https://autoscuolademo.netlify.app/`.
+- **2026-02-28**: Added the "Autoscuola Demo" link (`https://autoscuolademo.netlify.app/`) alongside the existing DriveFlow Academy project.
 
 ---
 *Maintained by Sergio Grivetto*
