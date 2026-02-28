@@ -81,6 +81,7 @@ The project includes an automated Python script for FTP deployment.
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
 ### Latest Updates:
+- **2026-02-28**: Added the "Estetica" (`https://grivetto.github.io/estetica/`) link to the Web Project Examples section across all supported languages.
 - **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
 
 ---

@@ -224,8 +224,11 @@ export default function Home({ onNavigate }) {
                             <a href="https://capelli.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_hair}
                             </a>
-                            <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
+                            <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_autoschool}
+                            </a>
+                            <a href="https://grivetto.github.io/estetica/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
+                                {t('expertise', 'card_web').link_estetica}
                             </a>
                         </motion.div>
 
