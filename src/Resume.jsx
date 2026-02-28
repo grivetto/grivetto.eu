@@ -41,7 +41,11 @@ const Resume = ({ onNavigate }) => {
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expNpo.title}</h3>
-                            <span className="company">{expNpo.company}</span>
+                            <span className="company">
+                                <a href="https://nposervices.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+                                    {expNpo.company}
+                                </a>
+                            </span>
                             <span className="dates">Nov 2013 – Present</span>
                         </div>
                         <ul className="job-details">

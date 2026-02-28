@@ -5,4 +5,5 @@
 - Added "Sevilla Luxury B&B" link to the Web Project Examples section in Home.jsx and translations.
 
 ### Changed
+- Updated the company name in the Resume section across all languages to "NPO Torino" and linked it to `nposervices.com`.
 - Updated GitHub Showcase link in Home.jsx to point to soms

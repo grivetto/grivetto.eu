@@ -186,7 +186,7 @@ export const translations = {
             section_exp: "Work Experience",
             exp_npo: {
                 title: "Senior IT Specialist",
-                company: "Enterprise IT Services",
+                company: "NPO Torino",
                 desc_1: "Designed and managed large-scale monitoring and automation systems for critical server farms.",
                 desc_2: "Deployed cross-platform solutions for server fleet management across heterogeneous environments.",
                 desc_3: "Engineered custom system agents with focus on portability and performance for legacy and modern distributions.",
@@ -529,7 +529,7 @@ export const translations = {
             section_exp: "Esperienza Lavorativa",
             exp_npo: {
                 title: "Senior IT Specialist",
-                company: "Servizi IT Enterprise",
+                company: "NPO Torino",
                 desc_1: "Progettazione e gestione di sistemi di monitoraggio e automazione su larga scala per server farm critiche.",
                 desc_2: "Implementazione di soluzioni multipiattaforma per la gestione di flotte di server in ambienti eterogenei.",
                 desc_3: "Sviluppo di agenti di sistema personalizzati con focus su portabilità e prestazioni per distribuzioni legacy e moderne.",
@@ -872,7 +872,7 @@ export const translations = {
             section_exp: "Experiencia Laboral",
             exp_npo: {
                 title: "Senior IT Specialist",
-                company: "Servicios IT Enterprise",
+                company: "NPO Torino",
                 desc_1: "Diseñé y gestioné sistemas de monitoreo y automatización a gran escala para granjas de servidores críticos.",
                 desc_2: "Implementé soluciones multiplataforma para la gestión de flotas de servidores en entornos heterogéneos.",
                 desc_3: "Desarrollé agentes de sistema personalizados con enfoque en portabilidad y rendimiento para distribuciones legacy y modernas.",
