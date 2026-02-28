@@ -86,6 +86,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-02-28**: Added the "Sevilla Luxury B&B" (`https://sevilla-luxury-b-b-102688887074.us-west1.run.app/`) link to the Web Project Examples section.
 - **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
 - **2026-02-28**: Updated the company name in the Resume section to "NPO Torino" and added a direct link to `https://nposervices.com/`.
+- **2026-02-28**: Updated the background Spline 3D animation on the Home page.
 
 ---
 *Maintained by Sergio Grivetto*

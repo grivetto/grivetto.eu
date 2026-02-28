@@ -7,3 +7,4 @@
 ### Changed
 - Updated the company name in the Resume section across all languages to "NPO Torino" and linked it to `nposervices.com`.
 - Updated GitHub Showcase link in Home.jsx to point to soms
+- Updated the background Spline 3D animation on the Home page
