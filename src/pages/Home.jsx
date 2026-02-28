@@ -243,6 +243,9 @@ export default function Home({ onNavigate }) {
                                 <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_sevilla}
                                 </a>
+                                <a href="https://serenissima99.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_serenissima}
+                                </a>
                             </div>
                         </motion.div>
 
