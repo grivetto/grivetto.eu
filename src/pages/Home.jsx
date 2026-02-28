@@ -209,36 +209,38 @@ export default function Home({ onNavigate }) {
                             <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
                                 {t('expertise', 'card_web').label_projects}
                             </p>
-                            <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_github}
-                            </a>
-                            <a href="https://beautiness.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_beautiness}
-                            </a>
-                            <a href="https://justsoap.netlify.app/?#testimonials" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_soap}
-                            </a>
-                            <a href="https://elettricista.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_electrician}
-                            </a>
-                            <a href="https://capelli.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_hair}
-                            </a>
-                            <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_autoschool}
-                            </a>
-                            <a href="https://autoscuolademo.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_autoschool_demo}
-                            </a>
-                            <a href="https://grivetto.github.io/estetica/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_estetica}
-                            </a>
-                            <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_drpaws}
-                            </a>
-                            <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block', marginBottom: '1rem' }}>
-                                {t('expertise', 'card_web').link_sevilla}
-                            </a>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem', position: 'relative', zIndex: 10 }}>
+                                <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_github}
+                                </a>
+                                <a href="https://beautiness.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_beautiness}
+                                </a>
+                                <a href="https://justsoap.netlify.app/?#testimonials" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_soap}
+                                </a>
+                                <a href="https://elettricista.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_electrician}
+                                </a>
+                                <a href="https://capelli.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_hair}
+                                </a>
+                                <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_autoschool}
+                                </a>
+                                <a href="https://autoscuolademo.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_autoschool_demo}
+                                </a>
+                                <a href="https://grivetto.github.io/estetica/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_estetica}
+                                </a>
+                                <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_drpaws}
+                                </a>
+                                <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_sevilla}
+                                </a>
+                            </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="bento-card">

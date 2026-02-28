@@ -9,3 +9,4 @@
 - Updated GitHub Showcase link in Home.jsx to point to soms
 - Updated the background Spline 3D animation on the Home page
 - Added "Autoscuola Demo" (`https://autoscuolademo.netlify.app/`) as an additional link to the web projects list
+- Refactored the Web Project Examples links sequence into a structured two-column grid layout
