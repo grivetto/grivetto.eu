@@ -89,6 +89,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-02-28**: Updated the background Spline 3D animation on the Home page.
 - **2026-02-28**: Added the "Autoscuola Demo" link (`https://autoscuolademo.netlify.app/`) alongside the existing DriveFlow Academy project.
 - **2026-02-28**: Refactored the Web Project Examples section to use a two-column grid layout.
+- **2026-02-28**: Added "Vivirito" (`https://vivirito.it/`) to the Live Businesses links.
 
 ---
 *Maintained by Sergio Grivetto*

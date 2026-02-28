@@ -10,3 +10,4 @@
 - Updated the background Spline 3D animation on the Home page
 - Added "Autoscuola Demo" (`https://autoscuolademo.netlify.app/`) as an additional link to the web projects list
 - Refactored the Web Project Examples links sequence into a structured two-column grid layout
+- Added "Vivirito" (`https://vivirito.it/`) to the Live Businesses links
