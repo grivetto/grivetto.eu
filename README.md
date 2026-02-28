@@ -75,5 +75,14 @@ The project includes an automated Python script for FTP deployment.
     ```
 
 ---
+
+## 📝 Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
+
+### Latest Updates:
+- **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
+
+---
 *Maintained by Sergio Grivetto*
 
