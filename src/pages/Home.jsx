@@ -206,6 +206,9 @@ export default function Home({ onNavigate }) {
                             <a href="https://vivirito.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_vivirito}
                             </a>
+                            <a href="https://serenissima99.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                                {t('expertise', 'card_web').link_serenissima}
+                            </a>
 
                             <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '1.25rem 0 1rem' }} />
 
@@ -242,9 +245,6 @@ export default function Home({ onNavigate }) {
                                 </a>
                                 <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_sevilla}
-                                </a>
-                                <a href="https://serenissima99.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_serenissima}
                                 </a>
                             </div>
                         </motion.div>
