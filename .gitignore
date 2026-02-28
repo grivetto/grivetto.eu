@@ -51,3 +51,4 @@ mail_config.json
 *.njsproj
 *.sln
 *.sw?
+.agent/
