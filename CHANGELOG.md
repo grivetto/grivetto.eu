@@ -2,6 +2,7 @@
 ### Added
 - Added "Estetica" link to the Web Project Examples section in Home.jsx and translations.
 - Added "Dr. Paws Clinic" link to the Web Project Examples section in Home.jsx and translations.
+- Added "Sevilla Luxury B&B" link to the Web Project Examples section in Home.jsx and translations.
 
 ### Changed
 - Updated GitHub Showcase link in Home.jsx to point to soms
