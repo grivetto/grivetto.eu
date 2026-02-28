@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Spline from '@splinetool/react-spline';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
 import './Home.css';
@@ -82,7 +83,10 @@ export default function Home({ onNavigate }) {
             </motion.nav>
 
             {/* Hero Section */}
-            <section className="hero-section">
+            <section className="hero-section" style={{ position: 'relative' }}>
+                <div className="spline-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
+                    <Spline scene="https://prod.spline.design/pBvxrrGWbwk-m4kf/scene.splinecode" style={{ pointerEvents: 'auto' }} />
+                </div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -205,7 +209,7 @@ export default function Home({ onNavigate }) {
                             <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
                                 {t('expertise', 'card_web').label_projects}
                             </p>
-                            <a href="https://grivetto.github.io/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
+                            <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
                                 {t('expertise', 'card_web').link_github}
                             </a>
                             <a href="https://beautiness.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
