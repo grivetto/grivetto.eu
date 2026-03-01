@@ -81,7 +81,7 @@ The project includes an automated Python script for FTP deployment.
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
 ### Latest Updates:
-- **2026-03-01**: Removed Beautiness, Electrician, JustSoap, and Hair Artist links to reduce Netlify costs.
+- **2026-03-01**: Removed Beautiness, Electrician, JustSoap, Hair Artist, and Autoscuola Demo links to reduce Netlify costs.
 - **2026-02-28**: Added "Serenissima" (`https://serenissima99.it/`) to the Live Businesses links.
 - **2026-02-28**: Added the "Estetica" (`https://grivetto.github.io/estetica/`) link to the Web Project Examples section across all supported languages.
 - **2026-02-28**: Added the "Dr. Paws Clinic" (`https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/`) link to the Web Project Examples section.
