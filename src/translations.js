@@ -11,6 +11,7 @@ export const translations = {
             title_tech: "IT Excellence",
             title_part2: "and",
             title_mind: "Lifelong Learning",
+            subtitle: "Senior IT Specialist & Full-Stack Architect with a focus on adaptive learning and digital resilience. Shaping the IT landscape since 1993.",
             cta_portfolio: "View Portfolio",
             stat_exp: "Years Experience",
             stat_proj: "Projects Delivered"
@@ -357,6 +358,7 @@ export const translations = {
             title_tech: "Eccellenza IT",
             title_part2: "e",
             title_mind: "Apprendimento Continuo",
+            subtitle: "Specialista IT Senior e Architetto Full-Stack con focus su apprendimento adattivo e resilienza digitale. Protagonista del panorama IT dal 1993.",
             cta_portfolio: "Vedi Portfolio",
             stat_exp: "Anni di Esperienza",
             stat_proj: "Progetti Consegnati"
@@ -702,6 +704,7 @@ export const translations = {
             title_tech: "Excelencia IT",
             title_part2: "y",
             title_mind: "Aprendizaje Continuo",
+            subtitle: "Especialista IT Senior y Arquitecto Full-Stack centrado en el aprendizaje adaptativo y la resiliencia digital. Liderando el panorama IT desde 1993.",
             cta_portfolio: "Ver Portfolio",
             stat_exp: "Años de Experiencia",
             stat_proj: "Proyectos Realizados"
