@@ -4,39 +4,48 @@ import { useLanguage } from '../contexts/LanguageContext';
 const LanguageSelector = ({ theme = 'default' }) => {
     const { language, toggleLanguage } = useLanguage();
 
-    const getNextLanguageInfo = () => {
+    const getCurrentLanguageInfo = () => {
         if (language === 'en') {
             return {
-                code: 'IT',
-                label: 'Passa a Italiano',
-                flag: 'https://flagcdn.com/w40/it.png',
-                alt: 'Italiano'
+                code: 'EN',
+                label: 'Switch to Italiano', // Label still indicates what happens on click
+                flag: 'https://flagcdn.com/w40/gb.png',
+                alt: 'English'
             };
         }
         if (language === 'it') {
             return {
+                code: 'IT',
+                label: 'Cambia in Español',
+                flag: 'https://flagcdn.com/w40/it.png',
+                alt: 'Italiano'
+            };
+        }
+        if (language === 'es') {
+            return {
                 code: 'ES',
-                label: 'Cambiar a Español',
+                label: 'Switch to English',
                 flag: 'https://flagcdn.com/w40/es.png',
                 alt: 'Español'
             };
         }
+        // Fallback
         return {
             code: 'EN',
-            label: 'Switch to English',
+            label: 'Switch to Italiano',
             flag: 'https://flagcdn.com/w40/gb.png',
             alt: 'English'
         };
     };
 
-    const next = getNextLanguageInfo();
+    const current = getCurrentLanguageInfo();
     const isCyberpunk = theme === 'cyberpunk';
 
     return (
         <button
             onClick={toggleLanguage}
             className="lang-toggle-btn"
-            title={next.label}
+            title={current.label}
             style={{
                 background: isCyberpunk ? 'rgba(0, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.8)',
                 border: isCyberpunk ? '1px solid hsla(180, 100%, 50%, 0.5)' : '1px solid rgba(0, 0, 0, 0.1)',
@@ -54,8 +63,8 @@ const LanguageSelector = ({ theme = 'default' }) => {
             }}
         >
             <img
-                src={next.flag}
-                alt={next.alt}
+                src={current.flag}
+                alt={current.alt}
                 style={{
                     width: '20px',
                     height: 'auto',
@@ -64,7 +73,7 @@ const LanguageSelector = ({ theme = 'default' }) => {
                 }}
             />
             <span style={{ fontSize: '0.75rem', fontWeight: '700', letterSpacing: '0.5px' }}>
-                {next.code}
+                {current.code}
             </span>
         </button>
     );
