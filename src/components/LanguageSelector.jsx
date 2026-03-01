@@ -24,9 +24,17 @@ const LanguageSelector = ({ theme = 'default' }) => {
         if (language === 'es') {
             return {
                 code: 'ES',
-                label: 'Switch to English',
+                label: 'Switch to Thai',
                 flag: 'https://flagcdn.com/w40/es.png',
                 alt: 'Español'
+            };
+        }
+        if (language === 'th') {
+            return {
+                code: 'TH',
+                label: 'Switch to English',
+                flag: 'https://flagcdn.com/w40/th.png',
+                alt: 'Thai'
             };
         }
         // Fallback

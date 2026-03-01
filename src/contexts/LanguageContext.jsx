@@ -10,6 +10,7 @@ export const LanguageProvider = ({ children }) => {
         setLanguage((prev) => {
             if (prev === 'en') return 'it';
             if (prev === 'it') return 'es';
+            if (prev === 'es') return 'th';
             return 'en';
         });
     };
