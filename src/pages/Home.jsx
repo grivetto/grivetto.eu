@@ -219,18 +219,6 @@ export default function Home({ onNavigate }) {
                                 <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_github}
                                 </a>
-                                <a href="https://beautiness.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_beautiness}
-                                </a>
-                                <a href="https://justsoap.netlify.app/?#testimonials" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_soap}
-                                </a>
-                                <a href="https://elettricista.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_electrician}
-                                </a>
-                                <a href="https://capelli.netlify.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_hair}
-                                </a>
                                 <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_autoschool}
                                 </a>
