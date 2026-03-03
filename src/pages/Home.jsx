@@ -234,6 +234,9 @@ export default function Home({ onNavigate }) {
                                 <a href="https://grivetto.github.io/ristorante/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_ristorante}
                                 </a>
+                                <a href="https://grivetto.github.io/guida/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_guida}
+                                </a>
                             </div>
                         </motion.div>
 
