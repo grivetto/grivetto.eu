@@ -240,6 +240,9 @@ export default function Home({ onNavigate }) {
                                 <a href="https://grivetto.github.io/autoscuola/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     {t('expertise', 'card_web').link_autoscuola}
                                 </a>
+                                <a href="https://grivetto.github.io/thay/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    {t('expertise', 'card_web').link_thay}
+                                </a>
                             </div>
                         </motion.div>
 
