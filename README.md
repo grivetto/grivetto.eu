@@ -81,6 +81,7 @@ The project includes an automated Python script for FTP deployment.
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
 ### Latest Updates:
+- **2026-03-03**: Added the "Ristorante" (`https://grivetto.github.io/ristorante/`) link to the Web Project Examples section.
 - **2026-03-01**: Added full Thai language support (`th`) across the entire web application.
 - **2026-03-01**: Fixed the language selector to display the current language and added missing `stat_exp` translations.
 - **2026-03-01**: Removed Beautiness, Electrician, JustSoap, Hair Artist, and Autoscuola Demo links to reduce Netlify costs.
