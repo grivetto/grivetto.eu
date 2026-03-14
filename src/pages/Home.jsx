@@ -121,19 +121,12 @@ export default function Home({ onNavigate }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
                         className="hero-cta"
-                        style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
                     >
                         <button onClick={() => onNavigate('portfolio')} className="btn-primary">
                             {t('hero', 'cta_portfolio')}
                             <svg className="btn-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
-                        </button>
-                        <button onClick={() => window.open('https://t.me/sergio_bot', '_blank')} className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <svg className="btn-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.22 3.47-.49.34-.94.51-1.35.5-.43-.01-1.25-.24-1.87-.44-.75-.24-1.35-.37-1.3-.78.02-.22.34-.45.94-.7 3.66-1.59 6.1-2.65 7.33-3.16 3.48-1.46 4.2-1.72 4.67-1.72.1 0 .34.02.49.15.14.11.18.26.19.38.01.07.02.17.01.3z"/>
-                            </svg>
-                            Launch @sergio_bot
                         </button>
                     </motion.div>
 
