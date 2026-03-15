@@ -140,6 +140,39 @@ const Resume = ({ onNavigate }) => {
                 </section>
 
                 <section className="resume-section">
+                    <h2>Live Projects</h2>
+                    <div className="experience-item">
+                        <div className="job-meta">
+                            <h3>Ballerina</h3>
+                            <span className="company">
+                                <a href="https://grivetto.github.io/ballerina/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+                                    Live Website
+                                </a>
+                            </span>
+                            <span className="dates">2026</span>
+                        </div>
+                        <p style={{ opacity: 0.8, fontStyle: 'italic' }}>
+                            Elegant and responsive website for a professional ballerina, featuring fluid animations and a modern design.
+                        </p>
+                    </div>
+
+                    <div className="experience-item">
+                        <div className="job-meta">
+                            <h3>Ristorante</h3>
+                            <span className="company">
+                                <a href="https://grivetto.github.io/ristorante/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+                                    Live Website
+                                </a>
+                            </span>
+                            <span className="dates">2026</span>
+                        </div>
+                        <p style={{ opacity: 0.8, fontStyle: 'italic' }}>
+                            Modern and appetizing presentation for a local restaurant, complete with interactive menus and a responsive layout.
+                        </p>
+                    </div>
+                </section>
+
+                <section className="resume-section">
                     <h2>{t('resume', 'section_edu')}</h2>
                     <div className="education-item">
                         <h3>{t('resume', 'edu_diploma')}</h3>

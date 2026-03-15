@@ -87,6 +87,28 @@ const Portfolio = ({ onNavigate }) => {
             tags: ["3D", "WebGL", "Interactive"],
             stats: { views: "20K+", rating: "5.0" },
             link: "rubiks"
+        },
+        {
+            id: 7,
+            title: t('page_portfolio', 'projects').p7.title,
+            category: t('page_portfolio', 'projects').p7.category,
+            description: t('page_portfolio', 'projects').p7.desc,
+            gradient: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
+            icon: "🩰",
+            tags: ["Design", "Business", "Responsive"],
+            stats: { views: "5K+", rating: "4.9" },
+            link: "https://grivetto.github.io/ballerina/"
+        },
+        {
+            id: 8,
+            title: t('page_portfolio', 'projects').p8.title,
+            category: t('page_portfolio', 'projects').p8.category,
+            description: t('page_portfolio', 'projects').p8.desc,
+            gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+            icon: "🍽️",
+            tags: ["Restaurant", "Business", "Modern"],
+            stats: { views: "8K+", rating: "4.8" },
+            link: "https://grivetto.github.io/ristorante/"
         }
     ];
 
@@ -293,7 +315,11 @@ const Portfolio = ({ onNavigate }) => {
                                     whileTap={{ scale: 0.95 }}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        onNavigate(project.link);
+                                        if (project.link.startsWith('http')) {
+                                            window.open(project.link, '_blank', 'noopener,noreferrer');
+                                        } else {
+                                            onNavigate(project.link);
+                                        }
                                     }}
                                 >
                                     {t('page_portfolio', 'btn_view')}
@@ -346,7 +372,13 @@ const Portfolio = ({ onNavigate }) => {
                                     style={{ marginTop: '2rem' }}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    onClick={() => onNavigate(selectedProject.link)}
+                                    onClick={() => {
+                                        if (selectedProject.link.startsWith('http')) {
+                                            window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
+                                        } else {
+                                            onNavigate(selectedProject.link);
+                                        }
+                                    }}
                                 >
                                     {t('page_portfolio', 'btn_view')}
                                 </motion.button>

@@ -44,6 +44,7 @@ export const translations = {
                 link_autoscuola: "Autoscuola →",
                 link_thay: "Thay →",
                 link_serenissa99: "Serenissa99 →",
+                link_michi: "Michi →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
@@ -287,6 +288,16 @@ export const translations = {
                     title: "Rubik's Cube 3D",
                     desc: "Interactive 3D Rubik's Cube with realistic physics and intuitive controls",
                     category: "3D Interactive"
+                },
+                p7: {
+                    title: "Ballerina",
+                    desc: "Elegant and responsive website for a professional ballerina",
+                    category: "Live Business"
+                },
+                p8: {
+                    title: "Ristorante",
+                    desc: "Modern and appetizing presentation for a local restaurant",
+                    category: "Live Business"
                 }
             },
             btn_view: "Learn More →",
@@ -395,6 +406,7 @@ export const translations = {
                 link_autoscuola: "Autoscuola →",
                 link_thay: "Thay →",
                 link_serenissa99: "Serenissa99 →",
+                link_michi: "Michi →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
@@ -638,6 +650,16 @@ export const translations = {
                     title: "Cubo di Rubik 3D",
                     desc: "Cubo di Rubik interattivo in 3D con fisica realistica e controlli intuitivi",
                     category: "3D Interattivo"
+                },
+                p7: {
+                    title: "Ballerina",
+                    desc: "Sito web elegante e responsivo per una ballerina professionista",
+                    category: "Live Business"
+                },
+                p8: {
+                    title: "Ristorante",
+                    desc: "Presentazione moderna e appetitosa per un ristorante locale",
+                    category: "Live Business"
                 }
             },
             btn_view: "Scopri di più →",
@@ -747,6 +769,7 @@ export const translations = {
                 link_autoscuola: "Autoscuola →",
                 link_thay: "Thay →",
                 link_serenissa99: "Serenissa99 →",
+                link_michi: "Michi →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
@@ -990,6 +1013,16 @@ export const translations = {
                     title: "Cubo de Rubik 3D",
                     desc: "Cubo de Rubik interactivo en 3D con física realista y controles intuitivos",
                     category: "3D Interactivo"
+                },
+                p7: {
+                    title: "Ballerina",
+                    desc: "Sitio web elegante y responsivo para una bailarina profesional",
+                    category: "Live Business"
+                },
+                p8: {
+                    title: "Ristorante",
+                    desc: "Presentación moderna y apetitosa para un restaurante local",
+                    category: "Live Business"
                 }
             },
             btn_view: "Ver más →",
@@ -1099,6 +1132,7 @@ export const translations = {
                 link_autoscuola: "Autoscuola →",
                 link_thay: "Thay →",
                 link_serenissa99: "Serenissa99 →",
+                link_michi: "Michi →",
                 btn_curiosity: "✨ ความอยากรู้อยากเห็นระดับจักรวาล",
                 btn_tunnel: "🌀 อุโมงค์นีออน",
                 btn_tictactoe: "⭕ โอเอ็กซ์นีออน",
@@ -1342,6 +1376,16 @@ export const translations = {
                     title: "ลูกบาศก์รูบิค 3 มิติ",
                     desc: "ลูกบาศก์รูบิคสามมิติแบบอินเทอร์แอกทีฟพร้อมฟิสิกส์ที่สมจริงและการควบคุมที่ใช้งานได้ง่าย",
                     category: "3 มิติเชิงโต้ตอบ"
+                },
+                p7: {
+                    title: "Ballerina",
+                    desc: "เว็บไซต์ที่สง่างามและตอบสนองได้ดีสำหรับนักบัลเลต์มืออาชีพ",
+                    category: "Live Business"
+                },
+                p8: {
+                    title: "Ristorante",
+                    desc: "การนำเสนอที่ทันสมัยและน่ารับประทานสำหรับร้านอาหารท้องถิ่น",
+                    category: "Live Business"
                 }
             },
             btn_view: "เรียนรู้เพิ่มเติม →",
