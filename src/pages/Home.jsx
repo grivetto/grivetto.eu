@@ -198,16 +198,16 @@ export default function Home({ onNavigate }) {
                                 {t('expertise', 'card_web').label_business}
                             </p>
                             <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_manuela}
+                                ⚕️ {t('expertise', 'card_web').link_manuela}
                             </a>
                             <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_grivetto}
+                                👨‍💻 {t('expertise', 'card_web').link_grivetto}
                             </a>
                             <a href="https://vivirito.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_vivirito}
+                                🏠 {t('expertise', 'card_web').link_vivirito}
                             </a>
                             <a href="https://serenissima99.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                {t('expertise', 'card_web').link_serenissima}
+                                🌟 {t('expertise', 'card_web').link_serenissima}
                             </a>
 
                             <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '1.25rem 0 1rem' }} />
@@ -217,37 +217,40 @@ export default function Home({ onNavigate }) {
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem', position: 'relative', zIndex: 10 }}>
                                 <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_github}
+                                    🏛️ {t('expertise', 'card_web').link_github}
                                 </a>
                                 <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_autoschool}
+                                    🚗 {t('expertise', 'card_web').link_autoschool}
                                 </a>
                                 <a href="https://grivetto.github.io/estetica/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_estetica}
+                                    💅 {t('expertise', 'card_web').link_estetica}
                                 </a>
                                 <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_drpaws}
+                                    🐾 {t('expertise', 'card_web').link_drpaws}
                                 </a>
                                 <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_sevilla}
+                                    🏨 {t('expertise', 'card_web').link_sevilla}
                                 </a>
                                 <a href="https://grivetto.github.io/ristorante/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_ristorante}
+                                    🍽️ {t('expertise', 'card_web').link_ristorante}
                                 </a>
                                 <a href="https://grivetto.github.io/guida/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_guida}
+                                    📍 {t('expertise', 'card_web').link_guida}
                                 </a>
                                 <a href="https://grivetto.github.io/autoscuola/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_autoscuola}
+                                    🚘 {t('expertise', 'card_web').link_autoscuola}
                                 </a>
                                 <a href="https://grivetto.github.io/thay/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_thay}
+                                    🍜 {t('expertise', 'card_web').link_thay}
                                 </a>
                                 <a href="https://grivetto.github.io/serenissa99/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_serenissa99}
+                                    ✨ {t('expertise', 'card_web').link_serenissa99}
                                 </a>
                                 <a href="https://grivetto.github.io/michi/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    {t('expertise', 'card_web').link_michi}
+                                    👤 {t('expertise', 'card_web').link_michi}
+                                </a>
+                                <a href="https://grivetto.github.io/ballerina/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    🩰 Ballerina →
                                 </a>
                             </div>
                         </motion.div>

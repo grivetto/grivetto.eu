@@ -9,7 +9,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceGrid from './components/ExperienceGrid';
 import Expertise from './components/Expertise';
-import Assistant from './components/Assistant';
 import Footer from './components/Footer';
 import ExperienceDetail from './components/ExperienceDetail';
 import { ViewState, Experience } from './types';
@@ -81,7 +80,6 @@ function AppContent() {
       </main>
 
       <Footer onLinkClick={handleNavClick} />
-      <Assistant />
     </>
   );
 }
