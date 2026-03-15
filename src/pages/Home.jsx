@@ -243,8 +243,8 @@ export default function Home({ onNavigate }) {
                                 <a href="https://grivetto.github.io/thay/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🍜 {t('expertise', 'card_web').link_thay}
                                 </a>
-                                <a href="https://grivetto.github.io/serenissa99/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    ✨ {t('expertise', 'card_web').link_serenissa99}
+                                <a href="https://grivetto.github.io/nena/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    ✨ {t('expertise', 'card_web').link_nena}
                                 </a>
                                 <a href="https://grivetto.github.io/michi/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     👤 {t('expertise', 'card_web').link_michi}
