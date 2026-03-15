@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Spline from '@splinetool/react-spline';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
 import './Home.css';
@@ -84,9 +83,6 @@ export default function Home({ onNavigate }) {
 
             {/* Hero Section */}
             <section className="hero-section" style={{ position: 'relative' }}>
-                <div className="spline-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none' }}>
-                    <Spline scene="https://prod.spline.design/TjCCrW1R05mL5usm/scene.splinecode" style={{ pointerEvents: 'auto' }} />
-                </div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
