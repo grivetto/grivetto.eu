@@ -2,12 +2,12 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import {
     TRANSLATIONS,
-    EXPERIENCES_IT, EXPERIENCES_EN,
-    SKILL_CATEGORIES_IT, SKILL_CATEGORIES_EN
+    EXPERIENCES_IT, EXPERIENCES_EN, EXPERIENCES_ES, EXPERIENCES_TH,
+    SKILL_CATEGORIES_IT, SKILL_CATEGORIES_EN, SKILL_CATEGORIES_ES, SKILL_CATEGORIES_TH
 } from '../translations';
 import { Experience, SkillCategory } from '../types';
 
-type Language = 'en' | 'it';
+type Language = 'en' | 'it' | 'es' | 'th';
 
 interface LanguageContextType {
     language: Language;
@@ -25,9 +25,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const value = {
         language,
         setLanguage,
-        t: TRANSLATIONS[language],
-        experiences: language === 'it' ? EXPERIENCES_IT : EXPERIENCES_EN,
-        skills: language === 'it' ? SKILL_CATEGORIES_IT : SKILL_CATEGORIES_EN,
+        t: TRANSLATIONS[language] || TRANSLATIONS.en,
+        experiences: language === 'it' ? EXPERIENCES_IT : language === 'es' ? EXPERIENCES_ES : language === 'th' ? EXPERIENCES_TH : EXPERIENCES_EN,
+        skills: language === 'it' ? SKILL_CATEGORIES_IT : language === 'es' ? SKILL_CATEGORIES_ES : language === 'th' ? SKILL_CATEGORIES_TH : SKILL_CATEGORIES_EN,
     };
 
     return (

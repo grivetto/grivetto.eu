@@ -71,6 +71,76 @@ export const TRANSLATIONS = {
             prof: 'Professionale',
             copyright: 'Costruito pensando alla stabilità.'
         }
+    },
+    es: {
+        nav: {
+            experience: 'Experiencia',
+            skills: 'Habilidades',
+            contact: 'Contacto',
+            backToHome: 'Volver a Inicio'
+        },
+        hero: {
+            badge: '30 Años de Excelencia Técnica',
+            subtitle: 'Administrador de Sistemas Senior & Ingeniero de Infraestructura.',
+            subtitle2: 'Especializado en Linux/Unix, Monitoreo Corporativo y Seguridad de Red.',
+            cta: 'Ver Experiencia'
+        },
+        experience: {
+            title: 'Trayectoria Profesional'
+        },
+        expertise: {
+            arsenal: 'Arsenal Técnico',
+            title: 'Experiencia & Habilidades',
+            desc: 'Más de 30 años de administración de sistemas críticos, migraciones masivas y diseño de infraestructuras de seguridad.'
+        },
+        footer: {
+            headline: "Construyamos sistemas estables.",
+            links: 'Enlaces',
+            career: 'Carrera',
+            expertise: 'Habilidades',
+            languages: 'Idiomas',
+            lang_it: 'Italiano',
+            lang_en: 'Inglés',
+            lang_es: 'Español',
+            native: 'Nativo',
+            prof: 'Profesional',
+            copyright: 'Construido pensando en la estabilidad.'
+        }
+    },
+    th: {
+        nav: {
+            experience: 'ประสบการณ์',
+            skills: 'ทักษะ',
+            contact: 'ติดต่อ',
+            backToHome: 'กลับสู่หน้าหลัก'
+        },
+        hero: {
+            badge: '30 ปีแห่งความเป็นเลิศทางเทคนิค',
+            subtitle: 'ผู้ดูแลระบบอาวุโสและวิศวกรโครงสร้างพื้นฐาน',
+            subtitle2: 'เชี่ยวชาญด้าน Linux/Unix, การตรวจสอบระบบองค์กร และความปลอดภัยเครือข่าย',
+            cta: 'ดูประสบการณ์'
+        },
+        experience: {
+            title: 'เส้นทางอาชีพ'
+        },
+        expertise: {
+            arsenal: 'คลังแสงทางเทคนิค',
+            title: 'ความเชี่ยวชาญและทักษะ',
+            desc: 'ประสบการณ์กว่า 30 ปีในการดูแลระบบที่สำคัญ การย้ายข้อมูลจำนวนมาก และการออกแบบโครงสร้างพื้นฐานด้านความปลอดภัย'
+        },
+        footer: {
+            headline: "มาร่วมสร้างระบบที่เสถียรกันเถอะ",
+            links: 'ลิงก์',
+            career: 'เส้นทางอาชีพ',
+            expertise: 'ความเชี่ยวชาญ',
+            languages: 'ภาษา',
+            lang_it: 'อิตาลี',
+            lang_en: 'อังกฤษ',
+            lang_es: 'สเปน',
+            native: 'ภาษาแม่',
+            prof: 'ระดับมืออาชีพ',
+            copyright: 'สร้างขึ้นโดยคำนึงถึงความเสถียรเป็นหลัก'
+        }
     }
 };
 
@@ -204,6 +274,72 @@ export const EXPERIENCES_EN: Experience[] = [
     }
 ];
 
+export const EXPERIENCES_ES: Experience[] = [
+    {
+        id: 'exp1',
+        company: 'NPO TORINO ITALY',
+        period: '2013 – Hoy',
+        role: 'Administrador de Sistemas Senior',
+        location: 'Turín, Italia',
+        summary: 'Gestión de infraestructura de monitoreo empresarial para cientos de servidores.',
+        details: [
+            'Gestión de Monitoreo Zabbix: Instalación y configuración de agentes en entornos heterogéneos.',
+            'Ingeniería de Software: Creación de builds de agentes Zabbix personalizados con enlace estático.',
+            'Aseguramiento de Calidad: Solución de problemas de agentes y garantía de continuidad del servicio.'
+        ],
+        technologies: ['Zabbix', 'Linux', 'Windows Server', 'C (Static Linking)', 'Troubleshooting'],
+        imageUrl: '/images/npo-torino.jpg'
+    },
+    {
+        id: 'exp2',
+        company: 'BANCO ARGENTARIA',
+        period: '2004 - 2007',
+        role: 'Ingeniero de Sistemas',
+        location: 'Palma de Mallorca, España',
+        summary: 'Especialista en Seguridad e Infraestructura para el sector bancario.',
+        details: [
+            'Seguridad e IDS: Pruebas de penetración y consultoría IDS Advisor.',
+            'Proyectos de Infraestructura: Migración de servidores de intranet a nueva DMZ protegida.',
+            'Seguridad de Red: Hardening del Firewall Check Point FW-1.',
+            'Sistemas Operativos: Administración de entornos BSD (OpenBSD, NetBSD, FreeBSD).'
+        ],
+        technologies: ['IDS', 'Check Point FW-1', 'OpenBSD', 'Network Security', 'Penetration Testing'],
+        imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000'
+    },
+    {
+        id: 'exp3',
+        company: 'COMISIÓN EUROPEA (CEE)',
+        period: '2002 – 2004',
+        role: 'Especialista en Migración',
+        location: 'Lieja, Bélgica',
+        summary: 'Gestión técnica de la migración crítica de 124 servidores desde Windows NT.',
+        details: [
+            'Migración de Servidores: Responsable de la seguridad, estabilidad y formación técnica.',
+            'Administración de Redes: Gestión de LAN, WAN, VPN y control administrativo.',
+            'Monitoreo: Ejecución de implementaciones Netsaint, Dataflow y Ganimede.'
+        ],
+        technologies: ['Linux Migration', 'Samba', 'VPN', 'Netsaint', 'Apache'],
+        imageUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000'
+    },
+    {
+        id: 'exp4',
+        company: 'ITS – TORINO (CONSULTOR FIAT)',
+        period: '1999 – 2001',
+        role: 'Ingeniero de Sistemas Unix Senior',
+        location: 'Turín, Italia',
+        summary: 'Implementación de infraestructura de sistemas para el portal web del Grupo FIAT.',
+        details: [
+            'Weblinea.it: Iplanet/Telexis infrastructure design.',
+            'Server Configuration: Sendmail installation on SUN Netra.',
+            'Tuning: Server maintenance operations.'
+        ],
+        technologies: ['Sun Solaris', 'Squid', 'Sendmail', 'Red Hat', 'SuSE'],
+        imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000'
+    }
+];
+
+export const EXPERIENCES_TH: Experience[] = EXPERIENCES_EN;
+
 export const SKILL_CATEGORIES_IT: SkillCategory[] = [
     {
         id: 's1',
@@ -249,3 +385,28 @@ export const SKILL_CATEGORIES_EN: SkillCategory[] = [
         skills: ['Bash', 'C', 'Perl', 'PHP', 'SQL', 'Assembler']
     }
 ];
+
+export const SKILL_CATEGORIES_ES: SkillCategory[] = [
+    {
+        id: 's1',
+        title: 'Sistemas Operativos',
+        skills: ['Linux (RHEL, CentOS, Ubuntu, Debian)', 'Unix (Solaris, BSD)', 'Windows Server (NT to 2022)']
+    },
+    {
+        id: 's2',
+        title: 'Monitoreo y HA',
+        skills: ['Zabbix (Advanced)', 'Nagios', 'HP OpenView', 'Heartbeat', 'OpenMosix']
+    },
+    {
+        id: 's3',
+        title: 'Seguridad y Redes',
+        skills: ['IDS Advisor', 'Check Point FW-1', 'Penetration Testing', 'DMZ Design', 'VPN']
+    },
+    {
+        id: 's4',
+        title: 'Desarrollo y Scripting',
+        skills: ['Bash', 'C', 'Perl', 'PHP', 'SQL', 'Ensamblador']
+    }
+];
+
+export const SKILL_CATEGORIES_TH: SkillCategory[] = SKILL_CATEGORIES_EN;

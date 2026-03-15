@@ -22,9 +22,23 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'it' : 'en');
+  const handleLanguageCycle = () => {
+    const langs: ('en' | 'it' | 'es' | 'th')[] = ['en', 'it', 'es', 'th'];
+    const currentIndex = langs.indexOf(language);
+    const nextIndex = (currentIndex + 1) % langs.length;
+    setLanguage(langs[nextIndex]);
   };
+
+  const getLanguageDetails = () => {
+    switch (language) {
+      case 'it': return { code: 'IT', flag: 'https://flagcdn.com/w40/it.png', label: 'Cambia in Español' };
+      case 'es': return { code: 'ES', flag: 'https://flagcdn.com/w40/es.png', label: 'Switch to Thai' };
+      case 'th': return { code: 'TH', flag: 'https://flagcdn.com/w40/th.png', label: 'Switch to English' };
+      default: return { code: 'EN', flag: 'https://flagcdn.com/w40/gb.png', label: 'Switch to Italiano' };
+    }
+  };
+
+  const currentLang = getLanguageDetails();
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#F5F2EB]/95 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-8'
@@ -39,10 +53,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
             {BRAND_NAME}
           </a>
           <button
-            onClick={toggleLanguage}
-            className={`relative z-[100] flex-shrink-0 flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium tracking-widest uppercase border transition-all bg-red-600 text-white border-white hover:bg-red-700`}
+            onClick={handleLanguageCycle}
+            title={currentLang.label}
+            className={`relative z-[100] flex-shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase border transition-all ${scrolled ? 'bg-white/80 border-gray-200 text-[#2C2A26] shadow-sm' : 'bg-white/10 border-white/30 text-white hover:bg-white/20'}`}
           >
-            <span>{(language || 'en') === 'en' ? 'IT' : 'EN'}</span>
+            <img src={currentLang.flag} alt={currentLang.code} className="w-4 h-3 object-cover rounded-sm grayscale-[0.2]" />
+            <span>{currentLang.code}</span>
           </button>
         </div>
 
