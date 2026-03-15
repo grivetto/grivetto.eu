@@ -164,7 +164,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
-            address: "Turin, Italy"
+            address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {
             title: "Cosmic Curiosity",
@@ -476,7 +476,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
-            address: "Torino, Italia"
+            address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
             title: "Servizi Professionali",
@@ -839,7 +839,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
-            address: "Turín, Italia"
+            address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
             title: "Servicios Profesionales",
@@ -1252,7 +1252,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
-            address: "ตูริน, อิตาลี"
+            address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {
             title: "ความอยากรู้อยากเห็นระดับจักรวาล",

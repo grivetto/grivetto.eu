@@ -135,5 +135,5 @@ export const CONTACT_INFO = {
   email: 'sergio@grivetto.it',
   web: 'https://grivetto.eu',
   instagram: 'https://www.instagram.com/webagency2000/',
-  address: 'Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO'
+  address: 'Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia'
 };
