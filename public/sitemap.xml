@@ -1,45 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.grivetto.eu/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th" />
   </url>
   <url>
-    <loc>https://www.grivetto.eu/?page=resume</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://www.grivetto.eu/resume</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it/resume" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es/resume" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th/resume" />
   </url>
   <url>
-    <loc>https://www.grivetto.eu/?page=portfolio</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://www.grivetto.eu/portfolio</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it/portfolio" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es/portfolio" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th/portfolio" />
   </url>
   <url>
-    <loc>https://www.grivetto.eu/?page=app</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://www.grivetto.eu/app</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it/app" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es/app" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th/app" />
   </url>
   <url>
-    <loc>https://www.grivetto.eu/?page=links</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://www.grivetto.eu/links</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it/links" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es/links" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th/links" />
   </url>
   <url>
     <loc>https://www.grivetto.eu/aura-quiet-living/index.html</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.grivetto.eu/?page=terminal</loc>
-    <lastmod>2026-02-01</lastmod>
+    <loc>https://www.grivetto.eu/terminal</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.grivetto.eu/it/terminal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.grivetto.eu/es/terminal" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.grivetto.eu/th/terminal" />
   </url>
 </urlset>

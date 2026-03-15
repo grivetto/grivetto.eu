@@ -111,43 +111,77 @@ const LinksView = ({ isVisible, handleNavigate }) => {
   );
 };
 
+const SUPPORTED_LANGS = ['en', 'it', 'es', 'th'];
+const VALID_PAGES = ['home', 'links', 'app', 'grid', 'resume', 'quiz', 'portfolio', 'asciinema-demo', 'curiosity', 'terminal', 'vintage'];
+
+function parseUrl() {
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+  
+  let lang = 'en';
+  let page = 'home';
+  
+  // Backwards compatibility with ?page=
+  const searchParams = new URLSearchParams(window.location.search);
+  const searchPage = searchParams.get('page');
+  
+  if (parts.length > 0) {
+    if (SUPPORTED_LANGS.includes(parts[0])) {
+      lang = parts[0];
+      if (parts.length > 1) {
+        page = parts[1];
+      }
+    } else {
+      page = parts[0];
+    }
+  } else if (searchPage) {
+    page = searchPage;
+  }
+  
+  if (page !== 'home' && !VALID_PAGES.includes(page)) {
+    page = 'not-found';
+  }
+  
+  return { lang, page };
+}
+
+function buildUrl(lang, page) {
+  const langPart = lang === 'en' ? '' : `/${lang}`;
+  const pagePart = page === 'home' ? '' : `/${page}`;
+  return `${langPart}${pagePart}` || '/';
+}
+
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const [view, setView] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('page');
-    if (page === 'links') return 'links';
-    if (page === 'app') return 'app';
-    if (page === 'grid') return 'grid';
-    if (page === 'resume') return 'resume';
-    if (page === 'quiz') return 'quiz';
-    if (page === 'portfolio') return 'portfolio';
-    if (page === 'asciinema-demo') return 'asciinema-demo';
-    if (page === 'curiosity') return 'curiosity';
-    if (page === 'terminal') return 'terminal';
-    if (page === 'vintage') return 'vintage';
-    if (page && page !== 'home') return 'not-found';
-    return 'home';
-  });
-
-
+  const [routeState, setRouteState] = useState(() => parseUrl());
+  
+  const view = routeState.page;
+  const lang = routeState.lang;
 
   const handleNavigate = (newView) => {
-    setView(newView);
-    const url = new URL(window.location);
-    url.searchParams.set('page', newView);
-    window.history.pushState({ page: newView }, '', url);
+    setRouteState(prev => {
+      const newState = { ...prev, page: newView };
+      const url = buildUrl(newState.lang, newState.page);
+      window.history.pushState(newState, '', url);
+      return newState;
+    });
+  };
+
+  const handleLanguageChange = (newLang) => {
+    setRouteState(prev => {
+      const newState = { ...prev, lang: newLang };
+      const url = buildUrl(newState.lang, newState.page);
+      window.history.pushState(newState, '', url);
+      return newState;
+    });
   };
 
   useEffect(() => {
     const handlePopState = (event) => {
-      if (event.state && event.state.page) {
-        setView(event.state.page);
+      if (event.state && event.state.page && event.state.lang) {
+        setRouteState({ page: event.state.page, lang: event.state.lang });
       } else {
-        // Fallback to URL param or 'home'
-        const params = new URLSearchParams(window.location.search);
-        const page = params.get('page') || 'home';
-        setView(page);
+        setRouteState(parseUrl());
       }
     };
 
@@ -229,10 +263,34 @@ function App() {
         'The requested page was not found on Grivetto.eu. Discover IT excellence and systems expertise dating back to 1993.'
       );
     }
-  }, [view]);
+    
+    // Manage SEO canonical and hreflang tags
+    document.querySelectorAll('link[rel="canonical"]').forEach(el => el.remove());
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+    
+    const canonicalLink = document.createElement('link');
+    canonicalLink.rel = 'canonical';
+    canonicalLink.href = `https://www.grivetto.eu${buildUrl(lang, view)}`;
+    document.head.appendChild(canonicalLink);
+    
+    SUPPORTED_LANGS.forEach(l => {
+        const altLink = document.createElement('link');
+        altLink.rel = 'alternate';
+        altLink.hreflang = l;
+        altLink.href = `https://www.grivetto.eu${buildUrl(l, view)}`;
+        document.head.appendChild(altLink);
+    });
+    
+    const defaultLink = document.createElement('link');
+    defaultLink.rel = 'alternate';
+    defaultLink.hreflang = 'x-default';
+    defaultLink.href = `https://www.grivetto.eu${buildUrl('en', view)}`;
+    document.head.appendChild(defaultLink);
+
+  }, [view, lang]);
 
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={lang} onLanguageChange={handleLanguageChange}>
       <div className={`app-container fade-in ${isVisible ? 'visible' : ''}`}>
         {view === 'home' && <Home onNavigate={handleNavigate} />}
         {view === 'links' && <LinksView isVisible={isVisible} handleNavigate={handleNavigate} />}

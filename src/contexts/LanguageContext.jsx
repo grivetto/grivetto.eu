@@ -3,16 +3,28 @@ import { translations } from '../translations';
 
 const LanguageContext = createContext();
 
-export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en'); // Default to English
+export const LanguageProvider = ({ children, initialLanguage = 'en', onLanguageChange }) => {
+    const [language, setLanguage] = useState(initialLanguage);
+
+    React.useEffect(() => {
+        if (initialLanguage) setLanguage(initialLanguage);
+    }, [initialLanguage]);
+
+    const changeLanguage = (newLang) => {
+        setLanguage(newLang);
+        if (onLanguageChange) {
+            onLanguageChange(newLang);
+        }
+    };
 
     const toggleLanguage = () => {
-        setLanguage((prev) => {
-            if (prev === 'en') return 'it';
-            if (prev === 'it') return 'es';
-            if (prev === 'es') return 'th';
+        const newLang = (() => {
+            if (language === 'en') return 'it';
+            if (language === 'it') return 'es';
+            if (language === 'es') return 'th';
             return 'en';
-        });
+        })();
+        changeLanguage(newLang);
     };
 
     const t = (section, key) => {
