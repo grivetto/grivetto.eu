@@ -85,7 +85,7 @@ export default function Home({ onNavigate }) {
             {/* Hero Section */}
             <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-                    <Spline scene="/bubbles_v2.splinecode" />
+                    <Spline scene="/bubbles_v3.splinecode" />
                 </div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}

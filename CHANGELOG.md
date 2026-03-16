@@ -1,3 +1,7 @@
+## [1.1.1] - 2026-03-16
+### Changed
+- Updated Spline background to requested scene version 3 (locally hosted).
+
 ## [1.1.0] - 2026-03-16
 ### Added
 - Integrated new interactive 3D Spline background with distorting bubbles effect (locally hosted).
