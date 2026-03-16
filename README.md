@@ -1,4 +1,4 @@
-# Grivetto.eu
+# Grivetto.eu ![Stable Release](https://img.shields.io/badge/status-stable-green)
 
 Welcome to the official repository for **grivetto.eu**. This project represents the modern web presence for the Grivetto brand, built with cutting-edge web technologies and robust automation tools.
 
@@ -81,6 +81,7 @@ The project includes an automated Python script for FTP deployment.
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
 ### Latest Updates:
+- **2026-03-16**: **Stable 1.0 (v1.1.0)** - Finalized hero section with 3D distorting bubbles and local hosting optimizations.
 - **2026-03-16**: Integrated a new interactive 3D Spline background with distorting bubbles effect on the Home page.
 - **2026-03-03**: Added the "Ristorante" (`https://grivetto.github.io/ristorante/`) link to the Web Project Examples section.
 - **2026-03-01**: Added full Thai language support (`th`) across the entire web application.
