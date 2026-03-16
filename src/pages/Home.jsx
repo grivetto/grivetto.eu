@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
+import Spline from '@splinetool/react-spline';
 import './Home.css';
 import './HomeCyberpunk.css';
 
@@ -82,12 +83,16 @@ export default function Home({ onNavigate }) {
             </motion.nav>
 
             {/* Hero Section */}
-            <section className="hero-section" style={{ position: 'relative' }}>
+            <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+                    <Spline scene="https://prod.spline.design/0D22mPu1bkwZLMLR/scene.splinecode" />
+                </div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     className="hero-content"
+                    style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}
                 >
 
 
@@ -117,6 +122,7 @@ export default function Home({ onNavigate }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
                         className="hero-cta"
+                        style={{ pointerEvents: 'auto' }}
                     >
                         <button onClick={() => onNavigate('portfolio')} className="btn-primary">
                             {t('hero', 'cta_portfolio')}
