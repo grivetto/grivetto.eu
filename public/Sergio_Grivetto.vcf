@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Sergio Grivetto
+TITLE:Senior IT Specialist & Full-Stack Architect
+ORG:NPO Torino
+TEL;TYPE=CELL:+393711741209
+EMAIL:sergio@grivetto.it
+ADR;TYPE=WORK:;;Via Nicola Fabrizi 76 Interno 40;Torino;TO;10145;Italia
+URL:https://grivetto.eu
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/sgrivett/
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/webagency2000/
+END:VCARD

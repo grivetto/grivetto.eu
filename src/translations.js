@@ -164,6 +164,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
+            download_vcard: "Save Contact (vCard)",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {
@@ -247,7 +248,8 @@ export const translations = {
             lang_es: "Spanish (Professional)",
             footer_auth: "I authorize the processing of my personal data in accordance with the GDPR (Regulation EU 2016/679).",
             btn_back: "Back to Home",
-            btn_download: "Download PDF"
+            btn_download: "Download PDF",
+            btn_save: "Save Contact (vCard)"
         },
         page_portfolio: {
             title: "Creative Portfolio",
@@ -476,6 +478,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
+            download_vcard: "Salva Contatto (vCard)",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
@@ -609,7 +612,8 @@ export const translations = {
             lang_es: "Spagnolo (Professionale)",
             footer_auth: "Autorizzo il trattamento dei miei dati personali in conformità al GDPR (Regolamento UE 2016/679).",
             btn_back: "Torna alla Home",
-            btn_download: "Scarica PDF"
+            btn_download: "Scarica PDF",
+            btn_save: "Salva Contatto (vCard)"
         },
         page_portfolio: {
             title: "Portfolio Creativo",
@@ -839,6 +843,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
+            download_vcard: "Descargar vCard",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
@@ -972,7 +977,8 @@ export const translations = {
             lang_es: "Español (Profesional)",
             footer_auth: "Autorizo el tratamiento de mis datos personales de acuerdo con el RGPD (Reglamento UE 2016/679).",
             btn_back: "Volver al Inicio",
-            btn_download: "Descargar PDF"
+            btn_download: "Descargar PDF",
+            btn_save: "Guardar Contacto (vCard)"
         },
         page_portfolio: {
             title: "Portfolio Creativo",
@@ -1252,6 +1258,7 @@ export const translations = {
             instagram_url: "https://www.instagram.com/webagency2000/",
             youtube: "YouTube",
             phone: "+39 371 1741209",
+            download_vcard: "ดาวน์โหลด vCard",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {
@@ -1335,7 +1342,8 @@ export const translations = {
             lang_es: "ภาษาสเปน (การสื่อสารเชิงวิชาชีพ)",
             footer_auth: "ข้าพเจ้าอนุญาตให้ประมวลผลข้อมูลส่วนบุคคลของข้าพเจ้า ตามความในระเบียบการคุ้มครองข้อมูลทั่วไปฉบับล่าสุด (GDPR Regulation EU 2016/679).",
             btn_back: "กลับสู่หน้าแรก",
-            btn_download: "ดาวน์โหลด PDF"
+            btn_download: "ดาวน์โหลด PDF",
+            btn_save: "บันทึกผู้ติดต่อ (vCard)"
         },
         page_portfolio: {
             title: "ผลงานสร้างสรรค์",

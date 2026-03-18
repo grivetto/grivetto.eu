@@ -1,3 +1,37 @@
+## [1.1.3] - 2026-03-18
+### Added
+- Created professional vCard for Sergio Grivetto (`public/Sergio_Grivetto.vcf`).
+- Added "Save Contact (vCard)" button to the Resume page footer.
+- Added "Download vCard" link to the global Footer component.
+- Implemented multi-language support (English, Italian, Spanish, Thai) for all vCard-related elements.
+- Fixed translation type issue in the Aura Footer component.
+
+## [1.1.2] - 2026-03-18
+### Changed
+- Updated `<title>` and all social/OG/Twitter titles to "Sergio Grivetto | Senior IT Specialist".
+- Expanded JSON-LD `jobTitle` to an array: Senior IT Specialist, Full-Stack Architect, IT Consultant, Linux/Unix Expert, Infrastructure Engineer.
+- Unified all description fields (meta, og:description, twitter:description) to a single clean version.
+- Set primary email to `sergio@grivetto.eu` (secondary: `sergio@grivetto.it`) across all JSON-LD blocks.
+- Corrected LinkedIn URL to `https://www.linkedin.com/in/sgrivett/` in JSON-LD and all Home.jsx links.
+- Changed `og:locale` primary to `en_GB`; alternates remain `it_IT` and `es_ES`.
+- Renamed ProfessionalService to "Grivetto ~ Digital Resilience & Advanced IT Architecture".
+- Updated WebSite JSON-LD name separator to `~`: "Sergio Grivetto ~ Senior IT Specialist".
+- Replaced local Spline bubble scene with the published "Distorting Typography" scene via iframe.
+- Added `SplineErrorBoundary` around Spline rendering to prevent white-page crashes on load failure.
+
+## [1.1.2] - 2026-03-18
+### Changed
+- Updated `<title>` and all social/OG/Twitter titles to "Sergio Grivetto | Senior IT Specialist".
+- Expanded JSON-LD `jobTitle` to an array: Senior IT Specialist, Full-Stack Architect, IT Consultant, Linux/Unix Expert, Infrastructure Engineer.
+- Unified all description fields (meta, og:description, twitter:description) to a single clean version.
+- Set primary email to `sergio@grivetto.eu` (secondary: `sergio@grivetto.it`) across all JSON-LD blocks.
+- Corrected LinkedIn URL to `https://www.linkedin.com/in/sgrivett/` in JSON-LD and all Home.jsx links.
+- Changed `og:locale` primary to `en_GB`; alternates remain `it_IT` and `es_ES`.
+- Renamed ProfessionalService to "Grivetto ~ Digital Resilience & Advanced IT Architecture".
+- Updated WebSite JSON-LD name separator to `~`: "Sergio Grivetto ~ Senior IT Specialist".
+- Replaced local Spline bubble scene with a new interactive 3D Spline background (hosted on prod.spline.design).
+- Added `SplineErrorBoundary` around Spline rendering to prevent white-page crashes on load failure.
+
 ## [1.1.1] - 2026-03-16
 ### Changed
 - Updated Spline background to requested scene version 3 (locally hosted).

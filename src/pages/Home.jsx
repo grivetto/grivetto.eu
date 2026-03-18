@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
 import Spline from '@splinetool/react-spline';
 import './Home.css';
 import './HomeCyberpunk.css';
+
+class SplineErrorBoundary extends React.Component {
+    constructor(props) { super(props); this.state = { hasError: false }; }
+    static getDerivedStateFromError() { return { hasError: true }; }
+    render() { return this.state.hasError ? null : this.props.children; }
+}
 
 export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
@@ -85,7 +91,11 @@ export default function Home({ onNavigate }) {
             {/* Hero Section */}
             <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-                    <Spline scene="/bubbles_v3.splinecode" />
+                    <SplineErrorBoundary>
+                        <Suspense fallback={null}>
+                            <Spline scene="https://prod.spline.design/JCCgHs42uvms7Jrx/scene.splinecode" />
+                        </Suspense>
+                    </SplineErrorBoundary>
                 </div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -410,7 +420,7 @@ export default function Home({ onNavigate }) {
                         ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                        <a href="https://linkedin.com/in/sgrivett" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                        <a href="https://www.linkedin.com/in/sgrivett/" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                             {t('blog', 'cta')}
                         </a>
                     </div>
@@ -456,7 +466,7 @@ export default function Home({ onNavigate }) {
                         {t('cta', 'subtitle')}
                     </p>
                     <div className="cta-buttons">
-                        <a href="https://linkedin.com/in/sgrivett" className="btn-secondary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/sgrivett/" className="btn-secondary" target="_blank" rel="noopener noreferrer">
                             {t('cta', 'btn_linkedin')}
                         </a>
                     </div>
@@ -470,7 +480,7 @@ export default function Home({ onNavigate }) {
                         <div className="footer-column">
                             <h3 className="footer-heading">{t('footer', 'connect')}</h3>
                             <nav className="footer-links">
-                                <a href="https://linkedin.com/in/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <a href="https://www.linkedin.com/in/sgrivett/" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                 <a href="https://github.com/grivetto" className="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                                 <a href="https://www.facebook.com/sgrivetto/" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'facebook')}</a>
                                 <a href="https://x.com/sgrivett" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'twitter')}</a>

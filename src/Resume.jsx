@@ -160,6 +160,7 @@ const Resume = ({ onNavigate }) => {
                     <p>{t('resume', 'footer_auth')}</p>
                     <button onClick={() => onNavigate('home')} className="btn-back">{t('resume', 'btn_back')}</button>
                     <a href="/CV_Sergio_Finale_ENG.pdf" download className="btn-download">{t('resume', 'btn_download')}</a>
+                    <a href="/Sergio_Grivetto.vcf" download className="btn-save" style={{ marginLeft: '1rem' }}>{t('resume', 'btn_save')}</a>
                 </footer>
             </div>
         </div>

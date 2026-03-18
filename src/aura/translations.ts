@@ -34,7 +34,8 @@ export const TRANSLATIONS = {
             lang_es: 'Spanish',
             native: 'Native',
             prof: 'Professional',
-            copyright: 'Built with stability in mind.'
+            copyright: 'Built with stability in mind.',
+            download_vcard: 'Download vCard'
         }
     },
     it: {
@@ -69,7 +70,8 @@ export const TRANSLATIONS = {
             lang_es: 'Spagnolo',
             native: 'Madrelingua',
             prof: 'Professionale',
-            copyright: 'Costruito pensando alla stabilità.'
+            copyright: 'Costruito pensando alla stabilità.',
+            download_vcard: 'Scarica vCard'
         }
     },
     es: {
@@ -104,7 +106,8 @@ export const TRANSLATIONS = {
             lang_es: 'Español',
             native: 'Nativo',
             prof: 'Profesional',
-            copyright: 'Construido pensando en la estabilidad.'
+            copyright: 'Construido pensando en la estabilidad.',
+            download_vcard: 'Descargar vCard'
         }
     },
     th: {
@@ -139,7 +142,8 @@ export const TRANSLATIONS = {
             lang_es: 'สเปน',
             native: 'ภาษาแม่',
             prof: 'ระดับมืออาชีพ',
-            copyright: 'สร้างขึ้นโดยคำนึงถึงความเสถียรเป็นหลัก'
+            copyright: 'สร้างขึ้นโดยคำนึงถึงความเสถียรเป็นหลัก',
+            download_vcard: 'ดาวน์โหลด vCard'
         }
     }
 };

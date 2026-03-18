@@ -35,6 +35,7 @@ const Footer: React.FC<FooterProps> = ({ onLinkClick }) => {
               <li><a href="#expertise" onClick={(e) => onLinkClick(e, 'expertise')} className="hover:text-[#2C2A26] transition-colors">{t.footer.expertise}</a></li>
               <li><a href={CONTACT_INFO.web} className="hover:text-[#2C2A26] transition-colors">{t.nav.backToHome}</a></li>
               <li><a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#2C2A26] transition-colors">Instagram</a></li>
+              <li><a href="/Sergio_Grivetto.vcf" download className="hover:text-[#2C2A26] transition-colors">{t.footer.download_vcard || 'Download vCard'}</a></li>
             </ul>
           </div>
 

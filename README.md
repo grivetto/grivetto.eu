@@ -38,6 +38,12 @@ Optimized for search engines and social platforms:
 *   **Design:** A single "Glassmorphism" block consolidating all project cards (Aura, Web Apps, Portfolio) for a cleaner UI.
 *   **Quick Actions:** Direct launch buttons for all apps (Neon Tunnel, Tic-Tac-Toe, Tetris) and resources (Resume, Aura Live).
 
+### **5. vCard Integration (Contact)**
+- Integrated a professional vCard (`.vcf`) file for easy contact synchronization.
+- **Save Contact** button on the Resume page.
+- **Download vCard** link in the global Footer.
+- Full multi-language support (EN, IT, ES, TH) for all download prompts.
+
 ---
 
 ## 🛠️ Local Development
@@ -80,12 +86,26 @@ The project includes an automated Python script for FTP deployment.
 
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
-### Latest Updates:
-- **2026-03-16**: **Patch v1.1.1** - Updated interactive 3D Spline background to user requested variant.
-- **2026-03-16**: **Stable 1.0 (v1.1.0)** - Finalized hero section with 3D distorting bubbles and local hosting optimizations.
-- **2026-03-16**: Integrated a new interactive 3D Spline background with distorting bubbles effect on the Home page.
-- **2026-03-03**: Added the "Ristorante" (`https://grivetto.github.io/ristorante/`) link to the Web Project Examples section.
-- **2026-03-01**: Added full Thai language support (`th`) across the entire web application.
+## [1.1.3] - 2026-03-18
+### Added
+- Created professional vCard for Sergio Grivetto (`public/Sergio_Grivetto.vcf`).
+- Added "Save Contact (vCard)" button to the Resume page footer.
+- Added "Download vCard" link to the global Footer component.
+- Implemented multi-language support (English, Italian, Spanish, Thai) for all vCard-related elements.
+- Fixed translation type issue in the Aura Footer component.
+
+## [1.1.2] - 2026-03-18
+### Changed
+- Updated `<title>` and all social/OG/Twitter titles to "Sergio Grivetto | Senior IT Specialist".
+- Expanded JSON-LD `jobTitle` to an array: Senior IT Specialist, Full-Stack Architect, IT Consultant, Linux/Unix Expert, Infrastructure Engineer.
+- Unified all description fields (meta, og:description, twitter:description) to a single clean version.
+- Set primary email to `sergio@grivetto.eu` (secondary: `sergio@grivetto.it`) across all JSON-LD blocks.
+- Corrected LinkedIn URL to `https://www.linkedin.com/in/sgrivett/` in JSON-LD and all Home.jsx links.
+- Changed `og:locale` primary to `en_GB`; alternates remain `it_IT` and `es_ES`.
+- Renamed ProfessionalService to "Grivetto ~ Digital Resilience & Advanced IT Architecture".
+- Updated WebSite JSON-LD name separator to `~`: "Sergio Grivetto ~ Senior IT Specialist".
+- Replaced local Spline bubble scene with a new interactive 3D Spline background (hosted on prod.spline.design).
+- Added `SplineErrorBoundary` around Spline rendering to prevent white-page crashes on load failure.
 - **2026-03-01**: Fixed the language selector to display the current language and added missing `stat_exp` translations.
 - **2026-03-01**: Removed Beautiness, Electrician, JustSoap, Hair Artist, and Autoscuola Demo links to reduce Netlify costs.
 - **2026-02-28**: Added "Serenissima" (`https://serenissima99.it/`) to the Live Businesses links.
