@@ -234,7 +234,7 @@ export default function Home({ onNavigate }) {
                                 <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🚗 {t('expertise', 'card_web').link_autoschool}
                                 </a>
-                                <a href="https://grivetto.github.io/estetica/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                <a href="https://grivetto.github.io/estetista/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     💅 {t('expertise', 'card_web').link_estetica}
                                 </a>
                                 <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
@@ -494,6 +494,7 @@ export default function Home({ onNavigate }) {
                                 <a href="https://www.grivetto.eu/hesk/index.php" className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'helpdesk')}</a>
                                 <a href="mailto:sergio@grivetto.eu" className="footer-link">{t('footer', 'email')}</a>
                                 <a href={t('footer', 'instagram_url')} className="footer-link" target="_blank" rel="noopener noreferrer">{t('footer', 'instagram')}</a>
+                                <a href="/Sergio_Grivetto.vcf" download className="footer-link">Download vCard TEST</a>
                             </nav>
                         </div>
 

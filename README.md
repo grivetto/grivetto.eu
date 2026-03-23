@@ -109,7 +109,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-03-01**: Fixed the language selector to display the current language and added missing `stat_exp` translations.
 - **2026-03-01**: Removed Beautiness, Electrician, JustSoap, Hair Artist, and Autoscuola Demo links to reduce Netlify costs.
 - **2026-02-28**: Added "Serenissima" (`https://serenissima99.it/`) to the Live Businesses links.
-- **2026-02-28**: Added the "Estetica" (`https://grivetto.github.io/estetica/`) link to the Web Project Examples section across all supported languages.
+- **2026-03-23**: Updated the "Estetica Center" link to `https://grivetto.github.io/estetista/` in the Web Project Examples section.
 - **2026-02-28**: Added the "Dr. Paws Clinic" (`https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/`) link to the Web Project Examples section.
 - **2026-02-28**: Added the "Sevilla Luxury B&B" (`https://sevilla-luxury-b-b-102688887074.us-west1.run.app/`) link to the Web Project Examples section.
 - **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
