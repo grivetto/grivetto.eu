@@ -58,12 +58,12 @@ def upload_directory(ftp, local_dir):
                 ftp.storbinary(f'STOR {remote_file_path}', file_obj)
 
 def main():
-    print(f"Connecting to {FTP_HOST} (Plain FTP, Active Mode)...")
+    print(f"Connecting to {FTP_HOST} (Plain FTP, Passive Mode)...")
     try:
         ftp = ftplib.FTP(FTP_HOST)
         ftp.login(FTP_USER, FTP_PASS)
-        ftp.set_pasv(False) # Force Active Mode
-        print("Authenticated via Plain FTP (Active Mode).")
+        ftp.set_pasv(True) # Force Passive Mode
+        print("Authenticated via Plain FTP (Passive Mode).")
     except Exception as e:
         print(f"Connection failed: {e}")
         sys.exit(1)

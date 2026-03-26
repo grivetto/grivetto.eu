@@ -41,7 +41,6 @@ Optimized for search engines and social platforms:
 ### **5. vCard Integration (Contact)**
 - Integrated a professional vCard (`.vcf`) file for easy contact synchronization.
 - **Save Contact** button on the Resume page.
-- **Download vCard** link in the global Footer.
 - Full multi-language support (EN, IT, ES, TH) for all download prompts.
 
 ---
@@ -85,6 +84,10 @@ The project includes an automated Python script for FTP deployment.
 ## 📝 Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
+
+## [1.1.4] - 2026-03-26
+### Changed
+- Removed the "Download vCard TEST" link from the global Footer component.
 
 ## [1.1.3] - 2026-03-18
 ### Added
