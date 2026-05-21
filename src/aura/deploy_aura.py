@@ -4,7 +4,7 @@ from ftplib import FTP
 
 FTP_HOST = "ftp.grivetto.eu"
 FTP_USER = "6539170@aruba.it"
-FTP_PASS = "@Freedom_2010!!"
+FTP_PASS = "8DF:d)Nq4u-egV7"
 LOCAL_DIR = "dist"
 REMOTE_DIR = "/www.grivetto.eu/aura-quiet-living"
 

@@ -240,9 +240,6 @@ export default function Home({ onNavigate }) {
                                 <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🐾 {t('expertise', 'card_web').link_drpaws}
                                 </a>
-                                <a href="https://sevilla-luxury-b-b-102688887074.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🏨 {t('expertise', 'card_web').link_sevilla}
-                                </a>
                                 <a href="https://grivetto.github.io/ristorante/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🍽️ {t('expertise', 'card_web').link_ristorante}
                                 </a>
@@ -263,6 +260,9 @@ export default function Home({ onNavigate }) {
                                 </a>
                                 <a href="https://grivetto.github.io/ballerina/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🩰 Ballerina →
+                                </a>
+                                <a href="https://sgrivett.ddns.net/denaro/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
+                                    💰 {t('expertise', 'card_web').link_denaro}
                                 </a>
                             </div>
                         </motion.div>
