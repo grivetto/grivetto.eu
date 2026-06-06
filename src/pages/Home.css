@@ -1291,6 +1291,15 @@
   .cta-container {
     padding: 3rem 1.5rem;
   }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-column:last-child {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1326,6 +1335,15 @@
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-column:last-child {
+    grid-column: span 2;
   }
 }
 
