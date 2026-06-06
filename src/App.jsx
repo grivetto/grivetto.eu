@@ -1,24 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import './App.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import CustomApp from './CustomApp';
-import ImageGrid from './ImageGrid';
-import RubiksCube from './RubiksCube';
-import NeonTicTacToe from './NeonTicTacToe';
-import TetrisGame from './TetrisGame';
-
-import Portfolio from './pages/Portfolio';
-import Resume from './Resume';
-import Home from './pages/Home';
-import AsciinemaDemo from './AsciinemaDemo';
-import QuizApp from './QuizApp';
-import CuriositySpark from './components/CuriositySpark';
-import WebTerminal from './components/WebTerminal';
-import HeskWrapper from './components/HeskWrapper';
-import TerminalDemo from './components/TerminalDemo';
 import LanguageSelector from './components/LanguageSelector';
-import VintagePortal from './pages/VintagePortal';
-import NotFound from './pages/NotFound';
+import Home from './pages/Home'; // Keep Home static for instant first paint
+
+const CustomApp = lazy(() => import('./CustomApp'));
+const ImageGrid = lazy(() => import('./ImageGrid'));
+const RubiksCube = lazy(() => import('./RubiksCube'));
+const NeonTicTacToe = lazy(() => import('./NeonTicTacToe'));
+const TetrisGame = lazy(() => import('./TetrisGame'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Resume = lazy(() => import('./Resume'));
+const AsciinemaDemo = lazy(() => import('./AsciinemaDemo'));
+const QuizApp = lazy(() => import('./QuizApp'));
+const CuriositySpark = lazy(() => import('./components/CuriositySpark'));
+const WebTerminal = lazy(() => import('./components/WebTerminal'));
+const HeskWrapper = lazy(() => import('./components/HeskWrapper'));
+const TerminalDemo = lazy(() => import('./components/TerminalDemo'));
+const VintagePortal = lazy(() => import('./pages/VintagePortal'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+const LoadingFallback = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '60vh',
+    flexDirection: 'column',
+    gap: '1.5rem',
+    color: '#00f2ff'
+  }}>
+    <div className="loading-spinner" />
+    <span style={{
+      fontFamily: 'monospace',
+      letterSpacing: '0.15em',
+      textTransform: 'uppercase',
+      fontSize: '0.9rem',
+      textShadow: '0 0 8px rgba(0, 242, 255, 0.5)'
+    }}>Loading Module...</span>
+  </div>
+);
 
 const LinksView = ({ isVisible, handleNavigate }) => {
   const { t } = useLanguage();
@@ -294,23 +315,25 @@ function App() {
   return (
     <LanguageProvider initialLanguage={lang} onLanguageChange={handleLanguageChange}>
       <div className={`${isFullWidth ? 'fluid-container' : 'app-container'} fade-in ${isVisible ? 'visible' : ''}`}>
-        {view === 'home' && <Home onNavigate={handleNavigate} />}
-        {view === 'links' && <LinksView isVisible={isVisible} handleNavigate={handleNavigate} />}
-        {view === 'app' && <CustomApp onNavigate={handleNavigate} />}
-        {view === 'grid' && <ImageGrid onNavigate={handleNavigate} />}
-        {view === 'rubiks' && <RubiksCube onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
-        {view === 'tictactoe' && <NeonTicTacToe onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
-        {view === 'tetris' && <TetrisGame onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
-        {view === 'portfolio' && <Portfolio onNavigate={handleNavigate} />}
-        {view === 'resume' && <Resume onNavigate={handleNavigate} />}
-        {view === 'asciinema-demo' && <AsciinemaDemo onNavigate={handleNavigate} />}
-        {view === 'quiz' && <QuizApp onNavigate={handleNavigate} />}
-        {view === 'curiosity' && <CuriositySpark onNavigate={handleNavigate} />}
-        {view === 'terminal' && <WebTerminal onNavigate={handleNavigate} />}
-        {view === 'hesk' && <HeskWrapper onNavigate={handleNavigate} />}
-        {view === 'terminal-demo' && <TerminalDemo onNavigate={handleNavigate} />}
-        {view === 'vintage' && <VintagePortal onNavigate={handleNavigate} />}
-        {view === 'not-found' && <NotFound onNavigate={handleNavigate} />}
+        <Suspense fallback={<LoadingFallback />}>
+          {view === 'home' && <Home onNavigate={handleNavigate} />}
+          {view === 'links' && <LinksView isVisible={isVisible} handleNavigate={handleNavigate} />}
+          {view === 'app' && <CustomApp onNavigate={handleNavigate} />}
+          {view === 'grid' && <ImageGrid onNavigate={handleNavigate} />}
+          {view === 'rubiks' && <RubiksCube onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+          {view === 'tictactoe' && <NeonTicTacToe onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+          {view === 'tetris' && <TetrisGame onBack={() => handleNavigate('home')} onNavigate={handleNavigate} />}
+          {view === 'portfolio' && <Portfolio onNavigate={handleNavigate} />}
+          {view === 'resume' && <Resume onNavigate={handleNavigate} />}
+          {view === 'asciinema-demo' && <AsciinemaDemo onNavigate={handleNavigate} />}
+          {view === 'quiz' && <QuizApp onNavigate={handleNavigate} />}
+          {view === 'curiosity' && <CuriositySpark onNavigate={handleNavigate} />}
+          {view === 'terminal' && <WebTerminal onNavigate={handleNavigate} />}
+          {view === 'hesk' && <HeskWrapper onNavigate={handleNavigate} />}
+          {view === 'terminal-demo' && <TerminalDemo onNavigate={handleNavigate} />}
+          {view === 'vintage' && <VintagePortal onNavigate={handleNavigate} />}
+          {view === 'not-found' && <NotFound onNavigate={handleNavigate} />}
+        </Suspense>
       </div>
     </LanguageProvider>
   );

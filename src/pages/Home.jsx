@@ -2,9 +2,10 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
-import Spline from '@splinetool/react-spline';
 import './Home.css';
 import './HomeCyberpunk.css';
+
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 class SplineErrorBoundary extends React.Component {
     constructor(props) { super(props); this.state = { hasError: false }; }
@@ -16,7 +17,7 @@ export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
     const [theme, setTheme] = useState('cyberpunk'); // Toggle between 'default' and 'cyberpunk'
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
     const { t, language, toggleLanguage } = useLanguage();
 
     useEffect(() => {

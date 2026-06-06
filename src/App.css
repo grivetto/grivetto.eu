@@ -319,3 +319,19 @@ li {
     filter: blur(0);
   }
 }
+
+/* Loading Fallback Spinner */
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(0, 242, 255, 0.15);
+  border-top-color: #00f2ff;
+  border-radius: 50%;
+  animation: loading-spin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+@keyframes loading-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
