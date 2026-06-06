@@ -245,40 +245,43 @@ function AsciinemaDemo() {
                     }}>
                         Comparison & Use Cases 📊
                     </h2>
-                    <table style={{
-                        width: '100%',
-                        borderCollapse: 'collapse',
-                        marginTop: '20px'
-                    }}>
-                        <thead>
-                            <tr style={{ background: '#f8f9fa' }}>
-                                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Method</th>
-                                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Best For</th>
-                                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Pros</th>
-                                <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Cons</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6', fontWeight: 'bold' }}>1. Direct Link</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Emails, messages, simple sharing</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Simple, lightweight</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>No preview</td>
-                            </tr>
-                            <tr>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6', fontWeight: 'bold' }}>2. Image Link</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>GitHub READMEs, documentation</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Visual preview, works everywhere</td>
-                                <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Requires click to play</td>
-                            </tr>
-                            <tr>
-                                <td style={{ padding: '12px', fontWeight: 'bold' }}>3. Embedded Player</td>
-                                <td style={{ padding: '12px' }}>Your own website, blog posts</td>
-                                <td style={{ padding: '12px' }}>Full interactive experience</td>
-                                <td style={{ padding: '12px' }}>Requires script support</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style={{ overflowX: 'auto', width: '100%' }}>
+                        <table style={{
+                            width: '100%',
+                            minWidth: '600px',
+                            borderCollapse: 'collapse',
+                            marginTop: '20px'
+                        }}>
+                            <thead>
+                                <tr style={{ background: '#f8f9fa' }}>
+                                    <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Method</th>
+                                    <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Best For</th>
+                                    <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Pros</th>
+                                    <th style={{ padding: '12px', textAlign: 'left', borderBottom: '2px solid #dee2e6' }}>Cons</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6', fontWeight: 'bold' }}>1. Direct Link</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Emails, messages, simple sharing</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Simple, lightweight</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>No preview</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6', fontWeight: 'bold' }}>2. Image Link</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>GitHub READMEs, documentation</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Visual preview, works everywhere</td>
+                                    <td style={{ padding: '12px', borderBottom: '1px solid #dee2e6' }}>Requires click to play</td>
+                                </tr>
+                                <tr>
+                                    <td style={{ padding: '12px', fontWeight: 'bold' }}>3. Embedded Player</td>
+                                    <td style={{ padding: '12px' }}>Your own website, blog posts</td>
+                                    <td style={{ padding: '12px' }}>Full interactive experience</td>
+                                    <td style={{ padding: '12px' }}>Requires script support</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

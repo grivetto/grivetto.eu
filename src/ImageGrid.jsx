@@ -136,8 +136,8 @@ const ImageGrid = ({ onNavigate }) => {
             {renderQuadrant('q2')}
             {renderQuadrant('q3')}
             {renderQuadrant('q4')}
-            <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
-                <button onClick={() => onNavigate('home')} className="btn" style={{ background: 'rgba(255, 255, 255, 0.8)', color: '#333' }}>Back to Home</button>
+            <div style={{ position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+                <button onClick={() => onNavigate('home')} className="btn" style={{ background: 'rgba(255, 255, 255, 0.85)', color: '#333', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)' }}>Back to Home</button>
             </div>
         </div>
     );

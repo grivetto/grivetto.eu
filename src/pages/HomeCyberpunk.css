@@ -357,3 +357,28 @@
     color: hsl(180, 100%, 50%);
     text-shadow: 0 0 10px hsl(180, 100%, 50%, 0.5);
 }
+
+/* ===================================
+   CYBERPUNK MOBILE NAVIGATION OVERRIDES
+   =================================== */
+@media (max-width: 768px) {
+    .modern-home.cyberpunk .nav-links {
+        background: rgba(10, 10, 25, 0.98);
+        border-left: 2px solid hsl(180, 100%, 50%, 0.5);
+        box-shadow: -10px 0 30px rgba(0, 255, 255, 0.2);
+    }
+    
+    .modern-home.cyberpunk .nav-link {
+        color: hsl(180, 80%, 70%) !important;
+    }
+    
+    .modern-home.cyberpunk .nav-link:hover {
+        color: hsl(180, 100%, 60%) !important;
+        text-shadow: 0 0 10px hsl(180, 100%, 50%);
+    }
+
+    .modern-home.cyberpunk .mobile-menu-toggle span {
+        background: hsl(180, 100%, 50%) !important;
+        box-shadow: 0 0 8px hsl(180, 100%, 50%);
+    }
+}

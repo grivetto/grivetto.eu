@@ -64,3 +64,20 @@
 .xterm-viewport {
     text-shadow: 0 0 3px rgba(0, 255, 65, 0.4);
 }
+
+@media (max-width: 768px) {
+    .terminal-wrapper {
+        height: auto;
+        min-height: 100vh;
+        padding: 10px;
+    }
+
+    .monitor-frame {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .terminal-container {
+        height: 400px;
+    }
+}

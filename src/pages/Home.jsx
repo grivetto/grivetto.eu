@@ -16,12 +16,21 @@ export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
     const [theme, setTheme] = useState('cyberpunk'); // Toggle between 'default' and 'cyberpunk'
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const { t, language, toggleLanguage } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        
+        checkMobile();
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('resize', checkMobile);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', checkMobile);
+        };
     }, []);
 
     const containerVariants = {
@@ -90,13 +99,15 @@ export default function Home({ onNavigate }) {
 
             {/* Hero Section */}
             <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-                    <SplineErrorBoundary>
-                        <Suspense fallback={null}>
-                            <Spline scene="https://prod.spline.design/JCCgHs42uvms7Jrx/scene.splinecode" />
-                        </Suspense>
-                    </SplineErrorBoundary>
-                </div>
+                {!isMobile && (
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+                        <SplineErrorBoundary>
+                            <Suspense fallback={null}>
+                                <Spline scene="https://prod.spline.design/JCCgHs42uvms7Jrx/scene.splinecode" />
+                            </Suspense>
+                        </SplineErrorBoundary>
+                    </div>
+                )}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -227,7 +238,7 @@ export default function Home({ onNavigate }) {
                             <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
                                 {t('expertise', 'card_web').label_projects}
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem', position: 'relative', zIndex: 10 }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem', position: 'relative', zIndex: 10 }}>
                                 <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
                                     🏛️ {t('expertise', 'card_web').link_github}
                                 </a>
