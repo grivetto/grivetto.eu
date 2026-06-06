@@ -220,60 +220,78 @@ export default function Home({ onNavigate }) {
                             <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(195, 60%, 45%)', marginTop: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8 }}>
                                 {t('expertise', 'card_web').label_business}
                             </p>
-                            <a href="https://www.manuelaaires.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                ⚕️ {t('expertise', 'card_web').link_manuela}
-                            </a>
-                            <a href="https://www.grivetto.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                👨‍💻 {t('expertise', 'card_web').link_grivetto}
-                            </a>
-                            <a href="https://vivirito.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                🏠 {t('expertise', 'card_web').link_vivirito}
-                            </a>
-                            <a href="https://serenissima99.it/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '0.5rem', display: 'block' }}>
-                                🌟 {t('expertise', 'card_web').link_serenissima}
-                            </a>
+                            <div className="bento-links-container" style={{ position: 'relative', zIndex: 10 }}>
+                                <a href="https://www.manuelaaires.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">⚕️</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_manuela.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                                <a href="https://www.grivetto.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">👨‍💻</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_grivetto.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                                <a href="https://vivirito.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🏠</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_vivirito.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                                <a href="https://serenissima99.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🌟</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_serenissima.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                            </div>
 
                             <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '1.25rem 0 1rem' }} />
 
                             <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
                                 {t('expertise', 'card_web').label_projects}
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem', position: 'relative', zIndex: 10 }}>
-                                <a href="https://grivetto.github.io/soms/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🏛️ {t('expertise', 'card_web').link_github}
+                            <div className="bento-links-container" style={{ position: 'relative', zIndex: 10 }}>
+                                <a href="https://grivetto.github.io/soms/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🏛️</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_github.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🚗 {t('expertise', 'card_web').link_autoschool}
+                                <a href="https://autoscoola-qwg7u6ny.manus.space/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🚗</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_autoschool.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/estetista/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    💅 {t('expertise', 'card_web').link_estetica}
+                                <a href="https://grivetto.github.io/estetista/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">💅</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_estetica.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🐾 {t('expertise', 'card_web').link_drpaws}
+                                <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🐾</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_drpaws.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/ristorante/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🍽️ {t('expertise', 'card_web').link_ristorante}
+                                <a href="https://grivetto.github.io/ristorante/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🍽️</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_ristorante.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/guida/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    📍 {t('expertise', 'card_web').link_guida}
+                                <a href="https://grivetto.github.io/guida/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">📍</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_guida.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/autoscuola/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🚘 {t('expertise', 'card_web').link_autoscuola}
+                                <a href="https://grivetto.github.io/autoscuola/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🚘</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_autoscuola.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/thay/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🍜 {t('expertise', 'card_web').link_thay}
+                                <a href="https://grivetto.github.io/thay/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🍜</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_thay.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/nena/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    ✨ {t('expertise', 'card_web').link_nena}
+                                <a href="https://grivetto.github.io/nena/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">✨</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_nena.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/michi/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    👤 {t('expertise', 'card_web').link_michi}
+                                <a href="https://grivetto.github.io/michi/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">👤</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_michi.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://grivetto.github.io/ballerina/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    🩰 Ballerina →
+                                <a href="https://grivetto.github.io/ballerina/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🩰</span>
+                                    <span className="bento-link-text">Ballerina</span>
                                 </a>
-                                <a href="https://sgrivett.ddns.net/denaro/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ pointerEvents: 'auto', display: 'block' }}>
-                                    💰 {t('expertise', 'card_web').link_denaro}
+                                <a href="https://sgrivett.ddns.net/denaro/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">💰</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_denaro.replace(' →', '').replace('→', '')}</span>
                                 </a>
                             </div>
                         </motion.div>

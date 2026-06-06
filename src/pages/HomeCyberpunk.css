@@ -241,6 +241,23 @@
     text-shadow: 0 0 15px hsl(300, 100%, 50%);
 }
 
+.modern-home.cyberpunk .bento-link-card {
+    background: rgba(10, 10, 25, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    color: hsl(180, 80%, 75%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.modern-home.cyberpunk .bento-link-card:hover {
+    background: rgba(0, 255, 255, 0.08);
+    border-color: hsl(180, 100%, 50%);
+    color: #fff;
+    text-shadow: 0 0 8px hsl(180, 100%, 50%);
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.3),
+        0 0 25px rgba(300, 100, 50, 0.1);
+}
+
 /* Accent cards with magenta */
 .modern-home.cyberpunk .bento-accent {
     background: linear-gradient(135deg, hsl(180, 100%, 20%), hsl(300, 100%, 20%));
