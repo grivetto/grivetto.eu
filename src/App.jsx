@@ -289,9 +289,11 @@ function App() {
 
   }, [view, lang]);
 
+  const isFullWidth = ['home', 'portfolio', 'grid', 'vintage', 'terminal'].includes(view);
+
   return (
     <LanguageProvider initialLanguage={lang} onLanguageChange={handleLanguageChange}>
-      <div className={`app-container fade-in ${isVisible ? 'visible' : ''}`}>
+      <div className={`${isFullWidth ? 'fluid-container' : 'app-container'} fade-in ${isVisible ? 'visible' : ''}`}>
         {view === 'home' && <Home onNavigate={handleNavigate} />}
         {view === 'links' && <LinksView isVisible={isVisible} handleNavigate={handleNavigate} />}
         {view === 'app' && <CustomApp onNavigate={handleNavigate} />}

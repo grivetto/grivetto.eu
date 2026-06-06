@@ -9,6 +9,10 @@
   gap: 3rem;
 }
 
+.fluid-container {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .app-container {
     padding: 1.5rem;

@@ -10,7 +10,7 @@ const Services = () => {
     return (
         <div className="container" style={{ padding: '4rem 0' }}>
             <h1>Our Services</h1>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', marginTop: '2rem' }}>
                 {data && data.services ? data.services.map((service, index) => (
                     <div key={index} style={{ padding: '1.5rem', border: '1px solid #e2e8f0', borderRadius: '0.5rem', backgroundColor: '#fff' }}>
                         <h3>{service.name}</h3>
