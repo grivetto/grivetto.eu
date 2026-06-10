@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 FTP_HOST = "ftp.grivetto.eu"
 FTP_USER = "6539170@aruba.it"
 FTP_PASS = "8DF:d)Nq4u-egV7"
-LOCAL_DIST_DIR = r"c:\dev\sito\dist"
+LOCAL_DIST_DIR = r"c:\dev\grivetto.eu\dist"
 
 def upload_file(ftp, local_path, remote_path):
     try:

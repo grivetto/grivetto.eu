@@ -213,7 +213,7 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
-                                <button onClick={() => onNavigate('aura')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_aura}
                                 </button>
                             </div>
@@ -258,7 +258,7 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">💅</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_estetica.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://dr-paws-veterinary-clinic-7744951827.us-west1.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                <a href="https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🐾</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_drpaws.replace(' →', '').replace('→', '')}</span>
                                 </a>

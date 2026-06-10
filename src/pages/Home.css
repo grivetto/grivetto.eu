@@ -142,6 +142,10 @@
   gap: 1rem;
 }
 
+.mobile-menu-toggle {
+  display: none;
+}
+
 .nav-link {
   font-size: 0.95rem;
   font-weight: 500;

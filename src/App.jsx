@@ -133,7 +133,7 @@ const LinksView = ({ isVisible, handleNavigate }) => {
 };
 
 const SUPPORTED_LANGS = ['en', 'it', 'es', 'th'];
-const VALID_PAGES = ['home', 'links', 'app', 'grid', 'resume', 'quiz', 'portfolio', 'asciinema-demo', 'curiosity', 'terminal', 'vintage'];
+const VALID_PAGES = ['home', 'links', 'app', 'grid', 'resume', 'quiz', 'portfolio', 'asciinema-demo', 'curiosity', 'terminal', 'vintage', 'hesk', 'rubiks', 'tictactoe', 'tetris', 'terminal-demo'];
 
 function parseUrl() {
   const path = window.location.pathname;
