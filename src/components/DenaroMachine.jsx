@@ -8,7 +8,7 @@ export default function DenaroMachine() {
     const [logs, setLogs] = useState([]);
     const [checkStatus, setCheckStatus] = useState('idle'); // 'idle' | 'checking' | 'success'
     const [activeNode, setActiveNode] = useState(null); // hover state or selection state for detail view
-    const terminalEndRef = useRef(null);
+    const consoleBodyRef = useRef(null);
 
     const baseLogs = [
         { type: 'system', text: "[SYSTEM] Booting Denaro Multi-Node Trading Core..." },
@@ -71,10 +71,10 @@ export default function DenaroMachine() {
         return () => clearInterval(interval);
     }, [logs.length, checkStatus]);
 
-    // Auto-scroll terminal
+    // Auto-scroll terminal internally
     useEffect(() => {
-        if (terminalEndRef.current) {
-            terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        if (consoleBodyRef.current) {
+            consoleBodyRef.current.scrollTop = consoleBodyRef.current.scrollHeight;
         }
     }, [logs]);
 
@@ -238,14 +238,13 @@ export default function DenaroMachine() {
                                 </div>
                                 <span className="console-title">denaro_trading_core.log</span>
                             </div>
-                            <div className="console-body">
+                            <div className="console-body" ref={consoleBodyRef}>
                                 <div className="log-entries">
                                     {logs.map((log, i) => (
                                         <div key={i} className={`log-entry ${log.type}`}>
                                             {log.text}
                                         </div>
                                     ))}
-                                    <div ref={terminalEndRef} />
                                 </div>
                             </div>
                         </div>
