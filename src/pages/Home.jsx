@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
+import DenaroMachine from '../components/DenaroMachine';
 import './Home.css';
 import './HomeCyberpunk.css';
 
@@ -351,6 +352,9 @@ export default function Home({ onNavigate }) {
                     </div>
                 </motion.div >
             </section >
+
+            {/* Denaro Bot Dashboard Section */}
+            <DenaroMachine />
 
             {/* Services Section */}
             <section className="services-section" id="services">

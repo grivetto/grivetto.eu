@@ -191,6 +191,24 @@ export const translations = {
                 "Programming is the closest thing to magic we have."
             ]
         },
+        denaro_machine: {
+            badge: "Trading Infrastructure",
+            title: "Macchina Crea Denaro (Denaro Bot)",
+            subtitle: "An automated, multi-strategy algorithmic crypto trading system running on Binance spot markets. Driven by market regime detection and real-time momentum scalping.",
+            view_github: "View GitHub Repository",
+            stats_profit: "Total Profit",
+            stats_trades: "Total Trades",
+            stats_winrate: "Win Rate",
+            stats_status: "System Status",
+            status_operational: "OPERATIONAL & STABLE",
+            watchdog_ok: "WATCHDOG: ACTIVE",
+            nuvola_desc: "Regime-Adaptive Grid bot. Uses Markov-inspired models to adjust grids dynamically on SOL/EUR.",
+            mc2_desc: "High-frequency momentum scalper tracking 28 USDT pairs via active WebSockets.",
+            marcodg1_desc: "Long-term trend grid system managing buy/sell levels on ADA/EUR.",
+            trigger_check: "Trigger Diagnostic Check",
+            checking: "Running diagnostics...",
+            check_ok: "Diagnostics complete. All nodes healthy!"
+        },
         resume: {
             job_title: "Technical Employee – Senior System Administrator",
             loc: "Turin, Italy",
@@ -555,6 +573,24 @@ export const translations = {
                 "Il colore CSS più 'pacifico' è probabilmente #B0E0E6 (Powder Blue).",
                 "Programmare è la cosa più vicina alla magia che abbiamo."
             ]
+        },
+        denaro_machine: {
+            badge: "Infrastruttura di Trading",
+            title: "Macchina Crea Denaro (Denaro Bot)",
+            subtitle: "Un sistema di trading crypto algoritmico distribuito e multi-strategia operante sui mercati spot di Binance. Basato su rilevamento dei regimi di mercato e scalping di momentum in tempo reale.",
+            view_github: "Vedi Repository GitHub",
+            stats_profit: "Profitto Totale",
+            stats_trades: "Operazioni Totali",
+            stats_winrate: "Win Rate",
+            stats_status: "Stato del Sistema",
+            status_operational: "OPERATIVO E STABILE",
+            watchdog_ok: "WATCHDOG: ATTIVO",
+            nuvola_desc: "Bot Grid adattivo al regime. Utilizza modelli Markov per calibrare i livelli su SOL/EUR.",
+            mc2_desc: "Momentum scalper ad alta frequenza che traccia 28 coppie USDT tramite WebSockets attivi.",
+            marcodg1_desc: "Sistema grid di trend a lungo termine che gestisce i livelli di acquisto/vendita su ADA/EUR.",
+            trigger_check: "Avvia Test Diagnostico",
+            checking: "Esecuzione diagnostica...",
+            check_ok: "Diagnostica completata. Tutti i nodi sono attivi!"
         },
         resume: {
             job_title: "Impiegato Tecnico – Senior System Administrator",
@@ -921,6 +957,24 @@ export const translations = {
                 "Programar es lo más parecido a la magia que tenemos."
             ]
         },
+        denaro_machine: {
+            badge: "Infraestructura de Trading",
+            title: "Máquina de Hacer Dinero (Denaro Bot)",
+            subtitle: "Un sistema de trading cripto algorítmico automatizado y multi-estrategia en los mercados spot de Binance. Basado en detección de regímenes y scalping de momentum en tiempo real.",
+            view_github: "Ver Repositorio GitHub",
+            stats_profit: "Beneficio Total",
+            stats_trades: "Operaciones Totales",
+            stats_winrate: "Tasa de Acierto",
+            stats_status: "Estado del Sistema",
+            status_operational: "OPERATIVO Y ESTABLE",
+            watchdog_ok: "WATCHDOG: ACTIVO",
+            nuvola_desc: "Bot Grid adaptativo. Utiliza principios de modelos de Markov para ajustar niveles en SOL/EUR.",
+            mc2_desc: "Scalper de momentum de alta frecuencia que rastrea 28 pares USDT vía WebSockets activos.",
+            marcodg1_desc: "Sistema grid de tendencia a largo plazo que gestiona niveles de compra/venta en ADA/EUR.",
+            trigger_check: "Iniciar Diagnóstico",
+            checking: "Ejecutando diagnóstico...",
+            check_ok: "¡Diagnóstico completo. Todos los nodos saludables!"
+        },
         resume: {
             job_title: "Empleado Técnico – Administrador Senior de Sistemas",
             loc: "Turín, Italia",
@@ -1285,6 +1339,24 @@ export const translations = {
                 "สี CSS ที่ 'สงบ' ที่สุดน่าจะเป็น #B0E0E6 (Powder Blue).",
                 "การเขียนโปรแกรมเป็นสิ่งที่ใกล้เคียงกับเวทมนตร์มากที่สุดเท่าที่เรามี."
             ]
+        },
+        denaro_machine: {
+            badge: "โครงสร้างพื้นฐานการเทรด",
+            title: "เครื่องจักรผลิตเงิน (Denaro Bot)",
+            subtitle: "ระบบเทรดคริปโตแบบอัลกอริทึมอัตโนมัติและหลากหลายกลยุทธ์ ทำงานบนตลาด Spot ของ Binance ขับเคลื่อนด้วยการตรวจจับสภาวะตลาดและการทำกำไรระยะสั้นในแบบเรียลไทม์",
+            view_github: "ดูคลังเก็บข้อมูล GitHub",
+            stats_profit: "กำไรรวม",
+            stats_trades: "จำนวนการเทรดรวม",
+            stats_winrate: "อัตราการชนะ",
+            stats_status: "สถานะระบบ",
+            status_operational: "ระบบกำลังทำงานและมีความเสถียร",
+            watchdog_ok: "สุนัขเฝ้าบ้านระบบ: กำลังทำงาน",
+            nuvola_desc: "บอทกริดปรับตัวตามสภาวะตลาด ใช้แบบจำลองแนวคิดมาร์คอฟเพื่อปรับระดับกริดใน SOL/EUR",
+            mc2_desc: "ระบบตรวจจับโมเมนตัมความถี่สูง ติดตามราคา 28 คู่เหรียญ USDT ผ่าน WebSockets ที่ทำงานอยู่",
+            marcodg1_desc: "ระบบกริดตามเทรนระยะยาว จัดการระดับคำสั่งซื้อ/ขายใน ADA/EUR",
+            trigger_check: "เรียกใช้การตรวจสอบระบบ",
+            checking: "กำลังวิเคราะห์ระบบ...",
+            check_ok: "ตรวจสอบเสร็จสิ้น! ทุกโหนดทำงานปกติ"
         },
         resume: {
             job_title: "เจ้าหน้าที่เทคนิค – ผู้ดูแลระบบอาวุโส",
