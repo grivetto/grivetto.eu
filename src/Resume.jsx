@@ -13,6 +13,21 @@ const Resume = ({ onNavigate }) => {
     const expIts = t('resume', 'exp_its');
     const expNovell = t('resume', 'exp_novell');
 
+    const renderJobDetail = (text) => {
+        if (!text) return null;
+        const colonIndex = text.indexOf(':');
+        if (colonIndex !== -1) {
+            const title = text.slice(0, colonIndex).trim();
+            const description = text.slice(colonIndex + 1);
+            return (
+                <>
+                    <strong>{title}:</strong>{description}
+                </>
+            );
+        }
+        return text;
+    };
+
     return (
         <div className="resume-container glass">
             <header className="resume-header">
@@ -41,25 +56,30 @@ const Resume = ({ onNavigate }) => {
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expNpo.title}</h3>
-                            <span className="company">
-                                <a href="https://nposervices.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
-                                    {expNpo.company}
-                                </a>
-                            </span>
-                            <span className="dates">Nov 2013 – Present</span>
+                            <div className="job-company-dates">
+                                <span className="company">
+                                    <a href="https://nposervices.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,0.3)' }}>
+                                        {expNpo.company}
+                                    </a>
+                                </span>
+                                <span className="separator">•</span>
+                                <span className="dates">Nov 2013 – Present</span>
+                            </div>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Infrastructure Orchestration:</strong> {expNpo.desc_1}</li>
-                            <li><strong>Monitoring:</strong> {expNpo.desc_2}</li>
-                            <li><strong>Advanced System Tools:</strong> {expNpo.desc_3}</li>
-                            <li><strong>Reliability Engineering:</strong> {expNpo.desc_4}</li>
+                            <li>{renderJobDetail(expNpo.desc_1)}</li>
+                            <li>{renderJobDetail(expNpo.desc_2)}</li>
+                            <li>{renderJobDetail(expNpo.desc_3)}</li>
+                            <li>{renderJobDetail(expNpo.desc_4)}</li>
                         </ul>
                     </div>
 
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expBreak.title}</h3>
-                            <span className="dates">2007 – 2013</span>
+                            <div className="job-company-dates">
+                                <span className="dates">2007 – 2013</span>
+                            </div>
                         </div>
                         <p style={{ opacity: 0.8, fontStyle: 'italic' }}>{expBreak.desc}</p>
                     </div>
@@ -67,56 +87,68 @@ const Resume = ({ onNavigate }) => {
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expBanco.title}</h3>
-                            <span className="company">{expBanco.company}</span>
-                            <span className="dates">2004 – 2007</span>
+                            <div className="job-company-dates">
+                                <span className="company">{expBanco.company}</span>
+                                <span className="separator">•</span>
+                                <span className="dates">2004 – 2007</span>
+                            </div>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Security Auditing:</strong> {expBanco.desc_1}</li>
-                            <li><strong>DMZ Migration:</strong> {expBanco.desc_2}</li>
-                            <li><strong>Perimeter Security:</strong> {expBanco.desc_3}</li>
-                            <li><strong>Unix Administration:</strong> {expBanco.desc_4}</li>
-                            <li><strong>Architectural Design:</strong> {expBanco.desc_5}</li>
+                            <li>{renderJobDetail(expBanco.desc_1)}</li>
+                            <li>{renderJobDetail(expBanco.desc_2)}</li>
+                            <li>{renderJobDetail(expBanco.desc_3)}</li>
+                            <li>{renderJobDetail(expBanco.desc_4)}</li>
+                            <li>{renderJobDetail(expBanco.desc_5)}</li>
                         </ul>
                     </div>
 
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expEu.title}</h3>
-                            <span className="company">{expEu.company}</span>
-                            <span className="dates">2002 – 2004</span>
+                            <div className="job-company-dates">
+                                <span className="company">{expEu.company}</span>
+                                <span className="separator">•</span>
+                                <span className="dates">2002 – 2004</span>
+                            </div>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Migration Project:</strong> {expEu.desc_1}</li>
-                            <li><strong>Network Administration:</strong> {expEu.desc_2}</li>
-                            <li><strong>Monitoring & Performance:</strong> {expEu.desc_3}</li>
-                            <li><strong>Security & Firewall:</strong> {expEu.desc_4}</li>
-                            <li><strong>Technological Benchmarking:</strong> {expEu.desc_5}</li>
+                            <li>{renderJobDetail(expEu.desc_1)}</li>
+                            <li>{renderJobDetail(expEu.desc_2)}</li>
+                            <li>{renderJobDetail(expEu.desc_3)}</li>
+                            <li>{renderJobDetail(expEu.desc_4)}</li>
+                            <li>{renderJobDetail(expEu.desc_5)}</li>
                         </ul>
                     </div>
 
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expIts.title}</h3>
-                            <span className="company">{expIts.company}</span>
-                            <span className="dates">1999 – 2001</span>
+                            <div className="job-company-dates">
+                                <span className="company">{expIts.company}</span>
+                                <span className="separator">•</span>
+                                <span className="dates">1999 – 2001</span>
+                            </div>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Weblinea.it Project:</strong> {expIts.desc_1}</li>
-                            <li><strong>Server & Mail Configuration:</strong> {expIts.desc_2}</li>
-                            <li><strong>Tuning & Optimization:</strong> {expIts.desc_3}</li>
+                            <li>{renderJobDetail(expIts.desc_1)}</li>
+                            <li>{renderJobDetail(expIts.desc_2)}</li>
+                            <li>{renderJobDetail(expIts.desc_3)}</li>
                         </ul>
                     </div>
 
                     <div className="experience-item">
                         <div className="job-meta">
                             <h3>{expNovell.title}</h3>
-                            <span className="company">{expNovell.company}</span>
-                            <span className="dates">1996 – 1998</span>
+                            <div className="job-company-dates">
+                                <span className="company">{expNovell.company}</span>
+                                <span className="separator">•</span>
+                                <span className="dates">1996 – 1998</span>
+                            </div>
                         </div>
                         <ul className="job-details">
-                            <li><strong>Certification:</strong> {expNovell.desc_1}</li>
-                            <li><strong>Infrastructure:</strong> {expNovell.desc_2}</li>
-                            <li><strong>Development:</strong> {expNovell.desc_3}</li>
+                            <li>{renderJobDetail(expNovell.desc_1)}</li>
+                            <li>{renderJobDetail(expNovell.desc_2)}</li>
+                            <li>{renderJobDetail(expNovell.desc_3)}</li>
                         </ul>
                     </div>
                 </section>

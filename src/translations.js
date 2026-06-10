@@ -198,10 +198,10 @@ export const translations = {
             exp_npo: {
                 title: "Senior IT Specialist",
                 company: "NPO Torino",
-                desc_1: "Designed and managed large-scale monitoring and automation systems for critical server farms.",
-                desc_2: "Deployed cross-platform solutions for server fleet management across heterogeneous environments.",
-                desc_3: "Engineered custom system agents with focus on portability and performance for legacy and modern distributions.",
-                desc_4: "Ensured 99.9% uptime for data collection services through proactive troubleshooting and automated recovery."
+                desc_1: "Infrastructure Orchestration: Designed and managed large-scale monitoring and automation systems for critical server farms.",
+                desc_2: "Monitoring: Deployed cross-platform solutions for server fleet management across heterogeneous environments.",
+                desc_3: "Advanced System Tools: Engineered custom system agents with focus on portability and performance for legacy and modern distributions.",
+                desc_4: "Reliability Engineering: Ensured 99.9% uptime for data collection services through proactive troubleshooting and automated recovery."
             },
             exp_break: {
                 title: "Career Break",
@@ -563,10 +563,10 @@ export const translations = {
             exp_npo: {
                 title: "Senior IT Specialist",
                 company: "NPO Torino",
-                desc_1: "Progettazione e gestione di sistemi di monitoraggio e automazione su larga scala per server farm critiche.",
-                desc_2: "Implementazione di soluzioni multipiattaforma per la gestione di flotte di server in ambienti eterogenei.",
-                desc_3: "Sviluppo di agenti di sistema personalizzati con focus su portabilità e prestazioni per distribuzioni legacy e moderne.",
-                desc_4: "Garanzia di uptime del 99,9% per i servizi di raccolta dati tramite troubleshooting proattivo e ripristino automatico."
+                desc_1: "Orchestrazione dell'Infrastruttura: Progettazione e gestione di sistemi di monitoraggio e automazione su larga scala per server farm critiche.",
+                desc_2: "Monitoraggio: Implementazione di soluzioni multipiattaforma per la gestione di flotte di server in ambienti eterogenei.",
+                desc_3: "Strumenti di Sistema Avanzati: Sviluppo di agenti di sistema personalizzati con focus su portabilità e prestazioni per distribuzioni legacy e moderne.",
+                desc_4: "Ingegneria dell'Affidabilità: Garanzia di uptime del 99,9% per i servizi di raccolta dati tramite troubleshooting proattivo e ripristino automatico."
             },
             exp_break: {
                 title: "Pausa Carriera",
@@ -928,10 +928,10 @@ export const translations = {
             exp_npo: {
                 title: "Senior IT Specialist",
                 company: "NPO Torino",
-                desc_1: "Diseñé y gestioné sistemas de monitoreo y automatización a gran escala para granjas de servidores críticos.",
-                desc_2: "Implementé soluciones multiplataforma para la gestión de flotas de servidores en entornos heterogéneos.",
-                desc_3: "Desarrollé agentes de sistema personalizados con enfoque en portabilidad y rendimiento para distribuciones legacy y modernas.",
-                desc_4: "Aseguré un tiempo de actividad del 99,9% para servicios de recolección de datos mediante resolución de problemas proactiva y recuperación automática."
+                desc_1: "Orquestación de Infraestructura: Diseñé y gestioné sistemas de monitoreo y automatización a gran escala para granjas de servidores críticos.",
+                desc_2: "Monitoreo: Implementé soluciones multiplataforma para la gestión de flotas de servidores en entornos heterogéneos.",
+                desc_3: "Herramientas de Sistema Avanzadas: Desarrollé agentes de sistema personalizados con enfoque en portabilidad y rendimiento para distribuciones legacy y modernas.",
+                desc_4: "Ingeniería de Confiabilidad: Aseguré un tiempo de actividad del 99,9% para servicios de recolección de datos mediante resolución de problemas proactiva y recuperación automática."
             },
             exp_break: {
                 title: "Pausa en la Carrera",
@@ -1293,10 +1293,10 @@ export const translations = {
             exp_npo: {
                 title: "ผู้เชี่ยวชาญด้านไอทีอาวุโส",
                 company: "NPO Torino",
-                desc_1: "ออกแบบและบริหารจัดการระบบตรวจสอบและการทำงานอัตโนมัติขนาดใหญ่สำหรับฟาร์มเซิร์ฟเวอร์ที่สำคัญ.",
-                desc_2: "ใช้งานโซลูชันข้ามแพลตฟอร์มสำหรับการจัดการเซิร์ฟเวอร์ในสภาพแวดล้อมที่หลากหลาย.",
-                desc_3: "พัฒนาตัวแทนระบบแบบกำหนดเอง โดยเน้นไปที่ความสามารถในการพกพาและประสิทธิภาพสำหรับระบบทั้งรุ่นเก่าและรุ่นใหม่.",
-                desc_4: "รับประกันเวลาเตรียมพร้อมให้บริการ (uptime) ถึง 99.9% สำหรับบริการเก็บข้อมูลผ่านการแก้ไขปัญหาเชิงรุกและการกู้คืนโดยอัตโนมัติ."
+                desc_1: "การประสานงานโครงสร้างพื้นฐาน: ออกแบบและบริหารจัดการระบบตรวจสอบและการทำงานอัตโนมัติขนาดใหญ่สำหรับฟาร์มเซิร์ฟเวอร์ที่สำคัญ.",
+                desc_2: "การตรวจสอบระบบ: ใช้งานโซลูชันข้ามแพลตฟอร์มสำหรับการจัดการเซิร์ฟเวอร์ในสภาพแวดล้อมที่หลากหลาย.",
+                desc_3: "เครื่องมือระบบขั้นสูง: พัฒนาตัวแทนระบบแบบกำหนดเอง โดยเน้นไปที่ความสามารถในการพกพาและประสิทธิภาพสำหรับระบบทั้งรุ่นเก่าและรุ่นใหม่.",
+                desc_4: "วิศวกรรมความน่าเชื่อถือ: รับประกันเวลาเตรียมพร้อมให้บริการ (uptime) ถึง 99.9% สำหรับบริการเก็บข้อมูลผ่านการแก้ไขปัญหาเชิงรุกและการกู้คืนโดยอัตโนมัติ."
             },
             exp_break: {
                 title: "พักสายงาน",
