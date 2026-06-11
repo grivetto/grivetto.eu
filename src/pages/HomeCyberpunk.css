@@ -399,3 +399,63 @@
         box-shadow: 0 0 8px hsl(180, 100%, 50%);
     }
 }
+
+/* Cyberpunk overrides for FAQ section */
+.modern-home.cyberpunk .faq-section {
+    background: linear-gradient(180deg, rgba(10, 10, 25, 0.4) 0%, transparent 100%);
+}
+
+.modern-home.cyberpunk .faq-item {
+    background: rgba(10, 10, 25, 0.6);
+    border: 2px solid hsl(180, 100%, 50%, 0.3);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(0, 255, 255, 0.05);
+}
+
+.modern-home.cyberpunk .faq-item:hover {
+    border-color: hsl(180, 100%, 50%, 0.8);
+    background: rgba(10, 10, 25, 0.8);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        0 0 25px hsl(180, 100%, 50%, 0.4);
+}
+
+.modern-home.cyberpunk .faq-item.active {
+    border-color: hsl(300, 100%, 50%, 0.8);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        0 0 25px hsl(300, 100%, 50%, 0.4);
+}
+
+.modern-home.cyberpunk .faq-question-text {
+    color: hsl(180, 80%, 85%);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+}
+
+.modern-home.cyberpunk .faq-item:hover .faq-question-text {
+    color: hsl(180, 100%, 60%);
+    text-shadow: 0 0 10px hsl(180, 100%, 50%);
+}
+
+.modern-home.cyberpunk .faq-item.active .faq-question-text {
+    color: hsl(300, 100%, 65%);
+    text-shadow: 0 0 10px hsl(300, 100%, 50%);
+}
+
+.modern-home.cyberpunk .faq-icon-wrapper {
+    color: hsl(180, 100%, 50%);
+    filter: drop-shadow(0 0 5px hsl(180, 100%, 50%));
+}
+
+.modern-home.cyberpunk .faq-icon.open {
+    color: hsl(300, 100%, 50%);
+    filter: drop-shadow(0 0 5px hsl(300, 100%, 50%));
+}
+
+.modern-home.cyberpunk .faq-answer-content {
+    color: hsl(180, 40%, 80%);
+    border-top: 1px dashed hsl(180, 100%, 50%, 0.2);
+    padding-top: 1.25rem;
+    margin-top: 0.25rem;
+}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
 import DenaroMachine from '../components/DenaroMachine';
+import { translations } from '../translations';
 import './Home.css';
 import './HomeCyberpunk.css';
 
@@ -20,6 +21,11 @@ export default function Home({ onNavigate }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
     const { t, language, toggleLanguage } = useLanguage();
+    const [openFaqIndex, setOpenFaqIndex] = useState(null);
+    const toggleFaq = (index) => {
+        setOpenFaqIndex(openFaqIndex === index ? null : index);
+    };
+    const faqItems = translations[language]?.faq?.items || translations['en']?.faq?.items || [];
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
@@ -291,9 +297,9 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">🩰</span>
                                     <span className="bento-link-text">Ballerina</span>
                                 </a>
-                                <a href="https://sgrivett.ddns.net/denaro/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
-                                    <span className="bento-link-icon">💰</span>
-                                    <span className="bento-link-text">{t('expertise', 'card_web').link_denaro.replace(' →', '').replace('→', '')}</span>
+                                <a href="https://grivetto.github.io/caf/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🏢</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_caf.replace(' →', '').replace('→', '')}</span>
                                 </a>
                             </div>
                         </motion.div>
@@ -461,10 +467,53 @@ export default function Home({ onNavigate }) {
                 </motion.div>
             </section>
 
+            {/* FAQ Accordion Section */}
+            <section className="faq-section" id="faq">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="section-container"
+                >
+                    <div className="section-header">
+                        <span className="section-badge">{t('faq', 'title')}</span>
+                        <h2 className="section-title">{t('faq', 'title')}</h2>
+                        <p className="section-subtitle">{t('faq', 'subtitle')}</p>
+                    </div>
 
-
-
-
+                    <div className="faq-accordion">
+                        {faqItems.map((item, index) => {
+                            const isOpen = openFaqIndex === index;
+                            return (
+                                <motion.div 
+                                    key={index} 
+                                    variants={itemVariants}
+                                    className={`faq-item glass ${isOpen ? 'active' : ''}`}
+                                >
+                                    <button 
+                                        className="faq-question-btn"
+                                        onClick={() => toggleFaq(index)}
+                                        aria-expanded={isOpen}
+                                    >
+                                        <span className="faq-question-text">{item.q}</span>
+                                        <span className="faq-icon-wrapper">
+                                            <svg className={`faq-icon ${isOpen ? 'open' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <div className={`faq-answer-wrapper ${isOpen ? 'open' : ''}`}>
+                                        <div className="faq-answer-content">
+                                            <p>{item.a}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </motion.div>
+            </section>
 
             {/* About & Philosophy Section (Increased Text Content) */}
             <section className="philosophy-section">

@@ -236,6 +236,81 @@
     margin-top: 0.5rem;
 }
 
+.denaro-actions-btn-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.denaro-actions-btn-group .btn-diag,
+.denaro-actions-btn-group .btn-git,
+.denaro-actions-btn-group .btn-dash {
+    flex: 1;
+    min-width: 180px;
+}
+
+.btn-dash {
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, rgba(77, 250, 148, 0.1), rgba(77, 250, 148, 0.2));
+    border: 1px solid rgba(77, 250, 148, 0.4);
+    border-radius: 8px;
+    color: #4dfa94;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-dash:hover {
+    background: linear-gradient(135deg, rgba(77, 250, 148, 0.2), rgba(77, 250, 148, 0.35));
+    border-color: #4dfa94;
+    box-shadow: 0 0 15px rgba(77, 250, 148, 0.4);
+    transform: translateY(-1px);
+    color: #4dfa94;
+}
+
+.btn-dash:active {
+    transform: translateY(0);
+}
+
+.btn-git {
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, rgba(209, 117, 255, 0.1), rgba(209, 117, 255, 0.2));
+    border: 1px solid rgba(209, 117, 255, 0.4);
+    border-radius: 8px;
+    color: #d175ff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn-git:hover {
+    background: linear-gradient(135deg, rgba(209, 117, 255, 0.2), rgba(209, 117, 255, 0.35));
+    border-color: #d175ff;
+    box-shadow: 0 0 15px rgba(209, 117, 255, 0.4);
+    transform: translateY(-1px);
+    color: #d175ff;
+}
+
+.btn-git:active {
+    transform: translateY(0);
+}
+
 .btn-diag {
     width: 100%;
     padding: 0.9rem 1.5rem;

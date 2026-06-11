@@ -44,7 +44,7 @@ export const translations = {
                 link_thay: "Thay →",
                 link_nena: "Nena →",
                 link_michi: "Michi →",
-                link_denaro: "Denaro - Trading Bot →",
+                link_caf: "Caf →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
@@ -196,6 +196,7 @@ export const translations = {
             title: "Macchina Crea Denaro (Denaro Bot)",
             subtitle: "An automated, multi-strategy algorithmic crypto trading system running on Binance spot markets. Driven by market regime detection and real-time momentum scalping.",
             view_github: "View GitHub Repository",
+            link_dashboard: "Live Dashboard →",
             stats_profit: "Total Profit",
             stats_trades: "Total Trades",
             stats_winrate: "Win Rate",
@@ -380,6 +381,82 @@ export const translations = {
             title: "404 - Page Not Found",
             message: "Oops! It seems you've drifted into deep space. The page you are looking for doesn't exist or has been moved.",
             back_home: "Back to Reality"
+        },
+        meta: {
+            home: {
+                title: "Sergio Grivetto | Senior IT Specialist",
+                desc: "Senior IT Specialist & Full-Stack Architect. Shaping the IT landscape since 1993. Expert in Linux/Unix and digital resilience."
+            },
+            links: {
+                title: "Historical Links | Grivetto.eu",
+                desc: "Explore the history of the Italian Internet (1992+). CRS4, Video On Line, and other digital pioneers."
+            },
+            app: {
+                title: "Custom Web App | Grivetto.eu",
+                desc: "Interactive showcase of modern web engineering and custom application development examples."
+            },
+            grid: {
+                title: "Image Grid | Grivetto.eu",
+                desc: "Responsive image grid showcase from the portfolio of Sergio Grivetto, IT System Administrator."
+            },
+            resume: {
+                title: "Resume | Sergio Grivetto",
+                desc: "Professional CV of Sergio Grivetto. Senior IT Specialist, Linux Expert, and IT Professional since 1993."
+            },
+            quiz: {
+                title: "Quiz App | Grivetto.eu",
+                desc: "Test your IT knowledge with this interactive Quiz. A demonstration of React state management."
+            },
+            portfolio: {
+                title: "Portfolio | Sergio Grivetto",
+                desc: "Showcase of web development projects and system administration expertise by Sergio Grivetto."
+            },
+            'asciinema-demo': {
+                title: "Asciinema Demo | Grivetto.eu",
+                desc: "Terminal session playback showcasing Linux CLI tools and system administration scripts."
+            },
+            curiosity: {
+                title: "Cosmic Curiosity | Grivetto.eu",
+                desc: "Interactive spark of knowledge featuring IT history and fun tech facts."
+            },
+            terminal: {
+                title: "IT Specialist | Grivetto.eu",
+                desc: "Advanced system administration and infrastructure orchestration since 1993."
+            },
+            vintage: {
+                title: "Vintage Portal (1993) | Grivetto.eu",
+                desc: "Journey back to the dawn of the public World Wide Web with this authentic 1993-styled page."
+            },
+            'not-found': {
+                title: "404 Page Not Found | Grivetto.eu",
+                desc: "The requested page was not found on Grivetto.eu. Discover IT excellence and systems expertise dating back to 1993."
+            }
+        },
+        faq: {
+            title: "Frequently Asked Questions",
+            subtitle: "Find quick answers to common questions about my technical background and services.",
+            items: [
+                {
+                    q: "Who is Sergio Grivetto?",
+                    a: "Sergio Grivetto is a Senior IT Specialist and Full-Stack Architect with over three decades of experience. Based in Turin, Italy, he has been building resilient digital infrastructures and custom web systems since 1993, combining deep systems administration skills with modern development practices."
+                },
+                {
+                    q: "What IT services do you offer?",
+                    a: "I specialize in Linux/Unix system administration (RedHat, Debian, Ubuntu), high-availability system clusters, infrastructure automation, network security auditing, full-stack React/Node.js development, and legacy system modernization."
+                },
+                {
+                    q: "Do you work remotely or on-site?",
+                    a: "I am based in Turin, Italy, and provide both local on-site services in the Piedmont region and remote consulting/server administration services for clients worldwide."
+                },
+                {
+                    q: "What is the 'Macchina Crea Denaro' (Denaro Bot) project?",
+                    a: "It is an automated algorithmic trading infrastructure running on Binance spot markets. It implements real-time momentum scalping, regime detection, and secure system monitoring, showcasing robust design and low-latency execution."
+                },
+                {
+                    q: "How does your experience since 1993 benefit modern systems?",
+                    a: "Having worked through the birth of the public internet in Italy up to today's cloud-native deployments gives me a deep understanding of low-level systems engineering, network protocols, and resilience. I design modern architectures built to scale and endure."
+                }
+            ]
         }
     },
     it: {
@@ -427,7 +504,7 @@ export const translations = {
                 link_thay: "Thay →",
                 link_nena: "Nena →",
                 link_michi: "Michi →",
-                link_denaro: "Denaro - Trading Bot →",
+                link_caf: "Caf →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
@@ -579,6 +656,7 @@ export const translations = {
             title: "Macchina Crea Denaro (Denaro Bot)",
             subtitle: "Un sistema di trading crypto algoritmico distribuito e multi-strategia operante sui mercati spot di Binance. Basato su rilevamento dei regimi di mercato e scalping di momentum in tempo reale.",
             view_github: "Vedi Repository GitHub",
+            link_dashboard: "Dashboard Live →",
             stats_profit: "Profitto Totale",
             stats_trades: "Operazioni Totali",
             stats_winrate: "Win Rate",
@@ -763,6 +841,82 @@ export const translations = {
             title: "404 - Pagina Non Trovata",
             message: "Oops! Sembra che tu sia finito nello spazio profondo. La pagina che stai cercando non esiste o è stata spostata.",
             back_home: "Torna alla Realtà"
+        },
+        meta: {
+            home: {
+                title: "Sergio Grivetto | Senior IT Specialist",
+                desc: "Senior IT Specialist & Full-Stack Architect. Attivo nel mondo IT dal 1993. Esperto di sistemi Linux/Unix e resilienza digitale."
+            },
+            links: {
+                title: "Link Storici | Grivetto.eu",
+                desc: "Esplora la storia di Internet in Italia (dal 1992). CRS4, Video On Line e altri pionieri del digitale."
+            },
+            app: {
+                title: "Web App Personalizzata | Grivetto.eu",
+                desc: "Dimostrazione interattiva di ingegneria web moderna ed esempi di sviluppo di applicazioni personalizzate."
+            },
+            grid: {
+                title: "Image Grid | Grivetto.eu",
+                desc: "Galleria di immagini responsive dal portfolio di Sergio Grivetto, amministratore di sistemi IT."
+            },
+            resume: {
+                title: "Curriculum | Sergio Grivetto",
+                desc: "CV professionale di Sergio Grivetto. Senior IT Specialist, esperto Linux e professionista IT dal 1993."
+            },
+            quiz: {
+                title: "App Quiz | Grivetto.eu",
+                desc: "Metti alla prova le tue conoscenze informatiche con questo quiz interattivo in React."
+            },
+            portfolio: {
+                title: "Portfolio | Sergio Grivetto",
+                desc: "Presentazione dei progetti di sviluppo web e delle competenze sistemistiche di Sergio Grivetto."
+            },
+            'asciinema-demo': {
+                title: "Asciinema Demo | Grivetto.eu",
+                desc: "Riproduzione di sessioni terminale che mostra comandi CLI Linux e script di amministrazione."
+            },
+            curiosity: {
+                title: "Cosmic Curiosity | Grivetto.eu",
+                desc: "Pillole di conoscenza interattive sulla storia dell'IT e curiosità tecnologiche."
+            },
+            terminal: {
+                title: "Specialista IT | Grivetto.eu",
+                desc: "Amministrazione di sistema avanzata e orchestrazione dell'infrastruttura dal 1993."
+            },
+            vintage: {
+                title: "Portale Vintage (1993) | Grivetto.eu",
+                desc: "Fai un viaggio alle origini del World Wide Web pubblico con questa pagina in stile retro 1993."
+            },
+            'not-found': {
+                title: "404 Pagina Non Trovata | Grivetto.eu",
+                desc: "La pagina richiesta non è stata trovata su Grivetto.eu. Scopri l'eccellenza IT e l'esperienza sistemistica dal 1993."
+            }
+        },
+        faq: {
+            title: "Domande Frequenti (FAQ)",
+            subtitle: "Trova risposte rapide sul mio percorso professionale e sui servizi IT offerti.",
+            items: [
+                {
+                    q: "Chi è Sergio Grivetto?",
+                    a: "Sergio Grivetto è un Senior IT Specialist e Full-Stack Architect con oltre trent'anni di esperienza. Con sede a Torino, si occupa dal 1993 della progettazione di infrastrutture digitali resilienti e sistemi web personalizzati, unendo solide competenze sistemistiche a pratiche di sviluppo moderne."
+                },
+                {
+                    q: "Quali servizi IT offri?",
+                    a: "Sono specializzato in amministrazione di sistemi Linux/Unix (RedHat, Debian, Ubuntu), cluster ad alta affidabilità, automazione delle infrastrutture, audit di sicurezza di rete, sviluppo full-stack (React/Node.js) e modernizzazione di sistemi legacy."
+                },
+                {
+                    q: "Lavori da remoto o in loco?",
+                    a: "Ho sede a Torino e offro servizi in loco nella regione Piemonte, oltre a servizi di consulenza e amministrazione remota dei server per clienti in tutto il mondo."
+                },
+                {
+                    q: "Cos'è il progetto 'Macchina Crea Denaro' (Denaro Bot)?",
+                    a: "È un'infrastruttura di trading algoritmico automatizzato che opera sui mercati spot di Binance. Implementa strategie di momentum scalping in tempo reale, rilevamento del regime di mercado e monitoraggio sicuro, evidenziando una progettazione robusta ed esecuzione a bassa latenza."
+                },
+                {
+                    q: "In che modo l'esperienza dal 1993 giova ai sistemi moderni?",
+                    a: "Aver vissuto la nascita di Internet in Italia fino alle odierne architetture cloud-native mi permette di avere una conoscenza profonda di sistemi a basso livello, protocolli di rete e resilienza. Progetto architetture moderne create per scalare e durare nel tempo."
+                }
+            ]
         }
     },
     es: {
@@ -810,7 +964,7 @@ export const translations = {
                 link_thay: "Thay →",
                 link_nena: "Nena →",
                 link_michi: "Michi →",
-                link_denaro: "Denaro - Trading Bot →",
+                link_caf: "Caf →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
@@ -962,6 +1116,7 @@ export const translations = {
             title: "Máquina de Hacer Dinero (Denaro Bot)",
             subtitle: "Un sistema de trading cripto algorítmico automatizado y multi-estrategia en los mercados spot de Binance. Basado en detección de regímenes y scalping de momentum en tiempo real.",
             view_github: "Ver Repositorio GitHub",
+            link_dashboard: "Panel de Control →",
             stats_profit: "Beneficio Total",
             stats_trades: "Operaciones Totales",
             stats_winrate: "Tasa de Acierto",
@@ -1146,6 +1301,82 @@ export const translations = {
             title: "404 - Página No Encontrada",
             message: "¡Oops! Parece que te has adentrado en el espacio profundo. La página que buscas no existe o ha sido movida.",
             back_home: "Volver a la Realidad"
+        },
+        meta: {
+            home: {
+                title: "Sergio Grivetto | Especialista Senior en TI",
+                desc: "Especialista Senior en TI y Arquitecto Full-Stack. Activo en el sector de la tecnología desde 1993. Experto en Linux/Unix y resiliencia digital."
+            },
+            links: {
+                title: "Enlaces Históricos | Grivetto.eu",
+                desc: "Explore la historia de Internet en Italia (desde 1992). CRS4, Video On Line y otros pioneros digitales."
+            },
+            app: {
+                title: "Aplicación Web Personalizada | Grivetto.eu",
+                desc: "Demostración interactiva de ingeniería web moderna y ejemplos de desarrollo de aplicaciones a medida."
+            },
+            grid: {
+                title: "Image Grid | Grivetto.eu",
+                desc: "Galería de imágenes adaptables del portafolio de Sergio Grivetto, administrador de sistemas de TI."
+            },
+            resume: {
+                title: "Currículum | Sergio Grivetto",
+                desc: "CV profesional de Sergio Grivetto. Especialista Senior en TI, experto en Linux y profesional tecnológico desde 1993."
+            },
+            quiz: {
+                title: "App de Preguntas | Grivetto.eu",
+                desc: "Ponga a prueba sus conocimientos informáticos con este juego interactivo de React."
+            },
+            portfolio: {
+                title: "Portafolio | Sergio Grivetto",
+                desc: "Muestra de proyectos de desarrollo web y experiencia en administración de sistemas de Sergio Grivetto."
+            },
+            'asciinema-demo': {
+                title: "Demo de Asciinema | Grivetto.eu",
+                desc: "Reproducción de sesiones de terminal que muestran comandos CLI de Linux y scripts de administración."
+            },
+            curiosity: {
+                title: "Cosmic Curiosity | Grivetto.eu",
+                desc: "Datos curiosos interactivos sobre la historia de la informática y la tecnología."
+            },
+            terminal: {
+                title: "Especialista en TI | Grivetto.eu",
+                desc: "Administración avanzada de sistemas y orquestación de infraestructura desde 1993."
+            },
+            vintage: {
+                title: "Portal Vintage (1993) | Grivetto.eu",
+                desc: "Viaje a los inicios de la World Wide Web pública con esta página auténtica de estilo retro de 1993."
+            },
+            'not-found': {
+                title: "404 Página No Encontrada | Grivetto.eu",
+                desc: "La página solicitada no se encontró en Grivetto.eu. Descubra la excelencia en TI y la experiencia en sistemas desde 1993."
+            }
+        },
+        faq: {
+            title: "Preguntas Frecuentes (FAQ)",
+            subtitle: "Respuestas rápidas sobre mi trayectoria profesional y los servicios de TI ofrecidos.",
+            items: [
+                {
+                    q: "¿Quién es Sergio Grivetto?",
+                    a: "Sergio Grivetto es un Especialista Senior en TI y Arquitecto Full-Stack con más de tres décadas de experiencia. Basado en Turín, Italia, se dedica desde 1993 al diseño de infraestructuras digitales resilientes y sistemas web personalizados, combinando experiencia en sistemas con desarrollo moderno."
+                },
+                {
+                    q: "¿Qué servicios de TI ofrece?",
+                    a: "Me especializo en administración de sistemas Linux/Unix (RedHat, Debian, Ubuntu), clústeres de alta disponibilidad, automatización de infraestructuras, auditorías de seguridad de red, desarrollo full-stack (React/Node.js) y modernización de sistemas heredados."
+                },
+                {
+                    q: "¿Trabaja a distancia o de forma presencial?",
+                    a: "Tengo mi sede en Turín, Italia, y ofrezco servicios presenciales en la región de Piamonte, además de consultoría y administración de servidores a distancia para clientes de todo el mundo."
+                },
+                {
+                    q: "¿Qué es el proyecto 'Macchina Crea Denaro' (Denaro Bot)?",
+                    a: "Es una infraestructura de trading algorítmico automatizado que opera en los mercados spot de Binance. Implementa estrategias de momentum scalping en tiempo real, detección del régimen de mercado y monitoreo seguro, destacando un diseño robusto y ejecución de baja latencia."
+                },
+                {
+                    q: "¿Cómo beneficia su experiencia desde 1993 a los sistemas modernos?",
+                    a: "Haber vivido desde el nacimiento del internet público en Italia hasta los despliegues modernos nativos de la nube me brinda un conocimiento profundo de la ingeniería de sistemas de bajo nivel, protocolos de red y resiliencia. Diseño arquitecturas modernas creadas para escalar y perdurar."
+                }
+            ]
         }
     },
     th: {
@@ -1193,7 +1424,7 @@ export const translations = {
                 link_thay: "Thay →",
                 link_nena: "Nena →",
                 link_michi: "Michi →",
-                link_denaro: "Denaro - Trading Bot →",
+                link_caf: "Caf →",
                 btn_curiosity: "✨ ความอยากรู้อยากเห็นระดับจักรวาล",
                 btn_tunnel: "🌀 อุโมงค์นีออน",
                 btn_tictactoe: "⭕ โอเอ็กซ์นีออน",
@@ -1345,6 +1576,7 @@ export const translations = {
             title: "เครื่องจักรผลิตเงิน (Denaro Bot)",
             subtitle: "ระบบเทรดคริปโตแบบอัลกอริทึมอัตโนมัติและหลากหลายกลยุทธ์ ทำงานบนตลาด Spot ของ Binance ขับเคลื่อนด้วยการตรวจจับสภาวะตลาดและการทำกำไรระยะสั้นในแบบเรียลไทม์",
             view_github: "ดูคลังเก็บข้อมูล GitHub",
+            link_dashboard: "แผงควบคุมสด →",
             stats_profit: "กำไรรวม",
             stats_trades: "จำนวนการเทรดรวม",
             stats_winrate: "อัตราการชนะ",
@@ -1529,6 +1761,82 @@ export const translations = {
             title: "404 - ไม่พบหน้าเว็บ",
             message: "โอ๊ะ! ดูเหมือนว่าคุณจะล่องลอยไปในห้วงอวกาศอันกว้างใหญ่ หน้าเว็บที่คุณกำลังหาอาจไม่มีอยู่หรือถูกย้ายแล้ว.",
             back_home: "กลับสู่โลกแห่งความจริง"
+        },
+        meta: {
+            home: {
+                title: "Sergio Grivetto | ผู้เชี่ยวชาญด้านไอทีอาวุโส",
+                desc: "ผู้เชี่ยวชาญด้านไอทีอาวุโสและสถาปนิก Full-Stack เริ่มทำงานในสายงานไอทีตั้งแต่ปี 1993 เชี่ยวชาญด้านระบบ Linux/Unix และความยืดหยุ่นทางดิจิทัล"
+            },
+            links: {
+                title: "ลิงก์ประวัติศาสตร์ | Grivetto.eu",
+                desc: "สำรวจประวัติศาสตร์ของอินเทอร์เน็ตในอิตาลี (ตั้งแต่ปี 1992) CRS4, Video On Line และผู้บุกเบิกดิจิทัลรายอื่นๆ"
+            },
+            app: {
+                title: "เว็บแอปพลิเคชันที่ออกแบบเอง | Grivetto.eu",
+                desc: "พื้นที่แสดงผลงานเชิงโต้ตอบของการวิศวกรรมเว็บที่ทันสมัยและตัวอย่างการพัฒนาแอปพลิเคชันแบบกำหนดเอง"
+            },
+            grid: {
+                title: "ตารางรูปภาพ | Grivetto.eu",
+                desc: "แกลเลอรีรูปภาพที่แสดงผลได้ดีในทุกอุปกรณ์จากผลงานของ Sergio Grivetto ผู้ดูแลระบบไอที"
+            },
+            resume: {
+                title: "ประวัติการทำงาน | Sergio Grivetto",
+                desc: "ประวัติการทำงานส่วนบุคคล of Sergio Grivetto ผู้เชี่ยวชาญด้านไอทีอาวุโส ผู้เชี่ยวชาญ Linux และมืออาชีพด้านไอทีตั้งแต่ปี 1993"
+            },
+            quiz: {
+                title: "แอปควิซเกม | Grivetto.eu",
+                desc: "ทดสอบความรู้ไอทีของคุณด้วยควิซคำถามเชิงโต้ตอบที่ขับเคลื่อนด้วย React"
+            },
+            portfolio: {
+                title: "ผลงาน | Sergio Grivetto",
+                desc: "พื้นที่รวบรวมโครงการพัฒนาเว็บและความเชี่ยวชาญด้านการดูแลระบบของ Sergio Grivetto"
+            },
+            'asciinema-demo': {
+                title: "วิดีโอสาธิต Asciinema | Grivetto.eu",
+                desc: "การเล่นบันทึกเซสชันเทอร์มินัลจำลองแสดงคำสั่ง CLI ของ Linux และสคริปต์การดูแลระบบ"
+            },
+            curiosity: {
+                title: "ความอยากรู้อยากเห็นแห่งจักรวาล | Grivetto.eu",
+                desc: "เกร็ดความรู้และข้อมูลทางเทคโนโลยีและประวัติศาสตร์ไอทีที่น่าสนใจในรูปแบบเชิงโต้ตอบ"
+            },
+            terminal: {
+                title: "ผู้เชี่ยวชาญระบบไอที | Grivetto.eu",
+                desc: "การดูแลระบบขั้นสูงและการจัดการโครงสร้างพื้นฐานระดับลึกมาตั้งแต่ปี 1993"
+            },
+            vintage: {
+                title: "พอร์ทัลวินเทจ (1993) | Grivetto.eu",
+                desc: "ย้อนเวลากลับไปสู่ยุคเริ่มต้นของ World Wide Web สาธารณะด้วยหน้าเว็บสไตล์ปี 1993 ของแท้"
+            },
+            'not-found': {
+                title: "404 ไม่พบหน้าเว็บ | Grivetto.eu",
+                desc: "ไม่พบหน้าเว็บที่คุณต้องการใน Grivetto.eu ร่วมค้นหาความเป็นเลิศด้านไอทีและประสบการณ์ระบบที่มีประวัติยาวนานตั้งแต่ปี 1993"
+            }
+        },
+        faq: {
+            title: "คำถามที่พบบ่อย (FAQ)",
+            subtitle: "ค้นหาคำตอบอย่างรวดเร็วเกี่ยวกับประวัติการทำงานและบริการด้านไอทีของฉัน",
+            items: [
+                {
+                    q: "Sergio Grivetto คือใคร?",
+                    a: "Sergio Grivetto เป็นผู้เชี่ยวชาญด้านไอทีอาวุโสและสถาปนิก Full-Stack ที่มีประสบการณ์มากกว่าสามทศวรรษ ประจำอยู่ที่เมืองตูริน ประเทศอิตาลี โดยเขาได้สร้างโครงสร้างพื้นฐานดิจิทัลที่ยืดหยุ่นและระบบเว็บที่ปรับแต่งได้มาตั้งแต่ปี 1993 ผสมผสานความเชี่ยวชาญด้านระบบเข้ากับการเขียนโปรแกรมสมัยใหม่"
+                },
+                {
+                    q: "คุณมีบริการด้านไอทีอะไรบ้าง?",
+                    a: "ฉันเชี่ยวชาญด้านการดูแลระบบ Linux/Unix (RedHat, Debian, Ubuntu), คลัสเตอร์ระบบที่มีความพร้อมใช้งานสูง, การจัดการโครงสร้างพื้นฐานแบบอัตโนมัติ, การตรวจสอบความปลอดภัยของเครือข่าย, การพัฒนาเว็บแบบ Full-Stack (React/Node.js) และการปรับปรุงระบบเก่าให้ทันสมัย"
+                },
+                {
+                    q: "คุณทำงานแบบระยะไกลหรือนอกสถานที่?",
+                    a: "ฉันอยู่ที่เมืองตูริน ประเทศอิตาลี ให้บริการนอกสถานที่ในเขตแคว้นปีเอมอนเต รวมถึงให้บริการคำปรึกษาและดูแลเซิร์ฟเวอร์จากระยะไกลสำหรับลูกค้าทั่วโลก"
+                },
+                {
+                    q: "โครงการ 'Macchina Crea Denaro' (Denaro Bot) คืออะไร?",
+                    a: "เป็นโครงสร้างพื้นฐานการเทรดคริปโตแบบอัลกอริทึมอัตโนมัติบนตลาด spot ของ Binance ซึ่งใช้กลยุทธ์การทำกำไรระยะสั้น (momentum scalping) แบบเรียลไทม์ การตรวจจับสภาวะตลาด และการตรวจสอบระบบที่ปลอดภัย แสดงถึงการออกแบบที่ทนทานและการประมวลผลที่รวดเร็ว"
+                },
+                {
+                    q: "ประสบการณ์ตั้งแต่ปี 1993 มีประโยชน์ต่อระบบยุคใหม่อย่างไร?",
+                    a: "การที่ได้ผ่านช่วงเวลาตั้งแต่การกำเนิดอินเทอร์เน็ตสาธารณะในอิตาลีจนถึงการใช้งานสถาปัตยกรรมแบบ cloud-native ในปัจจุบัน ทำให้ฉันมีความเข้าใจอย่างลึกซึ้งเกี่ยวกับการวิศวกรรมระบบระดับต่ำ โปรโตคอลเครือข่าย และความยืดหยุ่น ฉันออกแบบสถาปัตยกรรมยุคใหม่ที่สร้างขึ้นมาเพื่อการขยายตัวและมีความยั่งยืน"
+                }
+            ]
         }
     }
 };

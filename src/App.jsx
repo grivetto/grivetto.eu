@@ -3,6 +3,7 @@ import './App.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import LanguageSelector from './components/LanguageSelector';
 import Home from './pages/Home'; // Keep Home static for instant first paint
+import { translations } from './translations';
 
 const CustomApp = lazy(() => import('./CustomApp'));
 const ImageGrid = lazy(() => import('./ImageGrid'));
@@ -223,68 +224,237 @@ function App() {
       }
     };
 
-    if (view === 'home') {
-      updateMeta(
-        'Sergio Grivetto | Senior IT Specialist',
-        'Senior IT Specialist & Full-Stack Architect. Shaping the IT landscape since 1993. Expert in Linux/Unix and digital resilience.'
-      );
-    } else if (view === 'links') {
-      updateMeta(
-        'Historical Links | Grivetto.eu',
-        'Explore the history of the Italian Internet (1992+). CRS4, Video On Line, and other digital pioneers.'
-      );
-    } else if (view === 'app') {
-      updateMeta(
-        'Custom Web App | Grivetto.eu',
-        'Interactive showcase of modern web engineering and custom application development examples.'
-      );
-    } else if (view === 'grid') {
-      updateMeta(
-        'Image Grid | Grivetto.eu',
-        'Responsive image grid showcase from the portfolio of Sergio Grivetto, IT System Administrator.'
-      );
-    } else if (view === 'resume') {
-      updateMeta(
-        'Resume | Sergio Grivetto',
-        'Professional CV of Sergio Grivetto. Senior IT Specialist, Linux Expert, and IT Professional since 1993.'
-      );
-    } else if (view === 'quiz') {
-      updateMeta(
-        'Quiz App | Grivetto.eu',
-        'Test your IT knowledge with this interactive Quiz. A demonstration of React state management.'
-      );
-    } else if (view === 'portfolio') {
-      updateMeta(
-        'Portfolio | Sergio Grivetto',
-        'Showcase of web development projects and system administration expertise by Sergio Grivetto.'
-      );
-    } else if (view === 'asciinema-demo') {
-      updateMeta(
-        'Asciinema Demo | Grivetto.eu',
-        'Terminal session playback showcasing Linux CLI tools and system administration scripts.'
-      );
-    } else if (view === 'curiosity') {
-      updateMeta(
-        'Cosmic Curiosity | Grivetto.eu',
-        'Interactive spark of knowledge featuring IT history and fun tech facts.'
-      );
-    } else if (view === 'terminal') {
-      updateMeta(
-        'IT Specialist | Grivetto.eu',
-        'Advanced system administration and infrastructure orchestration since 1993.'
-      );
-    } else if (view === 'vintage') {
-      updateMeta(
-        'Vintage Portal (1993) | Grivetto.eu',
-        'Journey back to the dawn of the public World Wide Web with this authentic 1993-styled page.'
-      );
-    } else if (view === 'not-found') {
-      updateMeta(
-        '404 Page Not Found | Grivetto.eu',
-        'The requested page was not found on Grivetto.eu. Discover IT excellence and systems expertise dating back to 1993.'
-      );
+    // Localized title & description lookup
+    const pageMeta = translations[lang]?.meta?.[view] || translations['en']?.meta?.[view];
+    if (pageMeta) {
+      updateMeta(pageMeta.title, pageMeta.desc);
+    } else {
+      updateMeta('Sergio Grivetto | Senior IT Specialist', 'Senior IT Specialist & Full-Stack Architect.');
     }
-    
+
+    // Dynamic JSON-LD injection
+    const personSchema = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sergio Grivetto",
+      "url": "https://www.grivetto.eu/",
+      "email": ["sergio@grivetto.eu", "sergio@grivetto.it"],
+      "jobTitle": lang === 'it' 
+        ? ["Senior IT Specialist", "Full-Stack Architect", "Consulente IT", "Esperto Linux/Unix", "Ingegnere delle Infrastrutture"]
+        : lang === 'es'
+        ? ["Especialista Senior en TI", "Arquitecto Full-Stack", "Consultor de TI", "Experto en Linux/Unix", "Ingeniero de Infraestructuras"]
+        : lang === 'th'
+        ? ["ผู้เชี่ยวชาญด้านไอทีอาวุโส", "สถาปนิก Full-Stack", "ที่ปรึกษาด้านไอที", "ผู้เชี่ยวชาญ Linux/Unix", "วิศวกรโครงสร้างพื้นฐาน"]
+        : ["Senior IT Specialist", "Full-Stack Architect", "IT Consultant", "Linux/Unix Expert", "Infrastructure Engineer"],
+      "description": lang === 'it'
+        ? "Senior IT Specialist con profonda esperienza nel settore IT dal 1993. Specializzato in ambienti Linux/Unix, gestione adattiva delle infrastrutture e architetture full-stack."
+        : lang === 'es'
+        ? "Especialista Senior en TI con amplia experiencia en el sector desde 1993. Especializado en entornos Linux/Unix, gestión adaptativa de infraestructuras y arquitecturas full-stack."
+        : lang === 'th'
+        ? "ผู้เชี่ยวชาญด้านไอทีอาวุโสที่มีประสบการณ์อย่างลึกซึ้งในระบบไอทีมาตั้งแต่ปี 1993 เชี่ยวชาญด้านระบบสภาพแวดล้อม Linux/Unix การจัดการโครงสร้างพื้นฐานแบบปรับเปลี่ยนได้ และสถาปัตยกรรม full-stack"
+        : "Senior IT Specialist with a deep-rooted expertise in IT since 1993. Specializing in Linux/Unix environments, adaptive infrastructure, and full-stack architectures.",
+      "knowsAbout": [
+        "Linux System Administration",
+        "Unix Server Management", 
+        "Systems Architecture",
+        "Infrastructure Automation",
+        "Digital Resilience",
+        "Full-Stack Web Development",
+        "Network Security",
+        "System Integration",
+        "IT Consulting",
+        "Legacy system modernization"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "Certified Novell Engineer (CNE)"
+        }
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Amedeo Avogadro Institute",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Turin",
+          "addressCountry": "IT"
+        }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Turin",
+        "addressRegion": "Piedmont",
+        "addressCountry": "IT"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/sgrivett/",
+        "https://www.facebook.com/sgrivetto/",
+        "https://www.instagram.com/webagency2000/",
+        "https://www.grivetto.it"
+      ],
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Turin",
+          "addressRegion": "Piedmont",
+          "addressCountry": "IT"
+        }
+      }
+    };
+
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Grivetto ~ Digital Resilience & Advanced IT Architecture",
+      "description": lang === 'it'
+        ? "Servizi informatici e consulenza avanzata specializzati in ambienti Linux/Unix, infrastrutture adattive e architetture web moderne dal 1993."
+        : lang === 'es'
+        ? "Servicios de informática y consultoría avanzada especializados en entornos Linux/Unix, infraestructuras adaptativas y arquitecturas web modernas desde 1993."
+        : lang === 'th'
+        ? "บริการระบบไอทีและคำปรึกษาขั้นสูงที่เชี่ยวชาญในระบบ Linux/Unix การจัดการโครงสร้างพื้นฐานแบบปรับแต่งได้ และสถาปัตยกรรมเว็บสมัยใหม่มาตั้งแต่ปี 1993"
+        : "Advanced IT systems and consulting services specializing in Linux/Unix environments, adaptive infrastructure management, and modern digital architectures since 1993.",
+      "provider": {
+        "@type": "Person",
+        "name": "Sergio Grivetto",
+        "jobTitle": lang === 'it' ? "Senior IT Specialist" : lang === 'es' ? "Especialista Senior en TI" : lang === 'th' ? "ผู้เชี่ยวชาญด้านไอทีอาวุโส" : "Senior IT Specialist"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Turin",
+          "containedIn": {
+            "@type": "AdministrativeArea",
+            "name": "Piedmont"
+          }
+        },
+        {
+          "@type": "Country",
+          "name": "Italy"
+        },
+        "Remote Services Worldwide"
+      ],
+      "serviceType": lang === 'it' 
+        ? [
+            "Amministrazione di sistema Linux",
+            "Gestione server Unix",
+            "Orchestrazione avanzata dell'infrastruttura",
+            "Ingegneria Web Full-Stack",
+            "Consulenza sulla resilienza digitale",
+            "Modernizzazione di sistemi legacy",
+            "Strategia e innovazione IT",
+            "Ottimizzazione dei server"
+          ]
+        : lang === 'es'
+        ? [
+            "Administración de sistemas Linux",
+            "Gestión de servidores Unix",
+            "Orquestación avanzada de infraestructura",
+            "Ingeniería Web Full-Stack",
+            "Consultoría de resiliencia digital",
+            "Modernización de sistemas heredados",
+            "Estrategia e innovación de TI",
+            "Optimización de servidores"
+          ]
+        : lang === 'th'
+        ? [
+            "การดูแลระบบ Linux",
+            "การจัดการเซิร์ฟเวอร์ Unix",
+            "การประสานงานโครงสร้างพื้นฐานขั้นสูง",
+            "วิศวกรรมเว็บแบบ Full-Stack",
+            "คำปรึกษาความยืดหยุ่นทางดิจิทัล",
+            "การปรับปรุงระบบเก่าให้ทันสมัย",
+            "กลยุทธ์และนวัตกรรมไอที",
+            "การเพิ่มประสิทธิภาพเซิร์ฟเวอร์"
+          ]
+        : [
+            "Linux System Administration",
+            "Unix Server Management",
+            "Advanced Infrastructure Orchestration",
+            "Full-Stack Web Engineering",
+            "Digital Resilience Consulting",
+            "Legacy Systems Modernization",
+            "IT Strategy & Innovation",
+            "Server Optimization"
+          ],
+      "priceRange": "Contact for quote",
+      "url": "https://www.grivetto.eu/",
+      "email": "sergio@grivetto.eu",
+      "image": "https://www.grivetto.eu/images/og-image.jpg",
+      "telephone": "+39 371 1741209",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Turin",
+        "addressLocality": "Turin",
+        "postalCode": "10145",
+        "addressRegion": "Piedmont",
+        "addressCountry": "IT"
+      }
+    };
+
+    const faqItems = translations[lang]?.faq?.items || translations['en']?.faq?.items || [];
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    };
+
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": lang === 'it' 
+        ? "Sergio Grivetto ~ Specialista IT Senior"
+        : lang === 'es'
+        ? "Sergio Grivetto ~ Especialista Senior en TI"
+        : lang === 'th'
+        ? "Sergio Grivetto ~ ผู้เชี่ยวชาญด้านไอทีอาวุโส"
+        : "Sergio Grivetto ~ Senior IT Specialist",
+      "alternateName": "Grivetto.eu",
+      "url": "https://www.grivetto.eu/",
+      "description": lang === 'it'
+        ? "Portfolio professionale e competenze IT di Sergio Grivetto, specialista IT senior che modella il mondo digitale dal 1993."
+        : lang === 'es'
+        ? "Portafolio profesional y experiencia en TI de Sergio Grivetto, Especialista Senior en TI que da forma al mundo digital desde 1993."
+        : lang === 'th'
+        ? "พอร์ตโฟลิโอระดับมืออาชีพและความเชี่ยวชาญด้านไอทีของ Sergio Grivetto ผู้เชี่ยวชาญด้านไอทีอาวุโสผู้สร้างสรรค์โลกดิจิทัลมาตั้งแต่ปี 1993"
+        : "Professional portfolio and IT expertise of Sergio Grivetto, Senior IT Specialist shaping the digital world since 1993.",
+      "inLanguage": ["en", "it", "es", "th"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.grivetto.eu/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    };
+
+    const injectJsonLd = (id, schemaObj) => {
+      let scriptEl = document.getElementById(id);
+      if (!scriptEl) {
+        scriptEl = document.createElement('script');
+        scriptEl.id = id;
+        scriptEl.type = 'application/ld+json';
+        document.head.appendChild(scriptEl);
+      }
+      scriptEl.textContent = JSON.stringify(schemaObj);
+    };
+
+    injectJsonLd('jsonld-person', personSchema);
+    injectJsonLd('jsonld-service', serviceSchema);
+    injectJsonLd('jsonld-website', websiteSchema);
+    if (view === 'home') {
+      injectJsonLd('jsonld-faq', faqSchema);
+    } else {
+      const existingFaq = document.getElementById('jsonld-faq');
+      if (existingFaq) existingFaq.remove();
+    }
+
     // Manage SEO canonical and hreflang tags
     document.querySelectorAll('link[rel="canonical"]').forEach(el => el.remove());
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
