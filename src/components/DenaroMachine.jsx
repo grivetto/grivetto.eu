@@ -3,11 +3,136 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
 
+// --- Mini SVG Equity Chart ---
+function EquityChart({ profit }) {
+    const [history, setHistory] = useState([118.91]);
+    const maxPoints = 40;
+
+    useEffect(() => {
+        setHistory(prev => {
+            const next = [...prev, profit];
+            return next.length > maxPoints ? next.slice(-maxPoints) : next;
+        });
+    }, [profit]);
+
+    const min = Math.min(...history) - 2;
+    const max = Math.max(...history) + 2;
+    const range = max - min || 1;
+    const w = 400;
+    const h = 100;
+
+    const pts = history.map((v, i) => {
+        const x = (i / (maxPoints - 1)) * w;
+        const y = h - ((v - min) / range) * h;
+        return `${x},${y}`;
+    }).join(' ');
+
+    const areaPath = `M0,${h} L${history.map((v, i) => {
+        const x = (i / (maxPoints - 1)) * w;
+        const y = h - ((v - min) / range) * h;
+        return `${x},${y}`;
+    }).join(' L')} L${((history.length - 1) / (maxPoints - 1)) * w},${h} Z`;
+
+    const lastY = h - ((profit - min) / range) * h;
+    const lastX = ((history.length - 1) / (maxPoints - 1)) * w;
+
+    return (
+        <div className="equity-chart-wrapper">
+            <div className="equity-chart-header">
+                <span className="equity-label">Equity Curve</span>
+                <span className="equity-profit">+€{profit.toFixed(2)}</span>
+            </div>
+            <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" className="equity-svg">
+                <defs>
+                    <linearGradient id="equityGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#4dfa94" stopOpacity="0.35" />
+                        <stop offset="100%" stopColor="#4dfa94" stopOpacity="0.0" />
+                    </linearGradient>
+                </defs>
+                <path d={areaPath} fill="url(#equityGrad)" />
+                <polyline
+                    points={pts}
+                    fill="none"
+                    stroke="#4dfa94"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                />
+                {/* Live dot */}
+                <circle cx={lastX} cy={lastY} r="4" fill="#4dfa94">
+                    <animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+        </div>
+    );
+}
+
+// --- Live Price Ticker ---
+function PriceTicker() {
+    const [prices, setPrices] = useState({
+        SOL: 70.49,
+        ADA: 0.385,
+        BTC: 67450,
+        ETH: 3820,
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPrices(prev => ({
+                SOL: +(prev.SOL + (Math.random() - 0.5) * 0.5).toFixed(2),
+                ADA: +(prev.ADA + (Math.random() - 0.5) * 0.003).toFixed(4),
+                BTC: +(prev.BTC + (Math.random() - 0.5) * 50).toFixed(0),
+                ETH: +(prev.ETH + (Math.random() - 0.5) * 10).toFixed(0),
+            }));
+        }, 2000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const [prev, setPrev] = useState(prices);
+    const [dirs, setDirs] = useState({ SOL: 0, ADA: 0, BTC: 0, ETH: 0 });
+
+    useEffect(() => {
+        setDirs({
+            SOL: prices.SOL > prev.SOL ? 1 : prices.SOL < prev.SOL ? -1 : 0,
+            ADA: prices.ADA > prev.ADA ? 1 : prices.ADA < prev.ADA ? -1 : 0,
+            BTC: prices.BTC > prev.BTC ? 1 : prices.BTC < prev.BTC ? -1 : 0,
+            ETH: prices.ETH > prev.ETH ? 1 : prices.ETH < prev.ETH ? -1 : 0,
+        });
+        setPrev(prices);
+    }, [prices]);
+
+    const pairs = [
+        { key: 'SOL', label: 'SOL/EUR', val: `€${prices.SOL}`, color: '#ffb636' },
+        { key: 'ADA', label: 'ADA/EUR', val: `€${prices.ADA}`, color: '#4dfa94' },
+        { key: 'BTC', label: 'BTC/USD', val: `$${prices.BTC.toLocaleString()}`, color: '#d175ff' },
+        { key: 'ETH', label: 'ETH/USD', val: `$${prices.ETH.toLocaleString()}`, color: '#00f2ff' },
+    ];
+
+    return (
+        <div className="price-ticker">
+            {pairs.map(p => (
+                <div key={p.key} className="ticker-item">
+                    <span className="ticker-pair">{p.label}</span>
+                    <span
+                        className={`ticker-price ${dirs[p.key] === 1 ? 'up' : dirs[p.key] === -1 ? 'down' : ''}`}
+                        style={{ color: p.color }}
+                    >
+                        {dirs[p.key] === 1 ? '▲' : dirs[p.key] === -1 ? '▼' : '▶'} {p.val}
+                    </span>
+                </div>
+            ))}
+        </div>
+    );
+}
+
 export default function DenaroMachine() {
     const { t } = useLanguage();
     const [logs, setLogs] = useState([]);
-    const [checkStatus, setCheckStatus] = useState('idle'); // 'idle' | 'checking' | 'success'
-    const [activeNode, setActiveNode] = useState(null); // hover state or selection state for detail view
+    const [activeNode, setActiveNode] = useState(null);
+    const [profit, setProfit] = useState(118.91);
+    const [trades, setTrades] = useState(374);
+    const [isSimulating, setIsSimulating] = useState(false);
     const consoleBodyRef = useRef(null);
 
     const baseLogs = [
@@ -39,25 +164,21 @@ export default function DenaroMachine() {
         { type: 'watchdog', text: "[WATCHDOG] System scan OK. Memory usage: 4.2% | CPU: 1.8%." }
     ];
 
-    // Seed initial logs
     useEffect(() => {
         let currentLogs = [];
         const timer = setInterval(() => {
-            if (currentLogs.length < baseLogs.length && checkStatus === 'idle') {
+            if (currentLogs.length < baseLogs.length) {
                 currentLogs = [...currentLogs, baseLogs[currentLogs.length]];
                 setLogs(currentLogs);
             } else {
                 clearInterval(timer);
             }
-        }, 600);
-
+        }, 300);
         return () => clearInterval(timer);
-    }, [checkStatus]);
+    }, []);
 
-    // Append periodic logs after initial loading
     useEffect(() => {
-        if (logs.length < baseLogs.length || checkStatus !== 'idle') return;
-
+        if (logs.length < baseLogs.length || isSimulating) return;
         const interval = setInterval(() => {
             const randomLog = loopLogs[Math.floor(Math.random() * loopLogs.length)];
             const timestamp = new Date().toLocaleTimeString();
@@ -65,53 +186,81 @@ export default function DenaroMachine() {
                 ...randomLog,
                 text: randomLog.text.replace(/^[\[\w\]]+\s*/, (match) => `${match.trim()} [${timestamp}] `)
             };
-            setLogs(prev => [...prev.slice(-30), formattedLog]); // Keep last 30 logs
-        }, 4000);
-
+            setLogs(prev => [...prev.slice(-30), formattedLog]);
+        }, 5000);
         return () => clearInterval(interval);
-    }, [logs.length, checkStatus]);
+    }, [logs.length, isSimulating]);
 
-    // Auto-scroll terminal internally
     useEffect(() => {
         if (consoleBodyRef.current) {
             consoleBodyRef.current.scrollTop = consoleBodyRef.current.scrollHeight;
         }
     }, [logs]);
 
-    const runDiagnostics = () => {
-        if (checkStatus !== 'idle') return;
-        setCheckStatus('checking');
-        setLogs([]);
+    const injectEvent = (eventType) => {
+        if (isSimulating) return;
+        setIsSimulating(true);
 
-        const diagLogs = [
-            { type: 'system', text: "[DIAG] Launching global system checks..." },
-            { type: 'nuvola', text: "[DIAG] Checking NUVOLA node (Regime Grid SOL/EUR)..." },
-            { type: 'nuvola', text: "[DIAG] NUVOLA node responds: 200 OK. Process ID: 337142." },
-            { type: 'mc2', text: "[DIAG] Checking MC2 node (Momentum Scalper)..." },
-            { type: 'mc2', text: "[DIAG] MC2 node responds: 200 OK. Process ID: 337139." },
-            { type: 'marcodg1', text: "[DIAG] Checking MARCODG1 node (Trend Grid ADA/EUR)..." },
-            { type: 'marcodg1', text: "[DIAG] MARCODG1 node responds: 200 OK. Process ID: 297814." },
-            { type: 'watchdog', text: "[DIAG] Accessing Watchdog & Auto-Healer..." },
-            { type: 'watchdog', text: "[DIAG] Watchdog status: ACTIVE. Latency check: 12ms." },
-            { type: 'system', text: "[DIAG] Testing Binance API connectivity & signature validation..." },
-            { type: 'system', text: "[DIAG] API status: CONNECTED. Read/Write permissions verified." },
-            { type: 'system', text: "[DIAG] ALL DIAGNOSTIC TESTS PASSED successfully." }
-        ];
+        let eventLogs = [];
+        let profitDelta = 0;
+        let tradeDelta = 0;
 
-        let index = 0;
-        const diagTimer = setInterval(() => {
-            if (index < diagLogs.length) {
-                setLogs(prev => [...prev, diagLogs[index]]);
-                index++;
+        if (eventType === 'sol') {
+            eventLogs = [
+                { type: 'nuvola', text: `[NUVOLA] SOL/EUR Breakout detected! ATR velocity: +2.8%` },
+                { type: 'nuvola', text: `[NUVOLA] Target level €71.80 reached. Executing trailing grid exit.` },
+                { type: 'nuvola', text: `[NUVOLA] SELL ORDER filled: 0.18 SOL at €71.85.` },
+                { type: 'system', text: `[SYSTEM] Consolidated gain: +€1.84 on Binance account.` }
+            ];
+            profitDelta = 1.84;
+            tradeDelta = 1;
+        } else if (eventType === 'ada') {
+            eventLogs = [
+                { type: 'marcodg1', text: `[MARCODG1] ADA/EUR pulled back to support. Current price: €0.375.` },
+                { type: 'marcodg1', text: `[MARCODG1] LIMIT BUY filled: 120 ADA at €0.374.` },
+                { type: 'marcodg1', text: `[MARCODG1] Order filled. Adjusting grid sell targets to €0.382.` },
+                { type: 'watchdog', text: `[WATCHDOG] Node MARCODG1 collateral ratio healthy: 310%.` }
+            ];
+            profitDelta = 0;
+            tradeDelta = 1;
+        } else if (eventType === 'btc') {
+            eventLogs = [
+                { type: 'mc2', text: `[MC2] High-velocity momentum scalper triggered on BTC/USDT.` },
+                { type: 'mc2', text: `[MC2] Market Buy: 0.002 BTC at $67,450.` },
+                { type: 'mc2', text: `[MC2] Trailing take profit hit at $67,780. Closing position.` },
+                { type: 'system', text: `[SYSTEM] Consolidated gain: +€2.45 on Binance account.` }
+            ];
+            profitDelta = 2.45;
+            tradeDelta = 1;
+        } else if (eventType === 'crash') {
+            eventLogs = [
+                { type: 'watchdog', text: `[WATCHDOG] WARNING: Crypto Market Flash Crash detected! Drop > 4% in 30s.` },
+                { type: 'watchdog', text: `[WATCHDOG] Auto-healer: Activating safety margins.` },
+                { type: 'system', text: `[SYSTEM] Moving NUVOLA and MARCODG1 grids to safe levels.` },
+                { type: 'watchdog', text: `[WATCHDOG] Risk hedged successfully. Standing by for stability.` }
+            ];
+            profitDelta = -0.50;
+            tradeDelta = 2;
+        }
+
+        const timestamp = new Date().toLocaleTimeString();
+        const timedLogs = eventLogs.map(log => ({
+            ...log,
+            text: log.text.replace(/^\[\w+\]\s*/, (match) => `${match.trim()} [${timestamp}] `)
+        }));
+
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < timedLogs.length) {
+                setLogs(prev => [...prev.slice(-25), timedLogs[i]]);
+                i++;
             } else {
-                clearInterval(diagTimer);
-                setCheckStatus('success');
-                setTimeout(() => {
-                    setCheckStatus('idle');
-                    setLogs(baseLogs);
-                }, 2500);
+                clearInterval(interval);
+                if (profitDelta !== 0) setProfit(p => p + profitDelta);
+                if (tradeDelta !== 0) setTrades(t => t + tradeDelta);
+                setIsSimulating(false);
             }
-        }, 300);
+        }, 350);
     };
 
     return (
@@ -129,6 +278,9 @@ export default function DenaroMachine() {
                     </h2>
                     <p className="section-subtitle">{t('denaro_machine', 'subtitle')}</p>
                 </div>
+
+                {/* Live Price Ticker */}
+                <PriceTicker />
 
                 <div className="denaro-dashboard glass">
                     {/* Control Panel Grid */}
@@ -209,67 +361,71 @@ export default function DenaroMachine() {
                                 </div>
                             </div>
 
-                             {/* Diagnostic Trigger & GitHub Links */}
-                            <div className="action-container denaro-actions-btn-group">
-                                <button 
-                                    className={`btn-diag ${checkStatus !== 'idle' ? 'loading' : ''}`}
-                                    onClick={runDiagnostics}
-                                    disabled={checkStatus !== 'idle'}
-                                >
-                                    {checkStatus === 'idle' && t('denaro_machine', 'trigger_check')}
-                                    {checkStatus === 'checking' && (
-                                        <>
-                                            <span className="spinner"></span>
-                                            {t('denaro_machine', 'checking')}
-                                        </>
-                                    )}
-                                    {checkStatus === 'success' && t('denaro_machine', 'check_ok')}
-                                </button>
-                                <a
-                                    href="https://sgrivett.ddns.net/denaro/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-dash"
-                                >
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <rect x="3" y="3" width="7" height="7" rx="1" />
-                                        <rect x="14" y="3" width="7" height="7" rx="1" />
-                                        <rect x="3" y="14" width="7" height="7" rx="1" />
-                                        <rect x="14" y="14" width="7" height="7" rx="1" />
-                                    </svg>
-                                    <span>{t('denaro_machine', 'link_dashboard')}</span>
-                                </a>
-                                <a 
-                                    href="https://github.com/grivetto/alpha-omega-trading" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="btn-git"
-                                >
-                                    <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                    </svg>
-                                    <span>{t('denaro_machine', 'view_github')}</span>
-                                </a>
+                            {/* Scenario Event Injector Grid */}
+                            <div className="action-container">
+                                <span className="label" style={{ fontSize: '0.8rem', opacity: 0.6, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>
+                                    Inject Live Market Event
+                                </span>
+                                <div className="action-container-grid">
+                                    <button 
+                                        type="button"
+                                        className="btn-event sol" 
+                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); injectEvent('sol'); }}
+                                        disabled={isSimulating}
+                                    >
+                                        📈 SOL Breakout
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        className="btn-event ada" 
+                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); injectEvent('ada'); }}
+                                        disabled={isSimulating}
+                                    >
+                                        📉 ADA Buy Grid
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        className="btn-event btc" 
+                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); injectEvent('btc'); }}
+                                        disabled={isSimulating}
+                                    >
+                                        ⚡ BTC Scalp
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        className="btn-event crash" 
+                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); injectEvent('crash'); }}
+                                        disabled={isSimulating}
+                                    >
+                                        ⚠️ Flash Crash
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Right Column: Terminal Console */}
-                        <div className="console-panel">
-                            <div className="console-header">
-                                <div className="console-controls">
-                                    <span className="control-dot red"></span>
-                                    <span className="control-dot yellow"></span>
-                                    <span className="control-dot green"></span>
+                        {/* Right Column: Equity Chart + Terminal Console */}
+                        <div className="console-column">
+                            {/* Equity Curve Chart */}
+                            <EquityChart profit={profit} />
+
+                            {/* Terminal Console */}
+                            <div className="console-panel">
+                                <div className="console-header">
+                                    <div className="console-controls">
+                                        <span className="control-dot red"></span>
+                                        <span className="control-dot yellow"></span>
+                                        <span className="control-dot green"></span>
+                                    </div>
+                                    <span className="console-title">denaro_trading_core.log</span>
                                 </div>
-                                <span className="console-title">denaro_trading_core.log</span>
-                            </div>
-                            <div className="console-body" ref={consoleBodyRef}>
-                                <div className="log-entries">
-                                    {logs.map((log, i) => (
-                                        <div key={i} className={`log-entry ${log.type}`}>
-                                            {log.text}
-                                        </div>
-                                    ))}
+                                <div className="console-body" ref={consoleBodyRef}>
+                                    <div className="log-entries">
+                                        {logs.map((log, i) => (
+                                            <div key={i} className={`log-entry ${log.type}`}>
+                                                {log.text}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,11 +436,11 @@ export default function DenaroMachine() {
                     <div className="denaro-stats-row">
                         <div className="stat-card">
                             <div className="stat-label">{t('denaro_machine', 'stats_profit')}</div>
-                            <div className="stat-number profit-value">€118.91</div>
+                            <div className="stat-number profit-value">€{profit.toFixed(2)}</div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-label">{t('denaro_machine', 'stats_trades')}</div>
-                            <div className="stat-number">374</div>
+                            <div className="stat-number">{trades}</div>
                         </div>
                         <div className="stat-card">
                             <div className="stat-label">{t('denaro_machine', 'stats_winrate')}</div>
