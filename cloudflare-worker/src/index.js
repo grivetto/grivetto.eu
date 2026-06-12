@@ -17,14 +17,28 @@ async function hmacSha256(secret, message) {
     return Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// Ottiene il tempo corrente sincronizzato con Binance
+async function getBinanceTime() {
+    try {
+        const res = await fetch('https://api.binance.com/api/v3/time');
+        const data = await res.json();
+        return data.serverTime;
+    } catch {
+        return Date.now();
+    }
+}
+
 // Fetch autenticato verso Binance
 async function binanceFetch(path, params, apiKey, apiSecret) {
-    const ts = Date.now();
+    const ts = await getBinanceTime();
     const query = new URLSearchParams({ ...params, timestamp: ts, recvWindow: 60000 }).toString();
     const sig = await hmacSha256(apiSecret, query);
     const url = `https://api.binance.com${path}?${query}&signature=${sig}`;
     const res = await fetch(url, { headers: { 'X-MBX-APIKEY': apiKey } });
-    if (!res.ok) throw new Error(`Binance ${path} → ${res.status}`);
+    if (!res.ok) {
+        const errBody = await res.text();
+        throw new Error(`Binance ${path} → ${res.status}: ${errBody}`);
+    }
     return res.json();
 }
 
