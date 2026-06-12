@@ -28,17 +28,15 @@ async function binanceFetch(path, params, apiKey, apiSecret) {
     return res.json();
 }
 
-// Calcola P&L e statistiche dalle trades
+// Calcola P&L e statistiche dalle trades di tutti gli account
 function calcStats(trades) {
     let profit = 0;
     let wins = 0;
     let total = 0;
 
-    // Raggruppa per orderId per identificare round-trip completi
-    const orders = {};
     for (const t of trades) {
         if (t.isBuyer) continue; // Considera solo i SELL per il P&L semplificato
-        const gain = parseFloat(t.quoteQty) - parseFloat(t.commission);
+        const gain = parseFloat(t.quoteQty) - parseFloat(t.commission || 0);
         if (gain > 0) wins++;
         profit += gain;
         total++;
@@ -83,18 +81,44 @@ export default {
             const ping = await fetch('https://api.binance.com/api/v3/ping');
             const isOnline = ping.ok;
 
-            // 2. Recupera storico trades (ultimi 1000 per i pair principali)
-            // I pair del bot: SOL/EUR (Nuvola), ADA/EUR (MarcoDG1), + top USDT pairs (Mc2)
             const pairs = (env.TRADING_PAIRS || 'SOLEUR,ADAEUR,BTCUSDT,ETHUSDT,SOLUSDT').split(',');
-
             const allTrades = [];
+
+            // 2. Recupera trade dall'account principale
             for (const symbol of pairs) {
                 try {
                     const trades = await binanceFetch('/api/v3/myTrades', { symbol, limit: 1000 }, apiKey, apiSecret);
                     allTrades.push(...trades);
                 } catch (e) {
-                    console.warn(`Could not fetch trades for ${symbol}: ${e.message}`);
+                    console.warn(`Could not fetch main account trades for ${symbol}: ${e.message}`);
                 }
+            }
+
+            // 3. Recupera lista sub-account ed effettua il fetch delle trade per ciascun sub-account
+            try {
+                const subAccountRes = await binanceFetch('/sapi/v1/sub-account/list', {}, apiKey, apiSecret);
+                if (subAccountRes && subAccountRes.subAccounts) {
+                    for (const sub of subAccountRes.subAccounts) {
+                        const email = sub.email;
+                        for (const symbol of pairs) {
+                            try {
+                                // Usa l'endpoint per le trade dei sub-account
+                                const subTrades = await binanceFetch('/sapi/v1/sub-account/sub/userHistory', {
+                                    email,
+                                    symbol,
+                                    limit: 1000
+                                }, apiKey, apiSecret);
+                                if (Array.isArray(subTrades)) {
+                                    allTrades.push(...subTrades);
+                                }
+                            } catch (err) {
+                                console.warn(`Could not fetch sub-account (${email}) trades for ${symbol}: ${err.message}`);
+                            }
+                        }
+                    }
+                }
+            } catch (subErr) {
+                console.warn(`Could not fetch sub-accounts list: ${subErr.message}`);
             }
 
             const stats = calcStats(allTrades);
