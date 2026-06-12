@@ -1,0 +1,17 @@
+name = "denaro-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Route: accessibile come https://denaro-proxy.grivetto.eu/stats
+# (oppure il dominio workers.dev di default: https://denaro-proxy.<your-account>.workers.dev/stats)
+# workers_dev = true
+
+# Secrets (NON mettere mai i valori reali qui - usare: npx wrangler secret put BINANCE_API_KEY)
+# I seguenti sono solo segnaposto per documentazione:
+# BINANCE_API_KEY     → configurare con: npx wrangler secret put BINANCE_API_KEY
+# BINANCE_API_SECRET  → configurare con: npx wrangler secret put BINANCE_API_SECRET
+# TRADING_PAIRS       → configurare con: npx wrangler secret put TRADING_PAIRS (es: "SOLEUR,ADAEUR,BTCUSDT")
+
+[observability]
+enabled = true

@@ -1,0 +1,16 @@
+{
+  "name": "denaro-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker — proxy sicuro per le API private di Binance (Denaro Bot stats)",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:key": "wrangler secret put BINANCE_API_KEY",
+    "secret:secret": "wrangler secret put BINANCE_API_SECRET",
+    "secret:pairs": "wrangler secret put TRADING_PAIRS"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,6 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
+
+// URL del Cloudflare Worker proxy
+// Dopo il deploy del Worker, sostituire con l'URL reale (es: https://denaro-proxy.<account>.workers.dev/stats)
+const WORKER_URL = 'https://denaro-proxy.grivetto.eu/stats';
+
+// Intervallo di refresh dei dati live (5 minuti)
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+
+// Valori di fallback (usati se il Worker non risponde)
+const FALLBACK_STATS = { profit: 118.91, trades: 374, winRate: 22.2 };
 
 const LOG_POOL = [
     { type: 'system',   text: '[SYSTEM] Denaro Multi-Node Trading Core - ONLINE' },
@@ -12,7 +22,7 @@ const LOG_POOL = [
     { type: 'marcodg1', text: '[MARCODG1] ADA/EUR 0.385 | 15 Buy / 15 Sell levels active' },
     { type: 'marcodg1', text: '[MARCODG1] LIMIT SELL placed at 0.392' },
     { type: 'watchdog', text: '[WATCHDOG] Profit consolidated on Binance sub-accounts' },
-    { type: 'system',   text: '[SYSTEM] Total trades: 374 | Net profit: 118.91' },
+    { type: 'system',   text: '[SYSTEM] Fetching live data from Binance...' },
 ];
 
 const EVENTS = [
@@ -25,11 +35,43 @@ const EVENTS = [
 export default function DenaroMachine() {
     const { t } = useLanguage();
     const [logs, setLogs] = useState([]);
-    const [profit, setProfit] = useState(118.91);
-    const [trades, setTrades] = useState(374);
+    const [profit, setProfit] = useState(FALLBACK_STATS.profit);
+    const [trades, setTrades] = useState(FALLBACK_STATS.trades);
+    const [winRate, setWinRate] = useState(FALLBACK_STATS.winRate);
+    const [status, setStatus] = useState('OPERATIONAL');
+    const [liveOk, setLiveOk] = useState(false);   // true se dati live ricevuti
     const [busy, setBusy] = useState(false);
+    const [lastUpdate, setLastUpdate] = useState(null);
     const bodyRef = useRef(null);
 
+    // Fetch dati live dal Worker
+    const fetchLiveStats = useCallback(function() {
+        fetch(WORKER_URL)
+            .then(function(res) { return res.ok ? res.json() : Promise.reject('HTTP ' + res.status); })
+            .then(function(data) {
+                if (data.profit !== null && data.profit !== undefined) {
+                    setProfit(data.profit);
+                    setTrades(data.trades);
+                    setWinRate(data.winRate);
+                }
+                setStatus(data.status === 'OPERATIONAL' ? 'OPERATIONAL' : data.status);
+                setLiveOk(true);
+                setLastUpdate(new Date());
+                // Aggiungi log di aggiornamento nel terminale
+                const now = new Date().toLocaleTimeString();
+                setLogs(function(prev) {
+                    return prev.slice(-45).concat([
+                        { type: 'system', text: '[SYSTEM] Live sync OK — profit: ' + (data.profit !== null ? data.profit.toFixed(2) : '--') + ' | trades: ' + (data.trades || '--') + ' [' + now + ']' }
+                    ]);
+                });
+            })
+            .catch(function(err) {
+                console.warn('DenaroMachine: live fetch failed, using cached data.', err);
+                setLiveOk(false);
+            });
+    }, []);
+
+    // Boot: animazione log iniziali
     useEffect(function() {
         let idx = 0;
         const timer = setInterval(function() {
@@ -39,17 +81,27 @@ export default function DenaroMachine() {
                 idx++;
             } else {
                 clearInterval(timer);
+                // Dopo la sequenza di boot, fetch immediato
+                fetchLiveStats();
             }
         }, 280);
         return function() { clearInterval(timer); };
-    }, []);
+    }, [fetchLiveStats]);
 
+    // Refresh periodico ogni 5 minuti
+    useEffect(function() {
+        const interval = setInterval(fetchLiveStats, REFRESH_INTERVAL_MS);
+        return function() { clearInterval(interval); };
+    }, [fetchLiveStats]);
+
+    // Auto-scroll terminale
     useEffect(function() {
         if (bodyRef.current) {
             bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
         }
     }, [logs]);
 
+    // Inject market event (demo interattivo)
     function inject(ev) {
         if (busy) return;
         setBusy(true);
@@ -69,14 +121,26 @@ export default function DenaroMachine() {
         }, 400);
     }
 
+    var badge = t('denaro_machine', 'badge');
+    var title = t('denaro_machine', 'title');
+    var subtitle = t('denaro_machine', 'subtitle');
+    var labelProfit = t('denaro_machine', 'stats_profit');
+    var labelTrades = t('denaro_machine', 'stats_trades');
+    var labelWinrate = t('denaro_machine', 'stats_winrate');
+    var labelStatus = t('denaro_machine', 'stats_status');
+    var statusOk = t('denaro_machine', 'status_operational');
+    var nuvolaDesc = t('denaro_machine', 'nuvola_desc');
+    var mc2Desc = t('denaro_machine', 'mc2_desc');
+    var marcodg1Desc = t('denaro_machine', 'marcodg1_desc');
+
     return (
         <section className="dm-section" id="denaro">
             <div className="dm-container">
 
                 <div className="dm-header">
-                    <span className="dm-badge">{t('denaro_machine', 'badge')}</span>
+                    <span className="dm-badge">{badge}</span>
                     <h2 className="dm-title">
-                        {t('denaro_machine', 'title')}
+                        {title}
                         <a href="https://github.com/grivetto/alpha-omega-trading"
                            target="_blank" rel="noopener noreferrer"
                            className="dm-github">
@@ -85,30 +149,37 @@ export default function DenaroMachine() {
                             </svg>
                         </a>
                     </h2>
-                    <p className="dm-subtitle">{t('denaro_machine', 'subtitle')}</p>
+                    <p className="dm-subtitle">{subtitle}</p>
                 </div>
 
                 <div className="dm-stats">
                     <div className="dm-stat">
-                        <span className="dm-stat-label">{t('denaro_machine', 'stats_profit')}</span>
+                        <span className="dm-stat-label">{labelProfit}</span>
                         <span className="dm-stat-value dm-green">&euro;{profit.toFixed(2)}</span>
                     </div>
                     <div className="dm-stat">
-                        <span className="dm-stat-label">{t('denaro_machine', 'stats_trades')}</span>
+                        <span className="dm-stat-label">{labelTrades}</span>
                         <span className="dm-stat-value">{trades}</span>
                     </div>
                     <div className="dm-stat">
-                        <span className="dm-stat-label">{t('denaro_machine', 'stats_winrate')}</span>
-                        <span className="dm-stat-value">22.2%</span>
+                        <span className="dm-stat-label">{labelWinrate}</span>
+                        <span className="dm-stat-value">{winRate}%</span>
                     </div>
                     <div className="dm-stat">
-                        <span className="dm-stat-label">{t('denaro_machine', 'stats_status')}</span>
+                        <span className="dm-stat-label">{labelStatus}</span>
                         <span className="dm-stat-value dm-green">
-                            <span className="dm-led"></span>
-                            {t('denaro_machine', 'status_operational')}
+                            <span className={'dm-led' + (liveOk ? '' : ' dm-led-warn')}></span>
+                            {statusOk}
                         </span>
                     </div>
                 </div>
+
+                {lastUpdate && (
+                    <div className="dm-live-badge">
+                        <span className="dm-live-dot"></span>
+                        LIVE &bull; aggiornato alle {lastUpdate.toLocaleTimeString()}
+                    </div>
+                )}
 
                 <div className="dm-body">
                     <div className="dm-nodes">
@@ -118,7 +189,7 @@ export default function DenaroMachine() {
                                 <strong>Nuvola</strong>
                                 <span className="dm-chip">SOL/EUR</span>
                             </div>
-                            <p>{t('denaro_machine', 'nuvola_desc')}</p>
+                            <p>{nuvolaDesc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
@@ -126,7 +197,7 @@ export default function DenaroMachine() {
                                 <strong>Mc2</strong>
                                 <span className="dm-chip">28 Pairs</span>
                             </div>
-                            <p>{t('denaro_machine', 'mc2_desc')}</p>
+                            <p>{mc2Desc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
@@ -134,7 +205,7 @@ export default function DenaroMachine() {
                                 <strong>MarcoDG1</strong>
                                 <span className="dm-chip">ADA/EUR</span>
                             </div>
-                            <p>{t('denaro_machine', 'marcodg1_desc')}</p>
+                            <p>{marcodg1Desc}</p>
                         </div>
 
                         <div className="dm-events">
