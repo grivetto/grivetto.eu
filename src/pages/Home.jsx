@@ -220,7 +220,7 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
-                                <button onClick={() => window.open('https://www.grivetto.eu/aura-quiet-living/index.html', '_blank')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                 <button onClick={() => window.open('/aura/', '_blank')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_aura}
                                 </button>
                             </div>
