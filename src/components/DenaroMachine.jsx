@@ -3,8 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
 
 // URL del Cloudflare Worker proxy
-// Dopo il deploy del Worker, sostituire con l'URL reale (es: https://denaro-proxy.<account>.workers.dev/stats)
-const WORKER_URL = 'https://denaro-proxy.grivetto.eu/stats';
+const WORKER_URL = 'https://denaro-proxy.grivetto.workers.dev/stats';
 
 // Intervallo di refresh dei dati live (5 minuti)
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
