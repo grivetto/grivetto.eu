@@ -1,668 +1,313 @@
 /* =============================================
-   DENARO MACHINE — Full Dashboard CSS
+   DENARO MACHINE — KISS Edition
    ============================================= */
 
-.denaro-section {
+.dm-section {
     padding: 5rem 0;
     position: relative;
 }
 
-.denaro-section .section-header {
-    margin-bottom: 2rem;
-    text-align: center;
+.dm-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.denaro-section .section-badge {
+/* --- Header --- */
+.dm-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.dm-badge {
+    display: inline-block;
     background: rgba(0, 242, 255, 0.1);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    color: #00f2ff;
+    border: 1px solid rgba(0, 242, 255, 0.25);
     border-radius: 50px;
-    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 1px solid rgba(0, 242, 255, 0.2);
-    display: inline-block;
-    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
 }
 
-.denaro-section .section-title {
-    font-size: 2.5rem;
+.dm-title {
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
 }
 
-.denaro-section .github-link {
-    color: var(--text-color);
-    opacity: 0.6;
-    transition: all 0.3s ease;
+.dm-github {
+    color: rgba(255,255,255,0.4);
     display: flex;
     align-items: center;
+    transition: color 0.2s, transform 0.2s;
+}
+.dm-github:hover {
+    color: #00f2ff;
+    transform: scale(1.15);
 }
 
-.denaro-section .github-link:hover {
-    color: var(--primary-color);
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.denaro-section .section-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    max-width: 800px;
+.dm-subtitle {
+    font-size: 1rem;
+    opacity: 0.65;
+    max-width: 680px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-/* =============================================
-   LIVE PRICE TICKER
-   ============================================= */
-.price-ticker {
-    display: flex;
-    gap: 0.5rem;
-    overflow-x: auto;
-    padding: 0.75rem 0 1.5rem;
-    scrollbar-width: none;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.price-ticker::-webkit-scrollbar { display: none; }
-
-.ticker-item {
-    flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 0.6rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    min-width: 120px;
-    transition: border-color 0.3s ease;
-}
-
-.ticker-item:hover {
-    border-color: rgba(0, 242, 255, 0.3);
-}
-
-.ticker-pair {
-    font-size: 0.72rem;
-    font-family: monospace;
-    letter-spacing: 0.05em;
-    opacity: 0.5;
-    text-transform: uppercase;
-}
-
-.ticker-price {
-    font-size: 0.95rem;
-    font-weight: 700;
-    font-family: monospace;
-    transition: color 0.3s ease;
-}
-
-.ticker-price.up   { animation: flashUp 0.4s ease; }
-.ticker-price.down { animation: flashDown 0.4s ease; }
-
-@keyframes flashUp {
-    0%   { background: rgba(77,250,148,0.15); border-radius: 4px; }
-    100% { background: transparent; }
-}
-@keyframes flashDown {
-    0%   { background: rgba(255,77,77,0.15); border-radius: 4px; }
-    100% { background: transparent; }
-}
-
-/* =============================================
-   DASHBOARD WRAPPER
-   ============================================= */
-.denaro-dashboard {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2.5rem;
-    background: rgba(10, 15, 30, 0.7);
-    border: 1px solid rgba(0, 242, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(0, 242, 255, 0.1);
-}
-
-.denaro-grid {
+/* --- Stats Row --- */
+.dm-stats {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
-@media (min-width: 992px) {
-    .denaro-grid {
-        grid-template-columns: 1.2fr 1.8fr;
-    }
+@media (max-width: 768px) {
+    .dm-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Left Panel */
-.status-panel {
+.dm-stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
     display: flex;
     flex-direction: column;
+    gap: 0.35rem;
+}
+
+.dm-stat-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    opacity: 0.5;
+}
+
+.dm-stat-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.dm-green { color: #4dfa94; text-shadow: 0 0 10px rgba(77,250,148,0.3); }
+
+/* --- LED --- */
+.dm-led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4dfa94;
+    box-shadow: 0 0 8px #4dfa94;
+    display: inline-block;
+    animation: ledPulse 1.6s infinite alternate;
+    flex-shrink: 0;
+}
+.dm-led.dm-blue   { background: #00f2ff; box-shadow: 0 0 8px #00f2ff; }
+.dm-led.dm-purple { background: #d175ff; box-shadow: 0 0 8px #d175ff; }
+
+@keyframes ledPulse {
+    from { opacity: 0.6; }
+    to   { opacity: 1; box-shadow: 0 0 14px currentColor; }
+}
+
+/* --- Main Layout --- */
+.dm-body {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* Right Column (Chart + Console stacked) */
-.console-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+@media (min-width: 900px) {
+    .dm-body { grid-template-columns: 340px 1fr; }
 }
 
-/* =============================================
-   EQUITY CURVE CHART
-   ============================================= */
-.equity-chart-wrapper {
-    background: #050811;
-    border: 1px solid rgba(77, 250, 148, 0.2);
-    border-radius: 16px;
-    overflow: hidden;
-    padding: 1rem 1.25rem 0.75rem;
-}
-
-.equity-chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.equity-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.5;
-    font-family: monospace;
-}
-
-.equity-profit {
-    font-size: 1.1rem;
-    font-weight: 700;
-    font-family: monospace;
-    color: #4dfa94;
-    text-shadow: 0 0 10px rgba(77, 250, 148, 0.4);
-}
-
-.equity-svg {
-    width: 100%;
-    height: 80px;
-    display: block;
-}
-
-/* =============================================
-   SYSTEM HEALTH CARD
-   ============================================= */
-.system-health-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 1.25rem;
-}
-
-.system-health-card .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 0.5rem;
-}
-
-.system-health-card h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    opacity: 0.9;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.live-pill {
-    background: rgba(255, 60, 60, 0.15);
-    color: #ff4d4d;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
-    border: 1px solid rgba(255, 77, 77, 0.3);
-    animation: pulseRed 2s infinite ease-in-out;
-}
-
-.health-metrics {
+/* --- Node Cards --- */
+.dm-nodes {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.health-metrics .metric {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
+.dm-node {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    transition: border-color 0.25s, transform 0.25s;
 }
 
-.health-metrics .label { opacity: 0.7; }
-
-.health-metrics .value {
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.dm-node:hover {
+    border-color: rgba(0,242,255,0.3);
+    transform: translateX(3px);
 }
 
-.status-ok {
-    color: #4dfa94;
-    text-shadow: 0 0 8px rgba(77, 250, 148, 0.3);
-}
-
-/* =============================================
-   LED INDICATORS
-   ============================================= */
-.pulsing-led-green {
-    width: 8px; height: 8px;
-    background-color: #4dfa94;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #4dfa94, 0 0 20px #4dfa94;
-    display: inline-block;
-    animation: ledPulseGreen 1.5s infinite alternate;
-}
-
-.pulsing-led-blue {
-    width: 8px; height: 8px;
-    background-color: #00f2ff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
-    display: inline-block;
-    animation: ledPulseBlue 1.5s infinite alternate;
-}
-
-/* =============================================
-   NODE CARDS
-   ============================================= */
-.nodes-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.node-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    cursor: default;
-}
-
-.node-card:hover,
-.node-card.active {
-    transform: translateX(4px);
-    background: rgba(0, 242, 255, 0.04);
-    border-color: rgba(0, 242, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 242, 255, 0.05);
-}
-
-.node-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.node-title-group {
+.dm-node-top {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
-.node-header h5 {
+.dm-node-top strong {
     font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0;
-    color: #fff;
+    flex: 1;
 }
 
-.node-pair {
-    font-size: 0.8rem;
+.dm-chip {
+    font-size: 0.72rem;
     font-family: monospace;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 0.15rem 0.4rem;
+    background: rgba(255,255,255,0.07);
     border-radius: 4px;
-    opacity: 0.8;
-}
-
-.node-desc {
-    font-size: 0.85rem;
+    padding: 0.1rem 0.45rem;
     opacity: 0.75;
-    line-height: 1.4;
-    margin: 0;
 }
 
-/* =============================================
-   EVENT INJECTOR
-   ============================================= */
-.action-container { margin-top: 0.5rem; }
+.dm-node p {
+    font-size: 0.82rem;
+    opacity: 0.6;
+    margin: 0;
+    line-height: 1.45;
+}
 
-.action-container-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+/* --- Event Buttons --- */
+.dm-events {
     margin-top: 0.5rem;
 }
 
-.denaro-actions-btn-group {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.denaro-actions-btn-group .btn-diag,
-.denaro-actions-btn-group .btn-git,
-.denaro-actions-btn-group .btn-dash {
-    flex: 1;
-    min-width: 180px;
-}
-
-.btn-dash {
-    padding: 0.9rem 1.5rem;
-    background: linear-gradient(135deg, rgba(77, 250, 148, 0.1), rgba(77, 250, 148, 0.2));
-    border: 1px solid rgba(77, 250, 148, 0.4);
-    border-radius: 8px;
-    color: #4dfa94;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    letter-spacing: 0.05em;
+.dm-events-label {
+    display: block;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    text-decoration: none;
+    letter-spacing: 0.07em;
+    opacity: 0.45;
+    margin-bottom: 0.6rem;
 }
 
-.btn-dash:hover {
-    background: linear-gradient(135deg, rgba(77, 250, 148, 0.2), rgba(77, 250, 148, 0.35));
-    border-color: #4dfa94;
-    box-shadow: 0 0 15px rgba(77, 250, 148, 0.4);
-    transform: translateY(-1px);
-    color: #4dfa94;
+.dm-events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
 }
 
-.btn-dash:active {
-    transform: translateY(0);
-}
-
-.btn-git {
-    padding: 0.9rem 1.5rem;
-    background: linear-gradient(135deg, rgba(209, 117, 255, 0.1), rgba(209, 117, 255, 0.2));
-    border: 1px solid rgba(209, 117, 255, 0.4);
+.dm-btn {
+    padding: 0.65rem 0.75rem;
     border-radius: 8px;
-    color: #d175ff;
+    border: 1px solid;
+    background: transparent;
+    font-size: 0.78rem;
     font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-.btn-git:hover {
-    background: linear-gradient(135deg, rgba(209, 117, 255, 0.2), rgba(209, 117, 255, 0.35));
-    border-color: #d175ff;
-    box-shadow: 0 0 15px rgba(209, 117, 255, 0.4);
-    transform: translateY(-1px);
-    color: #d175ff;
-}
-
-.btn-git:active {
-    transform: translateY(0);
-}
-
-.btn-diag {
-    width: 100%;
-    padding: 0.9rem 1.5rem;
-    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(0, 242, 255, 0.2));
-    border: 1px solid rgba(0, 242, 255, 0.4);
-}
-
-.btn-event {
-    padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: #fff;
     font-family: monospace;
-    font-size: 0.8rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    text-align: center;
 }
+.dm-btn:hover:not(:disabled) { transform: translateY(-2px); }
+.dm-btn:active               { transform: translateY(0); }
+.dm-btn:disabled             { opacity: 0.4; cursor: not-allowed; }
 
-.btn-event:hover   { transform: translateY(-2px); }
-.btn-event:active  { transform: translateY(0); }
-.btn-event:disabled { opacity: 0.5; cursor: not-allowed; }
+.dm-btn-sol   { color: #ffb636; border-color: rgba(255,182,54,0.35); }
+.dm-btn-sol:hover:not(:disabled)   { background: rgba(255,182,54,0.12); box-shadow: 0 0 12px rgba(255,182,54,0.3); }
 
-.btn-event.sol { border-color: rgba(255, 182, 54, 0.3); color: #ffb636; }
-.btn-event.sol:hover:not(:disabled) {
-    background: rgba(255, 182, 54, 0.1);
-    box-shadow: 0 0 12px rgba(255, 182, 54, 0.3);
-}
+.dm-btn-ada   { color: #4dfa94; border-color: rgba(77,250,148,0.35); }
+.dm-btn-ada:hover:not(:disabled)   { background: rgba(77,250,148,0.12); box-shadow: 0 0 12px rgba(77,250,148,0.3); }
 
-.btn-event.ada { border-color: rgba(77, 250, 148, 0.3); color: #4dfa94; }
-.btn-event.ada:hover:not(:disabled) {
-    background: rgba(77, 250, 148, 0.1);
-    box-shadow: 0 0 12px rgba(77, 250, 148, 0.3);
-}
+.dm-btn-btc   { color: #d175ff; border-color: rgba(209,117,255,0.35); }
+.dm-btn-btc:hover:not(:disabled)   { background: rgba(209,117,255,0.12); box-shadow: 0 0 12px rgba(209,117,255,0.3); }
 
-.btn-event.btc { border-color: rgba(209, 117, 255, 0.3); color: #d175ff; }
-.btn-event.btc:hover:not(:disabled) {
-    background: rgba(209, 117, 255, 0.1);
-    box-shadow: 0 0 12px rgba(209, 117, 255, 0.3);
-}
+.dm-btn-crash { color: #ff4d4d; border-color: rgba(255,77,77,0.35); }
+.dm-btn-crash:hover:not(:disabled) { background: rgba(255,77,77,0.12); box-shadow: 0 0 12px rgba(255,77,77,0.3); }
 
-.btn-event.crash { border-color: rgba(255, 77, 77, 0.3); color: #ff4d4d; }
-.btn-event.crash:hover:not(:disabled) {
-    background: rgba(255, 77, 77, 0.1);
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.3);
-}
-
-/* =============================================
-   TERMINAL CONSOLE
-   ============================================= */
-.console-panel {
+/* --- Terminal --- */
+.dm-terminal {
     background: #050811;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
-    flex: 1;
-    min-height: 280px;
-    max-height: 340px;
+    min-height: 380px;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
 }
 
-.console-header {
-    background: #0b0e1a;
-    padding: 0.75rem 1.25rem;
+.dm-term-bar {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 6px;
+    padding: 0.65rem 1rem;
+    background: #0a0d1a;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
     flex-shrink: 0;
 }
 
-.console-controls {
-    display: flex;
-    gap: 6px;
-    margin-right: 1.5rem;
-}
-
-.control-dot {
-    width: 10px; height: 10px;
+.dm-dot {
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
 }
+.dm-dot.red    { background: #ff5f56; }
+.dm-dot.yellow { background: #ffbd2e; }
+.dm-dot.green  { background: #27c93f; }
 
-.control-dot.red    { background-color: #ff5f56; }
-.control-dot.yellow { background-color: #ffbd2e; }
-.control-dot.green  { background-color: #27c93f; }
-
-.console-title {
+.dm-term-title {
     font-family: monospace;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+    opacity: 0.5;
+    margin-left: 0.5rem;
 }
 
-.console-body {
+.dm-term-body {
     flex: 1;
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
     overflow-y: auto;
-    font-family: 'Fira Code', 'Courier New', Courier, monospace;
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.65;
     scroll-behavior: smooth;
 }
 
-.log-entries {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+.dm-term-body::-webkit-scrollbar { width: 5px; }
+.dm-term-body::-webkit-scrollbar-track { background: transparent; }
+.dm-term-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+
+.dm-log {
+    animation: logIn 0.3s ease;
+}
+@keyframes logIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
-.log-entry {
-    white-space: pre-wrap;
-    word-break: break-all;
-    opacity: 0.85;
+.dm-log-system   { color: #cbd5e1; }
+.dm-log-watchdog { color: #00f2ff; text-shadow: 0 0 5px rgba(0,242,255,0.2); }
+.dm-log-nuvola   { color: #ffb636; text-shadow: 0 0 5px rgba(255,182,54,0.2); }
+.dm-log-mc2      { color: #d175ff; text-shadow: 0 0 5px rgba(209,117,255,0.2); }
+.dm-log-marcodg1 { color: #4dfa94; text-shadow: 0 0 5px rgba(77,250,148,0.2); }
+
+.dm-cursor {
+    display: inline-block;
+    color: #00f2ff;
+    animation: blink 1s step-end infinite;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
 }
-
-.log-entry.system   { color: #e2e8f0; }
-.log-entry.watchdog { color: #00f2ff; text-shadow: 0 0 4px rgba(0, 242, 255, 0.2); }
-.log-entry.nuvola   { color: #ffb636; text-shadow: 0 0 4px rgba(255, 182, 54, 0.2); }
-.log-entry.mc2      { color: #d175ff; text-shadow: 0 0 4px rgba(209, 117, 255, 0.2); }
-.log-entry.marcodg1 { color: #4dfa94; text-shadow: 0 0 4px rgba(77, 250, 148, 0.2); }
-
-.console-body::-webkit-scrollbar { width: 6px; }
-.console-body::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
-.console-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-.console-body::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
-
-/* =============================================
-   BOTTOM STATS
-   ============================================= */
-.denaro-stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2rem;
-    margin-top: 1rem;
-}
-
-.stat-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1.25rem;
-    text-align: center;
-}
-
-.stat-card .stat-label {
-    font-size: 0.85rem;
-    opacity: 0.6;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-}
-
-.stat-card .stat-number {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.stat-card .profit-value {
-    color: #4dfa94;
-    text-shadow: 0 0 10px rgba(77, 250, 148, 0.2);
-}
-
-/* =============================================
-   ANIMATIONS
-   ============================================= */
-@keyframes pulseRed {
+@keyframes blink {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50%       { opacity: 0; }
 }
 
-@keyframes ledPulseGreen {
-    0%   { box-shadow: 0 0 5px #4dfa94, 0 0 10px rgba(77, 250, 148, 0.5); }
-    100% { box-shadow: 0 0 12px #4dfa94, 0 0 25px rgba(77, 250, 148, 0.9); }
-}
-
-@keyframes ledPulseBlue {
-    0%   { box-shadow: 0 0 5px #00f2ff, 0 0 10px rgba(0, 242, 255, 0.5); }
-    100% { box-shadow: 0 0 12px #00f2ff, 0 0 25px rgba(0, 242, 255, 0.9); }
-}
-
-/* =============================================
-   RESPONSIVE
-   ============================================= */
-@media (max-width: 768px) {
-    .denaro-section .section-title {
-        font-size: 2rem;
-    }
-    .denaro-dashboard {
-        padding: 1.25rem;
-    }
-    .denaro-stats-row {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    .stat-card {
-        padding: 1rem;
-    }
-    .stat-card .stat-number {
-        font-size: 1.4rem;
-    }
-    .console-panel {
-        min-height: 220px;
-        max-height: 260px;
-    }
-    .equity-svg {
-        height: 60px;
-    }
-    .price-ticker {
-        gap: 0.4rem;
-        padding-bottom: 1rem;
-    }
-    .ticker-item {
-        min-width: 100px;
-        padding: 0.5rem 0.75rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .action-container-grid {
-        grid-template-columns: 1fr;
-    }
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .dm-title { font-size: 1.6rem; }
+    .dm-events-grid { grid-template-columns: 1fr; }
 }
