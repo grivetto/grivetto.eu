@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
 
-// URL del Cloudflare Worker proxy
-const WORKER_URL = 'https://denaro-proxy.grivetto.workers.dev/stats';
+// URL del file JSON esportato da MC2 via FTP
+const WORKER_URL = '/denaro-live.json';
 
 // Intervallo di refresh dei dati live (5 minuti)
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;

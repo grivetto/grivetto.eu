@@ -1,3 +1,10 @@
+## [1.3.0] - 2026-06-13
+### Added
+- Added Python data exporter script `scripts/export_live_denaro.py` to aggregate local bot logs and push via FTP to the web server.
+- Configured cron job to automatically run the exporter.
+- Added visible "Last updated" footer element to homepage for GEO/SEO optimization.
+- Added `datePublished` and `dateModified` to `websiteSchema` in JSON-LD.
+
 ## [1.1.3] - 2026-03-18
 ### Added
 - Created professional vCard for Sergio Grivetto (`public/Sergio_Grivetto.vcf`).

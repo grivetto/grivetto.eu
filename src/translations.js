@@ -165,6 +165,7 @@ export const translations = {
             youtube: "YouTube",
             phone: "+39 371 1741209",
             download_vcard: "Save Contact (vCard)",
+            last_updated: "Last updated: June 13, 2026",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {
@@ -575,6 +576,7 @@ export const translations = {
             youtube: "YouTube",
             phone: "+39 371 1741209",
             download_vcard: "Salva Contatto (vCard)",
+            last_updated: "Ultimo aggiornamento: 13 Giugno 2026",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
@@ -1035,6 +1037,7 @@ export const translations = {
             youtube: "YouTube",
             phone: "+39 371 1741209",
             download_vcard: "Descargar vCard",
+            last_updated: "Última actualización: 13 de junio de 2026",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         services: {
@@ -1545,6 +1548,7 @@ export const translations = {
             youtube: "YouTube",
             phone: "+39 371 1741209",
             download_vcard: "ดาวน์โหลด vCard",
+            last_updated: "อัปเดตล่าสุด: 13 มิถุนายน 2026",
             address: "Via Nicola Fabrizi 76 Interno 40 – 10145 Torino TO Italia"
         },
         curiosity: {

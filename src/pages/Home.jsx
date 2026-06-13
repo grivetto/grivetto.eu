@@ -592,6 +592,7 @@ export default function Home({ onNavigate }) {
                     <div className="footer-bottom">
                         <p className="footer-copyright">© {new Date().getFullYear()} Sergio Grivetto. {t('footer', 'rights')}</p>
                         <p className="footer-tagline">{t('footer', 'tagline')}</p>
+                        <p className="footer-updated" style={{ fontSize: '0.8rem', opacity: 0.6, marginTop: '0.5rem' }}>{t('footer', 'last_updated')}</p>
                     </div>
                 </div>
             </footer >

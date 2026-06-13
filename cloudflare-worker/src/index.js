@@ -20,7 +20,12 @@ async function hmacSha256(secret, message) {
 // Ottiene il tempo corrente sincronizzato con Binance
 async function getBinanceTime() {
     try {
-        const res = await fetch('https://api.binance.com/api/v3/time');
+        const res = await fetch('https://api1.binance.com/api/v3/time', {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'application/json'
+            }
+        });
         const data = await res.json();
         return data.serverTime;
     } catch {
@@ -33,8 +38,14 @@ async function binanceFetch(path, params, apiKey, apiSecret) {
     const ts = await getBinanceTime();
     const query = new URLSearchParams({ ...params, timestamp: ts, recvWindow: 60000 }).toString();
     const sig = await hmacSha256(apiSecret, query);
-    const url = `https://api.binance.com${path}?${query}&signature=${sig}`;
-    const res = await fetch(url, { headers: { 'X-MBX-APIKEY': apiKey } });
+    const url = `https://api1.binance.com${path}?${query}&signature=${sig}`;
+    const res = await fetch(url, {
+        headers: {
+            'X-MBX-APIKEY': apiKey,
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'application/json'
+        }
+    });
     if (!res.ok) {
         const errBody = await res.text();
         throw new Error(`Binance ${path} → ${res.status}: ${errBody}`);
@@ -92,7 +103,12 @@ export default {
             }
 
             // 1. Ping Binance per verificare connettività
-            const ping = await fetch('https://api.binance.com/api/v3/ping');
+            const ping = await fetch('https://api1.binance.com/api/v3/ping', {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Accept': 'application/json'
+                }
+            });
             const isOnline = ping.ok;
 
             const pairs = (env.TRADING_PAIRS || 'SOLEUR,ADAEUR,BTCUSDT,ETHUSDT,SOLUSDT').split(',');

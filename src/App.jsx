@@ -427,6 +427,8 @@ function App() {
         ? "พอร์ตโฟลิโอระดับมืออาชีพและความเชี่ยวชาญด้านไอทีของ Sergio Grivetto ผู้เชี่ยวชาญด้านไอทีอาวุโสผู้สร้างสรรค์โลกดิจิทัลมาตั้งแต่ปี 1993"
         : "Professional portfolio and IT expertise of Sergio Grivetto, Senior IT Specialist shaping the digital world since 1993.",
       "inLanguage": ["en", "it", "es", "th"],
+      "datePublished": "2026-03-16",
+      "dateModified": "2026-06-13",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://www.grivetto.eu/?s={search_term_string}",
