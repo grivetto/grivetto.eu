@@ -41,6 +41,7 @@ export default function DenaroMachine() {
     const [liveOk, setLiveOk] = useState(false);   // true se dati live ricevuti
     const [busy, setBusy] = useState(false);
     const [lastUpdate, setLastUpdate] = useState(null);
+    const [capital, setCapital] = useState(null);
     const bodyRef = useRef(null);
 
     // Fetch dati live dal Worker
@@ -52,6 +53,9 @@ export default function DenaroMachine() {
                     setProfit(data.profit);
                     setTrades(data.trades);
                     setWinRate(data.winRate);
+                }
+                if (data.capital !== null && data.capital !== undefined) {
+                    setCapital(data.capital);
                 }
                 setStatus(data.status === 'OPERATIONAL' ? 'OPERATIONAL' : data.status);
                 setLiveOk(true);
@@ -155,6 +159,11 @@ export default function DenaroMachine() {
                     <div className="dm-stat">
                         <span className="dm-stat-label">{labelProfit}</span>
                         <span className="dm-stat-value dm-green">&euro;{profit.toFixed(2)}</span>
+                        {capital !== null && (
+                            <span className="dm-stat-sub" style={{ fontSize: '0.8rem', opacity: 0.7, display: 'block', marginTop: '0.25rem' }}>
+                                Cap: &euro;{capital.toFixed(2)}
+                            </span>
+                        )}
                     </div>
                     <div className="dm-stat">
                         <span className="dm-stat-label">{labelTrades}</span>
