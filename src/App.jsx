@@ -393,19 +393,6 @@ function App() {
       }
     };
 
-    const faqItems = translations[lang]?.faq?.items || translations['en']?.faq?.items || [];
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqItems.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.a
-        }
-      }))
-    };
 
     const websiteSchema = {
       "@context": "https://schema.org",
@@ -450,12 +437,8 @@ function App() {
     injectJsonLd('jsonld-person', personSchema);
     injectJsonLd('jsonld-service', serviceSchema);
     injectJsonLd('jsonld-website', websiteSchema);
-    if (view === 'home') {
-      injectJsonLd('jsonld-faq', faqSchema);
-    } else {
-      const existingFaq = document.getElementById('jsonld-faq');
-      if (existingFaq) existingFaq.remove();
-    }
+    const existingFaq = document.getElementById('jsonld-faq');
+    if (existingFaq) existingFaq.remove();
 
     // Manage SEO canonical and hreflang tags
     document.querySelectorAll('link[rel="canonical"]').forEach(el => el.remove());
