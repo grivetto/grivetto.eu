@@ -118,7 +118,16 @@ export default function Home({ onNavigate }) {
                     className="hero-content"
                     style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}
                 >
-
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="hero-badge"
+                        style={{ pointerEvents: 'auto' }}
+                    >
+                        <span className="badge-dot"></span>
+                        {t('hero', 'badge')}
+                    </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
@@ -296,6 +305,10 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">🏢</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_caf.replace(' →', '').replace('→', '')}</span>
                                 </a>
+                                <a href="https://omni-landing-244018943158.europe-west1.run.app" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">😊</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_vimade.replace(' →', '').replace('→', '')}</span>
+                                </a>
                             </div>
                         </motion.div>
 
@@ -387,14 +400,7 @@ export default function Home({ onNavigate }) {
                             <h3>{t('services', 'web').title}</h3>
                             <p>{t('services', 'web').desc}</p>
                         </motion.div>
-                        <motion.div variants={itemVariants} className="service-card glass availability-card">
-                            <div className="availability-status">
-                                <span className="badge-dot"></span>
-                                {t('hero', 'badge')}
-                            </div>
-                            <h3>{t('services', 'title')}</h3>
-                            <p>{t('services', 'subtitle')}</p>
-                        </motion.div>
+
                         <motion.div variants={itemVariants} className="service-card glass">
                             <div className="service-icon">🛡️</div>
                             <h3>{t('services', 'security').title}</h3>

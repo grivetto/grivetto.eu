@@ -219,7 +219,21 @@
   z-index: 10;
 }
 
-/* hero-badge removed, styles kept for reuse in availability-card if needed */
+/* hero-badge style */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: hsl(195, 70%, 95%);
+  color: hsl(195, 60%, 45%);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  pointer-events: auto !important;
+}
 
 .badge-dot {
   width: 8px;
@@ -968,35 +982,7 @@
   line-height: 1.6;
 }
 
-.availability-card {
-  background: linear-gradient(135deg, hsla(195, 70%, 50%, 0.05), hsla(175, 60%, 55%, 0.05)) !important;
-  border: 2px solid hsla(195, 70%, 50%, 0.2) !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.availability-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: white;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: hsl(195, 60%, 45%);
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.availability-card h3 {
-  background: linear-gradient(135deg, hsl(195, 70%, 45%), hsl(175, 60%, 50%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 /* ===================================
    TESTIMONIALS SECTION

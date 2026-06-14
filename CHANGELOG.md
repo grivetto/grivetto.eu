@@ -1,3 +1,10 @@
+## [1.3.4] - 2026-06-14
+### Changed
+- Relocated the "Available for collaboration" pill badge back to the Hero section above the main H1 title.
+- Restructured the Services grid section on the homepage from 5 to 4 cards, ensuring a clean single-row layout without wrapping.
+### Added
+- Added a new web project example link "VI made :-)" pointing to the Omni landing page.
+
 ## [1.3.0] - 2026-06-13
 ### Added
 - Added Python data exporter script `scripts/export_live_denaro.py` to aggregate local bot logs and push via FTP to the web server.

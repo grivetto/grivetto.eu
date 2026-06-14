@@ -85,6 +85,20 @@ The project includes an automated Python script for FTP deployment.
 
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
+## [1.3.4] - 2026-06-14
+### Changed
+- Relocated the "Available for collaboration" pill badge back to the Hero section above the main H1 title.
+- Restructured the Services grid section on the homepage from 5 to 4 cards, ensuring a clean single-row layout without wrapping.
+### Added
+- Added a new web project example link "VI made :-)" pointing to the Omni landing page.
+
+## [1.3.0] - 2026-06-13
+### Added
+- Added Python data exporter script `scripts/export_live_denaro.py` to aggregate local bot logs and push via FTP to the web server.
+- Configured cron job to automatically run the exporter.
+- Added visible "Last updated" footer element to homepage for GEO/SEO optimization.
+- Added `datePublished` and `dateModified` to `websiteSchema` in JSON-LD.
+
 ## [1.1.4] - 2026-03-26
 ### Changed
 - Removed the "Download vCard TEST" link from the global Footer component.
