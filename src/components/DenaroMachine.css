@@ -290,9 +290,9 @@
 
 .dm-log-system   { color: #cbd5e1; }
 .dm-log-watchdog { color: #00f2ff; text-shadow: 0 0 5px rgba(0,242,255,0.2); }
-.dm-log-nuvola   { color: #ffb636; text-shadow: 0 0 5px rgba(255,182,54,0.2); }
-.dm-log-mc2      { color: #d175ff; text-shadow: 0 0 5px rgba(209,117,255,0.2); }
-.dm-log-marcodg1 { color: #4dfa94; text-shadow: 0 0 5px rgba(77,250,148,0.2); }
+.dm-log-zero_oom     { color: #ffb636; text-shadow: 0 0 5px rgba(255,182,54,0.2); }
+.dm-log-neon_sniper  { color: #d175ff; text-shadow: 0 0 5px rgba(209,117,255,0.2); }
+.dm-log-micro_spread { color: #4dfa94; text-shadow: 0 0 5px rgba(77,250,148,0.2); }
 
 .dm-cursor {
     display: inline-block;

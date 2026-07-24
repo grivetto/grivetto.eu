@@ -1,3 +1,19 @@
+## [1.3.8] - 2026-07-25
+### Added
+- Added "RistoAI Studio" link pointing to `https://ristodev-xuoiaih5ta-ew.a.run.app/` to the web project examples section.
+
+## [1.3.7] - 2026-07-13
+### Added
+- Added both veterinary links to the web project examples: "Veterinario AI" pointing to `https://veterinario.ai.studio/` and "Dr. Paws Clinic" pointing to `https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app/`.
+
+## [1.3.6] - 2026-07-13
+### Changed
+- Renamed the "Dr. Paws Clinic" web project example to "Veterinario AI" to match its new custom domain `https://veterinario.ai.studio/`.
+
+## [1.3.5] - 2026-07-13
+### Changed
+- Updated the "Dr. Paws Clinic" link to point to its custom domain `https://veterinario.ai.studio/` instead of the old Cloud Run URL.
+
 ## [1.3.4] - 2026-06-14
 ### Changed
 - Relocated the "Available for collaboration" pill badge back to the Hero section above the main H1 title.

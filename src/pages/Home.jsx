@@ -269,9 +269,17 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">💅</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_estetica.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                <a href="https://veterinario.ai.studio/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🐾</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_veterinario_ai.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                                <a href="https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🐾</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_drpaws.replace(' →', '').replace('→', '')}</span>
+                                </a>
+                                <a href="https://ristodev-xuoiaih5ta-ew.a.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">👨‍🍳</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_ristoai.replace(' →', '').replace('→', '')}</span>
                                 </a>
                                 <a href="https://grivetto.github.io/ristorante/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🍽️</span>

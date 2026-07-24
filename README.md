@@ -85,6 +85,22 @@ The project includes an automated Python script for FTP deployment.
 
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
+## [1.3.8] - 2026-07-25
+### Added
+- Added "RistoAI Studio" link pointing to `https://ristodev-xuoiaih5ta-ew.a.run.app/` to the web project examples section.
+
+## [1.3.7] - 2026-07-13
+### Added
+- Added both veterinary links to the web project examples: "Veterinario AI" pointing to `https://veterinario.ai.studio/` and "Dr. Paws Clinic" pointing to `https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app/`.
+
+## [1.3.6] - 2026-07-13
+### Changed
+- Renamed the "Dr. Paws Clinic" web project example to "Veterinario AI" to match its new custom domain `https://veterinario.ai.studio/`.
+
+## [1.3.5] - 2026-07-13
+### Changed
+- Updated the "Dr. Paws Clinic" link to point to its custom domain `https://veterinario.ai.studio/` instead of the old Cloud Run URL.
+
 ## [1.3.4] - 2026-06-14
 ### Changed
 - Relocated the "Available for collaboration" pill badge back to the Hero section above the main H1 title.
@@ -127,7 +143,8 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-03-01**: Removed Beautiness, Electrician, JustSoap, Hair Artist, and Autoscuola Demo links to reduce Netlify costs.
 - **2026-02-28**: Added "Serenissima" (`https://serenissima99.it/`) to the Live Businesses links.
 - **2026-03-23**: Updated the "Estetica Center" link to `https://grivetto.github.io/estetista/` in the Web Project Examples section.
-- **2026-02-28**: Added the "Dr. Paws Clinic" (`https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app`) link to the Web Project Examples section.
+- **2026-02-28**: Added the "Dr. Paws Clinic" (`https://gestione-clinica-veterinaria-prenotazioni-244018943158.europe-west1.run.app/`) link to the Web Project Examples section.
+- **2026-07-13**: Added the "Veterinario AI" (`https://veterinario.ai.studio/`) link to the Web Project Examples section.
 - **2026-02-28**: Added the "Sevilla Luxury B&B" (`https://sevilla-luxury-b-b-102688887074.us-west1.run.app/`) link to the Web Project Examples section.
 - **2026-02-28**: Updated the "GitHub Showcase" link on the Home page to direct to the new SOMS project page (`https://grivetto.github.io/soms/`).
 - **2026-02-28**: Updated the company name in the Resume section to "NPO Torino" and added a direct link to `https://nposervices.com/`.

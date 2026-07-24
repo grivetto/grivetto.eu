@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
 
-// URL del file JSON esportato da MC2 via FTP
+// URL del file JSON con le statistiche aggregate esportate via FTP
 const WORKER_URL = '/denaro-live.json';
 
 // Intervallo di refresh dei dati live (5 minuti)
@@ -14,20 +14,20 @@ const FALLBACK_STATS = { profit: 118.91, trades: 374, winRate: 22.2 };
 const LOG_POOL = [
     { type: 'system',   text: '[SYSTEM] Denaro Multi-Node Trading Core - ONLINE' },
     { type: 'watchdog', text: '[WATCHDOG] All nodes healthy | uptime 146h | CPU 1.8%' },
-    { type: 'nuvola',   text: '[NUVOLA] SOL/EUR 70.49 | regime: Low-Vol Bull | grid OK' },
-    { type: 'nuvola',   text: '[NUVOLA] LIMIT BUY filled: 0.139 SOL at 70.25' },
-    { type: 'mc2',      text: '[MC2] BTC/USDT momentum trigger - scalp BUY executed' },
-    { type: 'mc2',      text: '[MC2] Scalp closed +0.78% | gain: 2.84' },
-    { type: 'marcodg1', text: '[MARCODG1] ADA/EUR 0.385 | 15 Buy / 15 Sell levels active' },
-    { type: 'marcodg1', text: '[MARCODG1] LIMIT SELL placed at 0.392' },
+    { type: 'zero_oom', text: '[ZERO_OOM] SOL/EUR 70.49 | regime: Low-Vol Bull | execution OK' },
+    { type: 'zero_oom', text: '[ZERO_OOM] LIMIT BUY filled: 0.139 SOL at 70.25' },
+    { type: 'neon_sniper', text: '[NEON_SNIPER] BTC/USDT momentum trigger - scalp BUY executed' },
+    { type: 'neon_sniper', text: '[NEON_SNIPER] Scalp closed +0.78% | gain: 2.84' },
+    { type: 'micro_spread', text: '[MICRO_SPREAD] ADA/EUR 0.385 | Micro-spread tracking active' },
+    { type: 'micro_spread', text: '[MICRO_SPREAD] LIMIT SELL placed at 0.392' },
     { type: 'watchdog', text: '[WATCHDOG] Profit consolidated on Binance sub-accounts' },
     { type: 'system',   text: '[SYSTEM] Fetching live data from Binance...' },
 ];
 
 const EVENTS = [
-    { key: 'sol',   label: 'SOL Breakout', icon: '📈', color: 'sol',   logs: ['[NUVOLA] SOL/EUR breakout! ATR +2.8%', '[NUVOLA] SELL 0.18 SOL at 71.85', '[SYSTEM] Gain: +1.84'], delta: 1.84 },
-    { key: 'ada',   label: 'ADA Grid',     icon: '📉', color: 'ada',   logs: ['[MARCODG1] ADA pullback to 0.375', '[MARCODG1] BUY 120 ADA at 0.374', '[MARCODG1] Grid targets set'], delta: 0 },
-    { key: 'btc',   label: 'BTC Scalp',    icon: '⚡', color: 'btc',   logs: ['[MC2] BTC momentum trigger', '[MC2] BUY 0.002 BTC at 67450', '[SYSTEM] Gain: +2.45'], delta: 2.45 },
+    { key: 'sol',   label: 'OOM Fill', icon: '📈', color: 'sol',   logs: ['[ZERO_OOM] SOL/EUR optimal liquidity!', '[ZERO_OOM] SELL 0.18 SOL at 71.85', '[SYSTEM] Gain: +1.84'], delta: 1.84 },
+    { key: 'ada',   label: 'Spread Capture', icon: '📉', color: 'ada',   logs: ['[MICRO_SPREAD] ADA pullback to 0.375', '[MICRO_SPREAD] BUY 120 ADA at 0.374', '[MICRO_SPREAD] Grid targets set'], delta: 0.15 },
+    { key: 'btc',   label: 'Sniper Scalp', icon: '⚡', color: 'btc',   logs: ['[NEON_SNIPER] BTC momentum trigger', '[NEON_SNIPER] BUY 0.002 BTC at 67450', '[SYSTEM] Gain: +2.45'], delta: 2.45 },
     { key: 'crash', label: 'Flash Crash',  icon: '⚠', color: 'crash', logs: ['[WATCHDOG] Flash Crash! Drop >4% in 30s', '[WATCHDOG] Safety margins activated', '[SYSTEM] Grids moved to safe levels'], delta: -0.50 },
 ];
 
@@ -109,7 +109,7 @@ export default function DenaroMachine() {
         if (busy) return;
         setBusy(true);
         let idx = 0;
-        const logType = ev.key === 'crash' ? 'watchdog' : ev.key === 'sol' ? 'nuvola' : ev.key === 'ada' ? 'marcodg1' : 'mc2';
+        const logType = ev.key === 'crash' ? 'watchdog' : ev.key === 'sol' ? 'zero_oom' : ev.key === 'ada' ? 'micro_spread' : 'neon_sniper';
         const timer = setInterval(function() {
             if (idx < ev.logs.length) {
                 const entry = { type: logType, text: ev.logs[idx] };
@@ -132,9 +132,9 @@ export default function DenaroMachine() {
     var labelWinrate = t('denaro_machine', 'stats_winrate');
     var labelStatus = t('denaro_machine', 'stats_status');
     var statusOk = t('denaro_machine', 'status_operational');
-    var nuvolaDesc = t('denaro_machine', 'nuvola_desc');
-    var mc2Desc = t('denaro_machine', 'mc2_desc');
-    var marcodg1Desc = t('denaro_machine', 'marcodg1_desc');
+    var zeroOomDesc = t('denaro_machine', 'zero_oom_desc');
+    var neonSniperDesc = t('denaro_machine', 'neon_sniper_desc');
+    var microSpreadDesc = t('denaro_machine', 'micro_spread_desc');
 
     return (
         <section className="dm-section" id="denaro">
@@ -194,26 +194,26 @@ export default function DenaroMachine() {
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led"></span>
-                                <strong>Nuvola</strong>
+                                <strong>Zero OOM</strong>
                                 <span className="dm-chip">SOL/EUR</span>
                             </div>
-                            <p>{nuvolaDesc}</p>
+                            <p>{zeroOomDesc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led dm-blue"></span>
-                                <strong>Mc2</strong>
-                                <span className="dm-chip">28 Pairs</span>
+                                <strong>Neon Sniper</strong>
+                                <span className="dm-chip">BTC/USDT</span>
                             </div>
-                            <p>{mc2Desc}</p>
+                            <p>{neonSniperDesc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led dm-purple"></span>
-                                <strong>MarcoDG1</strong>
+                                <strong>Micro Spread</strong>
                                 <span className="dm-chip">ADA/EUR</span>
                             </div>
-                            <p>{marcodg1Desc}</p>
+                            <p>{microSpreadDesc}</p>
                         </div>
 
                         <div className="dm-events">
