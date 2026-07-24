@@ -6,7 +6,7 @@ from datetime import datetime
 # FTP Configuration
 FTP_HOST = "ftp.grivetto.eu"
 FTP_USER = "6539170@aruba.it"
-FTP_PASS = "8DF:d)Nq4u-egV7"
+FTP_PASS = "@Romeo_2030!"
 FTP_DIR = "www.grivetto.eu"
 OUTPUT_FILE = "denaro-live.json"
 

@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 # Credentials provided by user
 FTP_HOST = "ftp.grivetto.eu"
 FTP_USER = "6539170@aruba.it"
-FTP_PASS = "8DF:d)Nq4u-egV7"
+FTP_PASS = "@Romeo_2030!"
 LOCAL_DIST_DIR = r"c:\dev\grivetto.eu\dist"
 
 def upload_file(ftp, local_path, remote_path):
@@ -78,8 +78,8 @@ def main():
 
     print(f"Starting upload from {LOCAL_DIST_DIR}...")
     
-    # Force navigation to the website root
-    domain = "grivetto.eu"
+    # Force navigation to www.grivetto.eu
+    domain = "www.grivetto.eu"
     try:
         print(f"Navigating to {domain}...")
         ftp.cwd(domain)
@@ -87,11 +87,11 @@ def main():
     except Exception as e:
         print(f"Could not cwd to {domain}: {e}")
         try:
-             print("Trying 'www.grivetto.eu'...")
-             ftp.cwd("www.grivetto.eu")
+             print("Trying 'grivetto.eu'...")
+             ftp.cwd("grivetto.eu")
              print(f"Success. Current dir: {ftp.pwd()}")
         except:
-             print("Could not likely find domain folder. Trying root upload...")
+             print("Could not find domain folder. Trying root upload...")
 
     # Upload
     try:
