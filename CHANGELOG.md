@@ -1,3 +1,7 @@
+## [1.3.9] - 2026-07-26
+### Added
+- Added "WebAgency AI" link pointing to `https://webagency.ai.studio/` to the web project examples section.
+
 ## [1.3.8] - 2026-07-25
 ### Added
 - Added "RistoAI Studio" link pointing to `https://ristodev-xuoiaih5ta-ew.a.run.app/` to the web project examples section.

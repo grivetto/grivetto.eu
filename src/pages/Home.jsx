@@ -269,6 +269,10 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">💅</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_estetica.replace(' →', '').replace('→', '')}</span>
                                 </a>
+                                <a href="https://webagency.ai.studio/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🌐</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_webagency_ai.replace(' →', '').replace('→', '')}</span>
+                                </a>
                                 <a href="https://veterinario.ai.studio/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🐾</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_veterinario_ai.replace(' →', '').replace('→', '')}</span>
