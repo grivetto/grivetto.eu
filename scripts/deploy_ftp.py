@@ -23,8 +23,8 @@ def upload_directory(ftp, local_dir):
         # Calculate relative path
         rel_path = os.path.relpath(root, local_dir)
         
-        # Skip .well-known and images
-        if ".well-known" in rel_path or "images" in rel_path:
+        # Skip .well-known
+        if ".well-known" in rel_path:
             continue
             
         if rel_path == "." or rel_path == "":
@@ -34,7 +34,7 @@ def upload_directory(ftp, local_dir):
         
         # Create remote directories
         for d in dirs:
-            if d == ".well-known" or d == "images":
+            if d == ".well-known":
                 continue
             remote_dir_path = (remote_root + "/" + d) if remote_root else d
             try:

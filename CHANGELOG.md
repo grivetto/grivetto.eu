@@ -1,3 +1,11 @@
+## [1.3.11] - 2026-08-27
+### Fixed
+- Fixed missing NPO Torino image in the `/aura/` page by compiling the sub-project correctly and adjusting the deployment script to stop skipping the `images` folder.
+
+## [1.3.10] - 2026-08-06
+### Changed
+- Updated the "RistoAI Studio" link to point to `https://stalwart-gecko-91ab91.netlify.app/` (Netlify build) instead of the old Cloud Run URL.
+
 ## [1.3.9] - 2026-07-26
 ### Added
 - Added "WebAgency AI" link pointing to `https://webagency.ai.studio/` to the web project examples section.

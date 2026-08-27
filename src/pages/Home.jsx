@@ -281,7 +281,7 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">🐾</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_drpaws.replace(' →', '').replace('→', '')}</span>
                                 </a>
-                                <a href="https://ristodev-xuoiaih5ta-ew.a.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                <a href="https://stalwart-gecko-91ab91.netlify.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">👨‍🍳</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_ristoai.replace(' →', '').replace('→', '')}</span>
                                 </a>
