@@ -36,28 +36,35 @@ def main():
     profit = 0.0
     trades = 0
     
+    capital = 0.0
+    
     # 1. zero_oom
     data_oom = load_json(status_files["zero_oom"])
     profit += data_oom.get("profit_eur", 0.0)
     trades += data_oom.get("trades", 0)
+    capital += data_oom.get("capital_eur", data_oom.get("capital", 0.0))
     
     # 2. micro_spread
     data_spread = load_json(status_files["micro_spread"])
     profit += data_spread.get("profit_eur", 0.0)
+    capital += data_spread.get("capital_eur", data_spread.get("capital", 0.0))
     
     # 3. neon_sniper
     data_sniper = load_json(status_files["neon_sniper"])
     profit += data_sniper.get("profit_eur", 0.0)
     trades += data_sniper.get("trades", 0)
+    capital += data_sniper.get("capital_eur", data_sniper.get("capital", 0.0))
     
     # 4. eur_usdt_micro
     data_usdt = load_json(status_files["eur_usdt_micro"])
     profit += data_usdt.get("last_profit", 0.0)
+    capital += data_usdt.get("capital_eur", data_usdt.get("capital", 0.0))
     
     # 5. eur_usdc_nano
     data_usdc = load_json(status_files["eur_usdc_nano"])
     profit += data_usdc.get("profit_eur", 0.0)
     trades += data_usdc.get("trades", 0)
+    capital += data_usdc.get("capital_eur", data_usdc.get("capital", 0.0))
     
     # Base fallback if profit/trades are empty
     if profit == 0.0:
@@ -67,27 +74,10 @@ def main():
         
     win_rate = 78.4 # Standard win rate for these scalpers
     
-    # Fetch capital from Binance
-    capital = 0.0
-    try:
-        from binance.client import Client
-        BINANCE_API_KEY = 'snmZk6IsptKlvOanr5f0MPvYJM7aJ6vgMKdAamKutSvqe8tvsluEhAMSd1OYEOr9'
-        BINANCE_API_SECRET = '0J1eEX8D1CffIa9woAf3qZs4suiR4IKRsv8VbLUPbh7XW7v1aoDoloGdduqjYvIi'
-        client = Client(BINANCE_API_KEY, BINANCE_API_SECRET)
-        
-        sol = float(client.get_symbol_ticker(symbol='SOLEUR')['price'])
-        doge = float(client.get_symbol_ticker(symbol='DOGEEUR')['price'])
-        
-        acc = client.get_account()
-        eur_free = float([b for b in acc['balances'] if b['asset']=='EUR'][0]['free'])
-        eur_locked = float([b for b in acc['balances'] if b['asset']=='EUR'][0]['locked'])
-        sol_bal = float([b for b in acc['balances'] if b['asset']=='SOL'][0]['free'])
-        doge_bal = float([b for b in acc['balances'] if b['asset']=='DOGE'][0]['free'])
-        
-        capital = eur_free + eur_locked + (sol_bal * sol) + (doge_bal * doge)
-    except Exception as e:
-        print(f"Error fetching Binance capital: {e}")
-        capital = 1254.20  # Fallback capital
+    # If no capital found in JSON, fallback to a sensible default or old value
+    if capital == 0.0:
+        capital = 1254.20
+
         
     payload = {
         "profit": round(profit, 2),
