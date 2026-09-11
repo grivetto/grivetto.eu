@@ -12,22 +12,22 @@ const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 const FALLBACK_STATS = { profit: 118.91, trades: 374, winRate: 22.2 };
 
 const LOG_POOL = [
-    { type: 'system',   text: '[SYSTEM] Denaro Multi-Node Trading Core - ONLINE' },
-    { type: 'watchdog', text: '[WATCHDOG] All nodes healthy | uptime 146h | CPU 1.8%' },
-    { type: 'zero_oom', text: '[ZERO_OOM] SOL/EUR 70.49 | regime: Low-Vol Bull | execution OK' },
-    { type: 'zero_oom', text: '[ZERO_OOM] LIMIT BUY filled: 0.139 SOL at 70.25' },
-    { type: 'neon_sniper', text: '[NEON_SNIPER] BTC/USDT momentum trigger - scalp BUY executed' },
-    { type: 'neon_sniper', text: '[NEON_SNIPER] Scalp closed +0.78% | gain: 2.84' },
-    { type: 'micro_spread', text: '[MICRO_SPREAD] ADA/EUR 0.385 | Micro-spread tracking active' },
-    { type: 'micro_spread', text: '[MICRO_SPREAD] LIMIT SELL placed at 0.392' },
-    { type: 'watchdog', text: '[WATCHDOG] Profit consolidated on Binance sub-accounts' },
-    { type: 'system',   text: '[SYSTEM] Fetching live data from Binance...' },
+    { type: 'system',   text: '[SYSTEM] Denaro v6 Predictive Fleet - ONLINE' },
+    { type: 'watchdog', text: '[WATCHDOG] Nodes healthy: nuvola (mc2), MARCODG1' },
+    { type: 'zero_oom', text: '[NUVOLA] Kraken API sign OK | execution OK' },
+    { type: 'zero_oom', text: '[NUVOLA] Adaptive DCA trigger: BUY filled' },
+    { type: 'neon_sniper', text: '[MARCODG1] OKX fleet sync | Volatility scaled risk active' },
+    { type: 'neon_sniper', text: '[MARCODG1] Dump defense guard: enabled' },
+    { type: 'micro_spread', text: '[FLEET] Multi-exchange liquidity check passed' },
+    { type: 'micro_spread', text: '[FLEET] LIMIT SELL placed across exchanges' },
+    { type: 'watchdog', text: '[WATCHDOG] Profit consolidated on main sub-accounts' },
+    { type: 'system',   text: '[SYSTEM] Fetching live data from fleet...' },
 ];
 
 const EVENTS = [
-    { key: 'sol',   label: 'OOM Fill', icon: '📈', color: 'sol',   logs: ['[ZERO_OOM] SOL/EUR optimal liquidity!', '[ZERO_OOM] SELL 0.18 SOL at 71.85', '[SYSTEM] Gain: +1.84'], delta: 1.84 },
-    { key: 'ada',   label: 'Spread Capture', icon: '📉', color: 'ada',   logs: ['[MICRO_SPREAD] ADA pullback to 0.375', '[MICRO_SPREAD] BUY 120 ADA at 0.374', '[MICRO_SPREAD] Grid targets set'], delta: 0.15 },
-    { key: 'btc',   label: 'Sniper Scalp', icon: '⚡', color: 'btc',   logs: ['[NEON_SNIPER] BTC momentum trigger', '[NEON_SNIPER] BUY 0.002 BTC at 67450', '[SYSTEM] Gain: +2.45'], delta: 2.45 },
+    { key: 'sol',   label: 'Adaptive Grid', icon: '📈', color: 'sol',   logs: ['[NUVOLA] Adaptive grid expansion', '[NUVOLA] Limit BUY executed', '[SYSTEM] Gain: +1.84'], delta: 1.84 },
+    { key: 'ada',   label: 'Multi-Exchange', icon: '📉', color: 'ada',   logs: ['[FLEET] Arbitrage condition detected', '[FLEET] BUY on Kraken, SELL on OKX', '[FLEET] Spread captured'], delta: 0.15 },
+    { key: 'btc',   label: 'Dump Defense', icon: '⚡', color: 'btc',   logs: ['[MARCODG1] High volatility detected', '[MARCODG1] Dump defense activated', '[SYSTEM] Capital protected'], delta: 0 },
     { key: 'crash', label: 'Flash Crash',  icon: '⚠', color: 'crash', logs: ['[WATCHDOG] Flash Crash! Drop >4% in 30s', '[WATCHDOG] Safety margins activated', '[SYSTEM] Grids moved to safe levels'], delta: -0.50 },
 ];
 
@@ -132,8 +132,8 @@ export default function DenaroMachine() {
     var labelWinrate = t('denaro_machine', 'stats_winrate');
     var labelStatus = t('denaro_machine', 'stats_status');
     var statusOk = t('denaro_machine', 'status_operational');
-    var zeroOomDesc = t('denaro_machine', 'zero_oom_desc');
-    var neonSniperDesc = t('denaro_machine', 'neon_sniper_desc');
+    var zeroOomDesc = t('denaro_machine', 'nuvola_node_desc');
+    var neonSniperDesc = t('denaro_machine', 'marcodg1_node_desc');
     var microSpreadDesc = t('denaro_machine', 'micro_spread_desc');
 
     return (
@@ -194,24 +194,24 @@ export default function DenaroMachine() {
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led"></span>
-                                <strong>Zero OOM</strong>
-                                <span className="dm-chip">SOL/EUR</span>
+                                <strong>Node Nuvola (mc2)</strong>
+                                <span className="dm-chip">Kraken</span>
                             </div>
                             <p>{zeroOomDesc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led dm-blue"></span>
-                                <strong>Neon Sniper</strong>
-                                <span className="dm-chip">BTC/USDT</span>
+                                <strong>Node MARCODG1</strong>
+                                <span className="dm-chip">OKX/Binance</span>
                             </div>
                             <p>{neonSniperDesc}</p>
                         </div>
                         <div className="dm-node">
                             <div className="dm-node-top">
                                 <span className="dm-led dm-purple"></span>
-                                <strong>Micro Spread</strong>
-                                <span className="dm-chip">ADA/EUR</span>
+                                <strong>Fleet Manager</strong>
+                                <span className="dm-chip">Multi-node</span>
                             </div>
                             <p>{microSpreadDesc}</p>
                         </div>
