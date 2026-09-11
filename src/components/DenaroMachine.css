@@ -174,20 +174,24 @@
 .dm-node-top strong {
     font-size: 0.95rem;
     flex: 1;
+    color: #f8fafc;
+    font-weight: 700;
 }
 
 .dm-chip {
     font-size: 0.72rem;
     font-family: monospace;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.12);
+    color: #e2e8f0;
     border-radius: 4px;
-    padding: 0.1rem 0.45rem;
-    opacity: 0.75;
+    padding: 0.2rem 0.5rem;
+    opacity: 1;
 }
 
 .dm-node p {
     font-size: 0.82rem;
-    opacity: 0.6;
+    color: #94a3b8;
+    opacity: 1;
     margin: 0;
     line-height: 1.45;
 }
@@ -202,7 +206,8 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    opacity: 0.45;
+    color: #64748b;
+    opacity: 1;
     margin-bottom: 0.6rem;
 }
 
@@ -228,17 +233,18 @@
 .dm-btn:active               { transform: translateY(0); }
 .dm-btn:disabled             { opacity: 0.4; cursor: not-allowed; }
 
-.dm-btn-sol   { color: #ffb636; border-color: rgba(255,182,54,0.35); }
-.dm-btn-sol:hover:not(:disabled)   { background: rgba(255,182,54,0.12); box-shadow: 0 0 12px rgba(255,182,54,0.3); }
+.dm-btn-sol   { color: #ffb636; border-color: rgba(255,182,54,0.35); background: rgba(255,182,54,0.05); }
+.dm-btn-sol:hover:not(:disabled)   { background: rgba(255,182,54,0.15); box-shadow: 0 0 12px rgba(255,182,54,0.3); }
 
-.dm-btn-ada   { color: #4dfa94; border-color: rgba(77,250,148,0.35); }
-.dm-btn-ada:hover:not(:disabled)   { background: rgba(77,250,148,0.12); box-shadow: 0 0 12px rgba(77,250,148,0.3); }
+.dm-btn-ada   { color: #4dfa94; border-color: rgba(77,250,148,0.35); background: rgba(77,250,148,0.05); }
+.dm-btn-ada:hover:not(:disabled)   { background: rgba(77,250,148,0.15); box-shadow: 0 0 12px rgba(77,250,148,0.3); }
 
-.dm-btn-btc   { color: #d175ff; border-color: rgba(209,117,255,0.35); }
-.dm-btn-btc:hover:not(:disabled)   { background: rgba(209,117,255,0.12); box-shadow: 0 0 12px rgba(209,117,255,0.3); }
+.dm-btn-btc   { color: #d175ff; border-color: rgba(209,117,255,0.35); background: rgba(209,117,255,0.05); }
+.dm-btn-btc:hover:not(:disabled)   { background: rgba(209,117,255,0.15); box-shadow: 0 0 12px rgba(209,117,255,0.3); }
 
-.dm-btn-crash { color: #ff4d4d; border-color: rgba(255,77,77,0.35); }
-.dm-btn-crash:hover:not(:disabled) { background: rgba(255,77,77,0.12); box-shadow: 0 0 12px rgba(255,77,77,0.3); }
+.dm-btn-crash { color: #ff4d4d; border-color: rgba(255,77,77,0.35); background: rgba(255,77,77,0.05); }
+.dm-btn-crash:hover:not(:disabled) { background: rgba(255,77,77,0.15); box-shadow: 0 0 12px rgba(255,77,77,0.3); }
+
 
 /* --- Terminal --- */
 .dm-terminal {
