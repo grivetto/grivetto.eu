@@ -189,6 +189,19 @@ export default function DenaroMachine() {
                     </div>
                 )}
 
+                <div className="dm-webapp-preview">
+                    <div className="dm-browser-bar">
+                        <span className="dm-dot red"></span>
+                        <span className="dm-dot yellow"></span>
+                        <span className="dm-dot green"></span>
+                        <a href="https://web.grivetto.eu" target="_blank" rel="noopener noreferrer" className="dm-browser-url">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px', verticalAlign: 'middle'}}><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            web.grivetto.eu
+                        </a>
+                    </div>
+                    <iframe src="https://web.grivetto.eu" className="dm-iframe" title="Denaro Web App" loading="lazy"></iframe>
+                </div>
+
                 <div className="dm-body">
                     <div className="dm-nodes">
                         <div className="dm-node">
