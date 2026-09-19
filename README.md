@@ -160,6 +160,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 - **2026-02-28**: Added the "Autoscuola Demo" link (`https://autoscuolademo.netlify.app/`) alongside the existing DriveFlow Academy project.
 - **2026-02-28**: Refactored the Web Project Examples section to use a two-column grid layout.
 - **2026-02-28**: Added "Vivirito" (`https://vivirito.it/`) to the Live Businesses links.
+- **2026-09-11**: Enhanced the "Denaro" section on the landing page with glassmorphism UI and a live iframe preview of `https://web.grivetto.eu`.
 
 ---
 *Maintained by Sergio Grivetto*
