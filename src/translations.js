@@ -325,6 +325,11 @@ export const translations = {
                     title: "Ristorante",
                     desc: "Modern and appetizing presentation for a local restaurant",
                     category: "Live Business"
+                },
+                p9: {
+                    title: "Meccanico AI Studio",
+                    desc: "AI studio showcasing advanced web development and AI capabilities",
+                    category: "Live Business"
                 }
             },
             btn_view: "Learn More →",
@@ -790,6 +795,11 @@ export const translations = {
                 p8: {
                     title: "Ristorante",
                     desc: "Presentazione moderna e appetitosa per un ristorante locale",
+                    category: "Live Business"
+                },
+                p9: {
+                    title: "Meccanico AI Studio",
+                    desc: "Studio AI che mostra capacità avanzate di sviluppo web e AI",
                     category: "Live Business"
                 }
             },
@@ -1257,6 +1267,11 @@ export const translations = {
                     title: "Ristorante",
                     desc: "Presentación moderna y apetitosa para un restaurante local",
                     category: "Live Business"
+                },
+                p9: {
+                    title: "Meccanico AI Studio",
+                    desc: "Estudio de IA que muestra capacidades avanzadas de desarrollo web e IA",
+                    category: "Live Business"
                 }
             },
             btn_view: "Ver más →",
@@ -1722,6 +1737,11 @@ export const translations = {
                 p8: {
                     title: "Ristorante",
                     desc: "การนำเสนอที่ทันสมัยและน่ารับประทานสำหรับร้านอาหารท้องถิ่น",
+                    category: "Live Business"
+                },
+                p9: {
+                    title: "Meccanico AI Studio",
+                    desc: "สตูดิโอ AI ที่แสดงความสามารถในการพัฒนาเว็บและ AI ขั้นสูง",
                     category: "Live Business"
                 }
             },

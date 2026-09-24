@@ -109,6 +109,17 @@ const Portfolio = ({ onNavigate }) => {
             tags: ["Restaurant", "Business", "Modern"],
             stats: { views: "8K+", rating: "4.8" },
             link: "https://grivetto.github.io/ristorante/"
+        },
+        {
+            id: 9,
+            title: t('page_portfolio', 'projects').p9.title,
+            category: t('page_portfolio', 'projects').p9.category,
+            description: t('page_portfolio', 'projects').p9.desc,
+            gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
+            icon: "🤖",
+            tags: ["AI", "Studio", "Web"],
+            stats: { views: "1K+", rating: "5.0" },
+            link: "https://meccanico.ai.studio/"
         }
     ];
 
