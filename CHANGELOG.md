@@ -1,3 +1,8 @@
+## [1.3.12] - 2026-10-01
+### Added
+- Added "Viaggi AI Studio" to the web project examples.
+- Configured automated FTP deployment via GitHub Actions.
+
 ## [1.3.11] - 2026-08-27
 ### Fixed
 - Fixed missing NPO Torino image in the `/aura/` page by compiling the sub-project correctly and adjusting the deployment script to stop skipping the `images` folder.
