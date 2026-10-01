@@ -83,7 +83,7 @@ const VintagePortal = ({ onNavigate }) => {
                         <p>{t('vintage', 'millennium_bug').desc}</p>
                         <div className="y2k-image-container">
                             <img
-                                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663295999996/rTIpRGkoAlwctIhq.png"
+                                src="/millennium-bug.jpg"
                                 alt="Millennium Bug Y2K"
                                 className="y2k-image"
                             />
