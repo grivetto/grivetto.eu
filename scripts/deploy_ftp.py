@@ -3,10 +3,10 @@ import ftplib
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
-# Credentials provided by user
-FTP_HOST = "ftp.grivetto.eu"
-FTP_USER = "6539170@aruba.it"
-FTP_PASS = "@Romeo_2030!"
+# Credentials provided by user or environment variables
+FTP_HOST = os.environ.get("FTP_HOST", "ftp.grivetto.eu")
+FTP_USER = os.environ.get("FTP_USER", "6539170@aruba.it")
+FTP_PASS = os.environ.get("FTP_PASS", "") # Usa le variabili d'ambiente per la password in locale
 LOCAL_DIST_DIR = r"c:\dev\grivetto.eu\dist"
 
 def upload_file(ftp, local_path, remote_path):
