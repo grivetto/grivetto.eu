@@ -329,6 +329,10 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">🌴</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_canarie.replace(' →', '').replace('→', '')}</span>
                                 </a>
+                                <a href="https://viaggi.ai.studio/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">✈️</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_viaggi.replace(' →', '').replace('→', '')}</span>
+                                </a>
                             </div>
                         </motion.div>
 
