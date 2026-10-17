@@ -85,6 +85,12 @@ The project includes an automated Python script for FTP deployment.
 
 See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
+## [1.3.13] - 2026-10-18
+### Added
+- Added "Illumina" (`https://illumina.ai.studio/`) to the web project examples section.
+### Changed
+- Shortened button names across the web project examples section (e.g. "Estetica", "Meccanico", "Canarie", "Viaggi", "Veterinario", "WebAgency", etc.) for a cleaner, more compact UI.
+
 ## [1.3.10] - 2026-08-06
 ### Changed
 - Updated the "RistoAI Studio" link to point to `https://stalwart-gecko-91ab91.netlify.app/` (Netlify build) instead of the old Cloud Run URL.

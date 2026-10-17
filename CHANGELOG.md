@@ -1,3 +1,9 @@
+## [1.3.13] - 2026-10-18
+### Added
+- Added "Illumina" (`https://illumina.ai.studio/`) to the web project examples section.
+### Changed
+- Shortened button names across the web project examples section (e.g. "Estetica", "Meccanico", "Canarie", "Viaggi", "Veterinario", "WebAgency", etc.) for a cleaner, more compact UI.
+
 ## [1.3.12] - 2026-10-01
 ### Added
 - Added "Viaggi AI Studio" to the web project examples.
