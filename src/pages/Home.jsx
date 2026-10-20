@@ -337,6 +337,10 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">💡</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_illumina.replace(' →', '').replace('→', '')}</span>
                                 </a>
+                                <a href="https://dedonato-cicli-1001602950918.europe-west1.run.app/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">🚲</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_dedonato.replace(' →', '').replace('→', '')}</span>
+                                </a>
                             </div>
                         </motion.div>
 

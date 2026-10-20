@@ -53,6 +53,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
+                link_dedonato: "Dedonato Cicli →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
@@ -333,6 +334,11 @@ export const translations = {
                     title: "Meccanico AI Studio",
                     desc: "AI studio showcasing advanced web development and AI capabilities",
                     category: "Live Business"
+                },
+                p10: {
+                    title: "Dedonato Cicli",
+                    desc: "Modern bicycle shop, workshop and biomechanics website with sleek design and booking",
+                    category: "Live Business"
                 }
             },
             btn_view: "Learn More →",
@@ -527,6 +533,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
+                link_dedonato: "Dedonato Cicli →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
@@ -807,6 +814,11 @@ export const translations = {
                     title: "Meccanico AI Studio",
                     desc: "Studio AI che mostra capacità avanzate di sviluppo web e AI",
                     category: "Live Business"
+                },
+                p10: {
+                    title: "Dedonato Cicli",
+                    desc: "Sito moderno per negozio bici, officina e laboratorio biomeccanico con prenotazioni online",
+                    category: "Live Business"
                 }
             },
             btn_view: "Scopri di più →",
@@ -1001,6 +1013,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
+                link_dedonato: "Dedonato Cicli →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
@@ -1281,6 +1294,11 @@ export const translations = {
                     title: "Meccanico AI Studio",
                     desc: "Estudio de IA que muestra capacidades avanzadas de desarrollo web e IA",
                     category: "Live Business"
+                },
+                p10: {
+                    title: "Dedonato Cicli",
+                    desc: "Sitio web moderno para tienda de bicicletas, taller y biomecánica con reservas",
+                    category: "Live Business"
                 }
             },
             btn_view: "Ver más →",
@@ -1475,6 +1493,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
+                link_dedonato: "Dedonato Cicli →",
                 btn_curiosity: "✨ ความอยากรู้อยากเห็นระดับจักรวาล",
                 btn_tunnel: "🌀 อุโมงค์นีออน",
                 btn_tictactoe: "⭕ โอเอ็กซ์นีออน",
@@ -1754,6 +1773,11 @@ export const translations = {
                 p9: {
                     title: "Meccanico AI Studio",
                     desc: "สตูดิโอ AI ที่แสดงความสามารถในการพัฒนาเว็บและ AI ขั้นสูง",
+                    category: "Live Business"
+                },
+                p10: {
+                    title: "Dedonato Cicli",
+                    desc: "เว็บไซต์ร้านจักรยาน เวิร์กช็อป และไบโอเมคานิกส์สมัยใหม่พร้อมระบบจอง",
                     category: "Live Business"
                 }
             },

@@ -1,3 +1,7 @@
+## [1.3.14] - 2026-10-20
+### Added
+- Added "Dedonato Cicli" (`https://dedonato-cicli-1001602950918.europe-west1.run.app/`) to the web project examples section and portfolio showcase.
+
 ## [1.3.13] - 2026-10-18
 ### Added
 - Added "Illumina" (`https://illumina.ai.studio/`) to the web project examples section.

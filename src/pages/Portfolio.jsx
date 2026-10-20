@@ -120,6 +120,17 @@ const Portfolio = ({ onNavigate }) => {
             tags: ["AI", "Studio", "Web"],
             stats: { views: "1K+", rating: "5.0" },
             link: "https://meccanico.ai.studio/"
+        },
+        {
+            id: 10,
+            title: t('page_portfolio', 'projects').p10.title,
+            category: t('page_portfolio', 'projects').p10.category,
+            description: t('page_portfolio', 'projects').p10.desc,
+            gradient: "linear-gradient(135deg, #0ea5e9 0%, #10b981 100%)",
+            icon: "🚲",
+            tags: ["Next.js", "Cycling", "Tailwind"],
+            stats: { views: "1K+", rating: "5.0" },
+            link: "https://dedonato-cicli-1001602950918.europe-west1.run.app/"
         }
     ];
 
