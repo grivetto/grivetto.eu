@@ -53,7 +53,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
-                link_dedonato: "Dedonato Cicli →",
+                link_dedonato: "Bike 2026 →",
                 btn_curiosity: "✨ Cosmic Curiosity",
                 btn_tunnel: "🌀 Neon Tunnel",
                 btn_tictactoe: "⭕ Neon Tic-Tac-Toe",
@@ -336,7 +336,7 @@ export const translations = {
                     category: "Live Business"
                 },
                 p10: {
-                    title: "Dedonato Cicli",
+                    title: "Bike 2026",
                     desc: "Modern bicycle shop, workshop and biomechanics website with sleek design and booking",
                     category: "Live Business"
                 }
@@ -533,7 +533,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
-                link_dedonato: "Dedonato Cicli →",
+                link_dedonato: "Bike 2026 →",
                 btn_curiosity: "✨ Curiosità Cosmica",
                 btn_tunnel: "🌀 Tunnel Neon",
                 btn_tictactoe: "⭕ Tris Neon",
@@ -816,7 +816,7 @@ export const translations = {
                     category: "Live Business"
                 },
                 p10: {
-                    title: "Dedonato Cicli",
+                    title: "Bike 2026",
                     desc: "Sito moderno per negozio bici, officina e laboratorio biomeccanico con prenotazioni online",
                     category: "Live Business"
                 }
@@ -1013,7 +1013,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
-                link_dedonato: "Dedonato Cicli →",
+                link_dedonato: "Bike 2026 →",
                 btn_curiosity: "✨ Curiosidad Cósmica",
                 btn_tunnel: "🌀 Túnel Neón",
                 btn_tictactoe: "⭕ Tres en Raya Neón",
@@ -1296,7 +1296,7 @@ export const translations = {
                     category: "Live Business"
                 },
                 p10: {
-                    title: "Dedonato Cicli",
+                    title: "Bike 2026",
                     desc: "Sitio web moderno para tienda de bicicletas, taller y biomecánica con reservas",
                     category: "Live Business"
                 }
@@ -1493,7 +1493,7 @@ export const translations = {
                 link_canarie: "Canarie →",
                 link_viaggi: "Viaggi →",
                 link_illumina: "Illumina →",
-                link_dedonato: "Dedonato Cicli →",
+                link_dedonato: "Bike 2026 →",
                 btn_curiosity: "✨ ความอยากรู้อยากเห็นระดับจักรวาล",
                 btn_tunnel: "🌀 อุโมงค์นีออน",
                 btn_tictactoe: "⭕ โอเอ็กซ์นีออน",
@@ -1776,7 +1776,7 @@ export const translations = {
                     category: "Live Business"
                 },
                 p10: {
-                    title: "Dedonato Cicli",
+                    title: "Bike 2026",
                     desc: "เว็บไซต์ร้านจักรยาน เวิร์กช็อป และไบโอเมคานิกส์สมัยใหม่พร้อมระบบจอง",
                     category: "Live Business"
                 }

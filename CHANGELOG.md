@@ -1,3 +1,7 @@
+## [1.3.15] - 2026-10-23
+### Changed
+- Renamed "Dedonato Cicli" button to "Bike 2026" in the web project examples section and portfolio showcase.
+
 ## [1.3.14] - 2026-10-20
 ### Added
 - Added "Dedonato Cicli" (`https://dedonato-cicli-1001602950918.europe-west1.run.app/`) to the web project examples section and portfolio showcase.
