@@ -1,3 +1,7 @@
+## [1.3.19] - 2026-10-27
+### Fixed
+- Fixed market scenario simulator layout in `DenaroMachine`: switched to a balanced 2-column grid with strict sizing constraints (`min-width: 0`, automatic text ellipsis), preventing the "Flash Crash" button from overflowing outside the container or off-screen.
+
 ## [1.3.18] - 2026-10-26
 ### Changed
 - Redesigned Denaro section with a unified, high-tech cockpit layout: eliminated tabs so all components (live Web App Studio window, distributed nodes, market simulator, and real-time streaming terminal) are visible simultaneously in a single view.
