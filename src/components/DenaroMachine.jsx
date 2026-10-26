@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import './DenaroMachine.css';
 
@@ -88,22 +87,18 @@ const UI_COPY = {
         updatedAt: 'Sincronizzato alle',
         openApp: 'Apri Dashboard Live',
         githubRepo: 'Codice Sorgente',
-        tabStudio: 'Live Web App Studio',
-        tabTerminal: 'Terminale & Simulatore',
-        tabNodes: 'Architettura & Nodi',
-        nodesTitle: 'Topologia Nodi Distribuiti',
-        nodesSubtitle: '3 Unità Attive',
         simulateTitle: 'Simulatore Scenari di Mercato',
-        simulateHint: 'Clicca su un evento per testare la risposta algoritmica in tempo reale',
+        simulateHint: 'Clicca su un evento per testare la risposta algoritmica',
         capitalPrefix: 'Capitale Attivo',
         profitSub: 'Rendimento netto consolidato',
         tradesSub: 'Eseguite su Kraken, OKX & Binance',
         winrateSub: 'Efficienza cicli DCA / Grid',
         statusHeadline: 'OPERATIVA',
-        expandPreview: 'Espandi vista',
-        compactPreview: 'Vista compatta',
         refreshBtn: 'Sincronizza ora',
         streamBadge: 'LIVE STREAM',
+        nodesTitle: 'Topologia Nodi Distribuiti',
+        webAppTitle: 'Live Web App Studio',
+        webAppSubtitle: 'Interfaccia remota connessa in tempo reale a web.grivetto.eu',
     },
     en: {
         versionTag: 'v6 Predictive',
@@ -112,11 +107,6 @@ const UI_COPY = {
         updatedAt: 'Synced at',
         openApp: 'Open Live Dashboard',
         githubRepo: 'Source Code',
-        tabStudio: 'Live Web App Studio',
-        tabTerminal: 'Terminal & Simulator',
-        tabNodes: 'Node Architecture',
-        nodesTitle: 'Distributed Node Topology',
-        nodesSubtitle: '3 Active Units',
         simulateTitle: 'Market Scenario Simulator',
         simulateHint: 'Click an event to test fleet algorithmic response in real-time',
         capitalPrefix: 'Active Capital',
@@ -124,10 +114,11 @@ const UI_COPY = {
         tradesSub: 'Executed across Kraken, OKX & Binance',
         winrateSub: 'DCA / Grid cycle efficiency',
         statusHeadline: 'OPERATIONAL',
-        expandPreview: 'Expand view',
-        compactPreview: 'Compact view',
         refreshBtn: 'Sync now',
         streamBadge: 'LIVE STREAM',
+        nodesTitle: 'Distributed Node Topology',
+        webAppTitle: 'Live Web App Studio',
+        webAppSubtitle: 'Remote interface connected live to web.grivetto.eu',
     },
     es: {
         versionTag: 'v6 Predictive',
@@ -136,11 +127,6 @@ const UI_COPY = {
         updatedAt: 'Sincronizado a las',
         openApp: 'Abrir Panel en Vivo',
         githubRepo: 'Código Fuente',
-        tabStudio: 'Panel en Vivo',
-        tabTerminal: 'Terminal y Simulador',
-        tabNodes: 'Arquitectura de Nodos',
-        nodesTitle: 'Topología de Nodos Distribuidos',
-        nodesSubtitle: '3 Unidades Activas',
         simulateTitle: 'Simulador de Escenarios',
         simulateHint: 'Haz clic para probar la respuesta algorítmica en tiempo real',
         capitalPrefix: 'Capital Activo',
@@ -148,10 +134,11 @@ const UI_COPY = {
         tradesSub: 'Ejecutadas en Kraken, OKX y Binance',
         winrateSub: 'Eficiencia de ciclos DCA / Grid',
         statusHeadline: 'OPERATIVO',
-        expandPreview: 'Expandir vista',
-        compactPreview: 'Vista compacta',
         refreshBtn: 'Sincronizar',
         streamBadge: 'EN VIVO',
+        nodesTitle: 'Topología de Nodos Distribuidos',
+        webAppTitle: 'Panel en Vivo',
+        webAppSubtitle: 'Interfaz remota conectada en vivo a web.grivetto.eu',
     },
     th: {
         versionTag: 'v6 Predictive',
@@ -160,11 +147,6 @@ const UI_COPY = {
         updatedAt: 'ซิงค์เมื่อ',
         openApp: 'เปิดแดชบอร์ดสด',
         githubRepo: 'ซอร์สโค้ด',
-        tabStudio: 'แดชบอร์ดสด',
-        tabTerminal: 'เทอร์มินัลและระบบจำลอง',
-        tabNodes: 'สถาปัตยกรรมโหนด',
-        nodesTitle: 'สถาปัตยกรรมโหนดแบบกระจาย',
-        nodesSubtitle: '3 โหนดทำงานอยู่',
         simulateTitle: 'จำลองสถานการณ์ตลาด',
         simulateHint: 'คลิกเพื่อทดสอบการตอบสนองของระบบในเวลาจริง',
         capitalPrefix: 'เงินทุนหมุนเวียน',
@@ -172,10 +154,11 @@ const UI_COPY = {
         tradesSub: 'ดำเนินการบน Kraken, OKX และ Binance',
         winrateSub: 'ประสิทธิภาพรอบ DCA / Grid',
         statusHeadline: 'พร้อมใช้งาน',
-        expandPreview: 'ขยายมุมมอง',
-        compactPreview: 'ย่อมุมมอง',
         refreshBtn: 'ซิงค์ข้อมูล',
         streamBadge: 'สตรีมสด',
+        nodesTitle: 'สถาปัตยกรรมโหนดแบบกระจาย',
+        webAppTitle: 'แดชบอร์ดสด',
+        webAppSubtitle: 'เชื่อมต่อกับ web.grivetto.eu แบบเรียลไทม์',
     }
 };
 
@@ -199,9 +182,7 @@ export default function DenaroMachine() {
     const [busy, setBusy] = useState(false);
     const [lastUpdate, setLastUpdate] = useState(null);
     const [capital, setCapital] = useState(null);
-    const [isExpandedPreview, setIsExpandedPreview] = useState(false);
     const [activeEventKey, setActiveEventKey] = useState(null);
-    const [activeTab, setActiveTab] = useState('terminal'); // 'terminal' | 'studio' | 'nodes'
     const [isRefreshing, setIsRefreshing] = useState(false);
     const bodyRef = useRef(null);
 
@@ -252,7 +233,7 @@ export default function DenaroMachine() {
                 clearInterval(timer);
                 fetchLiveStats();
             }
-        }, 220);
+        }, 200);
         return function() { clearInterval(timer); };
     }, [fetchLiveStats]);
 
@@ -267,17 +248,13 @@ export default function DenaroMachine() {
         if (bodyRef.current) {
             bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
         }
-    }, [logs, activeTab]);
+    }, [logs]);
 
     // Inject market event (demo interattivo)
     function inject(ev) {
         if (busy) return;
         setBusy(true);
         setActiveEventKey(ev.key);
-        // Switch automatico al terminale per mostrare la reazione dal vivo
-        if (activeTab !== 'terminal') {
-            setActiveTab('terminal');
-        }
 
         let idx = 0;
         const logType = ev.key === 'crash' ? 'watchdog' : ev.key === 'sol' ? 'zero_oom' : ev.key === 'ada' ? 'micro_spread' : 'neon_sniper';
@@ -293,7 +270,7 @@ export default function DenaroMachine() {
                 setBusy(false);
                 setTimeout(function() { setActiveEventKey(null); }, 600);
             }
-        }, 340);
+        }, 320);
     }
 
     const badge = t('denaro_machine', 'badge');
@@ -367,7 +344,7 @@ export default function DenaroMachine() {
                             </a>
 
                             <a
-                                href="https://github.com/grivetto/alpha-omega-trading"
+                                href="https://github.com/grivetto/money"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="dm-action-btn dm-action-secondary"
@@ -464,54 +441,120 @@ export default function DenaroMachine() {
                         </div>
                     </div>
 
-                    {/* --- Suite Navigation Tabs Elegante --- */}
-                    <div className="dm-tabs-container">
-                        <div className="dm-tabs-nav">
-                            <button
-                                type="button"
-                                className={'dm-tab-nav-btn' + (activeTab === 'terminal' ? ' is-active' : '')}
-                                onClick={() => setActiveTab('terminal')}
-                            >
-                                <span className="dm-tab-nav-icon">⚡</span>
-                                <span>{copy.tabTerminal}</span>
-                                <span className="dm-tab-nav-dot"></span>
-                            </button>
+                    {/* --- Cockpit Unificato (Tutto visibile in un unico colpo d'occhio) --- */}
+                    <div className="dm-cockpit-grid">
 
-                            <button
-                                type="button"
-                                className={'dm-tab-nav-btn' + (activeTab === 'studio' ? ' is-active' : '')}
-                                onClick={() => setActiveTab('studio')}
-                            >
-                                <span className="dm-tab-nav-icon">🌐</span>
-                                <span>{copy.tabStudio}</span>
-                                <span className="dm-tab-nav-dot"></span>
-                            </button>
+                        {/* COLONNA SINISTRA: Live Web App Studio */}
+                        <div className="dm-cockpit-col dm-cockpit-left">
+                            <div className="dm-panel-header">
+                                <span className="dm-panel-title">
+                                    <span className="dm-panel-dot"></span>
+                                    {copy.webAppTitle}
+                                </span>
+                                <span className="dm-panel-sub">{copy.webAppSubtitle}</span>
+                            </div>
 
-                            <button
-                                type="button"
-                                className={'dm-tab-nav-btn' + (activeTab === 'nodes' ? ' is-active' : '')}
-                                onClick={() => setActiveTab('nodes')}
-                            >
-                                <span className="dm-tab-nav-icon">🛰️</span>
-                                <span>{copy.tabNodes}</span>
-                                <span className="dm-tab-nav-dot"></span>
-                            </button>
+                            <div className="dm-webapp-preview">
+                                <div className="dm-browser-bar">
+                                    <div className="dm-window-dots" aria-hidden="true">
+                                        <span className="dm-dot red"></span>
+                                        <span className="dm-dot yellow"></span>
+                                        <span className="dm-dot green"></span>
+                                    </div>
+
+                                    <a
+                                        href="https://web.grivetto.eu"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="dm-browser-url"
+                                        title="web.grivetto.eu/live-telemetry"
+                                    >
+                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="dm-lock-icon">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        <span className="dm-url-domain">web.grivetto.eu</span>
+                                        <span className="dm-url-divider">/</span>
+                                        <span className="dm-url-path">live-telemetry</span>
+                                    </a>
+
+                                    <div className="dm-browser-actions">
+                                        <a
+                                            href="https://web.grivetto.eu"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="dm-browser-btn dm-browser-btn-accent"
+                                            title={copy.openApp}
+                                        >
+                                            <span>↗</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <iframe
+                                    src="https://web.grivetto.eu"
+                                    className="dm-iframe"
+                                    title="Denaro Web App"
+                                    loading="lazy"
+                                ></iframe>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* --- Interactive Tab Content --- */}
-                    <AnimatePresence mode="wait">
-                        {/* TAB 1: TERMINALE & SIMULATORE */}
-                        {activeTab === 'terminal' && (
-                            <motion.div
-                                key="tab-terminal"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.25 }}
-                                className="dm-tab-panel"
-                            >
-                                {/* Simulator Bar Integrata */}
+                        {/* COLONNA DESTRA: Engine Console (Nodi + Simulatore + Terminale) */}
+                        <div className="dm-cockpit-col dm-cockpit-right">
+
+                            {/* 1. Nodi Distribuiti */}
+                            <div className="dm-cockpit-block">
+                                <div className="dm-panel-header">
+                                    <span className="dm-panel-title">
+                                        <span className="dm-panel-dot dm-dot-cyan"></span>
+                                        {copy.nodesTitle}
+                                    </span>
+                                </div>
+
+                                <div className="dm-nodes-layout">
+                                    <div className="dm-node dm-node-emerald">
+                                        <div className="dm-node-top">
+                                            <span className="dm-led"></span>
+                                            <strong>Node Nuvola (mc2)</strong>
+                                            <span className="dm-chip dm-chip-emerald">Kraken</span>
+                                        </div>
+                                        <p>{nuvolaDesc}</p>
+                                        <div className="dm-node-meta">
+                                            <span>Orchestrator • DCA Grid</span>
+                                            <span className="dm-node-ping">42ms</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="dm-node dm-node-cyan">
+                                        <div className="dm-node-top">
+                                            <span className="dm-led dm-blue"></span>
+                                            <strong>Node MARCODG1</strong>
+                                            <span className="dm-chip dm-chip-cyan">OKX/Binance</span>
+                                        </div>
+                                        <p>{marcodg1Desc}</p>
+                                        <div className="dm-node-meta">
+                                            <span>Dump Guard • Scaled Risk</span>
+                                            <span className="dm-node-ping">38ms</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="dm-node dm-node-purple">
+                                        <div className="dm-node-top">
+                                            <span className="dm-led dm-purple"></span>
+                                            <strong>Fleet Manager</strong>
+                                            <span className="dm-chip dm-chip-purple">Multi-Sync</span>
+                                        </div>
+                                        <p>{microSpreadDesc}</p>
+                                        <div className="dm-node-meta">
+                                            <span>Cross-Exchange Spread</span>
+                                            <span className="dm-node-ping">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 2. Simulatore Scenari */}
+                            <div className="dm-cockpit-block">
                                 <div className="dm-simulator-strip">
                                     <div className="dm-sim-info">
                                         <span className="dm-sim-title">
@@ -542,8 +585,10 @@ export default function DenaroMachine() {
                                         })}
                                     </div>
                                 </div>
+                            </div>
 
-                                {/* Terminal Console */}
+                            {/* 3. Terminale Streaming */}
+                            <div className="dm-cockpit-block dm-terminal-block">
                                 <div className="dm-terminal">
                                     <div className="dm-term-bar">
                                         <div className="dm-window-dots" aria-hidden="true">
@@ -575,132 +620,11 @@ export default function DenaroMachine() {
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                        )}
+                            </div>
 
-                        {/* TAB 2: LIVE WEB APP STUDIO */}
-                        {activeTab === 'studio' && (
-                            <motion.div
-                                key="tab-studio"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.25 }}
-                                className="dm-tab-panel"
-                            >
-                                <div className={'dm-webapp-preview' + (isExpandedPreview ? ' is-expanded' : '')}>
-                                    <div className="dm-browser-bar">
-                                        <div className="dm-window-dots" aria-hidden="true">
-                                            <span className="dm-dot red"></span>
-                                            <span className="dm-dot yellow"></span>
-                                            <span className="dm-dot green"></span>
-                                        </div>
+                        </div>
 
-                                        <a
-                                            href="https://web.grivetto.eu"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="dm-browser-url"
-                                        >
-                                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="dm-lock-icon">
-                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                            </svg>
-                                            <span className="dm-url-domain">web.grivetto.eu</span>
-                                            <span className="dm-url-divider">/</span>
-                                            <span className="dm-url-path">live-telemetry</span>
-                                        </a>
-
-                                        <div className="dm-browser-actions">
-                                            <button
-                                                type="button"
-                                                className="dm-browser-btn"
-                                                onClick={function() { setIsExpandedPreview(!isExpandedPreview); }}
-                                            >
-                                                {isExpandedPreview ? copy.compactPreview : copy.expandPreview}
-                                            </button>
-                                            <a
-                                                href="https://web.grivetto.eu"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="dm-browser-btn dm-browser-btn-accent"
-                                            >
-                                                <span>↗</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <iframe
-                                        src="https://web.grivetto.eu"
-                                        className="dm-iframe"
-                                        title="Denaro Web App"
-                                        loading="lazy"
-                                    ></iframe>
-                                </div>
-                            </motion.div>
-                        )}
-
-                        {/* TAB 3: TOPOLOGIA NODI & ARCHITETTURA */}
-                        {activeTab === 'nodes' && (
-                            <motion.div
-                                key="tab-nodes"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.25 }}
-                                className="dm-tab-panel"
-                            >
-                                <div className="dm-nodes-layout">
-                                    <div className="dm-node dm-node-emerald">
-                                        <div className="dm-node-top">
-                                            <span className="dm-led"></span>
-                                            <strong>Node Nuvola (mc2)</strong>
-                                            <span className="dm-chip dm-chip-emerald">Kraken REST</span>
-                                        </div>
-                                        <p>{nuvolaDesc}</p>
-                                        <div className="dm-node-meta">
-                                            <span>Orchestrator</span>
-                                            <span>•</span>
-                                            <span>Adaptive Grid / DCA</span>
-                                            <span>•</span>
-                                            <span className="dm-node-ping">42ms latency</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="dm-node dm-node-cyan">
-                                        <div className="dm-node-top">
-                                            <span className="dm-led dm-blue"></span>
-                                            <strong>Node MARCODG1</strong>
-                                            <span className="dm-chip dm-chip-cyan">OKX / Binance</span>
-                                        </div>
-                                        <p>{marcodg1Desc}</p>
-                                        <div className="dm-node-meta">
-                                            <span>Dump Guard</span>
-                                            <span>•</span>
-                                            <span>Volatility Scaled</span>
-                                            <span>•</span>
-                                            <span className="dm-node-ping">38ms latency</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="dm-node dm-node-purple">
-                                        <div className="dm-node-top">
-                                            <span className="dm-led dm-purple"></span>
-                                            <strong>Fleet Manager</strong>
-                                            <span className="dm-chip dm-chip-purple">Multi-Node Sync</span>
-                                        </div>
-                                        <p>{microSpreadDesc}</p>
-                                        <div className="dm-node-meta">
-                                            <span>Cross-Exchange</span>
-                                            <span>•</span>
-                                            <span>Micro-Spread Engine</span>
-                                            <span>•</span>
-                                            <span className="dm-node-ping">Active Consolidation</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    </div>
 
                 </div>
             </div>

@@ -1,3 +1,9 @@
+## [1.3.18] - 2026-10-26
+### Changed
+- Redesigned Denaro section with a unified, high-tech cockpit layout: eliminated tabs so all components (live Web App Studio window, distributed nodes, market simulator, and real-time streaming terminal) are visible simultaneously in a single view.
+- Updated source code link to point to `https://github.com/grivetto/money` (replacing the old `alpha-omega-trading` repository).
+- Retained institutional luxury glassmorphism, glowing status LEDs, telemetry sync, and responsive mobile/tablet layout.
+
 ## [1.3.17] - 2026-10-26
 ### Changed
 - Elevated the Denaro section into an institutional-grade trading suite (`DenaroMachine`).
