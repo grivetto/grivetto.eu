@@ -1,3 +1,10 @@
+## [1.3.16] - 2026-10-26
+### Added
+- Replaced static pill links in the "Web Project Examples" section with an interactive, categorized showcase component (`WebProjectsShowcase`).
+- Added filtering tabs (All, AI & Cloud, Business & Services, Showcase & Web) with live counters.
+- Added technology badges (`Cloud Run` with pulse animation, `AI Studio`, `Next.js / Cloud`, `Web App`, `Heritage`, `Food`, `Creative`) and localized descriptions.
+- Added smooth expand/collapse toggle for featured vs all projects with Framer Motion animations.
+
 ## [1.3.15] - 2026-10-23
 ### Changed
 - Renamed "Dedonato Cicli" button to "Bike 2026" in the web project examples section and portfolio showcase.
