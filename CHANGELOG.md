@@ -1,3 +1,10 @@
+## [1.3.17] - 2026-10-26
+### Changed
+- Elevated the Denaro section into an institutional-grade trading suite (`DenaroMachine`).
+- Added an interactive segmented view switcher between "Terminale & Simulatore", "Live Web App Studio", and "Architettura & Nodi" to eliminate vertical clutter.
+- Integrated an interactive real-time market scenario simulation strip (Adaptive Grid, Multi-Exchange, Dump Defense, Flash Crash) with instant feedback in the streaming terminal.
+- Refined KPI metric cards with sleek glassmorphism, glowing tabular figures, and luxury typography.
+
 ## [1.3.16] - 2026-10-26
 ### Added
 - Replaced static pill links in the "Web Project Examples" section with an interactive, categorized showcase component (`WebProjectsShowcase`).
