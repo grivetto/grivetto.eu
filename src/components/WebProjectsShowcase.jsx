@@ -23,7 +23,7 @@ const PROJECTS_DATA = [
     },
     {
         id: 'dedonato',
-        title: 'De Donato Cicli',
+        title: 'Bike 2026',
         icon: '🚲',
         category: 'business',
         badge: 'Next.js / Cloud',

@@ -1,3 +1,7 @@
+## [1.3.21] - 2026-10-29
+### Fixed
+- Renamed `De Donato Cicli` card title to `Bike 2026` in `WebProjectsShowcase.jsx`.
+
 ## [1.3.20] - 2026-10-29
 ### Added
 - Added `Web.Grivetto.eu` (`https://web.grivetto.eu/`) to the "Live Businesses" section in `Home.jsx` and `translations.js`.
