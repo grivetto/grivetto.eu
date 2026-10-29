@@ -70,22 +70,6 @@ const PROJECTS_DATA = [
         }
     },
     {
-        id: 'autoschool',
-        title: 'DriveFlow',
-        icon: '🚗',
-        category: 'business',
-        badge: 'Web App',
-        badgeType: 'app',
-        url: 'https://autoscoola-qwg7u6ny.manus.space/',
-        featured: true,
-        desc: {
-            it: 'Piattaforma didattica interattiva per autoscuole',
-            en: 'Interactive learning platform for driving schools',
-            es: 'Plataforma educativa para autoescuelas',
-            th: 'แพลตฟอร์มการเรียนการสอนสำหรับโรงเรียนสอนขับรถ'
-        }
-    },
-    {
         id: 'webagency_ai',
         title: 'WebAgency AI',
         icon: '🌐',

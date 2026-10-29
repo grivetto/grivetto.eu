@@ -1,3 +1,7 @@
+## [1.3.22] - 2026-10-29
+### Removed
+- Removed `DriveFlow` (`manus.space`) project card from `WebProjectsShowcase.jsx`.
+
 ## [1.3.21] - 2026-10-29
 ### Fixed
 - Renamed `De Donato Cicli` card title to `Bike 2026` in `WebProjectsShowcase.jsx`.
