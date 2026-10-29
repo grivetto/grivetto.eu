@@ -1,3 +1,7 @@
+## [1.3.20] - 2026-10-29
+### Added
+- Added `Web.Grivetto.eu` (`https://web.grivetto.eu/`) to the "Live Businesses" section in `Home.jsx` and `translations.js`.
+
 ## [1.3.19] - 2026-10-27
 ### Fixed
 - Fixed market scenario simulator layout in `DenaroMachine`: switched to a balanced 2-column grid with strict sizing constraints (`min-width: 0`, automatic text ellipsis), preventing the "Flash Crash" button from overflowing outside the container or off-screen.

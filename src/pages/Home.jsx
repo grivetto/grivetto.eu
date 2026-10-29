@@ -246,6 +246,10 @@ export default function Home({ onNavigate }) {
                                     <span className="bento-link-icon">🏠</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_vivirito.replace(' →', '').replace('→', '')}</span>
                                 </a>
+                                <a href="https://web.grivetto.eu/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
+                                    <span className="bento-link-icon">📈</span>
+                                    <span className="bento-link-text">{t('expertise', 'card_web').link_web_grivetto.replace(' →', '').replace('→', '')}</span>
+                                </a>
                                 <a href="https://serenissima99.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🌟</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_serenissima.replace(' →', '').replace('→', '')}</span>
