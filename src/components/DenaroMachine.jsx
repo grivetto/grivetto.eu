@@ -184,6 +184,7 @@ export default function DenaroMachine() {
     const [capital, setCapital] = useState(null);
     const [activeEventKey, setActiveEventKey] = useState(null);
     const [isRefreshing, setIsRefreshing] = useState(false);
+    const [iframeInteractive, setIframeInteractive] = useState(false);
     const bodyRef = useRef(null);
 
     // Fetch dati live dal Worker
@@ -479,6 +480,15 @@ export default function DenaroMachine() {
                                     </a>
 
                                     <div className="dm-browser-actions">
+                                        {iframeInteractive && (
+                                            <button
+                                                type="button"
+                                                className="dm-browser-btn dm-unlock-scroll-btn"
+                                                onClick={() => setIframeInteractive(false)}
+                                            >
+                                                <span>✕ Scroll</span>
+                                            </button>
+                                        )}
                                         <a
                                             href="https://web.grivetto.eu"
                                             target="_blank"
@@ -490,12 +500,28 @@ export default function DenaroMachine() {
                                         </a>
                                     </div>
                                 </div>
-                                <iframe
-                                    src="https://web.grivetto.eu"
-                                    className="dm-iframe"
-                                    title="Denaro Web App"
-                                    loading="lazy"
-                                ></iframe>
+                                <div className={'dm-iframe-stage' + (iframeInteractive ? ' is-interactive' : '')}>
+                                    <iframe
+                                        src="https://web.grivetto.eu"
+                                        className="dm-iframe"
+                                        title="Denaro Web App"
+                                        loading="lazy"
+                                    ></iframe>
+                                    {!iframeInteractive && (
+                                        <div
+                                            className="dm-touch-guard"
+                                            onClick={() => setIframeInteractive(true)}
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIframeInteractive(true); }}
+                                        >
+                                            <span className="dm-touch-guard-pill">
+                                                <span>👆</span>
+                                                <span>{language === 'it' ? 'Tocca per interagire con la Live App' : language === 'es' ? 'Toca para interactuar con la App' : language === 'th' ? 'แตะเพื่อโต้ตอบกับแอปสด' : 'Tap to interact with Live App'}</span>
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
 

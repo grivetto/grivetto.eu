@@ -1528,3 +1528,310 @@
     font-size: 1rem;
   }
 }
+
+
+/* ===================================
+   MOBILE & TOUCH UX OPTIMIZATIONS
+   =================================== */
+
+.mobile-nav-backdrop {
+  display: none;
+}
+
+.section-text p {
+  margin-bottom: 1.15rem;
+  line-height: 1.75;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (hover: none) {
+  .bento-card:hover {
+    transform: none !important;
+  }
+
+  .bento-card::after {
+    display: none;
+  }
+
+  .tag:active,
+  .bento-link-card:active,
+  .btn-primary:active,
+  .btn-secondary:active,
+  .nav-link-btn:active {
+    transform: scale(0.97) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* GPU optimization for ambient orbs on mobile */
+  .orb-1,
+  .orb-2,
+  .orb-3 {
+    width: 260px;
+    height: 260px;
+    filter: blur(55px);
+    animation: none;
+  }
+
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 20, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9998;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    margin: 0 !important;
+    height: 100vh;
+    height: 100dvh;
+    width: min(82vw, 300px);
+    padding: 5.5rem 1.5rem 2rem;
+    gap: 1.15rem;
+    justify-content: flex-start;
+    z-index: 10000 !important;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.15);
+    font-size: 1.05rem;
+  }
+
+  .nav-link-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.25rem;
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-section {
+    padding: 6rem 1.1rem 1.5rem;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.15rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 8vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin-bottom: 1.65rem;
+  }
+
+  .hero-cta {
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 48px;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.98rem;
+  }
+
+  /* Compact 2-column horizontal KPI bar in Hero on mobile */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0.85rem;
+    border-radius: 16px;
+  }
+
+  .stat-value {
+    font-size: 1.55rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 34px;
+    background: linear-gradient(180deg, transparent, hsl(195, 30%, 75%), transparent);
+  }
+
+  .section-container {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.15rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  .bento-grid {
+    gap: 1.15rem;
+  }
+
+  .bento-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 20px;
+  }
+
+  .bento-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .bento-title {
+    font-size: 1.28rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bento-description {
+    font-size: 0.9rem;
+    line-height: 1.58;
+    margin-bottom: 1.1rem;
+  }
+
+  /* Thumb-friendly 2-column grids for tags and live business links */
+  .bento-tags {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .tag {
+    width: 100%;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.78rem;
+    line-height: 1.2;
+  }
+
+  .bento-links-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .bento-link-card {
+    width: 100%;
+    min-height: 42px;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.76rem;
+    border-radius: 12px;
+  }
+
+  .bento-link {
+    min-height: 40px;
+    padding: 0.35rem 0;
+  }
+
+  .bento-quote {
+    font-size: 1.18rem;
+  }
+
+  .services-section,
+  .testimonials-section,
+  .blog-section,
+  .cta-section {
+    padding: 2.75rem 0;
+  }
+
+  .services-grid,
+  .testimonials-grid,
+  .blog-grid {
+    gap: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .service-card,
+  .testimonial-card,
+  .blog-card,
+  .philosophy-content {
+    padding: 1.5rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .service-icon {
+    font-size: 2.3rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .service-card h3,
+  .blog-card h3 {
+    font-size: 1.22rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p,
+  .blog-card p,
+  .testimonial-text,
+  .section-text p {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .cta-container {
+    padding: 2.25rem 1.25rem;
+    border-radius: 22px;
+    margin: 0 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 0.96rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modern-footer {
+    padding: 2.5rem 0 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .footer-container {
+    padding: 0 1.15rem;
+  }
+
+  .footer-link {
+    min-height: 36px;
+    padding: 0.3rem 0;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-info-item {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 0.45rem;
+  }
+}

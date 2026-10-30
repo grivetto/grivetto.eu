@@ -181,6 +181,7 @@ function App() {
   const lang = routeState.lang;
 
   const handleNavigate = (newView) => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     setRouteState(prev => {
       const newState = { ...prev, page: newView };
       const url = buildUrl(newState.lang, newState.page);

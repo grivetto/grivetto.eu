@@ -24,11 +24,15 @@ export default function Home({ onNavigate }) {
     const { t, language, toggleLanguage } = useLanguage();
 
     useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
+        const handleScroll = () => {
+            if (window.innerWidth >= 768) {
+                setScrollY(window.scrollY);
+            }
+        };
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         
         checkMobile();
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', checkMobile);
         
         return () => {
@@ -93,6 +97,13 @@ export default function Home({ onNavigate }) {
                         </button>
                     </div>
 
+                    {isMenuOpen && (
+                        <div
+                            className="mobile-nav-backdrop"
+                            onClick={() => setIsMenuOpen(false)}
+                            aria-hidden="true"
+                        />
+                    )}
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
                         <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
                         <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
@@ -490,7 +501,7 @@ export default function Home({ onNavigate }) {
                         <div className="footer-column">
                             <h3 className="footer-heading">Contact</h3>
                             <div className="footer-info">
-                                <p className="footer-info-item">📞 {t('footer', 'phone')}</p>
+                                <p className="footer-info-item">📞 <a href="tel:+393711741209" className="footer-link" style={{ display: 'inline' }}>{t('footer', 'phone')}</a></p>
                                 <p className="footer-info-item">📍 {t('footer', 'address')}</p>
                             </div>
                         </div>

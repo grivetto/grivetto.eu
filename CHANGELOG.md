@@ -1,3 +1,12 @@
+## [1.3.23] - 2026-10-30
+### Changed
+- Comprehensive mobile UX, touch interaction, and performance optimization across the entire site:
+  - Eliminated mobile scroll re-renders (`scrollY` state updates disabled on `<768px`, passive scroll listener) and reduced GPU blur overdraw on ambient orbs.
+  - Added mobile navigation backdrop overlay and fixed drawer layout/touch targets.
+  - Refactored Hero stats, Bento mini-app tags, Live Business links, Denaro KPIs, and Market Simulator buttons into thumb-friendly 2-column grids on mobile.
+  - Added mobile touch-scroll guard overlay on the embedded `web.grivetto.eu` iframe in `DenaroMachine` to prevent accidental scroll trapping on mobile screens, with one-tap interactive unlock.
+  - Improved mobile layout, button touch targets, and scroll-to-top navigation across `Portfolio`, `Resume`, `WebProjectsShowcase`, and `Footer` (including clickable `tel:` link).
+
 ## [1.3.22] - 2026-10-29
 ### Removed
 - Removed `DriveFlow` (`manus.space`) project card from `WebProjectsShowcase.jsx`.

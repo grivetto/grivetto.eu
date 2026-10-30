@@ -526,3 +526,72 @@
         opacity: 0.5;
     }
 }
+
+
+/* Mobile & Top Bar Button Refinements */
+.back-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    padding: 0.55rem 1.15rem !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.22) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        background-attachment: scroll;
+    }
+
+    .back-button {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.45rem 0.95rem !important;
+        font-size: 0.85rem;
+    }
+
+    .portfolio-hero {
+        padding: 5.25rem 1.25rem 2rem;
+        min-height: auto;
+    }
+
+    .title-accent {
+        font-size: 2.5rem;
+    }
+
+    .stats-section {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 1.25rem 0.85rem !important;
+        border-radius: 18px;
+    }
+
+    .projects-section {
+        padding: 1rem;
+    }
+
+    .modal-overlay {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1.75rem 1.25rem;
+    }
+}
