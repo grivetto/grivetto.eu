@@ -4,7 +4,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSelector from '../components/LanguageSelector';
 import DenaroMachine from '../components/DenaroMachine';
 import WebProjectsShowcase from '../components/WebProjectsShowcase';
-import { translations } from '../translations';
 import './Home.css';
 import './HomeCyberpunk.css';
 
@@ -16,12 +15,44 @@ class SplineErrorBoundary extends React.Component {
     render() { return this.state.hasError ? null : this.props.children; }
 }
 
+const QUICK_NAV_LABELS = {
+    it: {
+        work: 'Progetti Web',
+        denaro: 'Trading Fleet',
+        services: 'Servizi IT',
+        resume: 'Curriculum',
+        menuTitle: 'Navigazione Rapida'
+    },
+    en: {
+        work: 'Web Projects',
+        denaro: 'Trading Fleet',
+        services: 'IT Services',
+        resume: 'Resume / CV',
+        menuTitle: 'Quick Navigation'
+    },
+    es: {
+        work: 'Proyectos Web',
+        denaro: 'Trading Fleet',
+        services: 'Servicios IT',
+        resume: 'Currículum',
+        menuTitle: 'Navegación Rápida'
+    },
+    th: {
+        work: 'โปรเจกต์เว็บ',
+        denaro: 'ระบบเทรด',
+        services: 'บริการไอที',
+        resume: 'เรซูเม่',
+        menuTitle: 'เมนูนำทาง'
+    }
+};
+
 export default function Home({ onNavigate }) {
     const [scrollY, setScrollY] = useState(0);
-    const [theme, setTheme] = useState('cyberpunk'); // Toggle between 'default' and 'cyberpunk'
+    const [theme] = useState('cyberpunk');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
-    const { t, language, toggleLanguage } = useLanguage();
+    const { t, language } = useLanguage();
+    const quickNav = QUICK_NAV_LABELS[language] || QUICK_NAV_LABELS.en;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,36 +61,16 @@ export default function Home({ onNavigate }) {
             }
         };
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        
+
         checkMobile();
         window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', checkMobile);
-        
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', checkMobile);
         };
     }, []);
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-        }
-    };
 
     return (
         <div className={`modern-home ${theme} lang-${language}`}>
@@ -71,12 +82,7 @@ export default function Home({ onNavigate }) {
             </div>
 
             {/* Navigation */}
-            <motion.nav
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="modern-nav"
-            >
+            <nav className="modern-nav">
                 <div className="nav-container">
                     <div className="nav-logo">
                         <span className="logo-text">Sergio Grivetto</span>
@@ -105,12 +111,35 @@ export default function Home({ onNavigate }) {
                         />
                     )}
                     <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-                        <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('nav', 'work')}</a>
-                        <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>{t('services', 'title')}</a>
-                        <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">{t('nav', 'resume')}</button>
+                        <div className="mobile-drawer-header">
+                            <span className="mobile-drawer-title">{quickNav.menuTitle}</span>
+                            <button
+                                type="button"
+                                className="mobile-drawer-close"
+                                onClick={() => setIsMenuOpen(false)}
+                                aria-label="Close menu"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <a href="#work" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                            <span className="nav-link-icon">🚀</span>
+                            <span>{t('nav', 'work')}</span>
+                        </a>
+                        <a href="#denaro" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                            <span className="nav-link-icon">📈</span>
+                            <span>{quickNav.denaro}</span>
+                        </a>
+                        <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                            <span className="nav-link-icon">🐧</span>
+                            <span>{t('services', 'title')}</span>
+                        </a>
+                        <button onClick={() => { onNavigate('resume'); setIsMenuOpen(false); }} className="nav-link-btn">
+                            <span>📄 {t('nav', 'resume')}</span>
+                        </button>
                     </div>
                 </div>
-            </motion.nav>
+            </nav>
 
             {/* Hero Section */}
             <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -124,65 +153,57 @@ export default function Home({ onNavigate }) {
                     </div>
                 )}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                     className="hero-content"
                     style={{ position: 'relative', zIndex: 1, pointerEvents: 'none' }}
                 >
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="hero-badge"
-                        style={{ pointerEvents: 'auto' }}
-                    >
+                    <div className="hero-badge" style={{ pointerEvents: 'auto' }}>
                         <span className="badge-dot"></span>
                         {t('hero', 'badge')}
-                    </motion.div>
+                    </div>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
-                        className="hero-title"
-                    >
+                    <h1 className="hero-title">
                         {t('hero', 'title_part1')} <span className="gradient-text">{t('hero', 'title_tech')}</span>
                         <br />
                         {t('hero', 'title_part2')} <span className="gradient-text-alt">{t('hero', 'title_mind')}</span>
-                    </motion.h1>
+                    </h1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.9 }}
-                        className="hero-subtitle"
-                        style={{ whiteSpace: 'pre-line' }}
-                    >
+                    <p className="hero-subtitle" style={{ whiteSpace: 'pre-line' }}>
                         {t('hero', 'subtitle')}
-                    </motion.p>
+                    </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.1 }}
-                        className="hero-cta"
-                        style={{ pointerEvents: 'auto' }}
-                    >
+                    <div className="hero-cta" style={{ pointerEvents: 'auto' }}>
                         <button onClick={() => onNavigate('portfolio')} className="btn-primary">
-                            {t('hero', 'cta_portfolio')}
+                            <span>{t('hero', 'cta_portfolio')}</span>
                             <svg className="btn-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>
                         </button>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 1.3 }}
-                        className="hero-stats"
-                    >
+                    {/* Quick-Jump Dock (Mobile & Desktop) */}
+                    <div className="hero-quick-dock" style={{ pointerEvents: 'auto' }}>
+                        <a href="#work" className="quick-dock-pill">
+                            <span className="quick-dock-icon">🚀</span>
+                            <span>{quickNav.work}</span>
+                        </a>
+                        <a href="#denaro" className="quick-dock-pill quick-dock-pill-accent">
+                            <span className="quick-dock-icon">📈</span>
+                            <span>{quickNav.denaro}</span>
+                        </a>
+                        <a href="#services" className="quick-dock-pill">
+                            <span className="quick-dock-icon">🐧</span>
+                            <span>{quickNav.services}</span>
+                        </a>
+                        <button type="button" onClick={() => onNavigate('resume')} className="quick-dock-pill">
+                            <span className="quick-dock-icon">📄</span>
+                            <span>{quickNav.resume}</span>
+                        </button>
+                    </div>
+
+                    <div className="hero-stats" style={{ pointerEvents: 'auto' }}>
                         <div className="stat-item">
                             <div className="stat-value">30+</div>
                             <div className="stat-label">{t('hero', 'stat_exp')}</div>
@@ -192,19 +213,13 @@ export default function Home({ onNavigate }) {
                             <div className="stat-value">50+</div>
                             <div className="stat-label">{t('hero', 'stat_proj')}</div>
                         </div>
-                    </motion.div>
+                    </div>
                 </motion.div>
             </section>
 
             {/* Expertise Bento Grid */}
             <section className="expertise-section" id="work">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="section-container"
-                >
+                <div className="section-container">
                     <div className="section-header">
                         <a href="https://www.grivetto.eu/aura-quiet-living/index.html" target="_blank" rel="noopener noreferrer" className="section-badge" style={{ textDecoration: 'none', cursor: 'pointer' }}>
                             {t('expertise', 'badge')}
@@ -214,12 +229,17 @@ export default function Home({ onNavigate }) {
                     </div>
 
                     <div className="bento-grid">
-                        <motion.div variants={itemVariants} className="bento-card bento-large">
-                            <div className="bento-icon">🚀</div>
-                            <h3 className="bento-title">{t('expertise', 'card_web').title}</h3>
-                            <p className="bento-description">
-                                {t('expertise', 'card_web').desc}
-                            </p>
+                        <div className="bento-card bento-large">
+                            <div className="bento-card-top">
+                                <div className="bento-icon">🚀</div>
+                                <div>
+                                    <h3 className="bento-title">{t('expertise', 'card_web').title}</h3>
+                                    <p className="bento-description">
+                                        {t('expertise', 'card_web').desc}
+                                    </p>
+                                </div>
+                            </div>
+
                             <div className="bento-tags">
                                 <button onClick={() => onNavigate('curiosity')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_curiosity}
@@ -236,46 +256,51 @@ export default function Home({ onNavigate }) {
                                 <button onClick={() => onNavigate('rubiks')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_cube}
                                 </button>
-                                 <button onClick={() => window.open('/aura/', '_blank')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
+                                <button onClick={() => window.open('/aura/', '_blank')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_web').btn_aura}
                                 </button>
                             </div>
 
-                            <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(195, 60%, 45%)', marginTop: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8 }}>
+                            <p className="bento-sub-label bento-sub-label-cyan">
                                 {t('expertise', 'card_web').label_business}
                             </p>
                             <div className="bento-links-container" style={{ position: 'relative', zIndex: 10 }}>
                                 <a href="https://www.manuelaaires.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">⚕️</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_manuela.replace(' →', '').replace('→', '')}</span>
+                                    <span className="bento-link-arrow">↗</span>
                                 </a>
                                 <a href="https://www.grivetto.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">👨‍💻</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_grivetto.replace(' →', '').replace('→', '')}</span>
+                                    <span className="bento-link-arrow">↗</span>
                                 </a>
                                 <a href="https://vivirito.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🏠</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_vivirito.replace(' →', '').replace('→', '')}</span>
+                                    <span className="bento-link-arrow">↗</span>
                                 </a>
                                 <a href="https://web.grivetto.eu/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">📈</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_web_grivetto.replace(' →', '').replace('→', '')}</span>
+                                    <span className="bento-link-arrow">↗</span>
                                 </a>
                                 <a href="https://serenissima99.it/" className="bento-link-card" target="_blank" rel="noopener noreferrer">
                                     <span className="bento-link-icon">🌟</span>
                                     <span className="bento-link-text">{t('expertise', 'card_web').link_serenissima.replace(' →', '').replace('→', '')}</span>
+                                    <span className="bento-link-arrow">↗</span>
                                 </a>
                             </div>
 
-                            <div style={{ height: '1px', background: 'rgba(0,0,0,0.05)', margin: '1.25rem 0 1rem' }} />
+                            <div className="bento-divider" />
 
-                            <p style={{ fontSize: '0.8rem', fontWeight: '700', color: 'hsl(210, 15%, 50%)', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.7 }}>
+                            <p className="bento-sub-label">
                                 {t('expertise', 'card_web').label_projects}
                             </p>
                             <WebProjectsShowcase />
-                        </motion.div>
+                        </div>
 
-                        <motion.div variants={itemVariants} className="bento-card">
+                        <div className="bento-card">
                             <div className="bento-icon">🧘</div>
                             <h3 className="bento-title">{t('expertise', 'card_history').title}</h3>
                             <p className="bento-description">
@@ -287,9 +312,9 @@ export default function Home({ onNavigate }) {
                             <button onClick={() => onNavigate('vintage')} className="bento-link" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', cursor: 'pointer', marginTop: '0.5rem' }}>
                                 {t('expertise', 'card_history').btn_vintage}
                             </button>
-                        </motion.div>
+                        </div>
 
-                        <motion.div variants={itemVariants} className="bento-card">
+                        <div className="bento-card">
                             <div className="bento-icon">📜</div>
                             <h3 className="bento-title">{t('expertise', 'card_archives').title}</h3>
                             <p className="bento-description">
@@ -298,15 +323,15 @@ export default function Home({ onNavigate }) {
                             <a href="https://archive.org/" className="bento-link" target="_blank" rel="noopener noreferrer" style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto', marginTop: '1rem' }}>
                                 {t('expertise', 'card_archives').link_history}
                             </a>
-                        </motion.div>
+                        </div>
 
-                        <motion.div variants={itemVariants} className="bento-card bento-tall">
+                        <div className="bento-card bento-tall">
                             <div className="bento-icon">🛠️</div>
                             <h3 className="bento-title">{t('expertise', 'card_support').title}</h3>
                             <p className="bento-description">
                                 {t('expertise', 'card_support').desc}
                             </p>
-                            <div className="bento-tags" style={{ flexDirection: 'column', gap: '8px', alignItems: 'stretch' }}>
+                            <div className="bento-tags bento-tags-stack">
                                 <button onClick={() => onNavigate('hesk')} className="tag" style={{ position: 'relative', zIndex: 20, pointerEvents: 'auto' }}>
                                     {t('expertise', 'card_support').btn_hesk}
                                 </button>
@@ -317,110 +342,83 @@ export default function Home({ onNavigate }) {
                                     {t('expertise', 'card_support').btn_terminal}
                                 </button>
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div variants={itemVariants} className="bento-card bento-accent">
+                        <div className="bento-card bento-accent">
                             <div className="quote-mark">"</div>
                             <blockquote className="bento-quote">
                                 {t('expertise', 'quote')}
                             </blockquote>
                             <cite className="bento-cite">{t('expertise', 'cite')}</cite>
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.div >
-            </section >
+                </div>
+            </section>
 
             {/* Denaro Bot Dashboard Section */}
             <DenaroMachine />
 
             {/* Services Section */}
             <section className="services-section" id="services">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="section-container"
-                >
+                <div className="section-container">
                     <div className="section-header">
                         <span className="section-badge">{t('services', 'title')}</span>
                         <h2 className="section-title">{t('services', 'subtitle')}</h2>
                     </div>
 
                     <div className="services-grid">
-                        <motion.div variants={itemVariants} className="service-card glass">
+                        <div className="service-card glass">
                             <div className="service-icon">🐧</div>
                             <h3>{t('services', 'linux').title}</h3>
                             <p>{t('services', 'linux').desc}</p>
-                        </motion.div>
-                        <motion.div variants={itemVariants} className="service-card glass">
+                        </div>
+                        <div className="service-card glass">
                             <div className="service-icon">📊</div>
                             <h3>{t('services', 'monitoring').title}</h3>
                             <p>{t('services', 'monitoring').desc}</p>
-                        </motion.div>
-                        <motion.div variants={itemVariants} className="service-card glass">
+                        </div>
+                        <div className="service-card glass">
                             <div className="service-icon">💻</div>
                             <h3>{t('services', 'web').title}</h3>
                             <p>{t('services', 'web').desc}</p>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="service-card glass">
+                        </div>
+                        <div className="service-card glass">
                             <div className="service-icon">🛡️</div>
                             <h3>{t('services', 'security').title}</h3>
                             <p>{t('services', 'security').desc}</p>
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.div>
+                </div>
             </section>
 
             {/* Testimonials Section */}
             <section className="testimonials-section">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="section-container"
-                >
-                    <h2 className="section-title">{t('testimonials', 'title')}</h2>
+                <div className="section-container">
+                    <h2 className="section-title" style={{ textAlign: 'center' }}>{t('testimonials', 'title')}</h2>
                     <div className="testimonials-grid">
                         {t('testimonials', 'items').map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.2 }}
-                                className="testimonial-card glass"
-                            >
+                            <div key={index} className="testimonial-card glass">
                                 <p className="testimonial-text">"{item.text}"</p>
                                 <p className="testimonial-author">{item.author}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
-                </motion.div>
+                </div>
             </section>
 
             {/* Blog Section */}
             <section className="blog-section">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="section-container"
-                >
+                <div className="section-container">
                     <div className="section-header">
                         <h2 className="section-title">{t('blog', 'title')}</h2>
                         <p className="section-subtitle">{t('blog', 'subtitle')}</p>
                     </div>
                     <div className="blog-grid">
                         {t('blog', 'posts').map((post, index) => (
-                            <motion.div
-                                key={index}
-                                variants={itemVariants}
-                                className="blog-card glass"
-                            >
+                            <div key={index} className="blog-card glass">
                                 <h3>{post.title}</h3>
                                 <p>{post.desc}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '2rem' }}>
@@ -428,20 +426,12 @@ export default function Home({ onNavigate }) {
                             {t('blog', 'cta')}
                         </a>
                     </div>
-                </motion.div>
+                </div>
             </section>
 
-
-
-            {/* About & Philosophy Section (Increased Text Content) */}
+            {/* About & Philosophy Section */}
             <section className="philosophy-section">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="section-container"
-                >
+                <div className="section-container">
                     <div className="philosophy-content glass">
                         <h2 className="section-title">{t('hero', 'title_tech')} & {t('hero', 'title_mind')}</h2>
                         <div className="section-text">
@@ -450,18 +440,12 @@ export default function Home({ onNavigate }) {
                             <p dangerouslySetInnerHTML={{ __html: t('philosophy', 'p3') }} />
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </section>
 
             {/* CTA Section */}
-            < section className="cta-section" id="history" >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="cta-container"
-                >
+            <section className="cta-section" id="history">
+                <div className="cta-container">
                     <h2 className="cta-title">{t('cta', 'title')}</h2>
                     <p className="cta-subtitle">
                         {t('cta', 'subtitle')}
@@ -471,11 +455,11 @@ export default function Home({ onNavigate }) {
                             {t('cta', 'btn_linkedin')}
                         </a>
                     </div>
-                </motion.div>
-            </section >
+                </div>
+            </section>
 
             {/* Modern Footer with Contact Links */}
-            < footer className="modern-footer" >
+            <footer className="modern-footer">
                 <div className="footer-container">
                     <div className="footer-grid">
                         <div className="footer-column">
@@ -513,7 +497,7 @@ export default function Home({ onNavigate }) {
                         <p className="footer-updated" style={{ fontSize: '0.8rem', opacity: 0.6, marginTop: '0.5rem' }}>{t('footer', 'last_updated')}</p>
                     </div>
                 </div>
-            </footer >
-        </div >
+            </footer>
+        </div>
     );
 }

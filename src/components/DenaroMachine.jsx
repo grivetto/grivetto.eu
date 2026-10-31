@@ -88,7 +88,7 @@ const UI_COPY = {
         openApp: 'Apri Dashboard Live',
         githubRepo: 'Codice Sorgente',
         simulateTitle: 'Simulatore Scenari di Mercato',
-        simulateHint: 'Clicca su un evento per testare la risposta algoritmica',
+        simulateHint: 'Tocca un evento per testare la risposta algoritmica live',
         capitalPrefix: 'Capitale Attivo',
         profitSub: 'Rendimento netto consolidato',
         tradesSub: 'Eseguite su Kraken, OKX & Binance',
@@ -99,6 +99,9 @@ const UI_COPY = {
         nodesTitle: 'Topologia Nodi Distribuiti',
         webAppTitle: 'Live Web App Studio',
         webAppSubtitle: 'Interfaccia remota connessa in tempo reale a web.grivetto.eu',
+        tabConsole: 'Console & Sim',
+        tabWebApp: 'Live Web App',
+        tabNodes: 'Nodi (3)',
     },
     en: {
         versionTag: 'v6 Predictive',
@@ -108,7 +111,7 @@ const UI_COPY = {
         openApp: 'Open Live Dashboard',
         githubRepo: 'Source Code',
         simulateTitle: 'Market Scenario Simulator',
-        simulateHint: 'Click an event to test fleet algorithmic response in real-time',
+        simulateHint: 'Tap an event to test fleet algorithmic response in real-time',
         capitalPrefix: 'Active Capital',
         profitSub: 'Consolidated net yield',
         tradesSub: 'Executed across Kraken, OKX & Binance',
@@ -119,6 +122,9 @@ const UI_COPY = {
         nodesTitle: 'Distributed Node Topology',
         webAppTitle: 'Live Web App Studio',
         webAppSubtitle: 'Remote interface connected live to web.grivetto.eu',
+        tabConsole: 'Console & Sim',
+        tabWebApp: 'Live Web App',
+        tabNodes: 'Nodes (3)',
     },
     es: {
         versionTag: 'v6 Predictive',
@@ -128,7 +134,7 @@ const UI_COPY = {
         openApp: 'Abrir Panel en Vivo',
         githubRepo: 'Código Fuente',
         simulateTitle: 'Simulador de Escenarios',
-        simulateHint: 'Haz clic para probar la respuesta algorítmica en tiempo real',
+        simulateHint: 'Toca un evento para probar la respuesta algorítmica en vivo',
         capitalPrefix: 'Capital Activo',
         profitSub: 'Rendimiento neto consolidado',
         tradesSub: 'Ejecutadas en Kraken, OKX y Binance',
@@ -139,6 +145,9 @@ const UI_COPY = {
         nodesTitle: 'Topología de Nodos Distribuidos',
         webAppTitle: 'Panel en Vivo',
         webAppSubtitle: 'Interfaz remota conectada en vivo a web.grivetto.eu',
+        tabConsole: 'Consola & Sim',
+        tabWebApp: 'App en Vivo',
+        tabNodes: 'Nodos (3)',
     },
     th: {
         versionTag: 'v6 Predictive',
@@ -148,7 +157,7 @@ const UI_COPY = {
         openApp: 'เปิดแดชบอร์ดสด',
         githubRepo: 'ซอร์สโค้ด',
         simulateTitle: 'จำลองสถานการณ์ตลาด',
-        simulateHint: 'คลิกเพื่อทดสอบการตอบสนองของระบบในเวลาจริง',
+        simulateHint: 'แตะเพื่อทดสอบการตอบสนองของระบบในเวลาจริง',
         capitalPrefix: 'เงินทุนหมุนเวียน',
         profitSub: 'กำไรสุทธิรวม',
         tradesSub: 'ดำเนินการบน Kraken, OKX และ Binance',
@@ -159,6 +168,9 @@ const UI_COPY = {
         nodesTitle: 'สถาปัตยกรรมโหนดแบบกระจาย',
         webAppTitle: 'แดชบอร์ดสด',
         webAppSubtitle: 'เชื่อมต่อกับ web.grivetto.eu แบบเรียลไทม์',
+        tabConsole: 'คอนโซล & ซิม',
+        tabWebApp: 'เว็บแอปสด',
+        tabNodes: 'โหนด (3)',
     }
 };
 
@@ -185,6 +197,7 @@ export default function DenaroMachine() {
     const [activeEventKey, setActiveEventKey] = useState(null);
     const [isRefreshing, setIsRefreshing] = useState(false);
     const [iframeInteractive, setIframeInteractive] = useState(false);
+    const [mobileTab, setMobileTab] = useState('console'); // 'console' | 'webapp' | 'nodes'
     const bodyRef = useRef(null);
 
     // Fetch dati live dal Worker
@@ -442,8 +455,42 @@ export default function DenaroMachine() {
                         </div>
                     </div>
 
-                    {/* --- Cockpit Unificato (Tutto visibile in un unico colpo d'occhio) --- */}
-                    <div className="dm-cockpit-grid">
+                    {/* --- Mobile Cockpit View Switcher (visible only <= 768px) --- */}
+                    <div className="dm-mobile-switcher" role="tablist" aria-label="Denaro Cockpit Views">
+                        <button
+                            type="button"
+                            role="tab"
+                            aria-selected={mobileTab === 'console'}
+                            className={'dm-switch-tab' + (mobileTab === 'console' ? ' is-active' : '')}
+                            onClick={() => setMobileTab('console')}
+                        >
+                            <span>⚡</span>
+                            <span>{copy.tabConsole}</span>
+                        </button>
+                        <button
+                            type="button"
+                            role="tab"
+                            aria-selected={mobileTab === 'webapp'}
+                            className={'dm-switch-tab' + (mobileTab === 'webapp' ? ' is-active' : '')}
+                            onClick={() => setMobileTab('webapp')}
+                        >
+                            <span>🌐</span>
+                            <span>{copy.tabWebApp}</span>
+                        </button>
+                        <button
+                            type="button"
+                            role="tab"
+                            aria-selected={mobileTab === 'nodes'}
+                            className={'dm-switch-tab' + (mobileTab === 'nodes' ? ' is-active' : '')}
+                            onClick={() => setMobileTab('nodes')}
+                        >
+                            <span>🖧</span>
+                            <span>{copy.tabNodes}</span>
+                        </button>
+                    </div>
+
+                    {/* --- Cockpit Unificato (Side-by-Side su Desktop, Tabbed su Mobile) --- */}
+                    <div className={`dm-cockpit-grid dm-mobile-view-${mobileTab}`}>
 
                         {/* COLONNA SINISTRA: Live Web App Studio */}
                         <div className="dm-cockpit-col dm-cockpit-left">
@@ -529,7 +576,7 @@ export default function DenaroMachine() {
                         <div className="dm-cockpit-col dm-cockpit-right">
 
                             {/* 1. Nodi Distribuiti */}
-                            <div className="dm-cockpit-block">
+                            <div className="dm-cockpit-block dm-nodes-block">
                                 <div className="dm-panel-header">
                                     <span className="dm-panel-title">
                                         <span className="dm-panel-dot dm-dot-cyan"></span>
@@ -580,7 +627,7 @@ export default function DenaroMachine() {
                             </div>
 
                             {/* 2. Simulatore Scenari */}
-                            <div className="dm-cockpit-block">
+                            <div className="dm-cockpit-block dm-sim-block">
                                 <div className="dm-simulator-strip">
                                     <div className="dm-sim-info">
                                         <span className="dm-sim-title">

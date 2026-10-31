@@ -1,3 +1,13 @@
+## [1.3.24] - 2026-10-31
+### Fixed & Redesigned
+- Fixed critical mobile viewport clipping and invisible sections ("si vede mezza pagina"):
+  - Removed `overflow-x: hidden; max-width: 100vw;` on `html, body` (which turned `body` into a sub-scroll container and broke Framer Motion `whileInView` `IntersectionObserver`, leaving sections stuck at `opacity: 0`), using `overflow-x: clip` instead.
+  - Removed `initial="hidden" whileInView="visible"` opacity traps across all homepage sections so content renders immediately with 100% visibility on all devices.
+  - Replaced `flex-wrap: nowrap` on `.wps-filter-tabs` with a responsive 2x2 grid on mobile and enforced `minmax(0, 1fr)` + `min-width: 0` across all grids and Bento cards to eliminate horizontal width expansion.
+- Redesigned mobile experience (`Home.jsx`, `Home.css`, `HomeCyberpunk.css`, `DenaroMachine.jsx`, `DenaroMachine.css`):
+  - Added a Quick-Jump Navigation Dock in the Hero (`🚀 Progetti Web`, `📈 Trading Fleet`, `🐧 Servizi IT`, `📄 Curriculum`) and upgraded the mobile slide-over drawer with a dedicated header, close button, and icon-badged links.
+  - Added a Mobile Cockpit View Switcher (`⚡ Console & Sim`, `🌐 Live Web App`, `🖧 Nodi (3)`) in `DenaroMachine` for mobile screens (`<= 768px`) while keeping the full unified cockpit on desktop.
+
 ## [1.3.23] - 2026-10-30
 ### Changed
 - Comprehensive mobile UX, touch interaction, and performance optimization across the entire site:

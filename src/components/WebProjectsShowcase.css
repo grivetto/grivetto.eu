@@ -1,7 +1,9 @@
 /* Web Projects Showcase Component */
 .web-projects-showcase {
   width: 100%;
-  margin-top: 1.25rem;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 1.1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -14,13 +16,16 @@
   gap: 0.5rem;
   align-items: center;
   margin-bottom: 0.25rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .wps-tab-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.85rem;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
   background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 9999px;
@@ -33,6 +38,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   user-select: none;
+  min-width: 0;
 }
 
 .wps-tab-btn:hover {
@@ -53,6 +59,13 @@
 .wps-tab-icon {
   font-size: 0.95rem;
   line-height: 1;
+  flex-shrink: 0;
+}
+
+.wps-tab-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .wps-tab-count {
@@ -68,6 +81,7 @@
   background: rgba(0, 0, 0, 0.07);
   color: inherit;
   transition: background 0.25s ease;
+  flex-shrink: 0;
 }
 
 .wps-tab-btn.active .wps-tab-count {
@@ -78,8 +92,10 @@
 /* --- Projects Grid --- */
 .wps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
   gap: 0.85rem;
+  width: 100%;
+  min-width: 0;
 }
 
 /* --- Project Card --- */
@@ -99,6 +115,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .wps-card::before {
@@ -140,6 +158,7 @@
   background: rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.25s ease;
+  flex-shrink: 0;
 }
 
 .wps-card:hover .wps-icon-wrapper {
@@ -220,12 +239,14 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .wps-card-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
   font-size: 0.92rem;
   font-weight: 700;
   color: hsl(210, 25%, 22%);
@@ -243,6 +264,7 @@
   opacity: 0.45;
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   color: hsl(205, 85%, 45%);
+  flex-shrink: 0;
 }
 
 .wps-card:hover .wps-card-arrow {
@@ -338,8 +360,8 @@
 .modern-home.cyberpunk .wps-card:hover {
   background: rgba(12, 20, 42, 0.9);
   border-color: hsl(180, 100%, 55%);
-  box-shadow: 
-    0 12px 30px rgba(0, 0, 0, 0.7), 
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.7),
     0 0 25px rgba(0, 255, 255, 0.35),
     0 0 40px rgba(217, 70, 239, 0.15);
 }
@@ -421,33 +443,9 @@
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .wps-grid {
-    grid-template-columns: 1fr;
-  }
-  .wps-filter-tabs {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 0.4rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  .wps-tab-btn {
-    flex-shrink: 0;
-  }
-}
-
-
-/* Mobile Touch & Scrollbar Refinements */
-.wps-filter-tabs {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.wps-filter-tabs::-webkit-scrollbar {
-  display: none;
-}
-
+/* ==========================================================================
+   Mobile & Touch Optimizations (Zero Horizontal Overflow)
+   ========================================================================== */
 @media (hover: none) {
   .wps-card:hover {
     transform: none;
@@ -460,28 +458,35 @@
 
 @media (max-width: 640px) {
   .wps-filter-tabs {
-    scroll-snap-type: x proximity;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.45rem;
-    margin-left: -0.25rem;
-    margin-right: -0.25rem;
-    padding: 0.15rem 0.25rem 0.45rem;
+    width: 100%;
   }
 
   .wps-tab-btn {
+    width: 100%;
     min-height: 40px;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.78rem;
-    scroll-snap-align: start;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.74rem;
+    border-radius: 12px;
+    justify-content: space-between;
+  }
+
+  .wps-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
   }
 
   .wps-card {
-    padding: 0.95rem 1rem;
-    min-height: 82px;
+    padding: 0.85rem 0.95rem;
+    min-height: 78px;
   }
 
   .wps-expand-btn {
     width: 100%;
-    min-height: 46px;
-    font-size: 0.84rem;
+    min-height: 44px;
+    font-size: 0.82rem;
+    border-radius: 12px;
   }
 }
